@@ -1,27 +1,58 @@
-import React, { Component } from 'react'
-import '../css/menu-bar.css';
-import menu_icon from '../menu_icon.png';
+import React from "react";
 
+import "../css/menu-bar.css";
+import { Route, Link, BrowserRouter as Router, Switch } from "react-router-dom";
 
-export default class MenuBar extends Component {
-    render() {
-        return (
-          <div className="menu-bar">
-            <img src={menu_icon} alt="VBVF Logo" />
-            <div className="menu-links">
-              <a>Service Time and Directions</a>
+import Home from "../containers/home";
+import ServiceTimeDirections from "../containers/service-time-directions";
+import About from "../containers/about";
+import Ministries from "../containers/ministries";
 
-              <a>About</a>
+import NotFound from "../containers/notfound";
+import SermonRedirect from "../containers/sermon-redirect";
 
-              <a>Ministries</a>
-
-              <a>Events</a>
-
-              <a>Sermons</a>
-
-              <a>Give</a>
-            </div>
-          </div>
-        );
-    }
+function MenuBar() {
+  return (
+    <Router>
+      <div>
+        <div className="menu-bar">
+          <ul className="menu-links">
+            <li>
+              <Link to="/service-time-directions">Service Time & Location</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/ministries">Ministries</Link>
+            </li>
+            <li>
+              <a href="https://vbvf.churchcenter.com/registrations/events">
+                Events
+              </a>
+            </li>
+            <li>
+              <Link to="/sermon-redirect">Sermons</Link>
+            </li>
+            <li>
+              <Link to="/give">Give</Link>
+            </li>
+          </ul>
+        </div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route
+            path="/service-time-directions"
+            component={ServiceTimeDirections}
+          />
+          <Route path="/about" component={About} />
+          <Route path="/ministries" component={Ministries} />
+          <Route path="/sermon-redirect" component={SermonRedirect} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
+  );
 }
+
+export default MenuBar;
