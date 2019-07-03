@@ -1,10 +1,11 @@
 import React from "react";
 import "../css/menu-bar.css";
 import { Link } from "react-router-dom";
-
+import MenuIcon from "../images/menu_icon.png";
 function MenuBar() {
   return (
     <div className="menu-bar">
+      <img src={MenuIcon} alt="VBVF Logo" />
       <ul className="menu-links">
         <li>
           <Link to="/service-time-directions">Service Time & Location</Link>
