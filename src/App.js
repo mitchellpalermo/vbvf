@@ -1,6 +1,8 @@
 import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import MenuBar from "./components/menu-bar";
+import Footer from "./components/footer";
 import ServiceTimeDirections from "./containers/service-time-directions";
 import About from "./containers/about";
 import Ministries from "./containers/ministries";
@@ -9,8 +11,6 @@ import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
 import Template from "./containers/template";
-import MenuBar from "./components/menu-bar";
-import Footer from "./components/footer";
 
 function App() {
   return (

@@ -1,6 +1,7 @@
+import "../css/footer.css";
 import React from "react";
 import FacebookLogo from "../images/f_logo_RGB-Black_100.png";
-import "../css/footer.css";
+
 import { Link } from "react-router-dom";
 
 const Footer = () => {
