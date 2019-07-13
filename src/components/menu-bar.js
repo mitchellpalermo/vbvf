@@ -1,8 +1,7 @@
 import React from "react";
 import "../css/menu-bar.css";
-
 import { Link } from "react-router-dom";
-import MenuIcon from "../images/menu_icon.png";
+import MenuIcon from "../images/vbvf_icon.png";
 function MenuBar() {
   return (
     <div className="menu-bar">
@@ -18,7 +17,10 @@ function MenuBar() {
           <Link to="/ministries">Ministries</Link>
         </li>
         <li>
-          <a href="https://vbvf.churchcenter.com/registrations/events">
+          <a
+            href="https://vbvf.churchcenter.com/registrations/events"
+            target="_blank"
+          >
             Events
           </a>
         </li>
@@ -26,7 +28,9 @@ function MenuBar() {
           <Link to="/sermon-redirect">Sermons</Link>
         </li>
         <li>
-          <Link to="/give">Give</Link>
+          <a href="https://vbvf.churchcenter.com/giving" target="_blank">
+            Give
+          </a>
         </li>
       </ul>
     </div>
