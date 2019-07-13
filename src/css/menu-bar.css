@@ -7,6 +7,15 @@
   background-color: hsla(0, 0%, 0%, 0.5);
   color: white;
 }
+.menu-bar a {
+  text-decoration: none;
+  margin: 10px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1em;
+}
 .menu-links {
   padding: 10px;
   width: 100%;
@@ -24,13 +33,4 @@ img {
 
 li {
   margin: 5px;
-}
-a {
-  text-decoration: none;
-  margin: 10px;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1em;
 }
