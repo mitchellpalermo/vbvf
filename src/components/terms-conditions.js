@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/terms-conditions.css";
+import "../css/terms-privacy.css";
 
 const TermsConditions = () => {
   return (
@@ -179,7 +179,7 @@ const TermsConditions = () => {
         If you have any questions, comments or concerns arising from the
         website, the privacy policy or any other relevant terms and conditions,
         policies and notices or the way in which we are handling your personal
-        information please
+        information please{" "}
         <a className="contact-link" href="mailto:info@vbvf.org">
           contact us.
         </a>

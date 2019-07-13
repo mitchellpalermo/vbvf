@@ -11,6 +11,12 @@
   color: black;
   text-decoration: none;
 }
+.footer-container ul {
+  list-style: none;
+}
+.footer-container li {
+  margin: 5px;
+}
 .icon-container {
   display: flex;
   flex-flow: row wrap;
@@ -33,7 +39,4 @@ img {
   margin: 10px;
   height: 40px;
   width: auto;
-}
-ul {
-  list-style: none;
 }

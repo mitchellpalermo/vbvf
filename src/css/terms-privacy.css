@@ -1,8 +1,11 @@
-.contact-link {
+a {
   color: goldenrod;
   font-weight: bold;
+  text-decoration: none;
 }
-
+ul {
+  list-style-type: disc;
+}
 .disclosures {
   padding-left: 200px;
   padding-right: 200px;
