@@ -15,7 +15,6 @@
   text-transform: uppercase;
   font-variant: small-caps;
   font-weight: bold;
-  text-align: center;
 }
 
 .menu-bar img {
@@ -29,6 +28,7 @@
 
 .menu-bar li {
   margin: 5px;
+  text-align: center;
 }
 
 .menu-links {
