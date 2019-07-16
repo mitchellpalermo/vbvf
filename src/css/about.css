@@ -37,8 +37,24 @@
   text-align: left;
   white-space: nowrap;
 }
-.side-menu a {
+.side-menu button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
+  margin: 10px;
+  font-size: 1em;
+  color: goldenrod;
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+.side-menu button:active {
+  border-left: 2px #0a1d3f solid;
 }
 .display-component {
   margin: 100px;
