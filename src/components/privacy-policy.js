@@ -113,8 +113,8 @@ const PrivacyPolicy = () => {
       <p>
         If If you have any questions about this Privacy Policy, the practices of
         this website, please contact us using the{" "}
-        <Link to="/contact">webform </Link>
-        provided on our Contact page or write us at:
+        <Link to="/contact">web form</Link> provided on our Contact page or
+        write us at:
       </p>
     </div>
   );

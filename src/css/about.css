@@ -18,13 +18,17 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+}
+.about-container h1 {
+  text-align: center;
 }
 
 .side-menu {
   position: relative;
   width: auto;
-  margin-left: 100px;
+  margin-left: 50px;
+  margin-top: 100px;
 }
 .side-menu ul {
   display: flex;
@@ -57,6 +61,7 @@
   border-left: 2px #0a1d3f solid;
 }
 .display-component {
-  margin: 100px;
+  margin-top: 100px;
+  margin-left: 50px;
   width: 60%;
 }
