@@ -3,6 +3,7 @@ import React from "react";
 export default function OurStory() {
   return (
     <div>
+      <h1>Our Story</h1>
       <p>
         Verse By Verse Fellowship (VBVF) is the result of a church planting
         effort by Verse By Verse Ministry International (VBVMI), a

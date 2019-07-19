@@ -7,16 +7,17 @@ import "../css/about.css";
 import ReactDOM from "react-dom";
 
 const About = () => {
-  const [component, setComponent] = useState(<OurStory />);
+  const [component, setComponent] = useState(<Leadership />);
 
-  const handleClick = (component, passingClass) => {
-    setComponent(component);
+  // TODO: change the styling of the side menu on select
+  // const handleClick = (component, passingClass) => {
+  //   setComponent(component);
 
-    let bigDocument = ReactDOM.findDOMNode(this);
-    console.log("this is the passing class: " + passingClass);
-    let activeButton = bigDocument.querySelector(passingClass);
-    activeButton.classList.add("active");
-  };
+  //   let bigDocument = ReactDOM.findDOMNode(this);
+  //   console.log("this is the passing class: " + passingClass);
+  //   let activeButton = bigDocument.querySelector(passingClass);
+  //   activeButton.classList.add("active");
+  // };
 
   return (
     <div>
@@ -29,7 +30,7 @@ const About = () => {
             <li>
               <button
                 className="our-story"
-                onClick={handleClick(<OurStory />, "our-story")}
+                onClick={() => setComponent(<OurStory />)}
               >
                 Our Story
               </button>
