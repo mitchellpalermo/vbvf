@@ -1,0 +1,18 @@
+.main-header {
+  background-image: url(../images/home_page_header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 300px;
+}
+
+.main-header h1 {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+.main-header h2 {
+  color: white;
+  font-size: 1.5em;
+  font-weight: regular;
+}

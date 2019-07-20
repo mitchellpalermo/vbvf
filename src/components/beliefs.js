@@ -29,7 +29,6 @@ export default function Beliefs() {
         Preaching the Gospel of Jesus Christ by word and deed is our privilege.
       </p>
       <br />
-      <hr />
       <h1>Core Beliefs</h1>
       <h3>The Nature of God</h3>
       <p>
