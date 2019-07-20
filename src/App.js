@@ -11,7 +11,6 @@ import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
 import Home from "./containers/home";
-import Template from "./containers/template";
 
 function App() {
   return (

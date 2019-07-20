@@ -23,6 +23,11 @@
   justify-content: center;
   align-items: center;
 }
+.icon-container img {
+  margin: 10px;
+  height: 40px;
+  width: auto;
+}
 .disclosure-container {
   display: flex;
   flex-flow: row wrap;
@@ -34,9 +39,4 @@
 .copyright {
   color: black;
   font-size: 0.75em;
-}
-img {
-  margin: 10px;
-  height: 40px;
-  width: auto;
 }

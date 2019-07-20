@@ -4,20 +4,21 @@ import Beliefs from "../components/beliefs";
 import Leadership from "../components/leadership";
 import FAQ from "../components/faq";
 import "../css/about.css";
-import ReactDOM from "react-dom";
 
 const About = () => {
-  const [component, setComponent] = useState(<Leadership />);
+  const [component, setComponent] = useState(<OurStory />);
 
-  // TODO: change the styling of the side menu on select
-  // const handleClick = (component, passingClass) => {
-  //   setComponent(component);
+  const handleClick = (passingComponent, passingClass) => {
+    setComponent(passingComponent);
 
-  //   let bigDocument = ReactDOM.findDOMNode(this);
-  //   console.log("this is the passing class: " + passingClass);
-  //   let activeButton = bigDocument.querySelector(passingClass);
-  //   activeButton.classList.add("active");
-  // };
+    //removing selected class from button
+    let removingClass = document.querySelector(".selected");
+    removingClass.classList.remove("selected");
+
+    //adding selected class to button
+    let activeButton = document.querySelector(passingClass);
+    activeButton.classList.add("selected");
+  };
 
   return (
     <div>
@@ -29,16 +30,20 @@ const About = () => {
           <ul>
             <li>
               <button
-                className="our-story"
-                onClick={() => setComponent(<OurStory />)}
+                className="our-story selected"
+                onClick={() => {
+                  handleClick(<OurStory />, ".our-story");
+                }}
               >
                 Our Story
               </button>
             </li>
             <li>
               <button
-                className="values-beliefs"
-                onClick={() => setComponent(<Beliefs />)}
+                className="beliefs"
+                onClick={() => {
+                  handleClick(<Beliefs />, ".beliefs");
+                }}
               >
                 Core Values & Beliefs
               </button>
@@ -46,13 +51,20 @@ const About = () => {
             <li>
               <button
                 className="leadership"
-                onClick={() => setComponent(<Leadership />)}
+                onClick={() => {
+                  handleClick(<Leadership />, ".leadership");
+                }}
               >
                 Leadership
               </button>
             </li>
             <li>
-              <button className="faq" onClick={() => setComponent(<FAQ />)}>
+              <button
+                className="faq"
+                onClick={() => {
+                  handleClick(<FAQ />, ".faq");
+                }}
+              >
                 FAQ
               </button>
             </li>

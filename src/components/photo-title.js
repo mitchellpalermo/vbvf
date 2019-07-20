@@ -1,12 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
+import "../css/photo-title.css";
 
-export default function PhotoTitle() {
+export default function PhotoTitle(props) {
   return (
-    <div>
-      <img />
+    <div className="person">
+      <img src={props.photo} alt={props.name} />
       <p>
-        <span />
+        {props.name}
+        <span>{props.title}</span>
       </p>
     </div>
   );
