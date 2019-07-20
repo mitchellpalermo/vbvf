@@ -16,7 +16,7 @@ import PhotoTitle from "../components/photo-title";
 
 export default function Leadership() {
   return (
-    <div>
+    <div className="leadership-container">
       <h1>Leadership</h1>
       <br />
       <hr />

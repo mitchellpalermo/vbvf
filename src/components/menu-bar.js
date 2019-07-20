@@ -5,7 +5,9 @@ import MenuIcon from "../images/vbvf_icon.png";
 function MenuBar() {
   return (
     <div className="menu-bar">
-      <img src={MenuIcon} alt="VBVF Logo" />
+      <Link to="/">
+        <img src={MenuIcon} alt="VBVF Logo" />
+      </Link>
       <ul className="menu-links">
         <li>
           <Link to="/service-time-directions">Service Time & Location</Link>
