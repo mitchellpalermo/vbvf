@@ -20,6 +20,7 @@ function MenuBar() {
           <a
             href="https://vbvf.churchcenter.com/registrations/events"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Events
           </a>
@@ -28,7 +29,11 @@ function MenuBar() {
           <Link to="/sermon-redirect">Sermons</Link>
         </li>
         <li>
-          <a href="https://vbvf.churchcenter.com/giving" target="_blank">
+          <a
+            href="https://vbvf.churchcenter.com/giving"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Give
           </a>
         </li>

@@ -1,29 +1,10 @@
 h2 {
   text-align: center;
 }
-
-.title {
-  display: block;
-  font-size: 0.5em;
-  color: grey;
-}
 .photo-array {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.person {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  width: auto;
-}
-.person img {
-  width: 40%;
-  height: auto;
 }

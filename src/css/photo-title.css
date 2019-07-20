@@ -1,0 +1,22 @@
+.person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  margin: 15px;
+}
+.person img {
+  width: 100%;
+  height: auto;
+}
+.person p {
+  font-size: 1em;
+}
+.person p span {
+  display: block;
+  font-size: 0.9em;
+
+  color: grey;
+}
