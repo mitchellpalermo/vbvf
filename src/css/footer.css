@@ -3,13 +3,15 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  border-top: 1px black solid;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 10px;
+  background-color: #0a1d3f;
+  margin-top: 100px;
 }
 .footer-container a {
-  color: black;
+  color: white;
   text-decoration: none;
+  font-weight: 400;
 }
 .footer-container ul {
   list-style: none;
@@ -37,6 +39,6 @@
   color: black;
 }
 .copyright {
-  color: black;
+  color: white;
   font-size: 0.75em;
 }
