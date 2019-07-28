@@ -1,17 +1,17 @@
 import React from "react";
 import "../css/leadership.css";
-import Stephen from "../images/stephen.jpg";
-import Brian from "../images/brian.jpg";
-import Tom from "../images/tom.jpg";
-import Jerry from "../images/jerry.jpg";
-import Taylor from "../images/taylor.jpg";
-import Charlie from "../images/charlie.jpg";
-import Sofi from "../images/sofi.jpg";
-import Kathy from "../images/kathy.jpg";
-import Mitch from "../images/mitch.jpg";
-import Kat from "../images/kat.jpg";
-import Terry from "../images/terry.jpg";
-import Kyle from "../images/kyle.jpg";
+import Stephen from "../images/leadership_photos/stephen.jpg";
+import Brian from "../images/leadership_photos/brian.jpg";
+import Tom from "../images/leadership_photos/tom.jpg";
+import Jerry from "../images/leadership_photos/jerry.jpg";
+import Taylor from "../images/leadership_photos/taylor.jpg";
+import Charlie from "../images/leadership_photos/charlie.jpg";
+import Sofi from "../images/leadership_photos/sofi.jpg";
+import Kathy from "../images/leadership_photos/kathy.jpg";
+import Mitch from "../images/leadership_photos/mitch.jpg";
+import Kat from "../images/leadership_photos/kat.jpg";
+import Terry from "../images/leadership_photos/terry.jpg";
+import Kyle from "../images/leadership_photos/kyle.jpg";
 import PhotoTitle from "../components/photo-title";
 
 export default function Leadership() {
@@ -19,9 +19,9 @@ export default function Leadership() {
     <div className="leadership-container">
       <h1>Leadership</h1>
       <br />
-      <hr />
+
       <h2>Elders</h2>
-      <hr />
+
       <div className="photo-array">
         <PhotoTitle
           photo={Stephen}
@@ -36,9 +36,9 @@ export default function Leadership() {
         <PhotoTitle photo={Tom} name={"Tom Didier"} title={"Discipleship"} />
         <PhotoTitle photo={Jerry} name={"Jerry Dyke"} title={"Missions"} />
       </div>
-      <hr />
+
       <h2>Ministry Directors</h2>
-      <hr />
+
       <div className="photo-array">
         <PhotoTitle
           photo={Taylor}

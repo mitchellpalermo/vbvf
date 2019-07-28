@@ -1,0 +1,27 @@
+.button-housing {
+  height: auto;
+  width: auto;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+
+.button-housing:hover {
+  transform: scale(1.1);
+  text-shadow: 2px;
+  padding-right: px;
+  transition: ease-in-out;
+  transition-duration: 1.1s;
+}
+.button-housing .side-facing-arrow:showing {
+  border: solid white;
+  width: auto;
+  height: 90%px;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 3px;
+}
