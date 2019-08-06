@@ -47,7 +47,7 @@ const Home = () => {
               of God, so we’re Preaching the Word on KSLR AM630. Click the
               button below if want to hear more of our current series on the
               book of Matthew.
-              <Link to="redirect/">Listen to Matthew series</Link>
+              <Link to="redirect/"> Listen to Matthew series</Link>
             </p>
           </div>
         </div>

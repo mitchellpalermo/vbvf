@@ -2,7 +2,7 @@
   height: auto;
   width: auto;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 1.5em;
   font-weight: bold;
   color: white;
   border: 2px solid white;
@@ -15,7 +15,7 @@
   text-shadow: 2px;
   padding-right: px;
   transition: ease-in-out;
-  transition-duration: 1.1s;
+  transition-duration: 0.1s;
 }
 .button-housing .side-facing-arrow:showing {
   border: solid white;
