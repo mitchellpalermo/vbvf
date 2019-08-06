@@ -1,4 +1,4 @@
-.menu-bar {
+.full-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,6 +7,53 @@
   color: white;
   margin: 20px;
 }
+.full-menu ul {
+  list-style: none;
+  margin-right: 20px;
+}
+@media (max-width: 800px) {
+  .full-menu {
+    display: none;
+  }
+}
+.mobile-menu {
+  display: none;
+}
+@media (max-width: 800px) {
+  .mobile-menu {
+    display: flex;
+    flex-direction: row;
+    color: black;
+  }
+}
+.mobile-menu span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+}
+.expanded-menu .inactive {
+  display: none;
+}
+.expanded-menu .active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .menu-bar a {
   font-family: "Roboto", sans-serif;
   text-decoration: none;

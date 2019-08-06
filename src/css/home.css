@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40rem;
+  min-height: 85vh;
 }
 .main-header h1 {
   color: white;
@@ -33,23 +33,6 @@
   font-size: 3rem;
   font-weight: regular;
 }
-/* .main-header .buttons button {
-  height: auto;
-  width: auto;
-  background-color: transparent;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-  border: 2px solid white;
-  border-radius: 20px;
-  margin-left: 50px;
-}
-.main-header .buttons button:hover {
-  background-color: hsla(0, 0%, 0%, 0.45);
-  text-shadow: 2px;
-  transition: ease-in-out;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-} */
 
 .see-more-arrow {
   border: solid white;
@@ -67,6 +50,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 1.5em;
 }
 .secondary-content .content-block {
   display: flex;
@@ -89,6 +73,10 @@
 .secondary-content .content-block img {
   width: 35%;
   margin: 2rem;
+}
+
+.full-width-promos {
+  font-size: 1.5em;
 }
 .end-times-promo-container {
   position: relative;
