@@ -21,7 +21,10 @@ const Home = () => {
         <span className="see-more-arrow" />
       </div>
       <div className="secondary-content">
-        <div className="connection-meeting content-block">
+        <div
+          id="connection-meeting"
+          className="connection-meeting content-block"
+        >
           <div className="words">
             <h2>Connection Meeting</h2>
             <p>
