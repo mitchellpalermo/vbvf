@@ -48,7 +48,14 @@ function MenuBar() {
         <nav role="navigation">
           <div className="mobile-menu-bar">
             <Link to="/">
-              <img src={MenuIcon} alt="VBVF Logo" />
+              <img
+                className="mobile-menu-icon"
+                src={MenuIcon}
+                alt="VBVF Logo"
+                onClick={() => {
+                  setShowCollapsedMenu(!showCollapsedMenu);
+                }}
+              />
             </Link>
             <div
               id="menuToggle"
@@ -67,15 +74,34 @@ function MenuBar() {
           >
             <ul>
               <li>
-                <Link to="/service-time-directions">
+                <Link
+                  to="/service-time-directions"
+                  onClick={() => {
+                    setShowCollapsedMenu(!showCollapsedMenu);
+                  }}
+                >
                   Service Time & Location
                 </Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link
+                  to="/about"
+                  onClick={() => {
+                    setShowCollapsedMenu(!showCollapsedMenu);
+                  }}
+                >
+                  About
+                </Link>
               </li>
               <li>
-                <Link to="/ministries">Ministries</Link>
+                <Link
+                  to="/ministries"
+                  onClick={() => {
+                    setShowCollapsedMenu(!showCollapsedMenu);
+                  }}
+                >
+                  Ministries
+                </Link>
               </li>
               <li>
                 <a
