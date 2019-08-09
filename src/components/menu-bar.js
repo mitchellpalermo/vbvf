@@ -46,52 +46,60 @@ function MenuBar() {
       </div>
       <div className="mobile-menu">
         <nav role="navigation">
-          <div
-            id="menuToggle"
-            onClick={() => {
-              setShowCollapsedMenu(!showCollapsedMenu);
-            }}
-          >
-            <span />
-            <span />
-            <span />
+          <div className="mobile-menu-bar">
+            <Link to="/">
+              <img src={MenuIcon} alt="VBVF Logo" />
+            </Link>
+            <div
+              id="menuToggle"
+              onClick={() => {
+                setShowCollapsedMenu(!showCollapsedMenu);
+              }}
+            >
+              <span />
+              <span />
+              <span />
+            </div>
           </div>
-          <ul
-            className={`expanded-menu ${
-              showCollapsedMenu ? "active" : "inactive"
-            }`}
+          <div
+            id="expanded-menu"
+            className={`${showCollapsedMenu ? "show" : "hide"}`}
           >
-            <li>
-              <Link to="/service-time-directions">Service Time & Location</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/ministries">Ministries</Link>
-            </li>
-            <li>
-              <a
-                href="https://vbvf.churchcenter.com/registrations/events"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Events
-              </a>
-            </li>
-            <li>
-              <Link to="/sermon-redirect">Sermons</Link>
-            </li>
-            <li>
-              <a
-                href="https://vbvf.churchcenter.com/giving"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Give
-              </a>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <Link to="/service-time-directions">
+                  Service Time & Location
+                </Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/ministries">Ministries</Link>
+              </li>
+              <li>
+                <a
+                  href="https://vbvf.churchcenter.com/registrations/events"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Events
+                </a>
+              </li>
+              <li>
+                <Link to="/sermon-redirect">Sermons</Link>
+              </li>
+              <li>
+                <a
+                  href="https://vbvf.churchcenter.com/giving"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Give
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
     </div>

@@ -4,7 +4,6 @@ import Button from "../components/button";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import PreachingTheWord from "../images/preaching_the_word.png";
 import EndTimesPromo from "../images/end_times_promo.jpg";
-import MatthewBackground from "../images/matthew_background.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
 const Home = () => {
@@ -31,10 +30,10 @@ const Home = () => {
               church. <Link to="about/">Learn More</Link>
             </p>
           </div>
-          <img src={ConnectionImage} />
+          <img src={ConnectionImage} alt="connection meeting logo" />
         </div>
         <div className="heard-on-radio content-block">
-          <img src={PreachingTheWord} />
+          <img src={PreachingTheWord} alt="Preaching the word logo" />
           <div className="words">
             <h2>Heard us on the Radio?</h2>
             <h3>
@@ -77,7 +76,7 @@ const Home = () => {
               title="Listen to Matthew Series"
             />
           </span>
-          <img src={CrownOfThorns} />
+          <img src={CrownOfThorns} alt="crown of thorns" />
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
-a {
+.disclosures a {
   color: goldenrod;
   font-weight: bold;
   text-decoration: none;
 }
-ul {
+.disclosures ul {
   list-style-type: disc;
 }
 .disclosures {
