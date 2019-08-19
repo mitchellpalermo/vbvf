@@ -6,6 +6,9 @@ import PreachingTheWord from "../images/preaching_the_word.png";
 import EndTimesPromo from "../images/end_times_promo.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
+import Time from "../images/time.svg";
+import Location from "../images/location.svg";
+
 const Home = () => {
   return (
     <div>
@@ -19,6 +22,17 @@ const Home = () => {
           </div>
         </div>
         <span className="see-more-arrow" />
+      </div>
+      <div className="time-and-directions-parent">
+        <div className="time-and-directions-child">
+          <img src={Time} />
+          Saturdays at 5:30pm <br />
+          Sundays at 10:30am
+        </div>
+        <div className="time-and-directions-child">
+          <img src={Location} />
+          551 E Nakoma Dr, San Antonio, TX 78216
+        </div>
       </div>
       <div className="secondary-content">
         <div
@@ -39,11 +53,10 @@ const Home = () => {
           <img src={PreachingTheWord} alt="Preaching the word logo" />
           <div className="words">
             <h2>Heard us on the Radio?</h2>
-            <h3>
-              Gospel of Matthew on AM 630
-              <br />
+            <p style={{ textAlign: "center" }}>
+              Gospel of Matthew <br /> on AM 630 <br />
               Monday-Friday at 6:30pm
-            </h3>
+            </p>
             <p>
               VBVF has a heart to see all of San Antonio understanding the word
               of God, so we’re Preaching the Word on KSLR AM630. Click the
@@ -63,6 +76,17 @@ const Home = () => {
             src={EndTimesPromo}
             alt="End Times Study Beginning September 10, 2019"
           />
+          <p className="mobile-description">
+            Many Christians consider Revelation to be a mysterious and even
+            frightening book of scripture. Some avoid studying it, and among
+            those who do try, many find it confusing. Why does the book confound
+            so many and give rise to so many conflicting interpretations? The
+            answer: because it's the final book of the Bible.{" "}
+            <a href="https://www.versebyverseministry.org/events/revelation-2019-2020">
+              Learn More
+            </a>
+          </p>
+          <Button title="Learn More" className="mobile-rev-button" />
         </div>
         <div className="current-series-promo-container">
           <span className="current-series-desc">
