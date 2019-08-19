@@ -3,6 +3,7 @@ body {
 }
 .main-header {
   width: 100%;
+  position: relative;
   background: url(../images/home_page_header.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -40,13 +41,41 @@ body {
 
 .see-more-arrow {
   border: solid white;
+  position: absolute;
+  bottom: 0;
   width: 5px;
   height: 5px;
   border-width: 0 5px 5px 0;
   display: inline-block;
   padding: 3px;
+  margin-bottom: 10px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.time-and-directions-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 20vh;
+}
+.time-and-directions-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  color: #122149;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.time-and-directions-child img {
+  width: 40px;
+  height: auto;
+  margin: 20px;
+  fill: #122149;
 }
 
 .secondary-content {
@@ -103,6 +132,12 @@ body {
   margin-right: auto;
   width: 100%;
   height: auto;
+}
+.end-times-promo-container .mobile-description {
+  display: none;
+}
+.end-times-promo-container .mobile-rev-button {
+  display: none;
 }
 .current-series-promo-container {
   width: 100%;
@@ -217,12 +252,12 @@ body {
     height: auto;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
   }
 
   .end-times-promo-container .end-times-button {
-    position: absolute;
-    top: 75%;
+    display: none;
   }
 
   .end-times-promo-container img {
@@ -231,6 +266,11 @@ body {
     width: 100%;
     height: auto;
   }
+  .end-times-promo-container .mobile-description {
+    display: block;
+    width: 75%;
+  }
+
   .current-series-promo-container {
     width: 100%;
     background-image: url(../images/matthew_background.jpg);
