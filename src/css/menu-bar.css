@@ -6,6 +6,7 @@
   height: 75px;
   color: white;
   padding: 20px;
+  z-index: 100;
 }
 .full-menu ul {
   list-style: none;
@@ -35,6 +36,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  z-index: 100;
 }
 .mobile-menu-bar .mobile-menu-icon {
   padding: 20px 20px 0px 20px;
