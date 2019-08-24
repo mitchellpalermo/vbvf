@@ -9,7 +9,7 @@ body {
   background-position: center;
   background-size: cover;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   min-height: 85vh;
@@ -18,12 +18,13 @@ body {
   color: white;
   font-size: 6rem;
   font-weight: bold;
-  padding-top: 50 px;
 }
 
 .main-header .titles {
-  max-width: 70%;
+  max-width: 50%;
   text-align: left;
+  justify-self: flex-start;
+  padding: 150px 0px 100px 0px;
 }
 
 .main-header .buttons {
@@ -55,11 +56,11 @@ body {
 
 .time-and-directions-parent {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-flow: row;
+  justify-content: space-evenly;
   width: 100%;
   height: 20vh;
+  background-color: hsla(43, 74%, 79%, 0.87);
 }
 .time-and-directions-child {
   display: flex;
@@ -70,6 +71,8 @@ body {
   color: #122149;
   font-size: 1.1em;
   font-weight: bold;
+  margin: 10px;
+  text-align: center;
 }
 .time-and-directions-child img {
   width: 40px;
@@ -113,35 +116,23 @@ body {
 .full-width-promos {
   font-size: 1.5em;
 }
-.end-times-promo-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+#revelation-series {
+  background-image: url(../images/revelation_background.jpg);
 }
 
-.end-times-promo-container .end-times-button {
-  position: absolute;
-  top: 75%;
-}
-
-.end-times-promo-container img {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+#revelation-series img {
+  margin: 30px;
+  width: 40%;
   height: auto;
 }
-.end-times-promo-container .mobile-description {
-  display: none;
+
+#matthew-series {
+  background-image: url(../images/matthew_background.jpg);
 }
-.end-times-promo-container .mobile-rev-button {
-  display: none;
-}
+
 .current-series-promo-container {
   width: 100%;
-  background-image: url(../images/matthew_background.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -150,6 +141,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .current-series-promo-container .current-series-desc {
   display: flex;
   color: white;
@@ -218,6 +210,31 @@ body {
     padding: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
+  }
+
+  .time-and-directions-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .time-and-directions-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    color: #122149;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px;
+  }
+  .time-and-directions-child img {
+    width: 40px;
+    height: auto;
+    margin: 20px;
+    fill: #122149;
   }
 
   .secondary-content .content-block {

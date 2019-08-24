@@ -96,7 +96,6 @@
     list-style: none;
   }
   .side-menu li {
-    margin: 2px;
     text-align: center;
   }
   .side-menu button {
@@ -109,7 +108,6 @@
     font-family: "Roboto", sans-serif;
     text-decoration: none;
     color: goldenrod;
-    font-size: 0.75em;
     text-transform: uppercase;
     font-variant: small-caps;
     font-weight: bold;

@@ -5,6 +5,7 @@ import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import PreachingTheWord from "../images/preaching_the_word.png";
 import EndTimesPromo from "../images/end_times_promo.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
+import RevelationLogo from "../images/revelation_logo.png";
 import { Link } from "react-router-dom";
 import Time from "../images/time.svg";
 import Location from "../images/location.svg";
@@ -68,27 +69,25 @@ const Home = () => {
         </div>
       </div>
       <div className="full-width-promos">
-        <div className="end-times-promo-container">
-          <span className="end-times-button">
-            <Button title="Learn More" />
+        <div className="current-series-promo-container " id="revelation-series">
+          <span className="current-series-desc">
+            <h2>Revelation Study</h2>
+            <p>
+              Many Christians consider Revelation to be a mysterious and even
+              frightening book of scripture. Some avoid studying it, and among
+              those who do try, many find it confusing. Why does the book
+              confound so many and give rise to so many conflicting
+              interpretations? The answer: because it's the final book of the
+              Bible.{" "}
+            </p>
+            <Button
+              href="https://www.versebyverseministry.org/events/revelation-2019-2020"
+              title="Listen to Revelation Series"
+            />
           </span>
-          <img
-            src={EndTimesPromo}
-            alt="End Times Study Beginning September 10, 2019"
-          />
-          <p className="mobile-description">
-            Many Christians consider Revelation to be a mysterious and even
-            frightening book of scripture. Some avoid studying it, and among
-            those who do try, many find it confusing. Why does the book confound
-            so many and give rise to so many conflicting interpretations? The
-            answer: because it's the final book of the Bible.{" "}
-            <a href="https://www.versebyverseministry.org/events/revelation-2019-2020">
-              Learn More
-            </a>
-          </p>
-          <Button title="Learn More" className="mobile-rev-button" />
+          <img src={RevelationLogo} alt="crown of thorns" />
         </div>
-        <div className="current-series-promo-container">
+        <div className="current-series-promo-container" id="matthew-series">
           <span className="current-series-desc">
             <h2>Current Series</h2>
             <p>
