@@ -1,7 +1,8 @@
 import React from "react";
+import 
 
 const Ministries = () => {
-  return <div>Ministries</div>;
+  return <div />;
 };
 
 export default Ministries;
