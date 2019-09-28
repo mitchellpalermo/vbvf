@@ -19,6 +19,15 @@ function MenuBar() {
             <Link to="/about">About</Link>
           </li>
           <li>
+            <a
+              href="https://vbvf.churchcenter.com/groups/bible-studies"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Bible Studies
+            </a>
+          </li>
+          <li>
             <Link to="/ministries">Ministries</Link>
           </li>
           <li>
