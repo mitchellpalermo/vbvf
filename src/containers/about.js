@@ -4,6 +4,7 @@ import Beliefs from "../components/beliefs";
 import Leadership from "../components/leadership";
 import FAQ from "../components/faq";
 import "../css/about.css";
+import MenuBar from "../components/menu-bar";
 
 const About = () => {
   const [component, setComponent] = useState(<OurStory />);

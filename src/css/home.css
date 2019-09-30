@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
 }
+
 .main-header {
   width: 100%;
   position: relative;
@@ -9,7 +10,7 @@ body {
   background-position: center;
   background-size: cover;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 85vh;
