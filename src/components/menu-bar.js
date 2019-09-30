@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/menu-bar.css";
 import { Link } from "react-router-dom";
-import MenuIcon from "../images/vbvf_icon.png";
+import MenuIcon from "../images/logos/vbvf_icon.png";
 function MenuBar() {
   const [showCollapsedMenu, setShowCollapsedMenu] = useState(false);
 
