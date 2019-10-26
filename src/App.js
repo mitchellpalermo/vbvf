@@ -12,7 +12,7 @@ import NotFound from "./containers/notfound";
 import Home from "./containers/home";
 import GlobalNav from "./components/global-nav";
 import ChildrensMinistry from "./components/ministries/childrens-ministry";
-import YouthMinistry from "./components/ministries/youth-ministry";
+import YouthMinistry from "./components/ministries/youth-ministry/youth-ministry";
 import SmallGroups from "./components/ministries/small-groups";
 import Serve from "./components/ministries/serve";
 
@@ -39,7 +39,7 @@ function App() {
           />
           <Route
             exact
-            path="/ministries/youth-ministry"
+            path="/ministries/youth-ministry/youth-ministry"
             component={YouthMinistry}
           />
           <Route

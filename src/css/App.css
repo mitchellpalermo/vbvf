@@ -1,3 +1,4 @@
 .page-container {
   z-index: 100;
+  overflow: hidden;
 }

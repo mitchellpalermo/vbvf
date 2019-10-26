@@ -18,20 +18,6 @@
   padding-right: 30px;
 }
 
-.menu-bar li {
-  margin: 5px;
-  text-align: center;
-}
-
-.menu-links {
-  padding: 10px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
-
 .sub-menu {
   font-size: 1em;
 }
