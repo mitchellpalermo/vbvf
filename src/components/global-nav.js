@@ -12,7 +12,6 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import { Link } from "react-router-dom";
 
 import "../css/global-nav.css";
 import MenuIcon from "../images/logos/vbvf_icon.png";
@@ -44,26 +43,31 @@ const GlobalNav = props => {
                 Ministries
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem tag={Link} to="/ministries/childrens-ministry">
-                  Children's Ministry
+                <DropdownItem>
+                  <NavLink
+                    className="sub-menu"
+                    href="/ministries/childrens-ministry"
+                  >
+                    Children's Ministry
+                  </NavLink>
                 </DropdownItem>
                 <DropdownItem>
                   <NavItem>
                     <NavLink
                       className="sub-menu"
-                      href="/ministries/youth-ministry"
+                      href="/ministries/youth-ministry/youth-ministry"
                     >
                       Youth Ministry
                     </NavLink>
                   </NavItem>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="sub-menu" href="/small-groups">
+                  <NavLink className="sub-menu" href="/ministries/small-groups">
                     Small Groups
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink className="sub-menu" href="/serve">
+                  <NavLink className="sub-menu" href="/ministries/serve">
                     Serving at VBVF
                   </NavLink>
                 </DropdownItem>
