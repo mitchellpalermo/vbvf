@@ -9,7 +9,6 @@ import RevelationLogo from "../images/revelation_logo.png";
 import { Link } from "react-router-dom";
 import Time from "../images/time.svg";
 import Location from "../images/location.svg";
-import MenuBar from "../components/menu-bar";
 
 const Home = () => {
   return (

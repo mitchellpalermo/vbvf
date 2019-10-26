@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import MenuBar from "./components/menu-bar";
 import Footer from "./components/footer";
 import ServiceTimeDirections from "./containers/service-time-directions";
 import About from "./containers/about";
@@ -11,12 +10,17 @@ import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
 import Home from "./containers/home";
+import GlobalNav from "./components/global-nav";
+import ChildrensMinistry from "./components/ministries/childrens-ministry";
+import YouthMinistry from "./components/ministries/youth-ministry";
+import SmallGroups from "./components/ministries/small-groups";
+import Serve from "./components/ministries/serve";
 
 function App() {
   return (
     <Router>
       <div className="page-container">
-        <MenuBar />
+        <GlobalNav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route
@@ -33,6 +37,22 @@ function App() {
             path="/terms-and-conditions"
             component={TermsConditions}
           />
+          <Route
+            exact
+            path="/ministries/youth-ministry"
+            component={YouthMinistry}
+          />
+          <Route
+            exact
+            path="/ministries/childrens-ministry"
+            component={ChildrensMinistry}
+          />
+          <Route
+            exact
+            path="/ministries/small-groups"
+            component={SmallGroups}
+          />
+          <Route exact path="/ministries/serve" component={Serve} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

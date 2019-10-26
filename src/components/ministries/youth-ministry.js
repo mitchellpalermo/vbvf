@@ -1,7 +1,7 @@
 import React from "react";
-import LogosLogo from "../images/logos/logos-logo-white.png";
+import LogosLogo from "../../images/logos/logos-logo-white.png";
 
-const YouthMinistry = () => {
+export default function YouthMinistry() {
   return (
     <div className="ministry-block">
       <div className="ministry-header">
@@ -33,4 +33,4 @@ const YouthMinistry = () => {
       </div>
     </div>
   );
-};
+}
