@@ -11,7 +11,7 @@ import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
 import Home from "./containers/home";
 import GlobalNav from "./components/global-nav";
-import ChildrensMinistry from "./components/ministries/childrens-ministry";
+import ChildrensMinistry from "./components/ministries/children-ministry/childrens-ministry";
 import YouthMinistry from "./components/ministries/youth-ministry/youth-ministry";
 import SmallGroups from "./components/ministries/small-groups";
 import Serve from "./components/ministries/serve";
