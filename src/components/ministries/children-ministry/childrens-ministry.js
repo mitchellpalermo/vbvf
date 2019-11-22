@@ -1,6 +1,6 @@
 import React from "react";
 import ChildrensMinistryPhotoCarousel from "./childrens-photo-carousel";
-import StaffCard from "./staff-card";
+import StaffCard from "../../staff-card";
 import Sofi from "../../../images/leadership_photos/sofi.jpg";
 import JourneyLogo from "../../../images/logos/journey-logo.png";
 import Checkin from "../../../images/childrens-ministry/checkin.jpg";
@@ -35,16 +35,12 @@ export default function ChildrensMinistry() {
           minutes earlier so that we can make sure your child is registered.
         </p>
       </div>
-      <p>
-        Our leaders are committed to come alongside parents in guiding students
-        to mature through various stages of discipleship: learning the word,
-        living according to the call, serving the body, reaching out to the
-        lost, and stepping up into leadership.
-      </p>
+
       <StaffCard
         image={Sofi}
         title="Sofi Smith"
         subtitle="Children's Ministry Director"
+        email="sofi.smith@vbvf.org"
       />
     </div>
   );
