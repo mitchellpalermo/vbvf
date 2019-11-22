@@ -13,18 +13,15 @@ import Coloring from "../../../images/childrens-ministry/coloring.jpg";
 const items = [
   {
     src: JonTeaching,
-    altText: "Slide 1",
-    caption: "Slide 1"
+    altText: "Photo of leader teaching bible stories"
   },
   {
     src: LittleGirlLooking,
-    altText: "Slide 2",
-    caption: "Slide 2"
+    altText: "photo of children's ministry"
   },
   {
     src: Coloring,
-    altText: "Slide 3",
-    caption: "Slide 3"
+    altText: "photo of children coloring"
   }
 ];
 
@@ -66,7 +63,12 @@ const ChildrensMinistryPhotoCarousel = props => {
   });
 
   return (
-    <Carousel activeIndex={activeIndex} next={next} previous={previous}>
+    <Carousel
+      className="childrens-carousel"
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+    >
       <CarouselIndicators
         items={items}
         activeIndex={activeIndex}

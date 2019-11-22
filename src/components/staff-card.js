@@ -18,7 +18,7 @@ const StaffCard = props => {
           <CardTitle>{props.title}</CardTitle>
           <CardSubtitle>{props.subtitle}</CardSubtitle>
           <CardText>{props.content}</CardText>
-          <Button onclick={"mailto:sofi.smith@vbvf.org"}>
+          <Button onclick={`mailto:${props.email}`}>
             Contact {props.title.split(" ")[0]}
           </Button>
         </CardBody>
