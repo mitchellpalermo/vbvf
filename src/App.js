@@ -19,6 +19,11 @@ import Serve from "./components/ministries/serve";
 function App() {
   return (
     <Router>
+      <link
+        href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
+        rel="stylesheet"
+      />
+
       <div className="page-container">
         <GlobalNav />
         <Switch>

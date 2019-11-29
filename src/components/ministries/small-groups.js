@@ -73,17 +73,22 @@ export default function SmallGroups() {
           />
         </Map>
       </div>
-      <div className="staff-container">
-        <Card />
-        <p>
-          Community is a gift from God. Small groups exist so that we can
-          encourage one another, learn from one another, and seek spiritual
-          growth.{" "}
-        </p>
-        <div className="info-contact">
-          <div className="staff-card">
-            <StaffCard title="Shane Carter" subtitle="Small Group Minstry Director" email="shane.carter@vbvf.org" image={Shane} />
-          </div>
+      <div className="info-contact">
+        <div className="staff-card">
+          <StaffCard
+            title="Shane Carter"
+            subtitle="Small Group Minstry Director"
+            email="shane.carter@vbvf.org"
+            image={Shane}
+          />
+        </div>
+        <div className="image-info">
+          <div id="image-placeholder"></div>
+          <p>
+            Community is a gift from God. Small groups exist so that we can
+            encourage one another, learn from one another, and seek spiritual
+            growth.{" "}
+          </p>
         </div>
       </div>
     </div>
