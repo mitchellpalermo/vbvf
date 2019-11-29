@@ -12,10 +12,10 @@
   background-position: center;
   color: white;
   background-size: auto;
-  display: flex;
   text-align: center;
-  justify-content: center;
-  margin-bottom: h1 {
+
+  h1 {
+    margin: 50px;
     position: relative;
   }
 }
@@ -30,33 +30,82 @@
 
   p {
     max-width: 40%;
-    margin: 30px 30px 30px 0;
+    margin: 30px 0 30px 0;
   }
-  @media screen {
+  .info-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .info-sign-up {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
     p {
       max-width: 80%;
-      margin: 30px 0 0 30px;
+      margin: 30px 0 10px 0;
+    }
+    .info-button-container {
+      display: block;
     }
   }
 }
 
-.info-button-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px;
-}
-
 .info-contact {
-  max-width: 70%;
+  max-width: 100%;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
 
+  .image-info {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #image-placeholder {
+    width: 90%;
+    height: 200px;
+    background-color: blue;
+  }
   p {
+    max-width: 80%;
+  }
+  .staff-card {
     max-width: 30%;
   }
 }
-.staff-card {
-  max-width: 30%;
+@media screen and (max-width: 800px) {
+  .info-contact {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    .image-info {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #image-placeholder {
+      width: 100%;
+      height: 200px;
+      margin: 10px 0 20px 0;
+      background-color: blue;
+    }
+    p {
+      max-width: 80%;
+    }
+    .staff-card {
+      min-width: 90%;
+    }
+  }
 }
