@@ -13,7 +13,7 @@ import Home from "./containers/home";
 import GlobalNav from "./components/global-nav";
 import ChildrensMinistry from "./components/ministries/children-ministry/childrens-ministry";
 import YouthMinistry from "./components/ministries/youth-ministry/youth-ministry";
-import SmallGroups from "./components/ministries/small-groups";
+import SmallGroups from "./components/ministries/small-groups/small-groups";
 import Serve from "./components/ministries/serve";
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
           />
           <Route
             exact
-            path="/ministries/small-groups"
+            path="/ministries/small-groups/small-groups"
             component={SmallGroups}
           />
           <Route exact path="/ministries/serve" component={Serve} />

@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Card } from "reactstrap";
-import StaffCard from "../staff-card";
+import StaffCard from "../../staff-card";
 import Map from "pigeon-maps";
 import Marker from "pigeon-marker";
-import "../../css/small-groups.scss";
-import Shane from "../../images/leadership_photos/shane.jpg";
+import "../../../css/small-groups.scss";
+import Shane from "../../../images/leadership_photos/shane.jpg";
 
 export default function SmallGroups() {
   return (
