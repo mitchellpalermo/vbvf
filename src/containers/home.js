@@ -9,6 +9,7 @@ import RevelationLogo from "../images/revelation_logo.png";
 import { Link } from "react-router-dom";
 import Time from "../images/time.svg";
 import Location from "../images/location.svg";
+import MissionBanner from "../components/mission-banner";
 
 const Home = () => {
   return (
@@ -24,7 +25,7 @@ const Home = () => {
         </div>
         <span className="see-more-arrow" />
       </div>
-      <div className="time-and-directions-parent">
+      {/* <div className="time-and-directions-parent">
         <div className="time-and-directions-child">
           <img src={Time} />
           Saturdays at 5:30pm <br />
@@ -34,7 +35,8 @@ const Home = () => {
           <img src={Location} />
           551 E Nakoma Dr, San Antonio, TX 78216
         </div>
-      </div>
+      </div> */}
+      <MissionBanner />
       <div className="secondary-content">
         <div
           id="connection-meeting"
