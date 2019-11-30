@@ -46,7 +46,7 @@ const GlobalNav = props => {
                 <DropdownItem>
                   <NavLink
                     className="sub-menu"
-                    href="/ministries/childrens-ministry"
+                    href="/ministries/childrens-ministry/childrens-ministry"
                   >
                     Children's Ministry
                   </NavLink>
