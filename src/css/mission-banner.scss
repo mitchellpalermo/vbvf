@@ -2,14 +2,14 @@
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: #414141;
+  //background-color: papayawhip;
   padding: 20px 0 20px 0;
 }
 
 .mission-block {
-  width: 30%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,7 @@
   }
   p {
     text-align: center;
-    color: white;
+    color: black;
     width: 100%;
     strong {
       display: block;
@@ -38,9 +38,7 @@
   .mission-block {
     width: 100%;
     p {
-      width: 100%;
-      text-align: center;
-      color: white;
+      width: 80%;
     }
   }
 }
