@@ -11,7 +11,7 @@ import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
 import Home from "./containers/home";
 import GlobalNav from "./components/global-nav";
-import ChildrensMinistry from "./components/ministries/children-ministry/childrens-ministry";
+import ChildrensMinistry from "./components/ministries/childrens-ministry/childrens-ministry";
 import YouthMinistry from "./components/ministries/youth-ministry/youth-ministry";
 import SmallGroups from "./components/ministries/small-groups/small-groups";
 import Serve from "./components/ministries/serve";
@@ -19,11 +19,6 @@ import Serve from "./components/ministries/serve";
 function App() {
   return (
     <Router>
-      <link
-        href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
-        rel="stylesheet"
-      />
-
       <div className="page-container">
         <GlobalNav />
         <Switch>
@@ -49,7 +44,7 @@ function App() {
           />
           <Route
             exact
-            path="/ministries/childrens-ministry"
+            path="/ministries/childrens-ministry/childrens-ministry"
             component={ChildrensMinistry}
           />
           <Route
@@ -61,6 +56,10 @@ function App() {
           <Route component={NotFound} />
         </Switch>
         <Footer />
+        <link
+          href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
+          rel="stylesheet"
+        />
       </div>
     </Router>
   );
