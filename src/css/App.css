@@ -3,12 +3,15 @@
   overflow: hidden;
 }
 
-h1 {
-  font-size: 2rem;
+h1,
+h2,
+h3 {
   font-family: "Vollkorn", serif;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: 1.25em;
   font-family: "Work Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4em;
 }
