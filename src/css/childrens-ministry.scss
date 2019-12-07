@@ -11,14 +11,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    img {
-      width: 50%;
+
+    #childrens-logo {
+      width: 40%;
       height: auto;
       padding: 20px;
     }
-    .carousel-item > img {
-      width: 100%;
-      height: auto;
+    .photo-collage {
+      max-width: 70%;
+      img {
+        width: 50%;
+        padding: 10px;
+      }
     }
   }
   .mission-container {
@@ -62,8 +66,29 @@
     }
   }
 
-  .staff-card {
-    max-width: 30%;
+  .staff-info-container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    .staff-card {
+      max-width: 30%;
+    }
+    .staff-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 50%;
+      h2 {
+        text-align: center;
+      }
+      p {
+        max-width: 90%;
+        margin: 20px;
+        align-self: flex-start;
+      }
+    }
   }
 
   @media screen and (max-width: 800px) {
@@ -71,9 +96,17 @@
       width: 100%;
       flex-direction: column;
 
-      img {
-        width: 100%;
-        margin-top: 30px;
+      #childrens-logo {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+      }
+      .photo-collage {
+        max-width: 90%;
+        img {
+          width: 50%;
+          padding: 5px;
+        }
       }
     }
     .mission-container {
@@ -102,8 +135,18 @@
         width: 90%;
       }
     }
-    .staff-card {
+    .staff-info-container {
       max-width: 90%;
+
+      flex-direction: column;
+      align-items: center;
+      .staff-card {
+        max-width: 100%;
+      }
+      .staff-info {
+        max-width: 90%;
+        margin-top: 20px;
+      }
     }
   }
 }
