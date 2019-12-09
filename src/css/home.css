@@ -87,7 +87,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1rem;
 }
 .secondary-content .content-block {
   display: flex;
@@ -115,7 +115,7 @@ body {
 }
 
 .full-width-promos {
-  font-size: 1.5em;
+  font-size: 1rem;
 }
 
 #revelation-series {
@@ -164,6 +164,9 @@ body {
 }
 
 @media (max-width: 800px) {
+  p {
+    font-size: 1rem;
+  }
   .main-header {
     width: 100%;
     background: url(../images/home_page_header.jpg);
@@ -197,7 +200,7 @@ body {
   .main-header .buttons h2 {
     display: inline;
     color: white;
-    font-size: 2rem;
+
     text-align: center;
     font-weight: regular;
   }
