@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/home.css";
-import Button from "../components/button";
+
+import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import PreachingTheWord from "../images/preaching_the_word.png";
 import EndTimesPromo from "../images/end_times_promo.jpg";
@@ -12,6 +13,9 @@ import Location from "../images/location.svg";
 import MissionBanner from "../components/mission-banner";
 
 const Home = () => {
+  let buttonStyle = {
+    color: "white"
+  };
   return (
     <div>
       <div className="main-header">
@@ -20,7 +24,9 @@ const Home = () => {
 
           <div className="buttons">
             <h2>John 1:1</h2>
-            <Button title="What to expect" />
+            <Button outline color="light">
+              What to expect
+            </Button>
           </div>
         </div>
         <span className="see-more-arrow" />
@@ -83,9 +89,12 @@ const Home = () => {
               Bible.{" "}
             </p>
             <Button
+              outline
+              color="light"
               href="https://www.versebyverseministry.org/events/revelation-2019-2020"
-              title="Listen to Revelation Series"
-            />
+            >
+              Listen to Revelation
+            </Button>
           </span>
           <img src={RevelationLogo} alt="crown of thorns" />
         </div>
@@ -100,9 +109,12 @@ const Home = () => {
               Every Christian can profit from such a grounding.
             </p>
             <Button
+              outline
+              color="light"
               href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
-              title="Listen to Matthew Series"
-            />
+            >
+              Listen to Matthew
+            </Button>
           </span>
           <img src={CrownOfThorns} alt="crown of thorns" />
         </div>

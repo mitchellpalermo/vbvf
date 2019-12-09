@@ -10,7 +10,12 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
 } from "reactstrap";
 
 import "../css/global-nav.css";
@@ -18,8 +23,28 @@ import MenuIcon from "../images/logos/vbvf_icon.png";
 
 const GlobalNav = props => {
   const [isOpen, setIsOpen] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+  const modalToggle = () => setModal(!modal);
+
+  function mapsSelector() {
+    if (
+      /* if we're on iOS, open in Apple Maps */
+      navigator.platform.indexOf("iPhone") != -1 ||
+      navigator.platform.indexOf("iPad") != -1 ||
+      navigator.platform.indexOf("iPod") != -1
+    )
+      window.open(
+        "maps://maps.google.com/maps?daddr=29.5490497,-98.4836892&amp;ll=&amp;destination_place+id=Verse+By+Verse+Fellowship"
+
+        //maps.google.com/maps/place/Verse+By+Verse+Fellowship/@29.5490497,-98.4836892&amp;ll=&amp;destination=Verse+By+Verse+Fellowship"
+      );
+    /* else use Google */ else
+      window.open(
+        "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
+      );
+  }
 
   return (
     <div>
@@ -31,9 +56,40 @@ const GlobalNav = props => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/service-time-directions/">
+              <NavLink onClick={modalToggle}>
                 Service Times & Directions
               </NavLink>
+              <Modal isOpen={modal} toggle={modalToggle}>
+                <ModalHeader toggle={modalToggle}>
+                  Service Times & Directions
+                </ModalHeader>
+                <ModalBody>
+                  <div className="service-time-modal">
+                    <div>
+                      <h2>Weekend Services</h2>
+                      <p>Saturday - 5:30pm</p>
+                      <p>Sunday - 10:30am</p>
+                    </div>
+                    <div>
+                      <h2>Mid-Week Studies</h2>
+                      <p>Tuesday - 7:00pm</p>
+                      <p>Women's Bible Study Tuesday - 10:00am</p>
+                    </div>
+                    <div>
+                      <h2>Location</h2>
+                      <p>531 E Nakoma St. San Antonio, TX 78216</p>
+                      <Button outline color="dark" onClick={mapsSelector}>
+                        Open in Maps
+                      </Button>
+                    </div>
+                  </div>
+                </ModalBody>
+                <ModalFooter>
+                  <Button outline color="dark" onClick={modalToggle}>
+                    Close
+                  </Button>{" "}
+                </ModalFooter>
+              </Modal>
             </NavItem>
             <NavItem>
               <NavLink href="/about">About</NavLink>
