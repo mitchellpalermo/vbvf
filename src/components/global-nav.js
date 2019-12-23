@@ -19,7 +19,7 @@ import {
 } from "reactstrap";
 
 import "../css/global-nav.css";
-import MenuIcon from "../images/logos/vbvf_icon.png";
+import VBVFLogo from "../images/logos/vbvf_logo.png";
 
 const GlobalNav = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,29 +34,31 @@ const GlobalNav = props => {
       navigator.platform.indexOf("iPhone") != -1 ||
       navigator.platform.indexOf("iPad") != -1 ||
       navigator.platform.indexOf("iPod") != -1
-    )
+    ) {
       window.open(
-        "maps://maps.google.com/maps?daddr=29.5490497,-98.4836892&amp;ll=&amp;destination_place+id=Verse+By+Verse+Fellowship"
+        "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
 
         //maps.google.com/maps/place/Verse+By+Verse+Fellowship/@29.5490497,-98.4836892&amp;ll=&amp;destination=Verse+By+Verse+Fellowship"
       );
-    /* else use Google */ else
+    } else {
+      /* else use Google */
       window.open(
         "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
       );
+    }
   }
 
   return (
     <div>
       <Navbar className="menu-bar" color="light" light expand="md">
         <NavbarBrand href="/">
-          <img id="menu-bar-icon" src={MenuIcon} alt="VBVF Logo" />
+          <img id="menu-bar-icon" src={VBVFLogo} alt="VBVF Logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink onClick={modalToggle}>
+              <NavLink href="#" onClick={modalToggle}>
                 Service Times & Directions
               </NavLink>
               <Modal isOpen={modal} toggle={modalToggle}>
