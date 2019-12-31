@@ -1,14 +1,15 @@
 .serve-container {
   width: 100%;
   display: flex;
-
   flex-direction: column;
   align-items: center;
+  font-size: 1em;
 
   .serve-photo-collage {
     display: flex;
     flex-direction: column;
     width: 50%;
+    margin-top: 5vh;
     img {
       padding: 10px;
     }
@@ -39,6 +40,7 @@
         h1 {
           font-size: 3em;
           align-self: center;
+          white-space: nowrap;
         }
         #levi {
           width: 85%;
@@ -53,13 +55,69 @@
   }
 
   .first-row {
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: 10vh 0 10vh 0;
     p {
+      margin-right: 5vh;
       max-width: 50%;
+    }
+  }
+  .second-row {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 10vh 0;
+
+    .button-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        max-width: 70%;
+        margin-right: 5vh;
+      }
+    }
+    img {
+      max-width: 60%;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .first-row {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5vh 0 5vh 0;
+      p {
+        font-size: 1em;
+        min-width: 90%;
+      }
+    }
+    .second-row {
+      width: 80%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      margin: 0 0 10vh 0;
+
+      .button-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+          align-self: center;
+          width: 100%;
+        }
+      }
+      img {
+        max-width: 100%;
+        margin-bottom: 3vh;
+      }
     }
   }
 }
