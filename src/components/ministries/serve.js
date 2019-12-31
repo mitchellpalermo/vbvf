@@ -4,7 +4,10 @@ import Ben from "../../images/serve/ben_coffee.jpg";
 import Cathy from "../../images/serve/cathy_greeting.jpg";
 import KidsMinistry from "../../images/serve/kids_ministry.jpg";
 import Levi from "../../images/serve/levi_setup.jpg";
+import John from "../../images/serve/john_praying.jpg";
+
 import ScriptureVerse from "../scripture-verse";
+import { Button } from "reactstrap";
 
 export default function Serve() {
   return (
@@ -22,20 +25,36 @@ export default function Serve() {
           <img id="cathy" src={Cathy} alt="serving at the coffee bar" />
         </div>
       </div>
-      <div className="main-body">
-        <div className="first-row">
-          <p>
-            We believe that our church exists to glorify God through teaching
-            the word and equipping believers with truth that can be relied upon.
-            Part of glorifying God is serving the body of Christ.{" "}
-          </p>
-          <ScriptureVerse
-            verse="Whatever you do, work heartily, as for the Lord and not for men,
+
+      <div className="first-row">
+        <p>
+          We believe that our church exists to glorify God through teaching the
+          word and equipping believers with truth that can be relied upon. Part
+          of glorifying God is serving the body of Christ.{" "}
+        </p>
+        <ScriptureVerse
+          verse="Whatever you do, work heartily, as for the Lord and not for men,
             knowing that from the Lord you will receive the inheritance as your
             reward. You are serving the Lord Christ"
-            reference="Colossians 3:23-24"
-          />
+          reference="Colossians 3:23-24"
+        />
+      </div>
+
+      <div className="second-row">
+        <div className="button-section">
+          <p>
+            Our church has many different areas to get involved with, all
+            equally important. Serving with one another also provides an
+            opportunity to form relationships with others. Click the button
+            below to get started.
+          </p>
+          <div className="button-wrapper">
+            <Button large outline white>
+              Learn More
+            </Button>
+          </div>
         </div>
+        <img src={John} alt="volunteer praying with children" />
       </div>
     </div>
   );

@@ -32,12 +32,6 @@ export default function ChildrensMinistry() {
           learn Bible lessons in a safe environment, from loving teachers
           committed to ministering to children.
         </p>
-        {/* <ScriptureVerse
-          verse="[…] and that from childhood you have known the sacred writings which
-          are able to give you the wisdom that leads to salvation through faith
-          which is in Christ Jesus[…]"
-          reference="2 Timothy 3:14-17"
-        ></ScriptureVerse> */}
 
         <h3 className="scripture-verse">
           “[…] and that from childhood you have known the sacred writings which

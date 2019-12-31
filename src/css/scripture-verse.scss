@@ -1,13 +1,16 @@
-.scripture-verse {
+.scripture-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-  font-weight: 200;
-  color: gray;
-
+  .scripture-verse {
+    font-weight: 200;
+    color: gray;
+  }
   .scripture-reference {
+    margin: 10px;
     font-weight: 600;
+    color: lightgray;
   }
 }
