@@ -25,6 +25,9 @@ export default function Serve() {
           <img id="cathy" src={Cathy} alt="serving at the coffee bar" />
         </div>
       </div>
+      <div className="serve-photo-collage-mobile">
+        <h1>Serve Together</h1>
+      </div>
 
       <div className="first-row">
         <p>
