@@ -2,7 +2,7 @@ import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/footer";
-import ServiceTimeDirections from "./containers/service-time-directions";
+import ConnectPage from "./containers/connect-page";
 import About from "./containers/about";
 import SermonRedirect from "./containers/sermon-redirect";
 import PrivacyPolicy from "./components/privacy-policy";
@@ -22,11 +22,7 @@ function App() {
         <GlobalNav />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route
-            exact
-            path="/service-time-directions"
-            component={ServiceTimeDirections}
-          />
+          <Route exact path="/connect" component={ConnectPage} />
           <Route exact path="/about" component={About} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />

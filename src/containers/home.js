@@ -53,7 +53,7 @@ const Home = () => {
             <p>
               Learn about our vision, beliefs and how you can join in our
               journey. Attend a connect meeting to learn how to make VBVF your
-              church. <Link to="about/">Learn More</Link>
+              church. <Link to="connect/">Learn More</Link>
             </p>
           </div>
           <img src={ConnectionImage} alt="connection meeting logo" />
