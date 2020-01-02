@@ -73,21 +73,27 @@ export default function SmallGroups() {
           />
         </Map>
       </div>
-      <div className="info-contact">
+      <div className="staff-info-container">
         <div className="staff-card">
           <StaffCard
+            image={Shane}
             title="Shane Carter"
             subtitle="Small Group Minstry Director"
             email="shane.carter@vbvf.org"
-            image={Shane}
           />
         </div>
-        <div className="image-info">
-          <div id="image-placeholder"></div>
+        <div className="staff-info">
+          <h2>Meet Shane</h2>
           <p>
-            Community is a gift from God. Small groups exist so that we can
-            encourage one another, learn from one another, and seek spiritual
-            growth.{" "}
+            In addition to serving as the Small Groups Director, Shane serves as
+            an urban missionary on the east side of San Antonio. He is
+            passionate about helping Christians connect to life-giving ministry
+            in the community in which they reside. Shane believes that Small
+            Groups create an environment whereby we can experience Christ while
+            living life with others. Small Groups create a natural environment
+            for people to express Christ's love to one another. And when hearts
+            adore Christ, people are compelled to express His love to those who
+            have not yet experienced it in the world around us.
           </p>
         </div>
       </div>
