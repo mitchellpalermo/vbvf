@@ -1,0 +1,151 @@
+.childrens-ministry-page-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+
+  .childrens-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #childrens-logo {
+      width: 40%;
+      height: auto;
+      padding: 20px;
+    }
+    .photo-collage {
+      max-width: 70%;
+      img {
+        width: 50%;
+        padding: 10px;
+      }
+    }
+  }
+  .mission-container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    p {
+      max-width: 50%;
+      margin-bottom: 40px;
+    }
+    .scripture-verse {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 200;
+      color: gray;
+
+      .scripture-reference {
+        font-weight: 600;
+      }
+    }
+  }
+  .check-in-section {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+    img {
+      width: 60%;
+    }
+    .info-button-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .staff-info-container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    .staff-card {
+      max-width: 30%;
+    }
+    .staff-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 50%;
+      h2 {
+        text-align: center;
+      }
+      p {
+        max-width: 90%;
+        margin: 20px;
+        align-self: flex-start;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .childrens-header {
+      width: 100%;
+      flex-direction: column;
+
+      #childrens-logo {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+      }
+      .photo-collage {
+        max-width: 90%;
+        img {
+          width: 50%;
+          padding: 5px;
+        }
+      }
+    }
+    .mission-container {
+      width: 100%;
+      flex-direction: column-reverse;
+      p {
+        max-width: 90%;
+      }
+      .scripture-verse {
+        width: 90%;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+    }
+    .check-in-section {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px 0px 20px 0px;
+      img {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .info-button-container {
+        width: 90%;
+      }
+    }
+    .staff-info-container {
+      max-width: 90%;
+      flex-direction: column;
+      align-items: center;
+      .staff-card {
+        max-width: 100%;
+      }
+      .staff-info {
+        max-width: 90%;
+        margin-top: 20px;
+      }
+    }
+  }
+}

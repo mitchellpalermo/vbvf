@@ -1,0 +1,13 @@
+.values {
+  display: flex;
+  flex-direction: column;
+}
+
+.scripture {
+  font-weight: 400;
+  color: grey;
+}
+.learn-more-link {
+  display: block;
+  margin-top: 1em;
+}
