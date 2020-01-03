@@ -37,7 +37,7 @@ const ConnectPage = () => {
               </Button>
             </li>
             <li>
-              Attend a Connection Meeting. Sign up using the link below.{" "}
+              <p>Attend a Connection Meeting. Sign up using the link below. </p>
               <Button
                 outline
                 primary
