@@ -4,13 +4,20 @@ import Beliefs from "../components/beliefs";
 import Leadership from "../components/leadership";
 import FAQ from "../components/faq";
 import "../css/about.css";
+import ReactDOM from "react-dom";
 
 const About = () => {
   const [component, setComponent] = useState(<OurStory />);
 
-  const handleClick = nextComponent => {
-    setComponent(nextComponent);
+  const handleClick = (component, passingClass) => {
+    setComponent(component);
+
+    let bigDocument = ReactDOM.findDOMNode(this);
+    console.log("this is the passing class: " + passingClass);
+    let activeButton = bigDocument.querySelector(passingClass);
+    activeButton.classList.add("active");
   };
+
   return (
     <div>
       <div className="header-container">
@@ -20,18 +27,33 @@ const About = () => {
         <div className="side-menu">
           <ul>
             <li>
-              <a onClick={() => setComponent(<OurStory />)}>Our Story</a>
+              <button
+                className="our-story"
+                onClick={handleClick(<OurStory />, "our-story")}
+              >
+                Our Story
+              </button>
             </li>
             <li>
-              <a onClick={() => setComponent(<Beliefs />)}>
+              <button
+                className="values-beliefs"
+                onClick={() => setComponent(<Beliefs />)}
+              >
                 Core Values & Beliefs
-              </a>
+              </button>
             </li>
             <li>
-              <a onClick={() => setComponent(<Leadership />)}>Leadership</a>
+              <button
+                className="leadership"
+                onClick={() => setComponent(<Leadership />)}
+              >
+                Leadership
+              </button>
             </li>
             <li>
-              <a onClick={() => setComponent(<FAQ />)}>FAQ</a>
+              <button className="faq" onClick={() => setComponent(<FAQ />)}>
+                FAQ
+              </button>
             </li>
           </ul>
         </div>
