@@ -45,6 +45,20 @@ export default function Contact() {
           </Button>
         </div>
       </Form>
+      <div className="contact-info-container">
+        <div className="contact-info">
+          <h4>Email</h4>
+          <p>info@vbvf.org</p>
+        </div>
+        <div className="contact-info">
+          <h4>Mailing Address</h4>
+          <p>814 Arion Parkway, #410 San Antonio, TX 78216</p>
+        </div>
+        <div className="contact-info">
+          <h4>Phone Number</h4>
+          <p>210-460-7556</p>
+        </div>
+      </div>
     </div>
   );
 }
