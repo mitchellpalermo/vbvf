@@ -36,9 +36,9 @@ export default function Serve() {
           of glorifying God is serving the body of Christ.{" "}
         </p>
         <ScriptureVerse
-          verse="Whatever you do, work heartily, as for the Lord and not for men,
+          verse='"Whatever you do, work heartily, as for the Lord and not for men,
             knowing that from the Lord you will receive the inheritance as your
-            reward. You are serving the Lord Christ"
+            reward. You are serving the Lord Christ"'
           reference="Colossians 3:23-24"
         />
       </div>

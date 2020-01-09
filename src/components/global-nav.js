@@ -17,7 +17,7 @@ import {
   ModalBody,
   ModalFooter
 } from "reactstrap";
-
+import { Link } from "react-router-dom";
 import "../css/global-nav.css";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
 
@@ -83,6 +83,10 @@ const GlobalNav = props => {
                       <Button outline color="dark" onClick={mapsSelector}>
                         Open in Maps
                       </Button>
+                      <p>
+                        Looking for our mailing address? Check out our{" "}
+                        <Link to="/contact">Contact Page</Link>
+                      </p>
                     </div>
                   </div>
                 </ModalBody>
