@@ -27,7 +27,10 @@ const GlobalNav = props => {
 
   const toggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
-
+  const dualToggle = () => {
+    setIsOpen(!isOpen);
+    setModal(!modal);
+  };
   function mapsSelector() {
     if (
       /* if we're on iOS, open in Apple Maps */
@@ -85,7 +88,9 @@ const GlobalNav = props => {
                       </Button>
                       <p>
                         Looking for our mailing address? Check out our{" "}
-                        <Link to="/contact">Contact Page</Link>
+                        <Link onClick={dualToggle} to="/contact">
+                          Contact Page
+                        </Link>
                       </p>
                     </div>
                   </div>
