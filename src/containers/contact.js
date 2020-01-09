@@ -10,7 +10,7 @@ export default function Contact() {
     <div className="contact-container">
       <h3>Have a question? Need prayer?</h3>
       <h1>Contact Us</h1>
-      <form name="contact">
+      <form name="contact" method="post">
         <input type="hidden" name="form-name" value="contact" />
         {/* <Form name="contact">
           <FormGroup>
