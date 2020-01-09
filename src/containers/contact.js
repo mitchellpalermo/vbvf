@@ -11,7 +11,7 @@ export default function Contact() {
       <h3>Have a question? Need prayer?</h3>
       <h1>Contact Us</h1>
 
-      <Form name="contact" data-netlify="true">
+      <Form name="contact">
         <input type="hidden" name="form-name" value="contact" />
         <FormGroup>
           <FormGroup>
