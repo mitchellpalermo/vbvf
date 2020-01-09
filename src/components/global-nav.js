@@ -18,7 +18,7 @@ import {
   ModalFooter
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import "../css/global-nav.css";
+import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
 
 const GlobalNav = props => {
@@ -28,7 +28,9 @@ const GlobalNav = props => {
   const toggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
   const dualToggle = () => {
-    setIsOpen(!isOpen);
+    if (isOpen) {
+      setIsOpen(!isOpen);
+    }
     setModal(!modal);
   };
   function mapsSelector() {
@@ -86,8 +88,9 @@ const GlobalNav = props => {
                       <Button outline color="dark" onClick={mapsSelector}>
                         Open in Maps
                       </Button>
-                      <p>
-                        Looking for our mailing address? Check out our{" "}
+                      <p className="contact-page-link">
+                        Looking for our <strong>mailing address?</strong> Check
+                        out our{" "}
                         <Link onClick={dualToggle} to="/contact">
                           Contact Page
                         </Link>

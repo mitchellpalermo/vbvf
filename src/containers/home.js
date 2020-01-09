@@ -71,7 +71,10 @@ const Home = () => {
               of God, so we’re Preaching the Word on KSLR AM630. Click the
               button below if want to hear more of our current series on the
               book of Matthew.
-              <Link to="redirect/"> Listen to Matthew series</Link>
+              <a href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew">
+                {" "}
+                Listen to Matthew series
+              </a>
             </p>
           </div>
         </div>
