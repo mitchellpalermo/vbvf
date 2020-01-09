@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/home.css";
+import "../css/home.scss";
 
 import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
@@ -20,10 +20,12 @@ const Home = () => {
     <div>
       <div className="main-header">
         <div className="titles">
-          <h1>Come find what you've been missing</h1>
+          <h1>
+            Come find what you've been missing{" "}
+            <h2 id="scripture-reference">John 1:1</h2>
+          </h1>
 
           <div className="buttons">
-            <h2>John 1:1</h2>
             <Button outline color="light">
               What to expect
             </Button>
