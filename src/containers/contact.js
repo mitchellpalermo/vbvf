@@ -12,7 +12,7 @@ export default function Contact() {
       <h1>Contact Us</h1>
       <form name="contact">
         <input type="hidden" name="form-name" value="contact" />
-        <Form name="contact">
+        {/* <Form name="contact">
           <FormGroup>
             <FormGroup>
               <Input name="name" type="text" placeholder="Name"></Input>
@@ -49,7 +49,12 @@ export default function Contact() {
               Submit
             </Button>
           </div>
-        </Form>
+        </Form> */}
+        <input name="name" type="text" placeholder="Name" />
+        <input name="email" type="email" placeholder="Email" />
+        <input name="phone_number" type="tel" placeholder="Phone" />
+        <textarea name="message" rows="10" cols="50" placeholder="Message" />
+        <input type="submit" value="Submit" />
       </form>
       <div className="contact-info-container">
         <div className="contact-info">
