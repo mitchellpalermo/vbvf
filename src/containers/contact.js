@@ -12,7 +12,7 @@ export default function Contact() {
       <h1>Contact Us</h1>
       <form name="contact" method="post">
         <input type="hidden" name="form-name" value="contact" />
-        {/* <Form name="contact">
+        <Form name="contact">
           <FormGroup>
             <FormGroup>
               <Input name="name" type="text" placeholder="Name"></Input>
@@ -32,11 +32,11 @@ export default function Contact() {
             <legend>How should we contact you?</legend>
             <FormGroup className="checkbox-container">
               <Label inline style={checkBox}>
-                <Input name="phone checkbox" type="checkbox" />
+                <Input name="phone_checkbox" type="checkbox" />
                 Phone
               </Label>
               <Label>
-                <Input name="email checkbox" style={checkBox} type="checkbox" />
+                <Input name="email_checkbox" type="checkbox" />
                 Email
               </Label>
             </FormGroup>
@@ -49,12 +49,7 @@ export default function Contact() {
               Submit
             </Button>
           </div>
-        </Form> */}
-        <input name="name" type="text" placeholder="Name" />
-        <input name="email" type="email" placeholder="Email" />
-        <input name="phone_number" type="tel" placeholder="Phone" />
-        <textarea name="message" rows="10" cols="50" placeholder="Message" />
-        <input type="submit" value="Submit" />
+        </Form>
       </form>
       <div className="contact-info-container">
         <div className="contact-info">
