@@ -10,47 +10,42 @@ export default function Contact() {
     <div className="contact-container">
       <h3>Have a question? Need prayer?</h3>
       <h1>Contact Us</h1>
-      <form name="contact" method="post">
+      <Form name="contact" method="post">
         <input type="hidden" name="form-name" value="contact" />
-        <Form name="contact">
+        <FormGroup>
           <FormGroup>
-            <FormGroup>
-              <Input name="name" type="text" placeholder="Name"></Input>
-            </FormGroup>
-            <FormGroup>
-              <Input name="email" type="email" placeholder="Email"></Input>
-            </FormGroup>
-            <FormGroup>
-              <Input
-                name="phone_number"
-                type="text"
-                placeholder="Phone"
-              ></Input>
-            </FormGroup>
+            <Input name="name" type="text" placeholder="Name"></Input>
           </FormGroup>
-          <div className="text-center">
-            <legend>How should we contact you?</legend>
-            <FormGroup className="checkbox-container">
-              <Label inline style={checkBox}>
-                <Input name="phone_checkbox" type="checkbox" />
-                Phone
-              </Label>
-              <Label>
-                <Input name="email_checkbox" type="checkbox" />
-                Email
-              </Label>
-            </FormGroup>
-          </div>
           <FormGroup>
-            <Input type="textarea" rows="10" cols="50" placeholder="Message" />
+            <Input name="email" type="email" placeholder="Email"></Input>
           </FormGroup>
-          <div className="text-right">
-            <Button outline large white type="submit">
-              Submit
-            </Button>
-          </div>
-        </Form>
-      </form>
+          <FormGroup>
+            <Input name="phone_number" type="text" placeholder="Phone"></Input>
+          </FormGroup>
+        </FormGroup>
+        <div className="text-center">
+          <legend>How should we contact you?</legend>
+          <FormGroup className="checkbox-container">
+            <Label inline style={checkBox}>
+              <Input name="phone_checkbox" type="checkbox" />
+              Phone
+            </Label>
+            <Label>
+              <Input name="email_checkbox" type="checkbox" />
+              Email
+            </Label>
+          </FormGroup>
+        </div>
+        <FormGroup>
+          <Input type="textarea" rows="10" cols="50" placeholder="Message" />
+        </FormGroup>
+        <div className="text-right">
+          <Button outline large white type="submit">
+            Submit
+          </Button>
+        </div>
+      </Form>
+
       <div className="contact-info-container">
         <div className="contact-info">
           <h4>Email</h4>
