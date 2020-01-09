@@ -31,17 +31,6 @@ const Home = () => {
         </div>
         <span className="see-more-arrow" />
       </div>
-      {/* <div className="time-and-directions-parent">
-        <div className="time-and-directions-child">
-          <img src={Time} />
-          Saturdays at 5:30pm <br />
-          Sundays at 10:30am
-        </div>
-        <div className="time-and-directions-child">
-          <img src={Location} />
-          551 E Nakoma Dr, San Antonio, TX 78216
-        </div>
-      </div> */}
       <MissionBanner />
       <div className="secondary-content">
         <div
