@@ -12,26 +12,27 @@ export default function Contact() {
       <h1>Contact Us</h1>
 
       <Form name="contact" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <FormGroup>
           <FormGroup>
-            <Input type="text" placeholder="Name"></Input>
+            <Input name="name" type="text" placeholder="Name"></Input>
           </FormGroup>
           <FormGroup>
             <Input name="email" type="email" placeholder="Email"></Input>
           </FormGroup>
           <FormGroup>
-            <Input type="text" placeholder="Phone"></Input>
+            <Input name="phone_number" type="text" placeholder="Phone"></Input>
           </FormGroup>
         </FormGroup>
         <div className="text-center">
           <legend>How should we contact you?</legend>
           <FormGroup className="checkbox-container">
             <Label inline style={checkBox}>
-              <Input type="checkbox" />
+              <Input name="phone checkbox" type="checkbox" />
               Phone
             </Label>
             <Label>
-              <Input style={checkBox} type="checkbox" />
+              <Input name="email checkbox" style={checkBox} type="checkbox" />
               Email
             </Label>
           </FormGroup>
@@ -40,7 +41,7 @@ export default function Contact() {
           <Input type="textarea" rows="10" cols="50" placeholder="Message" />
         </FormGroup>
         <div className="text-right">
-          <Button outline large white>
+          <Button outline large white type="submit">
             Submit
           </Button>
         </div>

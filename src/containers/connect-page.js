@@ -7,7 +7,7 @@ import "../css/connect-page.scss";
 const ConnectPage = () => {
   return (
     <div className="connect-container">
-      <div>Connect Header</div>
+      <h1>Connect with us!</h1>
       <div className="first-row">
         <p>
           Our monthly Connection Meeting offers prospective VBVF members the
