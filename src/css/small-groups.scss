@@ -6,6 +6,7 @@
 
 .small-group-header {
   width: 100%;
+
   background-image: url(../images/photo-element.png);
   background-size: cover;
   background-repeat: none;
@@ -15,7 +16,7 @@
   text-align: center;
 
   h1 {
-    margin: 50px;
+    margin: 15vh 0 15vh 0;
     position: relative;
   }
 }
@@ -27,7 +28,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-content: center;
-
+  margin: 15vh 0 15vh 0;
   p {
     max-width: 60%;
     margin: 30px 0 30px 0;
@@ -43,11 +44,10 @@
   .info-sign-up {
     width: 100%;
     height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    display: column;
+    font-size: 1.2em;
     align-content: center;
-
+    margin: auto;
     p {
       max-width: 80%;
       margin: 30px 0 10px 0;
@@ -82,17 +82,15 @@
     }
   }
 }
-@media screen and (max-width: 800px) {
-  .staff-info-container {
-    max-width: 90%;
-    flex-direction: column;
-    align-items: center;
-    .staff-card {
-      max-width: 100%;
-    }
-    .staff-info {
-      max-width: 90%;
-      margin-top: 20px;
-    }
+.staff-info-container {
+  margin: 3vh;
+  flex-direction: column;
+  align-items: center;
+  .staff-card {
+    min-width: 100%;
+  }
+  .staff-info {
+    margin-top: 20px;
+    min-width: 100%;
   }
 }

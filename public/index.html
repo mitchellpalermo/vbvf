@@ -20,10 +20,35 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Verse By Verse Fellowship</title>
-    <script src="https://js.churchcenter.com/modal/v1"></script>
-  </head>
+    
   <body>
+    <script src="https://js.churchcenter.com/modal/v1"></script>
+    <script>
+      var refTagger = {
+        settings: {
+          bibleVersion: "ESV"
+        }
+      };
+      (function(d, t) {
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src = "//api.reftagger.com/v2/RefTagger.js";
+        s.parentNode.insertBefore(g, s);
+      })(document, "script");
+    </script>
+  </head>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- A little help for the Netlify bots if you're not using a SSG -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone_number" />
+      <input type="checkbox" name="phone_checkbox" />
+      <input type="checkbox" name="email_checkbox" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.

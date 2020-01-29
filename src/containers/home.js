@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/home.css";
+import "../css/home.scss";
 
 import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
@@ -20,10 +20,12 @@ const Home = () => {
     <div>
       <div className="main-header">
         <div className="titles">
-          <h1>Come find what you've been missing</h1>
+          <h1>
+            Come find what you've been missing{" "}
+            <h2 id="scripture-reference">John 1:1</h2>
+          </h1>
 
           <div className="buttons">
-            <h2>John 1:1</h2>
             <Button outline color="light">
               What to expect
             </Button>
@@ -31,17 +33,6 @@ const Home = () => {
         </div>
         <span className="see-more-arrow" />
       </div>
-      {/* <div className="time-and-directions-parent">
-        <div className="time-and-directions-child">
-          <img src={Time} />
-          Saturdays at 5:30pm <br />
-          Sundays at 10:30am
-        </div>
-        <div className="time-and-directions-child">
-          <img src={Location} />
-          551 E Nakoma Dr, San Antonio, TX 78216
-        </div>
-      </div> */}
       <MissionBanner />
       <div className="secondary-content">
         <div
@@ -71,7 +62,10 @@ const Home = () => {
               of God, so we’re Preaching the Word on KSLR AM630. Click the
               button below if want to hear more of our current series on the
               book of Matthew.
-              <Link to="redirect/"> Listen to Matthew series</Link>
+              <a href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew">
+                {" "}
+                Listen to Matthew series
+              </a>
             </p>
           </div>
         </div>

@@ -5,7 +5,7 @@
   justify-content: space-around;
   align-items: center;
   //background-color: papayawhip;
-  padding: 20px 0 20px 0;
+  margin: 10vh 0 10vh 0;
 }
 
 .mission-block {
@@ -16,6 +16,7 @@
   margin: 10px 0 10px 0;
   img {
     width: 60%;
+    margin: 0 0 3vh 0;
   }
   p {
     text-align: center;
@@ -33,10 +34,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 2vh 0 2vh 0;
   }
 
   .mission-block {
-    width: 100%;
+    width: 60%;
+    margin: 1vh;
     p {
       width: 80%;
     }

@@ -14,6 +14,7 @@ import ChildrensMinistry from "./components/ministries/childrens-ministry";
 import YouthMinistry from "./components/ministries/youth-ministry";
 import SmallGroups from "./components/ministries/small-groups";
 import Serve from "./components/ministries/serve";
+import Contact from "./containers/contact";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/connect" component={ConnectPage} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route

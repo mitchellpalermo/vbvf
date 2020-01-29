@@ -4,17 +4,40 @@
   flex-direction: column;
   align-items: center;
 
+  #connect-header {
+    width: 100%;
+    padding: 30vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(255, 255, 255, 1)
+      ),
+      url(../images/connect/banner.jpg);
+    background-size: cover;
+    h1 {
+      font-size: 5em;
+      color: white;
+      text-align: center;
+      text-shadow: goldenrod 0 1px;
+    }
+  }
   .first-row {
     width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 5vh 0 10vh 0;
-    p {
-      margin: 5vh;
-      max-width: 40%;
-      font-size: 1.2em;
+    margin: 10vh 0 5vh 0;
+    .connection-meeting {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        width: 90%;
+        font-size: 1.2em;
+      }
     }
     img {
       max-width: 40%;
@@ -34,27 +57,83 @@
       flex-direction: column;
       align-items: center;
       h2 {
+        font-size: 3em;
         text-align: center;
       }
       p {
         max-width: 50%;
         font-size: 1.4em;
       }
-      ol {
+      ul {
+        padding: 0;
+        margin: 3vh 0 0 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        list-style-type: decimal;
       }
       li {
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         font-size: 1.2em;
         margin: 0 0 5vh 0;
         p {
           width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .connect-container {
+    flex-direction: column;
+
+    #connect-header {
+      padding: 10vh;
+      margin-bottom: 5vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      h1 {
+        font-size: 4em;
+        color: white;
+        text-align: center;
+        text-shadow: goldenrod 0 1px;
+      }
+    }
+    .first-row {
+      flex-direction: column-reverse;
+      margin: 5vh 0 3vh 0;
+      p {
+        margin-top: 2vh;
+        max-width: 90%;
+        font-size: 1em;
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+    .second-row {
+      flex-direction: column;
+
+      img {
+        max-width: 100%;
+      }
+      .word-section {
+        width: 100%;
+        margin-top: 2vh;
+        ul {
+          padding: 0;
+          margin: 2vh 0 0 0;
+        }
+        li {
+          font-size: 1em;
+          margin: 0 0 5vh 0;
+          p {
+            width: 100%;
+            font-size: 1em;
+          }
         }
       }
     }

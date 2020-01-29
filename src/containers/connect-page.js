@@ -7,26 +7,30 @@ import "../css/connect-page.scss";
 const ConnectPage = () => {
   return (
     <div className="connect-container">
-      <div>Connect Header</div>
+      <div id="connect-header">
+        <h1>Connect Here.</h1>
+      </div>
       <div className="first-row">
-        <p>
-          Our monthly Connection Meeting offers prospective VBVF members the
-          opportunity to hear more about our church distinctives, our history,
-          vision, beliefs and style of ministry. Meet Pastor Steve and the other
-          VBVF pastors, ask questions and get to know us. The meeting takes
-          place on the first weekend of the month at 4:00 PM at the church, just
-          prior to our regular Saturday evening service.
-        </p>
+        <div className="connection-meeting">
+          <h2>Connection Meeting</h2>
+          <p>
+            Our monthly Connection Meeting offers prospective VBVF members the
+            opportunity to hear more about our church distinctives, our history,
+            vision, beliefs and style of ministry. Meet Pastor Steve and the
+            other VBVF pastors, ask questions and get to know us. The meeting
+            takes place on the first weekend of the month at 4:00 PM at the
+            church, just prior to our regular Saturday evening service.
+          </p>
+        </div>
         <img src={Attendee} alt="vbvf member in connection meeting" />
       </div>
       <div className="second-row">
         <img src={SteveTalking} alt="pastor steve talking with vbvf members" />
         <div className="word-section">
           <h2>Ready to learn more?</h2>
-          <ol>
+          <ul>
             <li>
-              Submit a Connection Card during a VBVF worship service or submit
-              your information online using the link below.
+              <p>Submit an online Connection Card using the link below.</p>
               <Button
                 outline
                 primary
@@ -48,7 +52,7 @@ const ConnectPage = () => {
                 Connection Meeting
               </Button>
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
     </div>
