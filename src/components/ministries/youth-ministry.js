@@ -35,36 +35,23 @@ export default function YouthMinistry() {
         <img src={YouthImage} alt="youth playing gaga ball" />
       </div>
       <div className="bible-project-container">
-        <div className="description-section">
-          <img src={BibleProject} />
-          <div className="words-section">
-            <h2>What are we learning?</h2>
-            <p>
-              We are using the Bible Project videos and material to create an
-              overview of scripture. We are looking at overarching story, major
-              characters, and how the covenants play out through scripture. We
-              are taking it book by book and are doing a rapid tour through
-              scripture in hopes of giving students an idea of where they are in
-              the story of scripture in any given book.
-            </p>
-          </div>
-        </div>
-        <div className="more-lessons-section">
-          <div classNam="video-player-container">
-            <iframe
-              src="https://www.youtube.com/embed/ak06MSETeo4?controls=0"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+        <img src={BibleProject} />
+        <div className="words-section">
+          <h2>What are we learning?</h2>
+          <p>
+            We are using the Bible Project videos and material to create an
+            overview of scripture. We are looking at overarching story, major
+            characters, and how the covenants play out through scripture. We are
+            taking it book by book and are doing a rapid tour through scripture
+            in hopes of giving students an idea of where they are in the story
+            of scripture in any given book.
+          </p>
         </div>
       </div>
-      <h3>
-        Meeting time <br />
-        Tuesdays @ 6:30pm <br />
-        Flex Room
-      </h3>
+      <div className="time-section">
+        <h3>Meeting time</h3>
+        <p>Tuesdays @ 6:30pm Flex Room</p>
+      </div>
       <div className="social-media-section">
         <h3>Logos Ministry Social Media</h3>
         <div className="icon-section">
