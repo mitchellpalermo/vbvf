@@ -1,0 +1,12 @@
+//TODO
+
+// I want to locate all of the content for the site inside of this file. It would clean up the code a lot. Plus force some necessary organization. This will have to be accomplished in V2 of the site.
+
+{
+  "connectionPage": {
+    "firstRow": {
+      "heading": "Connection Meeting",
+      "copy": "Our monthly Connection Meeting offers prospective VBVF members the opportunity to hear more about our church distinctives, our history, vision, beliefs and style of ministry. Meet Pastor Steve and the other VBVF pastors, ask questions and get to know us. The meeting takes place on the first weekend of the month at 4:00 PM at the church, just prior to our regular Saturday evening service."
+    }
+  }
+}
