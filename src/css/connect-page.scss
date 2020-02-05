@@ -1,3 +1,4 @@
+$vbvf-blue: #122149;
 .connect-container {
   width: 100%;
   display: flex;
@@ -18,9 +19,8 @@
     background-size: cover;
     h1 {
       font-size: 5em;
-      color: white;
+      color: $vbvf-blue;
       text-align: center;
-      text-shadow: goldenrod 0 1px;
     }
   }
   .first-row {
@@ -60,25 +60,20 @@
         font-size: 3em;
         text-align: center;
       }
-      p {
-        max-width: 50%;
-        font-size: 1.4em;
-      }
       ul {
         padding: 0;
-        margin: 3vh 0 0 0;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 3vh 0 0 0;
       }
       li {
-        width: 100%;
-        display: flex;
+        width: 30%;
+        display: flex list-item;
         flex-direction: column;
-        align-items: center;
         text-align: center;
-        font-size: 1.2em;
         margin: 0 0 5vh 0;
+        list-style-type: none;
         p {
           width: 100%;
         }
