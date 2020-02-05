@@ -87,23 +87,22 @@ $vbvf-blue: #122149;
       margin-bottom: 5vh;
       background-size: cover;
       background-repeat: no-repeat;
-      h1 {
-        font-size: 4em;
-        color: white;
-        text-align: center;
-        text-shadow: goldenrod 0 1px;
-      }
+    }
+    h1 {
+      font-size: 3em;
     }
     .first-row {
       flex-direction: column-reverse;
-      margin: 5vh 0 3vh 0;
+      margin: 0 0 3vh 0;
       p {
-        margin-top: 2vh;
         max-width: 90%;
         font-size: 1em;
       }
       img {
-        max-width: 100%;
+        display: none;
+      }
+      h2 {
+        display: none;
       }
     }
     .second-row {
