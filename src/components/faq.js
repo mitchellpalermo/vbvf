@@ -11,6 +11,7 @@ export default function FAQ() {
       <p>{faq.locationQuestion.body}</p>
       <h4>{faq.dressQuestion.title}</h4>
       <p>{faq.dressQuestion.body}</p>
+
       <h4>Can I listen to your messages online?</h4>
       <p>
         Yes, you can find all of our weekly sermons on Verse By Verse Ministry
