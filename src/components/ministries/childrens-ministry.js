@@ -10,8 +10,10 @@ import Coloring from "../../images/childrens-ministry/coloring.jpg";
 import JonTeaching from "../../images/childrens-ministry/jon_teaching.jpg";
 import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looking.jpg";
 import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
+import Content from "../../content/content.json";
 
 export default function ChildrensMinistry() {
+  const childrensPage = Content.childrensPage;
   return (
     <div className="childrens-ministry-page-container">
       <div className="childrens-header">
@@ -25,30 +27,19 @@ export default function ChildrensMinistry() {
         </div>
       </div>
       <div className="mission-container">
-        <p>
-          We believe it is important that our littlest ones be trained in the
-          truths of the Bible, so they can grow up to love the Word. In our VBVF
-          Kids ministry, children from infancy through 5th grade will be able to
-          learn Bible lessons in a safe environment, from loving teachers
-          committed to ministering to children.
-        </p>
+        <p>{childrensPage.firstRow.body}</p>
 
         <h3 className="scripture-verse">
-          “[…] and that from childhood you have known the sacred writings which
-          are able to give you the wisdom that leads to salvation through faith
-          which is in Christ Jesus[…]”
-          <span className="scripture-reference">2 Timothy 3:14-17</span>
+          {childrensPage.firstRow.scripture}
+          <span className="scripture-reference">
+            {childrensPage.firstRow.reference}
+          </span>
         </h3>
       </div>
       <div className="check-in-section">
         <img alt="family registering child" src={Checkin} />
         <div className="info-button-container">
-          <p>
-            Our Children’s ministry is committed to the safety of our children.
-            We use a secure check-in/check-out system, so make sure to arrive a
-            few minutes earlier so that we can make sure your child is
-            registered.
-          </p>
+          <p>{childrensPage.secondRow.body}</p>
           <Button outline size="lg" color="primary">
             Get Info
           </Button>

@@ -1,5 +1,6 @@
 import React from "react";
 import FacebookLogo from "../images/logos/facebook_logo.png";
+import InstagramLogo from "../images/logos/instagram_logo.png";
 import "../css/footer.css";
 
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ const Footer = () => {
           <img src={FacebookLogo} alt="Facebook Logo" />
         </a>
         <a href="https://www.instagram.com/versebyversefellowship/">
-          <img src={FacebookLogo} alt="Instagram Logo" />
+          <img src={InstagramLogo} alt="Instagram Logo" />
         </a>
       </div>
       <ul className="disclosure-container">

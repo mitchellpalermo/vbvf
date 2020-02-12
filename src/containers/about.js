@@ -6,7 +6,7 @@ import FAQ from "../components/faq";
 import "../css/about.css";
 
 const About = () => {
-  const [component, setComponent] = useState(<OurStory />);
+  const [component, setComponent] = useState(<FAQ />);
 
   const handleClick = (passingComponent, passingClass) => {
     setComponent(passingComponent);
@@ -30,7 +30,17 @@ const About = () => {
           <ul>
             <li>
               <button
-                className="our-story selected"
+                className="faq selected"
+                onClick={() => {
+                  handleClick(<FAQ />, ".faq");
+                }}
+              >
+                FAQ
+              </button>
+            </li>
+            <li>
+              <button
+                className="our-story"
                 onClick={() => {
                   handleClick(<OurStory />, ".our-story");
                 }}
@@ -56,16 +66,6 @@ const About = () => {
                 }}
               >
                 Leadership
-              </button>
-            </li>
-            <li>
-              <button
-                className="faq"
-                onClick={() => {
-                  handleClick(<FAQ />, ".faq");
-                }}
-              >
-                FAQ
               </button>
             </li>
           </ul>

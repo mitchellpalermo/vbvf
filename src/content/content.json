@@ -1,12 +1,75 @@
-//TODO
-
-// I want to locate all of the content for the site inside of this file. It would clean up the code a lot. Plus force some necessary organization. This will have to be accomplished in V2 of the site.
-
 {
+  "aboutPage": {
+    "faq": {
+      "title": "FAQ",
+      "locationQuestion": {
+        "title": "Where and when do you meet for worship services?",
+        "body": "We gather as the Church to worship Jesus every Saturday evening at 5:30 at 551 E Nakoma Dr, San Antonio. We currently use the Oak Hills Church facility."
+      },
+      "dressQuestion": {
+        "title": "How should I dress?",
+        "body": "Our services are casual. Come dressed in anything that is comfortable for you."
+      },
+      "kidsQuestionj": {
+        "title": "What is available for my kids?",
+        "body": "We believe it is important that our littlest ones be trained in the truths of the Bible, so they can grow up to love the Word. In our VBVF Children’s Ministry, children birth through 5th grade will be able to learn Bible lessons in a safe environment, from loving teachers committed to ministering to children. Our Children’s ministry is committed to the safety of our children. Please plan on arriving a few minutes early to register your child with our Children’s ministry staff. Our youth ministry is designed to disciple students into adults who love God and own their faith. Our leaders are committed to come alongside parents in guiding students to mature through various stages of discipleship: learning the word, living according to the call, serving the body, reaching out to the lost, and stepping up into leadership."
+      },
+      "memberShipQuestion": {
+        "title": "How do I become a part of VBVF?",
+        "body": "Our church enthusiastically welcomes anyone to meet and worship with us every week…no strings attached! If you’re interested in learning more about our church or if you’re ready to call VBVF your church home, then we invite you to join us at one of our quarterly orientation meeting. These meetings offer an opportunity to meet our church leadership, hear our pastor explain Verse By Verse Fellowship’s core beliefs and values, and ask questions. You can sign up to attend a quarterly orientation meeting at the information desk in the church lobby or by filling out this "
+      },
+      "smallGroupQuestion": {
+        "title": "How do I join a small group?",
+        "body": ""
+      },
+      "vbvfStartQuestion": {
+        "title": "How did VBVF start?",
+        "body": ""
+      },
+      "learnMoreQuestion": {
+        "title": "How can I learn more about VBVF?",
+        "body": ""
+      }
+    }
+  },
   "connectionPage": {
     "firstRow": {
       "heading": "Connection Meeting",
-      "copy": "Our monthly Connection Meeting offers prospective VBVF members the opportunity to hear more about our church distinctives, our history, vision, beliefs and style of ministry. Meet Pastor Steve and the other VBVF pastors, ask questions and get to know us. The meeting takes place on the first weekend of the month at 4:00 PM at the church, just prior to our regular Saturday evening service."
+      "body": "Our monthly Connection Meeting offers prospective VBVF members the opportunity to hear more about our church distinctives, our history, vision, beliefs and style of ministry. Meet Pastor Steve and the other VBVF pastors, ask questions and get to know us. The meeting takes place on the first weekend of the month at 4:00 PM at the church, just prior to our regular Saturday evening service."
+    }
+  },
+  "youthPage": {
+    "firstRow": {
+      "title": "Why are we here?",
+      "body": "At Logos we strive to give students a real grasp on scripture. We want the students to walk away every week with a little bit of a better understanding of scripture and a closer walk with the Lord. We are currently working our way through a series titled The Story of Scripture."
+    },
+    "secondRow": {
+      "title": "What are we learning?",
+      "body": "We are using the Bible Project videos and material to create an overview of scripture. We are looking at overarching story, major characters, and how the covenants play out through scripture. We are taking it book by book and are doing a rapid tour through scripture in hopes of giving students an idea of where they are in the story of scripture in any given book."
+    },
+    "thirdRow": {
+      "title": "Meeting Time",
+      "body": "Tuesdays @ 6:30pm Flex Room"
+    }
+  },
+  "childrensPage": {
+    "firstRow": {
+      "body": "We believe it is important that our littlest ones be trained in the truths of the Bible, so they can grow up to love the Word. In our VBVF Kids ministry, children from infancy through 5th grade will be able to learn Bible lessons in a safe environment, from loving teachers committed to ministering to children.",
+      "scripture": "[…] and that from childhood you have known the sacred writings which are able to give you the wisdom that leads to salvation through faith which is in Christ Jesus[…]",
+      "reference": "2 Timothy 3:14-17"
+    },
+    "secondRow": {
+      "body": "Our Children’s ministry is committed to the safety of our children. We use a secure check-in/check-out system, so make sure to arrive a few minutes earlier so that we can make sure your child is registered."
+    }
+  },
+  "servePage": {
+    "firstRow": {
+      "body": "We believe that our church exists to glorify God through teaching the word and equipping believers with truth that can be relied upon. Part of glorifying God is serving the body of Christ.",
+      "scripture": "Whatever you do, work heartily, as for the Lord and not for men, knowing that from the Lord you will receive the inheritance as your reward. You are serving the Lord Christ",
+      "reference": "Colossians 3:23-24"
+    },
+    "secondRow": {
+      "body": "Our church has many different areas to get involved with, all equally important. Serving with one another also provides an opportunity to form relationships with others. Click the button below to get started."
     }
   }
 }
