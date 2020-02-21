@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer-container">
-      <p>Follow us online</p>
+      <p>Follow VBVF Online</p>
       <div className="icon-container">
         <a href="https://www.facebook.com/vbvfellowship/">
           <img src={FacebookLogo} alt="Facebook Logo" />

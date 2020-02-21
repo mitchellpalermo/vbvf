@@ -34,7 +34,7 @@ export default function YouthMinistry() {
         </div>
       </div>
       <div className="time-section">
-        <h3>{youthPage.thirdRow.title}</h3>
+        <h4>{youthPage.thirdRow.title}</h4>
         <p>{youthPage.thirdRow.body}</p>
       </div>
       <div className="social-media-section">
