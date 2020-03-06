@@ -40,8 +40,11 @@
   },
   "youthPage": {
     "firstRow": {
-      "title": "why are we here?",
-      "body": "At Logos we strive to give students a real grasp on scripture. We want the students to walk away every week with a little bit of a better understanding of scripture and a closer walk with the Lord. We are currently working our way through a series titled The Story of Scripture."
+      "body": "Logos Student Ministries desires to see students grow in the word of God while being intentional about living out the truth of the word of God. We want to be a community of people that provide the freedom to wrestle with the text while cultivating and facilitating the spiritual growth and development of our students. We want to see every student in Logos Student Ministries grow in their reliance of scripture, while operating in an attitude of service, as they grow in grace in a lifestyle of true Gospel witness."
+    },
+    "scriptureVerse": {
+      "verse": "Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching.",
+      "reference": "1 Timothy 4:12-16"
     },
     "secondRow": {
       "title": "what are we learning?",
