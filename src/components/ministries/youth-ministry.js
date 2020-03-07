@@ -47,23 +47,23 @@ export default function YouthMinistry() {
         </div>
         <p>{youthPage.body}</p>
       </div>
-      <div className="leaders-faq">
-        <div className="faq">
-          <h2>Logos FAQ</h2>
-          <ul>{faqList}</ul>
-        </div>
-        <div className="youth-leaders-container">
-          <h2>Youth Leaders</h2>
-          <span id="pastor">
-            <Leader name={youthPage.leaders[0]} photo={Wesley} />
-          </span>
-          <div className="youth-leaders">
-            <Leader name={youthPage.leaders[1]} photo={Leesha} />
-            <Leader name={youthPage.leaders[2]} photo={Juvie} />
-            <Leader name={youthPage.leaders[3]} photo={Maria} />
-            <Leader name={youthPage.leaders[4]} photo={Paul} />
-          </div>
-        </div>
+
+      <h2>Youth Leaders</h2>
+      <div className="youth-leaders">
+        <Leader
+          name={youthPage.leaders[0]}
+          photo={Wesley}
+          title="Youth Ministry Director"
+          email="wesley.livingston@vbvf.org"
+        />
+        <Leader name={youthPage.leaders[1]} photo={Leesha} />
+        <Leader name={youthPage.leaders[2]} photo={Juvie} />
+        <Leader name={youthPage.leaders[3]} photo={Maria} />
+        <Leader name={youthPage.leaders[4]} photo={Paul} />
+      </div>
+      <div className="faq">
+        <h2>Logos FAQ</h2>
+        <ul>{faqList}</ul>
       </div>
     </div>
   );
