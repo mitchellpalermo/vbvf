@@ -1,0 +1,17 @@
+.leader {
+  width: 50%;
+  display: flex;
+  flex-flow: column;
+
+  align-items: center;
+  &-name {
+    font-size: 1.5em;
+  }
+  &-photo {
+    width: 100%;
+    clip-path: circle(30% at center 30%);
+    #paul {
+      clip-path: circle(30% at center 40%);
+    }
+  }
+}

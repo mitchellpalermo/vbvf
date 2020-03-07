@@ -10,7 +10,7 @@ import Coloring from "../../images/childrens-ministry/coloring.jpg";
 import JonTeaching from "../../images/childrens-ministry/jon_teaching.jpg";
 import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looking.jpg";
 import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
-import Content from "../../content/content.json";
+import Content from "../../content/content";
 
 export default function ChildrensMinistry() {
   const childrensPage = Content.childrensPage;

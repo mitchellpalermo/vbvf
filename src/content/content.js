@@ -1,3 +1,1 @@
-const Content = "./content.json";
-
-module.exports = { Content };
+export default require("./content.json");
