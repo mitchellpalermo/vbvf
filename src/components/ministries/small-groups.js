@@ -1,26 +1,21 @@
 import React from "react";
 import { Button, Card } from "reactstrap";
-import StaffCard from "../staff-card";
 import Map from "pigeon-maps";
 import Marker from "pigeon-marker";
 import "../../css/small-groups.scss";
 import Shane from "../../images/leadership_photos/shane.jpg";
+import StaffInfo from "../staff-info";
+import Content from "../../content/youth-ministry-content";
+import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
   return (
     <div className="small-group-container">
       <div className="small-group-header">
-        <h1>Live. Together.</h1>
+        <h1>{content.title}</h1>
       </div>
       <div className="info-sign-up">
-        <p>
-          We feel that small groups are an important avenue for spiritual
-          growth. Our small groups are made up of people who call VBVF their
-          home church. There are 7 small groups that meet around the city of San
-          Antonio. Each of them is unique, but all of them seek to promote
-          spiritual growth in our church body. We do that through discussion of
-          the sermon concepts, prayer and fellowship.
-        </p>
+        <p>{content.ministrySummary}</p>
         <div className="info-button-container">
           <Button outline size="lg" color="primary">
             Get Info
@@ -73,30 +68,14 @@ export default function SmallGroups() {
           />
         </Map>
       </div>
-      <div className="staff-info-container">
-        <div className="staff-card">
-          <StaffCard
-            image={Shane}
-            title="Shane Carter"
-            subtitle="Small Group Minstry Director"
-            email="shane.carter@vbvf.org"
-          />
-        </div>
-        <div className="staff-info">
-          <h2>Meet Shane</h2>
-          <p>
-            In addition to serving as the Small Groups Director, Shane serves as
-            an urban missionary on the east side of San Antonio. He is
-            passionate about helping Christians connect to life-giving ministry
-            in the community in which they reside. Shane believes that Small
-            Groups create an environment whereby we can experience Christ while
-            living life with others. Small Groups create a natural environment
-            for people to express Christ's love to one another. And when hearts
-            adore Christ, people are compelled to express His love to those who
-            have not yet experienced it in the world around us.
-          </p>
-        </div>
-      </div>
+
+      <StaffInfo
+        name={content.leader.name}
+        role={content.leader.role}
+        email={content.leader.email}
+        image={Shane}
+        bio={content.leader.bio}
+      />
     </div>
   );
 }

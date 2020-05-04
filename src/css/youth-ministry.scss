@@ -18,24 +18,30 @@
     justify-content: center;
     align-items: center;
     margin: 3vh 0 10vh 0;
-    .ministry-logo {
+    &-logo {
       position: relative;
       width: 17%;
       height: auto;
       margin: 50px;
     }
-  }
-  .instablocks {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    span {
-      width: 45%;
-      margin: 5px;
-      height: 300px;
-      background: gray;
+
+    &-gallery {
+      width: 70%;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        width: 50%;
+        overflow: hidden;
+        padding: 0.5vh;
+      }
+      &-images {
+        width: 100%;
+        height: auto;
+        object-fit: sca;
+      }
     }
   }
 

@@ -9,11 +9,14 @@ import Juvie from "../../images/youth-assets/juvie.jpg";
 import Maria from "../../images/youth-assets/maria.jpg";
 import Paul from "../../images/youth-assets/paul.jpg";
 import Wesley from "../../images/youth-assets/paul.jpg";
-import StaffCard from "../../components/staff-card";
+import Smile from "../../images/youth-assets/smile.jpg";
+import HungryHippos from "../../images/youth-assets/hungry_hippos.jpg";
+import TableHockey from "../../images/youth-assets/table_hockey.jpg";
+import StaffCard from "../staff-card";
 
 export default function YouthMinistry() {
   const youthPage = Content;
-  const faqList = youthPage.faq.map(question => (
+  const faqList = youthPage.faq.map((question) => (
     <li key={question.question}>
       <h4>{question.question}</h4>
       <p>{question.answer}</p>
@@ -23,21 +26,29 @@ export default function YouthMinistry() {
     <div className="youth-page-container">
       <div className="youth-header">
         <img
-          className="ministry-logo"
+          className="youth-header-logo"
           src={LogosLogo}
           alt="Logos Student Ministry Logo"
         />
       </div>
-      <div className="instablocks">
-        <span />
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className="time-section">
+      {/* <div className="youth-header-gallery">
+        <span>
+          <img className="youth-header-gallery-images" src={HungryHippos} />
+        </span>
+        <span>
+          <img className="youth-header-gallery-images" src={Smile} />
+        </span>
+        <span>
+          <img className="youth-header-gallery-images" src={TableHockey} />
+        </span>
+        <span>
+          <img className="youth-header-gallery-images" src={Smile} />
+        </span>
+      </div> */}
+      {/* <div className="time-section">
         <h4>{youthPage.meetingTime.title}</h4>
         <p>{youthPage.meetingTime.body}</p>
-      </div>
+      </div> */}
       <div className="description-container">
         <div className="half-box">
           <ScriptureVerse
@@ -50,17 +61,18 @@ export default function YouthMinistry() {
 
       <h2>Youth Leaders</h2>
       <div className="youth-leaders">
-        <Leader
-          name={youthPage.leaders[0]}
-          photo={Wesley}
-          title="Youth Ministry Director"
-          email="wesley.livingston@vbvf.org"
-        />
         <Leader name={youthPage.leaders[1]} photo={Leesha} />
         <Leader name={youthPage.leaders[2]} photo={Juvie} />
         <Leader name={youthPage.leaders[3]} photo={Maria} />
         <Leader name={youthPage.leaders[4]} photo={Paul} />
       </div>
+      <StaffCard
+        image={Wesley}
+        title={youthPage.leaders[0]}
+        subtitle="Youth Ministry Director"
+        email="wesley.livingston@vbvf.org"
+      />
+
       <div className="faq">
         <h2>Logos FAQ</h2>
         <ul>{faqList}</ul>

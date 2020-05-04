@@ -8,9 +8,10 @@
   }
   &-name {
     font-size: 1.5em;
+    white-space: nowrap;
   }
   &-photo {
     width: 100%;
-    clip-path: circle(30% at center 30%);
+    clip-path: circle(100px at center);
   }
 }
