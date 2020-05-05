@@ -14,7 +14,7 @@ export default function StaffInfo(props) {
         />
       </div>
       <div className="staff-info">
-        <h2>Meet {props.name}</h2>
+        <h2>Meet {props.name.split(" ")[0]}</h2>
         <p>{props.bio}</p>
       </div>
     </div>

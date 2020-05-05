@@ -5,20 +5,10 @@
 }
 
 .small-group-header {
-  width: 100%;
-
-  background-image: url(../images/photo-element.png);
-  background-size: cover;
-  background-repeat: none;
-  background-position: center;
-  color: white;
-  background-size: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-
-  h1 {
-    margin: 15vh 0 15vh 0;
-    position: relative;
-  }
 }
 
 .info-sign-up {

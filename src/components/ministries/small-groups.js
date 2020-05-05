@@ -1,11 +1,11 @@
 import React from "react";
-import { Button, Card } from "reactstrap";
+import { Button } from "reactstrap";
 import Map from "pigeon-maps";
 import Marker from "pigeon-marker";
 import "../../css/small-groups.scss";
 import Shane from "../../images/leadership_photos/shane.jpg";
 import StaffInfo from "../staff-info";
-import Content from "../../content/youth-ministry-content";
+
 import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
@@ -13,6 +13,7 @@ export default function SmallGroups() {
     <div className="small-group-container">
       <div className="small-group-header">
         <h1>{content.title}</h1>
+        <img />
       </div>
       <div className="info-sign-up">
         <p>{content.ministrySummary}</p>

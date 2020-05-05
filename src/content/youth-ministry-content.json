@@ -18,27 +18,33 @@
   "faq": [
     {
       "question": "What's the best way to get my student plugged into Logos Student Ministry?",
-      "answer": "We have an AMAZING Team that is ready and excited to welcome your student into our space each time we gather. We will connect your student and welcome them in, get them plugged into a group, and make sure they have an amazing time! We gather every other Sunday 1:30p-3p."
+      "answer": "We have an amazing team of small group leaders who are ready and excited to welcome your student into our gathering space also known as the FlexRoom. We will help your student be immersed into the Logos culture and environment while at the very same time helping them feel right at home. We gather together every Tuesday from 6:30pm-8:30pm."
     },
     {
       "question": "As a parent, can I come check out Logos Student Ministry?",
-      "answer": "We are very intentional about who comes back into our space on a Sunday, for the safety of our students. Each Team member and adult who is present in the space has to take a background check prior to being into our space. However, if you want to come and check things out, please connect with someone on our Team beforehand so they can host you on that day. Feel free to email our Team using the contact form below and we can set something up!"
+      "answer": "As a Student Ministry we believe in the full safety and security of our students in our space. Each Small Group leader and adult present in the FlexRoom during a Logos Gathering, has to take a background check prior to being in our space. However, if you want to come and check out our gathering space, please connect with the Youth Ministry Director or email wesley.livingston@vbvf.org so that a member on our team can host you on that day."
     },
     {
       "question": "Where does Logos Student Ministry meet?",
-      "answer": "We meet every other Sunday, WeWork Wonder Bread Factory (641 S St NW, Washington, DC 20001) on the third floor from 1:30p to 3p. We encourage you to attend our 11:30 gathering prior to coming to Passion Students!"
+      "answer": "We meet every Tuesday in the FlexRoom at Verse by Verse Fellowship ( 551 E Nakoma Dr, San Antonio, TX 78216) from 6:30pm - 8:30pm."
     },
     {
       "question": "What's the best way to get updates on what is happening in Passion Students?",
-      "answer": "The best way to receive updates from our Team is by signing up on our email list. Scroll to the bottom of this page and sign-up for more information and to start receiving updates. Our Team will be sending out an email at the beginning of each month, with details about all that’s coming up in the month ahead."
+      "answer": "The best way to receive updates from out Team is by signing up on our email list. Scroll to the bottom of this page and sign-up for more information and to start receiving updates. Our team will be sending out weekly digital newsletters that will detail the upcoming news and need-to know for the week."
     },
     {
       "question": "How do I become a youth leader within Logos Student Ministry",
-      "answer": "Currently, our Team has an amazing group of Door Holders leading our middle + high school students and we are not adding any additional leaders. If you are interested in serving in Passion Students in the future, please fill out the form below. Until then, we want to encourage you to serve as a Door Holder on another one of our AMAZING teams at Passion City Church D.C. Check out our other Door Holder teams here."
+      "answer": "Currently, our team has an amazing group of small group leaders and we are not adding any additional small group leaders at this time. If opportunities to serve become available in the future, please fill out the form below so that we can have your information on file to fill you in on any updates and availability for volunteering with the Team."
     },
     {
       "question": "How do I get in touch with the Logos Student Ministry team?",
-      "answer": "The best way to get in touch with our Team is to fill out the email form below or email students.dc@passioncitychurch.com with any questions you may have."
+      "answer": "The best way to get in touch with our team is to fill out the email form below or email Wesley Livingston ,Youth Ministry Director, at wesley.livingston@vbvf.org with any questions you may have."
     }
-  ]
+  ],
+  "leader": {
+    "name": "Wesley Livingston",
+    "role": "Youth Ministry Director",
+    "email": "wesley.livingston@vbvf.org",
+    "bio": "Prior to Sofi Smith’s position as the VBVF Children’s Ministry Director, she served on staff at Verse by Verse Ministry International as Executive Assistant to Pastor Stephen Armstrong. She has dedicated her life to the scriptures, ministry at home, locally and worldwide, bringing the Good News to the lost, anywhere she can find them."
+  }
 }
