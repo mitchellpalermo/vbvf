@@ -15,10 +15,12 @@ import YouthMinistry from "./components/ministries/youth-ministry";
 import SmallGroups from "./components/ministries/small-groups";
 import Serve from "./components/ministries/serve";
 import Contact from "./containers/contact";
+import ScrollToTop from "./components/scroll-to-top";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="page-container">
         <GlobalNav />
         <Switch>

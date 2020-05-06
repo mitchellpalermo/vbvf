@@ -5,6 +5,8 @@ import Marker from "pigeon-marker";
 import "../../css/small-groups.scss";
 import Shane from "../../images/leadership_photos/shane.jpg";
 import StaffInfo from "../staff-info";
+import Logo from "../../images/logos/small_group_logo.svg";
+import Praying from "../";
 
 import content from "../../content/small-groups-ministry-content";
 
@@ -12,9 +14,14 @@ export default function SmallGroups() {
   return (
     <div className="small-group-container">
       <div className="small-group-header">
-        <h1>{content.title}</h1>
-        <img />
+        <img src={} />
+        <div>
+          <img src={Logo} />
+          <h1>{content.title}</h1>
+        </div>
+        <img src={} />
       </div>
+
       <div className="info-sign-up">
         <p>{content.ministrySummary}</p>
         <div className="info-button-container">
