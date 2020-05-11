@@ -6,29 +6,28 @@ import "../../css/small-groups.scss";
 import Shane from "../../images/leadership_photos/shane.jpg";
 import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
-import Praying from "../";
+import Praying from "../../images/small_groups/praying.jpg";
 
 import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
   return (
     <div className="small-group-container">
-      <div className="small-group-header">
-        <img src={} />
-        <div>
+      <div className="header">
+        <div className="header-logo-container">
           <img src={Logo} />
           <h1>{content.title}</h1>
         </div>
-        <img src={} />
       </div>
 
       <div className="info-sign-up">
-        <p>{content.ministrySummary}</p>
-        <div className="info-button-container">
+        <div className="info-sign-up-button-container">
+          <p>{content.ministrySummary}</p>
           <Button outline size="lg" color="primary">
             Get Info
           </Button>
         </div>
+        <img src={Praying} />
       </div>
       <div className="map-block">
         <Map
