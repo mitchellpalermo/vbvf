@@ -38,7 +38,6 @@ export default function YouthMinistry() {
           verse={Content.scriptureVerse.verse}
           reference={Content.scriptureVerse.reference}
         />
-
         <p>{Content.body}</p>
       </div>
 
