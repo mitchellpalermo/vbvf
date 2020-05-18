@@ -11,22 +11,26 @@ import { Link } from "react-router-dom";
 import Time from "../images/time.svg";
 import Location from "../images/location.svg";
 import MissionBanner from "../components/mission-banner";
+require("dotenv").config();
 
 const Home = () => {
   let buttonStyle = {
-    color: "white"
+    color: "white",
   };
+
+  console.log(process.env.REACT_APP_VIMEO_KEY);
+
   return (
     <div>
       <div className="main-header">
         <div className="titles">
           <h1>
-            Come find what you've been missing{" "}
+            Come find what you've been missing
             <h2 id="scripture-reference">John 1:1</h2>
           </h1>
 
           <div className="buttons">
-            <Button outline color="light">
+            <Button href="/about" outline color="light">
               What to expect
             </Button>
           </div>
