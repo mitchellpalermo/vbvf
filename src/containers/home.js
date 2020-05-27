@@ -11,14 +11,11 @@ import { Link } from "react-router-dom";
 import Time from "../images/time.svg";
 import Location from "../images/location.svg";
 import MissionBanner from "../components/mission-banner";
-require("dotenv").config();
 
 const Home = () => {
   let buttonStyle = {
     color: "white",
   };
-
-  console.log(process.env.REACT_APP_VIMEO_KEY);
 
   return (
     <div>

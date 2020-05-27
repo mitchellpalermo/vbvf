@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/footer";
 import ConnectPage from "./containers/connect-page";
 import About from "./containers/about";
+import StudyAggregator from "./containers/study-aggregator";
 import SermonRedirect from "./containers/sermon-redirect";
 import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
@@ -16,6 +17,7 @@ import SmallGroups from "./components/ministries/small-groups";
 import Serve from "./components/ministries/serve";
 import Contact from "./containers/contact";
 import ScrollToTop from "./components/scroll-to-top";
+import StudyPage from "./components/study-page";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route exact path="/connect" component={ConnectPage} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/bible-studies" component={StudyAggregator} />
+          <Route path="/study" render={(props) => <StudyPage {...props} />} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route

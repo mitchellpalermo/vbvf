@@ -1,0 +1,24 @@
+{
+  "studies": [
+    {
+      "name": "Ephesians",
+      "vimeoFolder": "1903127",
+      "dropBoxFolder": "/VBVF/study-materials/Ephesians"
+    },
+    {
+      "name": "1 John",
+      "vimeoFolder": "1892350",
+      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1John"
+    },
+    {
+      "name": "1 Thessalonians",
+      "vimeoFolder": "1892341",
+      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1Thessalonians"
+    },
+    {
+      "name": "2 Thessalonians",
+      "vimeoFolder": "1892346",
+      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/2Thessalonians"
+    }
+  ]
+}
