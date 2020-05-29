@@ -4,6 +4,7 @@ import { getVideos, getDocumentIds, buildLessons } from "../util/index";
 import { Link, useParams } from "react-router-dom";
 
 import Content from "../content/study-content";
+import LessonBlock from "./lesson-block";
 
 export default function StudyPage() {
   let { studyId } = useParams();
@@ -15,8 +16,9 @@ export default function StudyPage() {
   //make a call to vimeo ✅
   //make a call to dropbox ✅
   //combine lessons ✅
-  //render lessons in a list
-  //figure out how to use the lessons after they resolve
+  //render lessons in a list ✅
+  //figure out how to use the lessons after they resolve ✅
+  //figure out why links are coming through
   useEffect(() => {
     const videos = getVideos(study.vimeoFolder); //videos at data.data
     const documents = getDocumentIds(study.dropBoxFolder); //docs at data.entries
@@ -37,15 +39,11 @@ export default function StudyPage() {
         </div>
         <div className="lesson-list">
           <h3 className="lesson-list-title">Available Lessons</h3>
-          {console.log(lessons)}
+
           {isLoading ? (
             <p>Loading Lessons</p>
           ) : (
-            lessons.map((lesson) => (
-              <div className="" key={lesson.id}>
-                <h4>{lesson.video.name}</h4>
-              </div>
-            ))
+            lessons.map((lesson) => <LessonBlock key={lesson.id} {...lesson} />)
           )}
         </div>
       </div>
