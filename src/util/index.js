@@ -37,7 +37,6 @@ export function getDocumentIds(dropBoxFolder) {
 }
 
 async function getStudyNotes(studyNote) {
-  let documentPath = studyNote.path_lower;
   let link = document.createElement("a");
 
   const options = {
@@ -46,7 +45,7 @@ async function getStudyNotes(studyNote) {
     params: {
       authorization: process.env.REACT_APP_DROPBOX_KEY,
       arg: {
-        path: documentPath,
+        path: studyNote.path_lower,
       },
       reject_cors_preflight: true,
     },
