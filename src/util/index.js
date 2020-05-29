@@ -39,18 +39,25 @@ export function getDocumentIds(dropBoxFolder) {
 async function getStudyNotes(studyNote) {
   let documentPath = studyNote.path_lower;
   let link = document.createElement("a");
-  var endpoint = `https://content.dropboxapi.com/2/files/download?authorization=Bearer ${process.env.REACT_APP_DROPBOX_KEY}&arg={"path":"' +
-    documentPath +
-    '"} &reject_cors_preflight=true`;
-  var init = { method: "POST" };
 
-  return fetch(endpoint, init)
+  const options = {
+    method: "POST",
+    url: "https://content.dropboxapi.com/2/files/download",
+    params: {
+      authorization: process.env.REACT_APP_DROPBOX_KEY,
+      arg: {
+        path: documentPath,
+      },
+      reject_cors_preflight: true,
+    },
+  };
+
+  return axios(options)
     .then(async (response) => {
-      var apiResult = JSON.parse(response.headers.get("dropbox-api-result"));
-
+      var apiResult = JSON.parse(response.headers["dropbox-api-result"]);
       return {
         filename: apiResult.name,
-        blob: await response.blob(),
+        blob: await response.data,
       };
     })
     .then(async (responseObj) => {
@@ -85,9 +92,9 @@ export async function buildLessons(videos, documents) {
         lessonObj.notesLink = await getStudyNotes(document);
       }
     });
-    console.log(lessonObj);
+
     lessonObj.id = video.name;
     lessonArray.push(lessonObj);
   });
-  return lessonArray;
+  return await lessonArray;
 }

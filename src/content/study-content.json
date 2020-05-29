@@ -1,21 +1,25 @@
 {
   "studies": [
     {
+      "url": "ephesians",
       "name": "Ephesians",
       "vimeoFolder": "1903127",
       "dropBoxFolder": "/VBVF/study-materials/Ephesians"
     },
     {
+      "url": "1-john",
       "name": "1 John",
       "vimeoFolder": "1892350",
       "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1John"
     },
     {
+      "url": "1-thessalonians",
       "name": "1 Thessalonians",
       "vimeoFolder": "1892341",
       "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1Thessalonians"
     },
     {
+      "url": "2-thessalonians",
       "name": "2 Thessalonians",
       "vimeoFolder": "1892346",
       "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/2Thessalonians"

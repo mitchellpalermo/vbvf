@@ -4,16 +4,11 @@ import "../css/study-aggregator.scss";
 import { Link } from "react-router-dom";
 
 export default function StudyAggregator() {
-  //onclick just sends the person to the lesson page with the content passed as props
-
   const studies = Content.studies.map((study) => (
     <Link
       key={study.name}
       className="study-icon"
-      to={{
-        pathname: "study",
-        study: study,
-      }}
+      to={`bible-studies/${study.url}`}
     >
       <div>{study.name}</div>
     </Link>

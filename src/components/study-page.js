@@ -1,15 +1,21 @@
 import React from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { getVideos, getDocumentIds, buildLessons } from "../util/index";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-export default function StudyPage(props) {
-  const study = props.location.study;
+import Content from "../content/study-content";
+
+export default function StudyPage() {
+  let { studyId } = useParams();
+
+  //using the url param to search through studies and grab the right one
+  const study = Content.studies.find((study) => study.url == studyId);
 
   //make a call to vimeo ✅
   //make a call to dropbox ✅
-  //combine lessons
+  //combine lessons ✅
   //render lessons in a list
+  //figure out how to use the lessons after they resolve
 
   const videos = getVideos(study.vimeoFolder); //videos at data.data
   const documents = getDocumentIds(study.dropBoxFolder); //docs at data.entries
@@ -17,13 +23,6 @@ export default function StudyPage(props) {
   const lessons = Promise.all([videos, documents]).then((values) => {
     return buildLessons(values[0], values[1]);
   });
-
-  const lessonList = lessons.map((lesson) => (
-    <li key={lesson.id}>
-      <h4>lesson.video.name</h4>
-      <img src={DocumentIcon} href={lesson.notesLink} />
-    </li>
-  ));
 
   return (
     <div>
@@ -34,7 +33,7 @@ export default function StudyPage(props) {
         </div>
         <div className="lesson-list">
           <h3 className="lesson-list-title">Available Lessons</h3>
-          <ul>{lessonList}</ul>
+          <ul></ul>
         </div>
       </div>
     </div>

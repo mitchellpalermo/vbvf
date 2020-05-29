@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/bible-studies" component={StudyAggregator} />
-          <Route path="/study" render={(props) => <StudyPage {...props} />} />
+          <Route path="/bible-studies/:studyId" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route
