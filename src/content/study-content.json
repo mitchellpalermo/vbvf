@@ -4,25 +4,33 @@
       "url": "ephesians",
       "name": "Ephesians",
       "vimeoFolder": "1903127",
-      "dropBoxFolder": "/VBVF/study-materials/Ephesians"
+      "dropBoxFolder": "/VBVF/study-materials/Ephesians",
+      "description": "In his letter to the Ephesians, the apostle Paul explains the identity, calling, and purpose of the church.  Described as the body of Christ, believers are encouraged as we understand who we are in Jesus, our unity as the people of God, and how we are to “walk as children of light” (Ephesians 5:8).  Join us as we seek to know the “mystery of Christ.",
+      "image": ""
     },
     {
       "url": "1-john",
       "name": "1 John",
       "vimeoFolder": "1892350",
-      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1John"
+      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1John",
+      "description": "",
+      "image": ""
     },
     {
       "url": "1-thessalonians",
       "name": "1 Thessalonians",
       "vimeoFolder": "1892341",
-      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1Thessalonians"
+      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/1Thessalonians",
+      "description": "",
+      "image": ""
     },
     {
       "url": "2-thessalonians",
       "name": "2 Thessalonians",
       "vimeoFolder": "1892346",
-      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/2Thessalonians"
+      "dropBoxFolder": "/VBVF/study-materials/womens-bible-study/2Thessalonians",
+      "description": "",
+      "image": ""
     }
   ]
 }
