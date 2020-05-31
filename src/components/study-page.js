@@ -22,11 +22,10 @@ export default function StudyPage() {
       buildLessons(values[0], values[1]).then((lessons) => {
         setLessons(lessons);
       });
+      setIsLoading(false);
     });
-    setIsLoading(false);
   }, []);
 
-  console.log(lessons);
   return (
     <div>
       <div className="study-container">

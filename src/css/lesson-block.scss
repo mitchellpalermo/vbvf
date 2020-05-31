@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   padding: 1vh;
-  background: rgba(219, 204, 165, 0.5);
+  background: rgba(219, 204, 165, 0.4);
 
   &-title {
     font-weight: 600;
@@ -14,4 +14,8 @@
     height: 3vh;
     margin: 2vh;
   }
+}
+
+.lesson-block:nth-child(even) {
+  background: rgba(219, 204, 165, 0.6);
 }

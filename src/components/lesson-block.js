@@ -12,7 +12,6 @@ export default function LessonBlock(props) {
     <div className="lesson-block">
       <h5 className="lesson-block-title">{props.video.name}</h5>
       <img className="lesson-block-icon" src={PlayIcon} />
-      {/* TODO: Study notes link isn't coming through */}
       <a href="#" onClick={() => downloadFile(props.document)}>
         <img className="lesson-block-icon" src={DocumentIcon} />
       </a>
