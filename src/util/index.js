@@ -36,7 +36,7 @@ export function getDocumentIds(dropBoxFolder) {
   return axios(options);
 }
 
-async function getStudyNotes(studyNote) {
+export async function getStudyNotes(studyNote) {
   let link = document.createElement("a");
 
   const options = {
@@ -59,7 +59,7 @@ async function getStudyNotes(studyNote) {
         blob: await response.data,
       };
     })
-    .then(async (responseObj) => {
+    .then((responseObj) => {
       const newBlob = new Blob([responseObj.blob], {
         type: "application/pdf",
       });
@@ -71,9 +71,8 @@ async function getStudyNotes(studyNote) {
         link.href = objUrl;
         link.download = responseObj.filename;
         link.text = "Download " + responseObj.filename.split(".")[0] + " Notes";
+        link.click();
       }
-
-      return await link;
     })
     .catch((err) => console.log("study notes catch: " + err));
 }
@@ -81,19 +80,14 @@ async function getStudyNotes(studyNote) {
 export async function buildLessons(videos, documents) {
   var lessonArray = [];
 
-  videos.data.data.forEach((video) => {
+  videos.data.data.forEach(async (video) => {
     var lessonObj = {};
     lessonObj.video = video;
-
-    documents.data.entries.forEach(async (document) => {
-      if (document.name.split(".")[0] == lessonObj.video.name) {
-        lessonObj.document = document;
-        lessonObj.notesLink = await getStudyNotes(document);
-      }
-    });
-
+    lessonObj.document = documents.data.entries.find(
+      (document) => document.name.split(".")[0] == lessonObj.video.name
+    );
     lessonObj.id = video.name;
     lessonArray.push(lessonObj);
   });
-  return await lessonArray;
+  return lessonArray;
 }
