@@ -30,6 +30,7 @@ export default function LessonBlock(props) {
       <h5 className="lesson-block-title">{props.video.name}</h5>
       <Link onClick={modalToggle}>
         <img className="lesson-block-icon" src={PlayIcon} />
+        <span>Watch</span>
       </Link>
       <Modal isOpen={modal} toggle={modalToggle} size="lg">
         <ModalHeader toggle={modalToggle}>{props.video.name}</ModalHeader>
@@ -49,9 +50,10 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <a href="#" onClick={() => downloadFile(props.document)}>
+      <Link href="#" onClick={() => downloadFile(props.document)}>
         <img className="lesson-block-icon" src={DocumentIcon} />
-      </a>
+        <span>Download Notes</span>
+      </Link>
     </div>
   );
 }
