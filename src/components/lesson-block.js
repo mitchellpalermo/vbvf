@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/lesson-block.scss";
 import PlayIcon from "../images/lesson-page/play-outline.svg";
 import DocumentIcon from "../images/lesson-page/document.svg";
-import { getStudyNotes } from "../util/index";
+import { getStudyNotesSimple, getStudyNotes } from "../util/index";
 import { Link } from "react-router-dom";
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 
 export default function LessonBlock(props) {
-  const downloadFile = (document) => {
-    getStudyNotes(document);
-  };
-
+  useEffect(() => {
+    getStudyNotes(props.document).then((link) => {
+      console.log(link);
+      setDocLink(link);
+    });
+  }, []);
   function createMarkup() {
     return { __html: props.video.embed.html };
   }
 
+  const [docLink, setDocLink] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
 
@@ -42,7 +45,7 @@ export default function LessonBlock(props) {
             />
 
             <div className="lesson-modal-button">
-              <Button color="info" onClick={() => downloadFile(props.document)}>
+              <Button color="info">
                 Download notes
                 <img src={DocumentIcon} />
               </Button>
@@ -50,10 +53,10 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <Link href="#" onClick={() => downloadFile(props.document)}>
+      <a href={docLink} target="_blank">
         <img className="lesson-block-icon" src={DocumentIcon} />
         <span>Download Notes</span>
-      </Link>
+      </a>
     </div>
   );
 }

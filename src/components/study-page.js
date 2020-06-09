@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { getVideos, getDocumentIds, buildLessons } from "../util/index";
 import { Link, useParams } from "react-router-dom";
@@ -18,6 +18,7 @@ export default function StudyPage() {
   useEffect(() => {
     const videos = getVideos(study.vimeoFolder); //videos at data.data
     const documents = getDocumentIds(study.dropBoxFolder); //docs at data.entries
+
     Promise.all([videos, documents]).then((values) => {
       buildLessons(values[0], values[1]).then((lessons) => {
         lessons.sort((a, b) => a.video.name.localeCompare(b.video.name)); //sorting lessons alphabetically
@@ -26,7 +27,7 @@ export default function StudyPage() {
       setIsLoading(false);
     });
   }, []);
-
+  console.log(lessons);
   return (
     <div className="study-container">
       <div className="description">
