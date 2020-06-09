@@ -53,10 +53,14 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <a href={docLink} target="_blank">
+      <span
+        role="button"
+        onClick={() => window.open(docLink.href)}
+        target="_blank"
+      >
         <img className="lesson-block-icon" src={DocumentIcon} />
         <span>Download Notes</span>
-      </a>
+      </span>
     </div>
   );
 }

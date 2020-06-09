@@ -71,6 +71,7 @@ export async function getStudyNotes(studyNote) {
   const options = {
     method: "POST",
     url: "https://content.dropboxapi.com/2/files/download",
+    responseType: "blob",
     params: {
       authorization: process.env.REACT_APP_DROPBOX_KEY,
       arg: {
@@ -96,7 +97,7 @@ export async function getStudyNotes(studyNote) {
       if (window.navigator && window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveOrOpenBlob(newBlob);
       } else {
-        const objUrl = URL.createObjectURL(newBlob);
+        const objUrl = window.URL.createObjectURL(newBlob);
         link.href = objUrl;
         link.download = responseObj.filename;
       }
