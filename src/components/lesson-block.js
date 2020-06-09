@@ -32,10 +32,10 @@ export default function LessonBlock(props) {
     <div className="lesson-block">
       <h4 className="lesson-block-title">{props.video.name}</h4>
 
-      <Link onClick={modalToggle}>
-        <img className="lesson-block-icon" src={PlayIcon} />
-        <span>Watch</span>
-      </Link>
+      <span className="lesson-block-icon" onClick={modalToggle}>
+        <img src={PlayIcon} />
+        Watch
+      </span>
       <Modal isOpen={modal} toggle={modalToggle} size="lg">
         <ModalHeader toggle={modalToggle}>{props.video.name}</ModalHeader>
         <ModalBody>
@@ -48,7 +48,6 @@ export default function LessonBlock(props) {
             <div className="lesson-modal-button">
               <Button color="info" onClick={() => window.open(docLink.href)}>
                 Download notes
-                <img src={DocumentIcon} />
               </Button>
             </div>
           </div>
@@ -56,11 +55,12 @@ export default function LessonBlock(props) {
       </Modal>
 
       <span
+        className="lesson-block-icon"
         role="button"
         onClick={() => window.open(docLink.href)}
         target="_blank"
       >
-        <img className="lesson-block-icon" src={DocumentIcon} />
+        <img src={DocumentIcon} />
         Notes
       </span>
     </div>

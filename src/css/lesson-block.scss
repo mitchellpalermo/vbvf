@@ -12,11 +12,16 @@
     margin-right: 2vh;
   }
   &-icon {
-    height: 3vh;
+    cursor: pointer;
+    img {
+      padding: 1px;
+      height: 3vh;
+    }
   }
   a {
     color: black;
     font-weight: 400;
+    text-decoration: none;
   }
 }
 
@@ -45,9 +50,10 @@
   &-button {
     align-self: center;
     margin: 2vh auto 0 auto;
-    img {
+    .doc-icon {
       fill: white;
-      width: 8%;
+      height: 3vh;
+      margin: 1vh;
     }
   }
 }
