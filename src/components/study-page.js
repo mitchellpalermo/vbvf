@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Suspense } from "react";
-import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Spinner } from "reactstrap";
 import { getVideos, getDocumentIds, buildLessons } from "../util/index";
 import { Link, useParams } from "react-router-dom";
 
@@ -37,7 +37,10 @@ export default function StudyPage() {
       <div className="lesson-list">
         <h3 className="lesson-list-title">Available Lessons</h3>
         {isLoading ? (
-          <p>Loading Lessons</p>
+          <>
+            <p>Loading Lessons</p>
+            <Spinner color="dark" />
+          </>
         ) : (
           lessons.map((lesson) => <LessonBlock key={lesson.id} {...lesson} />)
         )}

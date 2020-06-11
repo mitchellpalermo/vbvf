@@ -1,16 +1,21 @@
 .studies-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: wrap row;
+
   justify-content: center;
   align-items: center;
 }
 
-.study-icon {
+.study-link {
   width: 30%;
-  height: 20vh;
-  background: blue;
-  color: white;
+  height: auto;
+  color: black;
+  :hover {
+    text-decoration: none;
+  }
+}
+.study-icon {
   text-align: center;
-  margin: 3%;
+  margin: 2vh;
   border-radius: 10px;
 }
