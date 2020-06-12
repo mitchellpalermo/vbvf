@@ -27,6 +27,9 @@ const Home = () => {
           </h1>
 
           <div className="buttons">
+            <Button href="/livestream" outline color="light">
+              View Livestream
+            </Button>
             <Button href="/about" outline color="light">
               What to expect
             </Button>

@@ -18,6 +18,7 @@ import Serve from "./components/ministries/serve";
 import Contact from "./containers/contact";
 import ScrollToTop from "./components/scroll-to-top";
 import StudyPage from "./components/study-page";
+import Livestream from "./containers/livestream";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/bible-studies" component={StudyAggregator} />
+          <Route exact path="/livestream" component={Livestream} />
           <Route path="/bible-studies/:studyId" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />

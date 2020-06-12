@@ -3,7 +3,7 @@ import { Button } from "reactstrap";
 import Map from "pigeon-maps";
 import Marker from "pigeon-marker";
 import "../../css/small-groups.scss";
-import Shane from "../../images/leadership_photos/shane.jpg";
+import Mike from "../../images/leadership_photos/Mike_Morris.jpeg";
 import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
 import Praying from "../../images/small_groups/praying.jpg";
@@ -80,7 +80,7 @@ export default function SmallGroups() {
         name={content.leader.name}
         role={content.leader.role}
         email={content.leader.email}
-        image={Shane}
+        image={Mike}
         bio={content.leader.bio}
       />
     </div>

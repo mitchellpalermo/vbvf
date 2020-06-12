@@ -1,17 +1,22 @@
 import React from "react";
 import "../css/leadership.css";
-import Stephen from "../images/leadership_photos/stephen.jpg";
-import Brian from "../images/leadership_photos/brian.jpg";
-import Tom from "../images/leadership_photos/tom.jpg";
-import Jerry from "../images/leadership_photos/jerry.jpg";
-import Taylor from "../images/leadership_photos/taylor.jpg";
-import Charlie from "../images/leadership_photos/charlie.jpg";
-import Sofi from "../images/leadership_photos/sofi.jpg";
-import Kathy from "../images/leadership_photos/kathy.jpg";
-import Mitch from "../images/leadership_photos/mitch.jpg";
-import Kat from "../images/leadership_photos/kat.jpg";
-import Terry from "../images/leadership_photos/terry.jpg";
-import Kyle from "../images/leadership_photos/kyle.jpg";
+
+import Stephen from "../images/leadership_photos/Stephen_Armstrong.jpeg";
+import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
+import Jerry from "../images/leadership_photos/Jerry_Smith.jpeg";
+import Bob from "../images/leadership_photos/Bob_Butler.jpeg";
+import Jim from "../images/leadership_photos/Jim_Rowland.jpeg";
+import John from "../images/leadership_photos/John_Oneill.jpeg";
+import Jan from "../images/leadership_photos/Jan_Worrell.jpeg";
+import Linda from "../images/leadership_photos/Linda_Briley.jpeg";
+import Mike from "../images/leadership_photos/Mike_Morris.jpeg";
+import Charlie from "../images/leadership_photos/Charlie_Haley.jpeg";
+import Sofi from "../images/leadership_photos/Sofi_Smith.jpeg";
+import Kathy from "../images/leadership_photos/Kathy_Smith.jpeg";
+import Mitch from "../images/leadership_photos/Mitch_Palermo.jpeg";
+import Wesley from "../images/leadership_photos/Wesley_Livingston.jpeg";
+import Kyle from "../images/leadership_photos/Kyle_Mounts.jpeg";
+
 import PhotoTitle from "../components/photo-title";
 
 export default function Leadership() {
@@ -28,22 +33,25 @@ export default function Leadership() {
           name={"Stephen Armstrong"}
           title={"Senior Pastor"}
         />
-        <PhotoTitle
-          photo={Brian}
-          name={"Brian Smith"}
-          title={"Finance & Budget"}
-        />
+
         <PhotoTitle photo={Tom} name={"Tom Didier"} title={"Discipleship"} />
-        <PhotoTitle photo={Jerry} name={"Jerry Dyke"} title={"Missions"} />
+        <PhotoTitle photo={Bob} name={"Tom Didier"} title={"Security"} />
+        <PhotoTitle
+          photo={Jim}
+          name={"Tom Didier"}
+          title={"Chief Operations Officer"}
+        />
+        <PhotoTitle photo={John} name={"Tom Didier"} title={"Finance"} />
+        <PhotoTitle photo={Jerry} name={"Tom Didier"} title={"Facilities"} />
       </div>
 
       <h2>Ministry Directors</h2>
 
       <div className="photo-array">
         <PhotoTitle
-          photo={Taylor}
-          name={"Taylor Putman"}
-          title={"Youth Ministry Director"}
+          photo={Wesley}
+          name={"Wesley Livingston"}
+          title={"Youth Pastor"}
         />
         <PhotoTitle
           photo={Charlie}
@@ -51,34 +59,37 @@ export default function Leadership() {
           title={"Worship Pastor"}
         />
         <PhotoTitle
+          photo={Mike}
+          name={"Mike Morris"}
+          title={"Associate Pastor"}
+        />
+
+        <PhotoTitle
           photo={Sofi}
           name={"Sofi Smith"}
           title={"Childrens' Ministry Director"}
         />
+
+        <PhotoTitle
+          photo={Jan}
+          name={"Jan Worrell"}
+          title={"Women's Ministry Director"}
+        />
+        <PhotoTitle photo={Linda} name={"Linda Briley"} title={"Finances"} />
         <PhotoTitle
           photo={Kathy}
           name={"Kathy Smith"}
           title={"Administration Director"}
         />
         <PhotoTitle
-          photo={Mitch}
-          name={"Mitch Palermo"}
-          title={"Small Group Ministry Director"}
-        />
-        <PhotoTitle
-          photo={Kat}
-          name={"Kat Palermo"}
-          title={"Small Group Ministry Director"}
-        />
-        <PhotoTitle
-          photo={Terry}
-          name={"Terry Bashore"}
-          title={"Congregational Care Pastor"}
-        />
-        <PhotoTitle
           photo={Kyle}
           name={"Kyle Mounts"}
           title={"Audio/Visual Coordinator"}
+        />
+        <PhotoTitle
+          photo={Mitch}
+          name={"Mitch Palermo"}
+          title={"Web Developer"}
         />
       </div>
     </div>

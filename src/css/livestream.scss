@@ -1,0 +1,13 @@
+.livestream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-video {
+    width: 90%;
+  }
+  &-body {
+    width: 90%;
+    margin: 2vh;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Sofi from "../../images/leadership_photos/sofi.jpg";
+import Sofi from "../../images/leadership_photos/Sofi_Smith.jpeg";
 import JourneyLogo from "../../images/logos/journey-logo.png";
 import Checkin from "../..//images/childrens-ministry/checkin.jpg";
 import "../../css/childrens-ministry.scss";

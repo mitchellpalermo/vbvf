@@ -1,21 +1,26 @@
 .studies-container {
   display: flex;
-  flex-flow: wrap row;
-
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-}
 
-.study-link {
-  width: 30%;
-  height: auto;
-  color: black;
-  :hover {
-    text-decoration: none;
+  .study-link {
+    width: 30%;
+    height: auto;
+    color: black;
+    :hover {
+      text-decoration: none;
+    }
   }
-}
-.study-icon {
-  text-align: center;
-  margin: 2vh;
-  border-radius: 10px;
+  .study-icon {
+    text-align: center;
+    margin: 2vh;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 800px) {
+    .study-link {
+      width: 50%;
+    }
+  }
 }
