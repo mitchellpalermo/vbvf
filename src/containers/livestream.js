@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/livestream.scss";
 import { Link } from "react-router-dom";
+import { getVideos } from "../util/index";
+import { Spinner } from "reactstrap";
 
-export default function livestream() {
+export default function Livestream() {
+  const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getVideos("1553779").then((vidArr) => {
+      setSundayArchiveVideos(vidArr.data.data);
+      setIsLoading(false);
+    });
+  }, []);
+
   let today = new Date();
 
   const contStyle = {
@@ -40,17 +52,48 @@ export default function livestream() {
     </div>
   );
 
+  function renderVideoContent(day) {
+    if (day == 0 && day.getHour() >= 10) {
+      return sundayStream;
+    } else if (day == 2 && day.getHour() >= 18 && day.getMinutes() > 30) {
+      return tuesdayStream;
+    } else if (day != 2 || day != 0) {
+      return sundayArchiveVideos.slice(0, 3).map((video) => (
+        <>
+          <p className="livestream-body">
+            Verse by Verse Fellowship livestreams its Tuesday and Sunday
+            services. Recordings of these services are available on our{" "}
+            <Link to="/bible-studies">Bible Studies</Link> page.
+          </p>
+
+          <h3>{video.name}</h3>
+          <div
+            className="sunday-service-archive-video"
+            dangerouslySetInnerHTML={createMarkup(video)}
+          ></div>
+        </>
+      ));
+    }
+  }
+
+  function createMarkup(video) {
+    return { __html: video.embed.html };
+  }
+
   return (
     <div className="livestream">
       <h1>Livestream</h1>
+
       <div className="livestream-video">
-        {today.getDay() == 2 ? tuesdayStream : sundayStream}
+        {isLoading ? (
+          <>
+            <p>Loading Archived Services</p>
+            <Spinner color="dark" />
+          </>
+        ) : (
+          renderVideoContent(today)
+        )}
       </div>
-      <p className="livestream-body">
-        Verse by Verse Fellowship livestreams its Tuesday and Sunday services.
-        Recordings of these services are available on our{" "}
-        <Link to="/bible-studies">Bible Studies</Link> page.
-      </p>
     </div>
   );
 }

@@ -9,7 +9,6 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 export default function LessonBlock(props) {
   useEffect(() => {
     getStudyNotes(props.document).then((link) => {
-      console.log(link);
       setDocLink(link);
     });
   }, []);

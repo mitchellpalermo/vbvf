@@ -10,4 +10,20 @@
     width: 90%;
     margin: 2vh;
   }
+  .sunday-service-archive {
+    &-video {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+
+      iframe {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }
