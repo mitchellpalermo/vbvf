@@ -9,10 +9,6 @@ import Juvie from "../../images/youth-assets/juvie_cropped.jpg";
 import Maria from "../../images/youth-assets/maria_cropped.jpg";
 
 import Wesley from "../../images/leadership_photos/Wesley_Livingston.jpeg";
-import Smile from "../../images/youth-assets/smile.jpg";
-import HungryHippos from "../../images/youth-assets/hungry_hippos.jpg";
-import TableHockey from "../../images/youth-assets/table_hockey.jpg";
-import StaffCard from "../staff-card";
 import StaffInfo from "../staff-info";
 
 export default function YouthMinistry() {

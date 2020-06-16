@@ -15,7 +15,7 @@ export default function SmallGroups() {
     <div className="small-group-container">
       <div className="header">
         <div className="header-logo-container">
-          <img src={Logo} />
+          <img alt="small groups logo" src={Logo} />
           <h1>{content.title}</h1>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function SmallGroups() {
             Get Info
           </Button>
         </div>
-        <img src={Praying} />
+        <img alt="girls praying together" src={Praying} />
       </div>
       <div className="map-block">
         <Map

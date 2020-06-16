@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../css/contact.scss";
 
 export default function Contact() {
   const checkBox = {
-    margin: "5px;"
+    margin: "5px;",
   };
   return (
     <div className="contact-container">

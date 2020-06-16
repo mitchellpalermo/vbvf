@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "reactstrap";
 import Attendee from "../images/connect/attending_meeting.jpg";
 import SteveTalking from "../images/connect/steve_talking.jpg";
 import ConnectionStep from "../components/connection-steps";

@@ -32,6 +32,7 @@ export default function Livestream() {
   const sundayStream = (
     <div style={contStyle}>
       <iframe
+        title="Sunday Service"
         src="https://vimeo.com/event/51649/embed"
         frameborder="0"
         allow="autoplay; fullscreen"
@@ -43,6 +44,7 @@ export default function Livestream() {
   const tuesdayStream = (
     <div style={contStyle}>
       <iframe
+        title="Tuesday Service"
         src="https://vimeo.com/event/49116/embed"
         frameborder="0"
         allow="autoplay; fullscreen"
@@ -53,11 +55,11 @@ export default function Livestream() {
   );
 
   function renderVideoContent(day) {
-    if (day == 0 && day.getHour() >= 10) {
+    if (day === 0 && day.getHour() >= 10) {
       return sundayStream;
-    } else if (day == 2 && day.getHour() >= 18 && day.getMinutes() > 30) {
+    } else if (day === 2 && day.getHour() >= 18 && day.getMinutes() > 30) {
       return tuesdayStream;
-    } else if (day != 2 || day != 0) {
+    } else if (day !== 2 || day !== 0) {
       return sundayArchiveVideos.slice(0, 3).map((video) => (
         <>
           <h3>{video.name}</h3>

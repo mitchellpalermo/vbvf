@@ -112,7 +112,7 @@ export async function buildLessons(videos, documents) {
     var lessonObj = {};
     lessonObj.video = video;
     lessonObj.document = documents.data.entries.find(
-      (document) => document.name.split(".")[0] == lessonObj.video.name
+      (document) => document.name.split(".")[0] === lessonObj.video.name
     );
 
     lessonObj.id = video.name;
