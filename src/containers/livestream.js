@@ -34,9 +34,9 @@ export default function Livestream() {
       <iframe
         title="Sunday Service"
         src="https://vimeo.com/event/51649/embed"
-        frameborder="0"
+        frameBorder="0"
         allow="autoplay; fullscreen"
-        allowfullscreen
+        allowFullScreen
         style={vidStyle}
       ></iframe>
     </div>
@@ -46,20 +46,25 @@ export default function Livestream() {
       <iframe
         title="Tuesday Service"
         src="https://vimeo.com/event/49116/embed"
-        frameborder="0"
+        frameBorder="0"
         allow="autoplay; fullscreen"
-        allowfullscreen
+        allowFullScreen
         style={vidStyle}
       ></iframe>
     </div>
   );
 
   function renderVideoContent(day) {
-    if (day === 0 && day.getHour() >= 10) {
+    console.log(day.getDay + day.getHours());
+    if (day.getDay() === 0 && day.getHours() >= 10) {
       return sundayStream;
-    } else if (day === 2 && day.getHour() >= 18 && day.getMinutes() > 30) {
+    } else if (
+      day.getDay() === 2 &&
+      day.getHours() >= 17 &&
+      day.getMinutes() > 30
+    ) {
       return tuesdayStream;
-    } else if (day !== 2 || day !== 0) {
+    } else if (day.getDay() !== 2 || day.getDay() !== 0) {
       return sundayArchiveVideos.slice(0, 3).map((video) => (
         <>
           <h3>{video.name}</h3>
@@ -87,16 +92,14 @@ export default function Livestream() {
         page.
       </p>
 
-      <div className="livestream-video">
-        {isLoading ? (
-          <>
-            <p>Loading Archived Services</p>
-            <Spinner color="dark" />
-          </>
-        ) : (
-          renderVideoContent(today)
-        )}
-      </div>
+      {isLoading ? (
+        <>
+          <p>Loading Services</p>
+          <Spinner color="dark" />
+        </>
+      ) : (
+        <div className="livestream-video">{renderVideoContent(today)}</div>
+      )}
     </div>
   );
 }
