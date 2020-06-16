@@ -7,7 +7,7 @@ import ScriptureVerse from "../scripture-verse";
 import Leesha from "../../images/youth-assets/leesha_cropped.jpg";
 import Juvie from "../../images/youth-assets/juvie_cropped.jpg";
 import Maria from "../../images/youth-assets/maria_cropped.jpg";
-import Paul from "../../images/youth-assets/paul_cropped.jpg";
+
 import Wesley from "../../images/leadership_photos/Wesley_Livingston.jpeg";
 import Smile from "../../images/youth-assets/smile.jpg";
 import HungryHippos from "../../images/youth-assets/hungry_hippos.jpg";
@@ -46,7 +46,6 @@ export default function YouthMinistry() {
         <Leader name={Content.leaders[1]} photo={Leesha} />
         <Leader name={Content.leaders[2]} photo={Juvie} />
         <Leader name={Content.leaders[3]} photo={Maria} />
-        <Leader name={Content.leaders[4]} photo={Paul} />
       </div>
       <StaffInfo
         name={Content.leader.name}

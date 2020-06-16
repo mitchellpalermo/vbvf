@@ -1,5 +1,4 @@
 import axios from "axios";
-import Vimeo from "vimeo";
 
 require("dotenv").config();
 

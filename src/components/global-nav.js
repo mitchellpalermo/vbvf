@@ -154,6 +154,9 @@ const GlobalNav = (props) => {
             <NavItem>
               <NavLink href="/sermon-redirect">Sermons</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/contact">Contact</NavLink>
+            </NavItem>
           </Nav>
         </Collapse>
       </Navbar>

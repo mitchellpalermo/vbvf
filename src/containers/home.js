@@ -8,42 +8,38 @@ import EndTimesPromo from "../images/end_times_promo.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
 import RevelationLogo from "../images/revelation_logo.png";
 import { Link } from "react-router-dom";
-import Time from "../images/time.svg";
-import Location from "../images/location.svg";
 import MissionBanner from "../components/mission-banner";
+import BibleStudyContent from "../content/study-content.json";
 
 const Home = () => {
-  let buttonStyle = {
-    color: "white",
-  };
-
   return (
     <div>
       <div className="main-header">
-        <div className="titles">
+        <div className="main-header-titles">
           <h1>
             Come find what you've been missing
-            <h2 id="scripture-reference">John 1:1</h2>
+            <h2>John 1:1</h2>
           </h1>
 
-          <div className="buttons">
-            <Button href="/livestream" outline color="light">
-              View Livestream
-            </Button>
-            <Button href="/about" outline color="light">
-              What to expect
-            </Button>
+          <div className="main-header-buttons">
+            <div className="button">
+              <Button href="/livestream" color="light">
+                View Livestream
+              </Button>
+            </div>
+            <div className="button">
+              <Button href="/about" color="light">
+                What to expect
+              </Button>
+            </div>
           </div>
         </div>
         <span className="see-more-arrow" />
       </div>
       <MissionBanner />
       <div className="secondary-content">
-        <div
-          id="connection-meeting"
-          className="connection-meeting content-block"
-        >
-          <div className="words">
+        <div id="connection-meeting" className="secondary-content-block">
+          <div className="secondary-content-block-words">
             <h2>Connection Meeting</h2>
             <p>
               Learn about our vision, beliefs and how you can join in our
@@ -53,9 +49,9 @@ const Home = () => {
           </div>
           <img src={ConnectionImage} alt="connection meeting logo" />
         </div>
-        <div className="heard-on-radio content-block">
+        <div className="secondary-content-block">
           <img src={PreachingTheWord} alt="Preaching the word logo" />
-          <div className="words">
+          <div className="secondary-content-block-words">
             <h2>Heard us on the Radio?</h2>
             <p style={{ textAlign: "center" }}>
               Gospel of Matthew <br /> on AM 630 <br />
@@ -74,30 +70,18 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="full-width-promos">
-        <div className="current-series-promo-container " id="revelation-series">
-          <span className="current-series-desc">
-            <h2>Revelation Study</h2>
-            <p>
-              Many Christians consider Revelation to be a mysterious and even
-              frightening book of scripture. Some avoid studying it, and among
-              those who do try, many find it confusing. Why does the book
-              confound so many and give rise to so many conflicting
-              interpretations? The answer: because it's the final book of the
-              Bible.{" "}
-            </p>
-            <Button
-              outline
-              color="light"
-              href="https://www.versebyverseministry.org/events/revelation-2019-2020"
-            >
-              Listen to Revelation
+      <div>
+        <div className="series-promo" id="ephesians-series">
+          <span className="series-promo-desc">
+            <h2>Ephesians Study</h2>
+            <p>{BibleStudyContent.studies[0].description}</p>
+            <Button outline color="light" href="/bible-studies/ephesians">
+              Listen to {BibleStudyContent.studies[0].name}
             </Button>
           </span>
-          <img src={RevelationLogo} alt="crown of thorns" />
         </div>
-        <div className="current-series-promo-container" id="matthew-series">
-          <span className="current-series-desc">
+        <div className="series-promo" id="matthew-series">
+          <span className="series-promo-desc">
             <h2>Current Series</h2>
             <p>
               As we present this important book, we’ll give careful attention to

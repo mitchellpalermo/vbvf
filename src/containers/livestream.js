@@ -60,15 +60,9 @@ export default function Livestream() {
     } else if (day != 2 || day != 0) {
       return sundayArchiveVideos.slice(0, 3).map((video) => (
         <>
-          <p className="livestream-body">
-            Verse by Verse Fellowship livestreams its Tuesday and Sunday
-            services. Recordings of these services are available on our{" "}
-            <Link to="/bible-studies">Bible Studies</Link> page.
-          </p>
-
           <h3>{video.name}</h3>
           <div
-            className="sunday-service-archive-video"
+            className="livestream-video-player"
             dangerouslySetInnerHTML={createMarkup(video)}
           ></div>
         </>
@@ -83,6 +77,13 @@ export default function Livestream() {
   return (
     <div className="livestream">
       <h1>Livestream</h1>
+      <p className="livestream-body">
+        Verse by Verse Fellowship livestreams its Tuesday and Sunday services.
+        While there's not a service streaming right now, please feel free to
+        check out some of our recent services below. Recordings of our services
+        are available on our <Link to="/bible-studies">Bible Studies</Link>{" "}
+        page.
+      </p>
 
       <div className="livestream-video">
         {isLoading ? (
