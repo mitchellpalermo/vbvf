@@ -155,7 +155,12 @@ const GlobalNav = (props) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/sermon-redirect">Sermons</NavLink>
+              <NavLink
+                target="_blank"
+                href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthewt"
+              >
+                Sermons
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/contact">Contact</NavLink>
