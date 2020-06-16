@@ -1,0 +1,40 @@
+.study-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 3vh 0 0 0;
+  .description {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 3vh 0 0;
+    &-title {
+      text-align: left;
+      font-weight: 700;
+    }
+  }
+  .lesson-list {
+    width: 40%;
+    text-align: center;
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .description {
+      width: 90%;
+      align-items: center;
+      margin: 0;
+
+      &-title {
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+    .lesson-list {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

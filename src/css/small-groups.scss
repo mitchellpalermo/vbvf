@@ -4,93 +4,63 @@
   align-content: center;
 }
 
-.small-group-header {
+.header {
+  display: flex;
   width: 100%;
-
-  background-image: url(../images/photo-element.png);
-  background-size: cover;
-  background-repeat: none;
-  background-position: center;
-  color: white;
-  background-size: auto;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
   text-align: center;
 
-  h1 {
-    margin: 15vh 0 15vh 0;
-    position: relative;
+  &-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    img {
+      width: 100%;
+    }
   }
 }
 
 .info-sign-up {
   width: 100%;
-  height: auto;
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  align-content: center;
-  margin: 15vh 0 15vh 0;
-  p {
-    max-width: 60%;
-    margin: 30px 0 30px 0;
+  align-items: flex-end;
+  margin: 5vh 0 15vh 0;
+
+  img {
+    width: 30%;
   }
-  .info-button-container {
+  &-button-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: 50px;
+    width: 50%;
+
+    padding: 2vh;
+    p {
+      width: 90%;
+    }
   }
 }
 @media screen and (max-width: 800px) {
   .info-sign-up {
     width: 100%;
-    height: auto;
-    display: column;
-    font-size: 1.2em;
-    align-content: center;
-    margin: auto;
-    p {
-      max-width: 80%;
-      margin: 30px 0 10px 0;
-    }
-    .info-button-container {
-      display: block;
-    }
-  }
-}
-
-.staff-info-container {
-  max-width: 90%;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
-  .staff-card {
-    max-width: 30%;
-  }
-  .staff-info {
     display: flex;
     flex-direction: column;
+    font-size: 1.2em;
     align-items: center;
-    max-width: 50%;
-    h2 {
-      text-align: center;
+    margin: 5vh 0 5vh 0;
+    img {
+      width: 100%;
     }
-    p {
-      max-width: 90%;
-      margin: 20px;
-      align-self: flex-start;
+    &-button-container {
+      width: 100%;
+      p {
+        width: 90%;
+        margin: 5vh 0 3vh 0;
+      }
     }
-  }
-}
-.staff-info-container {
-  margin: 3vh;
-  flex-direction: column;
-  align-items: center;
-  .staff-card {
-    min-width: 100%;
-  }
-  .staff-info {
-    margin-top: 20px;
-    min-width: 100%;
   }
 }

@@ -1,21 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Content from "../content/content.json";
 
 export default function FAQ() {
+  const faq = Content.aboutPage.faq;
   return (
     <div>
-      <h1>FAQ</h1>
-      <h4>Where and when do you meet for worship services?</h4>
-      <p>
-        We gather as the Church to worship Jesus every Saturday evening at 5:30
-        at 551 E Nakoma Dr, San Antonio. We currently use the Oak Hills Church
-        facility.
-      </p>
-      <h4>How should I dress?</h4>
-      <p>
-        Our services are casual. Come dressed in anything that is comfortable
-        for you.
-      </p>
+      <h1>{faq.title}</h1>
+      <h4>{faq.locationQuestion.title}</h4>
+      <p>{faq.locationQuestion.body}</p>
+      <h4>{faq.dressQuestion.title}</h4>
+      <p>{faq.dressQuestion.body}</p>
+
       <h4>Can I listen to your messages online?</h4>
       <p>
         Yes, you can find all of our weekly sermons on Verse By Verse Ministry

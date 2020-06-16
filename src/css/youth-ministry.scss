@@ -1,17 +1,14 @@
 .youth-page-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.4em;
-  }
+
   h1,
   h2,
-  h3 {
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  h3,
+  h4 {
+    font-family: "Work Sans";
     font-weight: bold;
   }
 
@@ -20,96 +17,74 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../images/youth-assets/brush_stroke.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 110%;
-    .ministry-logo {
+    margin: 3vh 0 5vh 0;
+    &-logo {
       position: relative;
-      width: 17%;
+      width: 30%;
       height: auto;
-      margin: 50px;
     }
   }
-  .youth-description-container {
+
+  .time-section {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 3vh 0 3vh 0;
+  }
+  .description-container {
     width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 50px 0 50px 0;
-    img {
-      max-width: 40%;
-      margin: 10px;
+    margin: 10vh;
+    p {
+      width: 70%;
+      padding: 1vh;
     }
-    .words-section {
+  }
+
+  .faq {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 0 5vh 0;
+    li {
+      list-style-type: none;
+      font-size: 0.9em;
+    }
+  }
+
+  .youth-leaders {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 0 5vh 0;
+  }
+  @media screen and (max-width: 800px) {
+    .youth-header {
+      margin: 5vh 0 0 0;
+      &-logo {
+        width: 50%;
+      }
+    }
+    .description-container {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      max-width: 50%;
-      margin: 20px;
-    }
-  }
-  .bible-project-container {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px 0 50px 0;
-    img {
-      max-width: 40%;
-      margin: 10px;
-    }
-    .description-section {
-      display: flex;
-      .words-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 50%;
-        margin: 20px;
+      p {
+        width: 90%;
       }
     }
-    .more-lessons-section {
-      margin: 50px 0 50px 0;
-      text-align: center;
-      .video-player-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 35px;
-        height: 0;
-        overflow: hidden;
-        .video-player-container iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
-      button {
-        margin: 10px;
-      }
-    }
-  }
-  .social-media-section {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    width: 90%;
-    .icon-section {
-      display: flex;
-      flex-direction: row wrap;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      img {
-        width: 30%;
-        height: auto;
-        margin: 3px;
-      }
+    .faq {
+      width: 90%;
     }
   }
 }

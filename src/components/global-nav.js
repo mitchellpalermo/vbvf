@@ -15,13 +15,13 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter
+  ModalFooter,
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
 
-const GlobalNav = props => {
+const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
 
@@ -144,9 +144,7 @@ const GlobalNav = props => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href="https://vbvf.churchcenter.com/registrations/events">
-                Events
-              </NavLink>
+              <NavLink href="/bible-studies">Bible Studies</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://vbvf.churchcenter.com/giving">
@@ -155,6 +153,9 @@ const GlobalNav = props => {
             </NavItem>
             <NavItem>
               <NavLink href="/sermon-redirect">Sermons</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/contact">Contact</NavLink>
             </NavItem>
           </Nav>
         </Collapse>

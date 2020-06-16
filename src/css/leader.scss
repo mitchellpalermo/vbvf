@@ -1,0 +1,25 @@
+.leader {
+  width: 25%;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 0 -5vh 0;
+  h4 {
+    font-size: 1em;
+  }
+  &-name {
+    font-size: medium;
+    text-align: center;
+    white-space: nowrap;
+  }
+  &-photo {
+    width: 90%;
+    clip-path: circle(30% at center 30%);
+  }
+}
+@media screen and (max-width: 800px) {
+  .leader {
+    flex: 1 1 50%;
+  }
+}

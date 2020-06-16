@@ -26,25 +26,13 @@
     }
   }
   .mission-container {
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     p {
-      max-width: 50%;
+      width: 50%;
       margin-bottom: 40px;
-    }
-    .scripture-verse {
-      width: 40%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-weight: 200;
-      color: gray;
-
-      .scripture-reference {
-        font-weight: 600;
-      }
     }
   }
   .check-in-section {
@@ -63,31 +51,6 @@
       flex-direction: column;
       align-items: center;
       margin: 0 0 0 20px;
-    }
-  }
-
-  .staff-info-container {
-    max-width: 90%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    .staff-card {
-      max-width: 30%;
-    }
-    .staff-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 50%;
-      h2 {
-        text-align: center;
-      }
-      p {
-        max-width: 90%;
-        margin: 20px;
-        align-self: flex-start;
-      }
     }
   }
 
@@ -113,12 +76,7 @@
       width: 100%;
       flex-direction: column-reverse;
       p {
-        max-width: 90%;
-      }
-      .scripture-verse {
         width: 90%;
-        font-size: 1.2em;
-        margin-bottom: 20px;
       }
     }
     .check-in-section {
@@ -126,25 +84,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 20px 0px 20px 0px;
       img {
         width: 100%;
         margin-bottom: 20px;
       }
       .info-button-container {
         width: 90%;
-      }
-    }
-    .staff-info-container {
-      max-width: 90%;
-      flex-direction: column;
-      align-items: center;
-      .staff-card {
-        max-width: 100%;
-      }
-      .staff-info {
-        max-width: 90%;
-        margin-top: 20px;
       }
     }
   }

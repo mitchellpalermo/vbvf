@@ -1,0 +1,59 @@
+.lesson-block {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1vh;
+  background: rgba(219, 204, 165, 0.4);
+
+  &-title {
+    font-size: 1.2em;
+    margin-right: 2vh;
+  }
+  &-icon {
+    cursor: pointer;
+    img {
+      padding: 1px;
+      height: 3vh;
+    }
+  }
+  a {
+    color: black;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+.lesson-block:nth-child(even) {
+  background: rgba(219, 204, 165, 0.6);
+}
+
+.lesson-modal {
+  display: flex;
+  flex-direction: column;
+
+  &-video {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      border: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &-button {
+    align-self: center;
+    margin: 2vh auto 0 auto;
+    .doc-icon {
+      fill: white;
+      height: 3vh;
+      margin: 1vh;
+    }
+  }
+}
