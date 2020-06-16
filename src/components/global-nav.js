@@ -147,7 +147,10 @@ const GlobalNav = (props) => {
               <NavLink href="/bible-studies">Bible Studies</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://vbvf.churchcenter.com/giving">
+              <NavLink
+                target="_blank"
+                href="https://vbvf.churchcenter.com/giving"
+              >
                 Give
               </NavLink>
             </NavItem>
