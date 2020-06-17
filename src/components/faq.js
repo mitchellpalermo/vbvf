@@ -14,9 +14,9 @@ export default function FAQ() {
 
       <h4>Can I listen to your messages online?</h4>
       <p>
-        Yes, you can find all of our weekly sermons on Verse By Verse Ministry
-        International’s website at <a href="www.VBVMI.org">VBVMI.org</a>.
-        Sermons are posted following each service.
+        Yes, you can find all of our weekly sermons on our{" "}
+        <Link to="/bible-studies">Bible Studies page</Link>. Sermons are posted
+        following each service.
       </p>
       <h4>What is available for my kids?</h4>
       <p>
@@ -37,22 +37,15 @@ export default function FAQ() {
       <p>
         Our church enthusiastically welcomes anyone to meet and worship with us
         every week…no strings attached! If you’re interested in learning more
-        about our church or if you’re ready to call VBVF your church home, then
-        we invite you to join us at one of our quarterly orientation meeting.
-        These meetings offer an opportunity to meet our church leadership, hear
-        our pastor explain Verse By Verse Fellowship’s core beliefs and values,
-        and ask questions. You can sign up to attend a quarterly orientation
-        meeting at the information desk in the church lobby or by filling out
-        this <Link to="/contact">web form.</Link>
+        about our church you can learn more on our{" "}
+        <Link to="/connect-page">Connect Page</Link>.
       </p>
       <h4>How do I join a small group?</h4>
       <p>
         God created us in His image and designed us for relationship. He calls
         us to form relationships with one another so that we may encourage each
         other toward love and good deeds! If you’re interested in small groups,
-        please fill out this{" "}
-        <a href="https://vbvf.churchcenter.com/people/forms/29086">web form</a>{" "}
-        and we’ll be in touch!
+        visit our <Link to="/small-groups">Small Groups page</Link>.
       </p>
       <h4>How did VBVF start?</h4>
       <p>
@@ -73,7 +66,7 @@ export default function FAQ() {
       </p>
       <h4>How can I learn more about VBVF?</h4>
       <p>
-        Join our weekly newsletter for updates on events and a devotional.{" "}
+        Sign up to receive periodic updates on events and news from VBVF.{" "}
         <a href="https://vbvf.churchcenter.com/people/forms/26635">
           Click here to sign up.
         </a>
