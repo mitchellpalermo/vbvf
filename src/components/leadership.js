@@ -35,14 +35,14 @@ export default function Leadership() {
         />
 
         <PhotoTitle photo={Tom} name={"Tom Didier"} title={"Discipleship"} />
-        <PhotoTitle photo={Bob} name={"Tom Didier"} title={"Security"} />
+        <PhotoTitle photo={Bob} name={"Bob Butler"} title={"Security"} />
         <PhotoTitle
           photo={Jim}
           name={"Tom Didier"}
           title={"Chief Operations Officer"}
         />
-        <PhotoTitle photo={John} name={"Tom Didier"} title={"Finance"} />
-        <PhotoTitle photo={Jerry} name={"Tom Didier"} title={"Facilities"} />
+        <PhotoTitle photo={John} name={"John O'Neill"} title={"Finance"} />
+        <PhotoTitle photo={Jerry} name={"Jerry Smith"} title={"Facilities"} />
       </div>
 
       <h2>Ministry Directors</h2>
