@@ -5,7 +5,6 @@ import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import PreachingTheWord from "../images/preaching_the_word.png";
 import CrownOfThorns from "../images/matthew_crown.png";
-import ChurchIcon from "../images/church_icon.svg";
 import { Link } from "react-router-dom";
 import MissionBanner from "../components/mission-banner";
 import BibleStudyContent from "../content/study-content.json";
