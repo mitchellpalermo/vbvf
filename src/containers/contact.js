@@ -49,7 +49,9 @@ export default function Contact() {
       <div className="contact-info-container">
         <div className="contact-info">
           <h4>Email</h4>
-          <p>info@vbvf.org</p>
+          <p>
+            <a href="mailto:info@vbvf.org">info@vbvf.org</a>
+          </p>
         </div>
         <div className="contact-info">
           <h4>Mailing Address</h4>

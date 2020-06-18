@@ -38,22 +38,20 @@ export default function FAQ() {
         Our church enthusiastically welcomes anyone to meet and worship with us
         every week…no strings attached! If you’re interested in learning more
         about our church you can learn more on our{" "}
-        <Link to="/connect-page">Connect Page</Link>.
+        <Link to="/connect">Connect Page</Link>.
       </p>
       <h4>How do I join a small group?</h4>
       <p>
         God created us in His image and designed us for relationship. He calls
         us to form relationships with one another so that we may encourage each
         other toward love and good deeds! If you’re interested in small groups,
-        visit our <Link to="/small-groups">Small Groups page</Link>.
+        visit our <Link to="/ministries/small-groups">Small Groups page</Link>.
       </p>
       <h4>How did VBVF start?</h4>
       <p>
         Although VBVF opened its doors in early 2018, God began preparing people
         for this Church 15 years ago. In 2003, Pastor Stephen Armstrong founded{" "}
-        <a href="https://www.versebyverseministry.org/">
-          Verse By Verse Ministry International
-        </a>
+        <Link to="/sermon-redirect">Verse By Verse Ministry International</Link>
         , a ministry committed to providing compelling, verse-by-verse teaching
         of God’s word at no charge (2Cor 2:17), thus ensuring the whole counsel
         of God is proclaimed (Acts 20:27). With San Antonio roots, VBVMI
@@ -67,7 +65,7 @@ export default function FAQ() {
       <h4>How can I learn more about VBVF?</h4>
       <p>
         Sign up to receive periodic updates on events and news from VBVF.{" "}
-        <a href="https://vbvf.churchcenter.com/people/forms/26635">
+        <a href="https://vbvf.churchcenter.com/people/forms/26635?open-in-church-center-modal=true">
           Click here to sign up.
         </a>
       </p>

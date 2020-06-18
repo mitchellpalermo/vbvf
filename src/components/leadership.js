@@ -38,7 +38,7 @@ export default function Leadership() {
         <PhotoTitle photo={Bob} name={"Bob Butler"} title={"Security"} />
         <PhotoTitle
           photo={Jim}
-          name={"Tom Didier"}
+          name={"Jim Rowland"}
           title={"Chief Operations Officer"}
         />
         <PhotoTitle photo={John} name={"John O'Neill"} title={"Finance"} />

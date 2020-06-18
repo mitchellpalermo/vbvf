@@ -5,6 +5,7 @@ import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import PreachingTheWord from "../images/preaching_the_word.png";
 import CrownOfThorns from "../images/matthew_crown.png";
+import ChurchIcon from "../images/church_icon.svg";
 import { Link } from "react-router-dom";
 import MissionBanner from "../components/mission-banner";
 import BibleStudyContent from "../content/study-content.json";
@@ -60,7 +61,11 @@ const Home = () => {
               of God, so we’re Preaching the Word on KSLR AM630. Click the
               button below if want to hear more of our current series on the
               book of Matthew.
-              <a href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
+              >
                 {" "}
                 Listen to Matthew series
               </a>
@@ -72,6 +77,7 @@ const Home = () => {
         <div className="series-promo" id="ephesians-series">
           <span className="series-promo-desc">
             <h2>Ephesians Study</h2>
+            {/* <img alt="" src={ChurchIcon} /> */}
             <p>{BibleStudyContent.studies[0].description}</p>
             <Button outline color="light" href="/bible-studies/ephesians">
               Listen to {BibleStudyContent.studies[0].name}
@@ -92,6 +98,7 @@ const Home = () => {
               outline
               color="light"
               href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
+              target="_blank"
             >
               Listen to Matthew
             </Button>
