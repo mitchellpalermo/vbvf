@@ -1,23 +1,21 @@
-.childrens-ministry-page-container {
-  width: 100%;
+.childrens-ministry {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  font-size: 16px;
 
-  .childrens-header {
+  &-header {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    #childrens-logo {
+    &-logo {
       width: 40%;
       height: auto;
       padding: 20px;
+      margin: 3vh;
     }
-    .photo-collage {
+    &-photo-collage {
       max-width: 70%;
       img {
         width: 50%;
@@ -25,32 +23,35 @@
       }
     }
   }
-  .mission-container {
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    p {
-      width: 50%;
-      margin-bottom: 40px;
-    }
-  }
-  .check-in-section {
-    width: 70%;
+  &-mission {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 20px 0px 20px 0px;
-    img {
+    padding: 5vh;
+    margin-top: 3vh;
+    background: #2e3c49;
+
+    p {
+      color: white;
       width: 60%;
     }
-    .info-button-container {
+  }
+  &-check-in {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5vh;
+
+    img {
       width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 0 0 20px;
+      border-radius: 20px;
+    }
+    p {
+      width: 40%;
     }
   }
 

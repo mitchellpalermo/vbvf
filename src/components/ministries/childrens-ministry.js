@@ -15,32 +15,31 @@ import StaffInfo from "../staff-info";
 
 export default function ChildrensMinistry() {
   return (
-    <div className="childrens-ministry-page-container">
-      <div className="childrens-header">
-        <img id="childrens-logo" alt="Journey Kids Logo" src={JourneyLogo} />
+    <div className="childrens-ministry">
+      <div className="childrens-ministry-header">
+        <img
+          className="childrens-ministry-header-logo"
+          alt="Journey Kids Logo"
+          src={JourneyLogo}
+        />
 
-        <div className="photo-collage">
+        <div className="childrens-ministry-header-photo-collage">
           <img alt="children-coloring" src={Coloring}></img>
           <img alt="children-looking" src={LittleGirlLooking}></img>
           <img alt="children-learning" src={JonTeaching}></img>
           <img alt="children-listening" src={JayTeaching}></img>
         </div>
       </div>
-      <div className="mission-container">
+      <div className="childrens-ministry-mission">
         <p>{Content.firstRow.body}</p>
         <ScriptureVerse
           verse={Content.scriptureVerse.verse}
           reference={Content.scriptureVerse.reference}
         />
       </div>
-      <div className="check-in-section">
+      <div className="childrens-ministry-check-in">
         <img alt="family registering child" src={Checkin} />
-        <div className="info-button-container">
-          <p>{Content.secondRow.body}</p>
-          <Button outline size="lg" color="primary">
-            Get Info
-          </Button>
-        </div>
+        <p>{Content.secondRow.body}</p>
       </div>
       <StaffInfo
         name={Content.leader.name}
