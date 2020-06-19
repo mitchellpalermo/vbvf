@@ -20,6 +20,7 @@ import {
 import { Link } from "react-router-dom";
 import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
+import { mapsSelector } from "../util/index";
 
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,25 +34,6 @@ const GlobalNav = (props) => {
     }
     setModal(!modal);
   };
-  function mapsSelector() {
-    if (
-      /* if we're on iOS, open in Apple Maps */
-      navigator.platform.indexOf("iPhone") !== -1 ||
-      navigator.platform.indexOf("iPad") !== -1 ||
-      navigator.platform.indexOf("iPod") !== -1
-    ) {
-      window.open(
-        "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
-
-        //maps.google.com/maps/place/Verse+By+Verse+Fellowship/@29.5490497,-98.4836892&amp;ll=&amp;destination=Verse+By+Verse+Fellowship"
-      );
-    } else {
-      /* else use Google */
-      window.open(
-        "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
-      );
-    }
-  }
 
   return (
     <div>

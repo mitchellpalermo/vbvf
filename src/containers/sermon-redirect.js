@@ -34,12 +34,8 @@ const SermonRedirect = () => {
         <h2>{counter}</h2>
       </div>
       <div className="redirect-buttons">
-        <Button
-          size="lg"
-          color="danger"
-          onClick={() => (window.location.href = "/")}
-        >
-          Cancel
+        <Button size="lg" color="danger" onClick={() => window.history.back()}>
+          Stay Here
         </Button>{" "}
         <Button size="lg" color="success" onClick={() => redirect()}>
           Proceed
