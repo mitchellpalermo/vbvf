@@ -60,14 +60,15 @@ const Home = () => {
               of God, so we’re Preaching the Word on KSLR AM630. Click the
               button below if want to hear more of our current series on the
               book of Matthew.
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
+              <Link
+                to={{
+                  pathname: "/sermon-redirect",
+                  deepDive: "bible-studies/gospel-of-matthew",
+                }}
               >
                 {" "}
                 Listen to Matthew series
-              </a>
+              </Link>
             </p>
           </div>
         </div>
@@ -93,14 +94,16 @@ const Home = () => {
               rounding out the full story of Jesus’ arrival and work on earth.
               Every Christian can profit from such a grounding.
             </p>
-            <Button
-              outline
-              color="light"
-              href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
-              target="_blank"
+            <Link
+              to={{
+                pathname: "/sermon-redirect",
+                deepDive: "bible-studies/gospel-of-matthew",
+              }}
             >
-              Listen to Matthew
-            </Button>
+              <Button outline color="light">
+                Listen to Matthew
+              </Button>
+            </Link>
           </span>
           <img src={CrownOfThorns} alt="crown of thorns" />
         </div>

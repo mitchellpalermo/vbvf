@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/beliefs.css";
+import { Link } from "react-router-dom";
 
 export default function Beliefs() {
   return (
@@ -34,13 +35,17 @@ export default function Beliefs() {
       <p>
         There is one God who eternally exists as three Persons (Father, Son, and
         Holy Spirit) and is the Sovereign Creator of all things (Genesis 1:1).
-        <a
+        <Link
           className="learn-more-link"
-          href="https://www.versebyverseministry.org/bible-studies/the_sovereignty_of_god#sthash.tGBui5H2.ymWNfxe0.dpbs"
+          to={{
+            pathname: "/sermon-redirect",
+            deepDive:
+              "bible-studies/the_sovereignty_of_god#sthash.tGBui5H2.ymWNfxe0.dpbs",
+          }}
         >
           {" "}
           Learn more about God’s sovereignty.
-        </a>
+        </Link>
       </p>
       <h3>Scripture</h3>
       <p>
@@ -50,13 +55,17 @@ export default function Beliefs() {
         to the glory of God. God is the final authority as revealed in His
         perfect, trustworthy, and inspired Word, which unfolds His character and
         His purposes (2 Timothy 3:16-17).
-        <a
+        <Link
           className="learn-more-link"
-          href="https://www.versebyverseministry.org/bible-answers/is_scripture_meant_to_be_literal_or_figurative#sthash.coahtwuJ.dpbs"
+          to={{
+            pathname: "/sermon-redirect",
+            deepDive:
+              "bible-answers/is_scripture_meant_to_be_literal_or_figurative#sthash.coahtwuJ.dpbs",
+          }}
         >
           {" "}
           Learn more about interpretation of Scripture.
-        </a>
+        </Link>
       </p>
       <h3>The Purpose of God</h3>
       <p>
@@ -69,12 +78,15 @@ export default function Beliefs() {
         he placed all mankind into both physical and spiritual death; thus
         humanity became alienated from God, totally depraved, and incapable of
         remedying our sinful condition by our own means. (Genesis 1:27)
-        <a
+        <Link
           className="learn-more-link"
-          href="https://www.versebyverseministry.org/bible-studies/genesis_2011#sthash.YoxCa5hY.dpbs"
+          to={{
+            pathname: "/sermon-redirect",
+            deepDive: "bible-studies/genesis_2011#sthash.YoxCa5hY.dpbs",
+          }}
         >
           Access a complete study on the book of Genesis.
-        </a>
+        </Link>
       </p>
       <h3>Sin</h3>
       <p>
@@ -103,12 +115,15 @@ export default function Beliefs() {
         Salvation comes by grace, through faith in the finished work of Jesus
         Christ on the cross plus nothing on the part of humanity (Ephesians
         2:1-10).
-        <a
+        <Link
           className="learn-more-link"
-          href="https://www.versebyverseministry.org/about/how_can_i_go_to_heaven#sthash.RKt1PUNE.dpbs"
+          to={{
+            pathname: "/sermon-redirect",
+            deepDive: "about/how_can_i_go_to_heaven#sthash.RKt1PUNE.dpbs",
+          }}
         >
           Learn more about salvation.
-        </a>
+        </Link>
       </p>
       <h3>The Holy Spirit</h3>
       <p>
@@ -134,12 +149,15 @@ export default function Beliefs() {
         among God’s people in the coming New Heavens and Earth called the New
         Jerusalem. (John 14:1-5; 1Corinthians 15; Revelation 20-22; Matthew
         24:1-51, 25:1-46).
-        <a
+        <Link
           className="learn-more-link"
-          href="https://www.versebyverseministry.org/bible-studies/revelation_2011#sthash.BKUJuUry.dpbs"
+          to={{
+            pathname: "/sermon-redirect",
+            deepDive: "bible-studies/revelation_2011#sthash.BKUJuUry.dpbs",
+          }}
         >
           Learn more about the End Times.
-        </a>
+        </Link>
       </p>
       <h3>The Eternal State of Humanity</h3>
       <p>

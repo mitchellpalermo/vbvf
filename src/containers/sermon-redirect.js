@@ -5,19 +5,20 @@ import VbvmiLogo from "../images/logos/vbvmi_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
 import { Button } from "reactstrap";
 
-const SermonRedirect = () => {
+const SermonRedirect = (props) => {
   const [counter, setCounter] = useState("10");
 
+  console.log(props);
   useEffect(() => {
     counter >= 1
       ? setTimeout(() => {
           setCounter(counter - 1);
         }, 1000)
-      : redirect();
-  }, [counter]);
+      : verseByVerseRedirect(props.location.deepDive);
+  }, [counter, props.location.deepDive]);
 
-  function redirect() {
-    window.location.replace("https://www.versebyverseministry.org");
+  function verseByVerseRedirect(path) {
+    window.location.replace(`https://www.versebyverseministry.org/${path}`);
   }
 
   return (
@@ -41,7 +42,11 @@ const SermonRedirect = () => {
         >
           Stay Here
         </Button>{" "}
-        <Button size="lg" color="success" onClick={() => redirect()}>
+        <Button
+          size="lg"
+          color="success"
+          onClick={() => verseByVerseRedirect()}
+        >
           Proceed
         </Button>
       </div>
