@@ -52,8 +52,13 @@ export default function Serve() {
             below to get started.
           </p>
           <div className="button-wrapper">
-            <Button large outline white>
-              Learn More
+            <Button
+              large
+              outline
+              white
+              href="https://vbvf.churchcenter.com/people/forms/33404?open-in-church-center-modal=true"
+            >
+              Get Involved
             </Button>
           </div>
         </div>

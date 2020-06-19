@@ -6,10 +6,10 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button
+  Button,
 } from "reactstrap";
 
-const StaffCard = props => {
+const StaffCard = (props) => {
   return (
     <div>
       <Card body className="text-center">
@@ -18,7 +18,7 @@ const StaffCard = props => {
           <CardTitle>{props.title}</CardTitle>
           <CardSubtitle>{props.subtitle}</CardSubtitle>
           <CardText>{props.content}</CardText>
-          <Button onclick={`mailto:${props.email}`}>
+          <Button href={`mailto:${props.email}`}>
             Contact {props.title.split(" ")[0]}
           </Button>
         </CardBody>
