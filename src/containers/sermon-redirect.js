@@ -18,6 +18,7 @@ const SermonRedirect = (props) => {
   }, [counter, props.location.deepDive]);
 
   function verseByVerseRedirect(path) {
+    console.log(path);
     window.location.replace(`https://www.versebyverseministry.org/${path}`);
   }
 
@@ -45,7 +46,7 @@ const SermonRedirect = (props) => {
         <Button
           size="lg"
           color="success"
-          onClick={() => verseByVerseRedirect()}
+          onClick={() => verseByVerseRedirect(props.location.deepDive)}
         >
           Proceed
         </Button>

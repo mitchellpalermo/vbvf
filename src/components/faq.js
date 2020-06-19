@@ -51,7 +51,9 @@ export default function FAQ() {
       <p>
         Although VBVF opened its doors in early 2018, God began preparing people
         for this Church 15 years ago. In 2003, Pastor Stephen Armstrong founded{" "}
-        <Link to="/sermon-redirect">Verse By Verse Ministry International</Link>
+        <Link to={{ pathname: "/sermon-redirect", deepDive: "" }}>
+          Verse By Verse Ministry International
+        </Link>
         , a ministry committed to providing compelling, verse-by-verse teaching
         of God’s word at no charge (2Cor 2:17), thus ensuring the whole counsel
         of God is proclaimed (Acts 20:27). With San Antonio roots, VBVMI
