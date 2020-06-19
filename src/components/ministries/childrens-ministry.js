@@ -4,7 +4,6 @@ import Sofi from "../../images/leadership_photos/Sofi_Smith.jpeg";
 import JourneyLogo from "../../images/logos/journey-logo.png";
 import Checkin from "../..//images/childrens-ministry/checkin.jpg";
 import "../../css/childrens-ministry.scss";
-import { Button } from "reactstrap";
 import ScriptureVerse from "../scripture-verse";
 import Coloring from "../../images/childrens-ministry/coloring.jpg";
 import JonTeaching from "../../images/childrens-ministry/jon_teaching.jpg";
