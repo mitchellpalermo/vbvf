@@ -4,7 +4,7 @@ body {
 
 .main-header {
   position: relative;
-  background: url(../images/home_page_header.jpg);
+  background: url(../images/hand_raised_compressed.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -14,7 +14,7 @@ body {
   min-height: 85vh;
   &-titles {
     max-width: 50%;
-    text-align: left;
+    text-align: center;
     justify-self: flex-start;
     padding: 150px 0px 100px 0px;
     h1 {

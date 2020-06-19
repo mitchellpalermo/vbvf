@@ -27,7 +27,7 @@ const Home = () => {
             </div>
             <div className="button">
               <Button href="/about" color="light">
-                What to expect
+                Regathering Details
               </Button>
             </div>
           </div>

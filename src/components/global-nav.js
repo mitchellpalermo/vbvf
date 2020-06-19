@@ -37,7 +37,7 @@ const GlobalNav = (props) => {
 
   return (
     <div>
-      <Navbar className="menu-bar" color="light" light expand="md">
+      <Navbar className="menu-bar bg-transparent" color="" expand="md">
         <NavbarBrand href="/">
           <img id="menu-bar-icon" src={VBVFLogo} alt="VBVF Logo" />
         </NavbarBrand>

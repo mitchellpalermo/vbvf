@@ -22,30 +22,35 @@ export default function LessonBlock(props) {
 
   return (
     <div className="lesson-block">
-      <h4 className="lesson-block-title">{props.video.name}</h4>
+      {props.video && (
+        <>
+          <h4 className="lesson-block-title">{props.video.name}</h4>
+          <span className="lesson-block-icon" onClick={modalToggle}>
+            <img alt="play icon" src={PlayIcon} />
+            Watch
+          </span>
+          <Modal isOpen={modal} toggle={modalToggle} size="lg">
+            <ModalHeader toggle={modalToggle}>{props.video.name}</ModalHeader>
+            <ModalBody>
+              <div className="lesson-modal">
+                <div
+                  className="lesson-modal-video"
+                  dangerouslySetInnerHTML={createMarkup()}
+                />
 
-      <span className="lesson-block-icon" onClick={modalToggle}>
-        <img alt="play icon" src={PlayIcon} />
-        Watch
-      </span>
-      <Modal isOpen={modal} toggle={modalToggle} size="lg">
-        <ModalHeader toggle={modalToggle}>{props.video.name}</ModalHeader>
-        <ModalBody>
-          <div className="lesson-modal">
-            <div
-              className="lesson-modal-video"
-              dangerouslySetInnerHTML={createMarkup()}
-            />
-
-            <div className="lesson-modal-button">
-              <Button color="info" onClick={() => window.open(docLink.href)}>
-                Download notes
-              </Button>
-            </div>
-          </div>
-        </ModalBody>
-      </Modal>
-
+                <div className="lesson-modal-button">
+                  <Button
+                    color="info"
+                    onClick={() => window.open(docLink.href)}
+                  >
+                    Download notes
+                  </Button>
+                </div>
+              </div>
+            </ModalBody>
+          </Modal>
+        </>
+      )}
       <span
         className="lesson-block-icon"
         role="button"

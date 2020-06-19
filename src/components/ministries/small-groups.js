@@ -23,7 +23,12 @@ export default function SmallGroups() {
       <div className="info-sign-up">
         <div className="info-sign-up-button-container">
           <p>{content.ministrySummary}</p>
-          <Button outline size="lg" color="primary">
+          <Button
+            outline
+            size="lg"
+            color="primary"
+            href="https://vbvf.churchcenter.com/people/forms/29086?open-in-church-center-modal=true"
+          >
             Get Info
           </Button>
         </div>
