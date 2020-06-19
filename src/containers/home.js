@@ -26,7 +26,7 @@ const Home = () => {
               </Button>
             </div>
             <div className="button">
-              <Button href="/about" color="light">
+              <Button href="/corona-virus" color="light">
                 Regathering Details
               </Button>
             </div>
