@@ -17,8 +17,7 @@ const SermonRedirect = () => {
   }, [counter]);
 
   function redirect() {
-    window.open("https://versebyverseministry.org");
-    window.history.back();
+    window.location.replace("https://www.versebyverseministry.org");
   }
 
   return (
@@ -26,15 +25,20 @@ const SermonRedirect = () => {
       <div className="redirect-desc">
         <h1>You are now leaving Verse by Verse Fellowship</h1>
         <p>
-          You're being transferred to Verse by Verse Ministry's website. Please
-          click the cancel button below if you would like to stay here.
+          You're being transferred to Verse by Verse Ministry's website in{" "}
+          {counter} seconds. Please click the cancel button below if you would
+          like to stay here.
         </p>
       </div>
-      <div className="redirect-countdown">
+      {/* <div className="redirect-countdown">
         <h2>{counter}</h2>
-      </div>
+      </div> */}
       <div className="redirect-buttons">
-        <Button size="lg" color="danger" onClick={() => window.history.back()}>
+        <Button
+          size="lg"
+          color="secondary"
+          onClick={() => window.history.back()}
+        >
           Stay Here
         </Button>{" "}
         <Button size="lg" color="success" onClick={() => redirect()}>

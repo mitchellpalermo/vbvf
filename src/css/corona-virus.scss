@@ -1,0 +1,8 @@
+.corona {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-desc {
+    width: 80%;
+  }
+}

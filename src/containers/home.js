@@ -15,7 +15,7 @@ const Home = () => {
       <div className="main-header">
         <div className="main-header-titles">
           <h1>
-            Come find what you've been missing
+            Trust in the Word
             <h2>John 1:1</h2>
           </h1>
 
