@@ -6,6 +6,7 @@ import ConnectPage from "./containers/connect-page";
 import About from "./containers/about";
 import StudyAggregator from "./containers/study-aggregator";
 import SermonRedirect from "./containers/sermon-redirect";
+import GivingRedirect from "./containers/giving-redirect";
 import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/livestream" component={Livestream} />
           <Route path="/bible-studies/:studyId" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
+          <Route exact path="/giving-redirect" component={GivingRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route
             exact

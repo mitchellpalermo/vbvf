@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Collapse,
   Navbar,
@@ -20,11 +20,12 @@ import {
 import { Link } from "react-router-dom";
 import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
-import { mapsSelector } from "../util/index";
+import { onIphone } from "../util/index";
 
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
+  const [givingLink, setGivingLink] = useState("/giving-redirect");
 
   const toggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
@@ -34,6 +35,14 @@ const GlobalNav = (props) => {
     }
     setModal(!modal);
   };
+
+  useEffect(() => {
+    onIphone()
+      ? setGivingLink("/giving-redirect")
+      : setGivingLink(
+          "https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"
+        );
+  }, [givingLink]);
 
   return (
     <div>
@@ -67,7 +76,19 @@ const GlobalNav = (props) => {
                     <div>
                       <h2>Location</h2>
                       <p>531 E Nakoma St. San Antonio, TX 78216</p>
-                      <Button outline color="dark" onClick={mapsSelector}>
+                      <Button
+                        outline
+                        color="dark"
+                        onClick={() => {
+                          onIphone
+                            ? window.open(
+                                "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
+                              )
+                            : window.open(
+                                "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
+                              );
+                        }}
+                      >
                         Open in Maps
                       </Button>
                       <p className="contact-page-link">
@@ -129,10 +150,7 @@ const GlobalNav = (props) => {
               <NavLink href="/bible-studies">Bible Studies</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink
-                target="_blank"
-                href="https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"
-              >
+              <NavLink target="_blank" href={givingLink}>
                 Give
               </NavLink>
             </NavItem>

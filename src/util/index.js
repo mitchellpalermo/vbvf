@@ -2,19 +2,16 @@ import axios from "axios";
 
 require("dotenv").config();
 
-export function mapsSelector() {
+export function onIphone() {
   if (
     /* if we're on iOS, open in Apple Maps */
     navigator.platform.indexOf("iPhone") !== -1 ||
     navigator.platform.indexOf("iPad") !== -1 ||
     navigator.platform.indexOf("iPod") !== -1
   ) {
-    window.open("http://maps.apple.com/?q=Verse+By+Verse+Fellowship");
+    return true;
   } else {
     /* else use Google */
-    window.open(
-      "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
-    );
   }
 }
 
