@@ -1,0 +1,16 @@
+$darkNavy: #2e3c49;
+$green: #4f5957;
+$gold: #e8b021;
+#about-menu {
+  margin: 5vh;
+  border-bottom: 1px solid $darkNavy;
+  a {
+    color: $darkNavy;
+  }
+  a:hover {
+    color: $green;
+  }
+}
+.active {
+  color: $gold;
+}

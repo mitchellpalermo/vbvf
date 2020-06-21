@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/leadership.css";
+import "../css/leadership.scss";
 
 import Stephen from "../images/leadership_photos/Stephen_Armstrong.jpeg";
 import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
@@ -19,15 +19,18 @@ import Kyle from "../images/leadership_photos/Kyle_Mounts.jpeg";
 
 import PhotoTitle from "../components/photo-title";
 
+import AboutMenu from "./about-menu";
+
 export default function Leadership() {
   return (
-    <div className="leadership-container">
+    <div className="leadership">
+      <AboutMenu />
       <h1>Leadership</h1>
       <br />
 
       <h2>Elders</h2>
 
-      <div className="photo-array">
+      <div className="leadership-photo-array">
         <PhotoTitle
           photo={Stephen}
           name={"Stephen Armstrong"}
@@ -47,7 +50,7 @@ export default function Leadership() {
 
       <h2>Ministry Directors</h2>
 
-      <div className="photo-array">
+      <div className="leadership-photo-array">
         <PhotoTitle
           photo={Wesley}
           name={"Wesley Livingston"}

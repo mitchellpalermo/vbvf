@@ -1,3 +1,9 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+
 .page-container {
   z-index: 100;
   overflow: hidden;
@@ -14,12 +20,4 @@ p {
   font-family: "Work Sans", sans-serif;
   text-rendering: optimizeLegibility;
   line-height: 1.4em;
-}
-
-:root {
-  --gold: #e8b021;
-  --lightNavy: #66788d;
-  --sand: #dbcca5;
-  --darkNavy: #2e3c49;
-  --green: #4f5957;
 }
