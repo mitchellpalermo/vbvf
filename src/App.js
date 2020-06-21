@@ -36,7 +36,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/connect" component={ConnectPage} />
           <Route exact path="/about/faq" component={FAQ} />
-          <Route exact path="/about/faq" component={FAQ} />
           <Route exact path="/about/leadership" component={Leadership} />
           <Route exact path="/about/our-story" component={OurStory} />
           <Route exact path="/about/beliefs" component={Beliefs} />
