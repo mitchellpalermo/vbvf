@@ -30,7 +30,10 @@ export default function StudyAggregator() {
           confidence and love. Please enjoy these teaching series from teachers
           here at VBVF. If you would like to listen to more bible teaching,
           please visit our sister ministry,{" "}
-          <Link to="/sermon-redirect">Verse by Verse Ministry</Link>.
+          <Link to={{ pathname: "/sermon-redirect", deepDive: "" }}>
+            Verse by Verse Ministry
+          </Link>
+          .
         </p>
       </div>
       {studies}
