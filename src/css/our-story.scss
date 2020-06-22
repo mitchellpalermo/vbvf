@@ -5,4 +5,11 @@
   &-text {
     width: 75%;
   }
+  @media screen {
+    .our-story {
+      &-text {
+        width: 90%;
+      }
+    }
+  }
 }

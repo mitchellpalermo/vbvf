@@ -28,10 +28,21 @@ $green: #4f5957;
   }
   .scripture {
     font-weight: 400;
+    text-decoration: none;
     color: $green;
   }
   .learn-more-link {
     display: block;
     margin: 2vh 0 3vh 0;
+  }
+  @media screen and (max-width: 600px) {
+    .beliefs-values {
+      &-text {
+        width: 90%;
+        p {
+          width: 100%;
+        }
+      }
+    }
   }
 }

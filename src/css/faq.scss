@@ -15,4 +15,14 @@
       width: 50%;
     }
   }
+  @media screen {
+    .faq {
+      &-questions {
+        width: 100%;
+        p {
+          width: 90%;
+        }
+      }
+    }
+  }
 }

@@ -4,7 +4,7 @@ import "../css/about-menu.scss";
 
 const AboutMenu = () => {
   return (
-    <div id="about-menu">
+    <div className="about-menu">
       <Nav>
         <NavLink activeClassName="active" href="/about/faq">
           FAQ
