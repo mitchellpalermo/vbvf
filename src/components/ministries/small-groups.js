@@ -40,7 +40,6 @@ export default function SmallGroups() {
           metaWheelZoom={true}
           center={[29.56544, -98.54064]}
           zoom={11}
-          width={window.width}
           height={400}
         >
           <Marker //palermo group
