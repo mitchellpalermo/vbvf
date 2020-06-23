@@ -25,6 +25,7 @@ import FAQ from "./components/faq";
 import OurStory from "./components/our-story";
 import Beliefs from "./components/beliefs";
 import Leadership from "./components/leadership";
+import Giving from "./containers/giving";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route exact path="/about/faq" component={FAQ} />
           <Route exact path="/about/leadership" component={Leadership} />
           <Route exact path="/about/our-story" component={OurStory} />
+          <Route exact path="/giving" component={Giving} />
           <Route exact path="/about/beliefs" component={Beliefs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/bible-studies" component={StudyAggregator} />

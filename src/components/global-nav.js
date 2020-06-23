@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -25,7 +25,6 @@ import { onIphone } from "../util/index";
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [modal, setModal] = useState(false);
-  const [givingLink, setGivingLink] = useState("/giving-redirect");
 
   const toggle = () => setIsOpen(!isOpen);
   const modalToggle = () => setModal(!modal);
@@ -35,14 +34,6 @@ const GlobalNav = (props) => {
     }
     setModal(!modal);
   };
-
-  useEffect(() => {
-    onIphone()
-      ? setGivingLink("/giving-redirect")
-      : setGivingLink(
-          "https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"
-        );
-  }, [givingLink]);
 
   return (
     <div>
@@ -150,9 +141,7 @@ const GlobalNav = (props) => {
               <NavLink href="/bible-studies">Bible Studies</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink target="_blank" href={givingLink}>
-                Give
-              </NavLink>
+              <NavLink href="/giving">Give</NavLink>
             </NavItem>
             <NavItem>
               <NavLink

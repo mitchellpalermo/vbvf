@@ -1,0 +1,99 @@
+.giving {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-desc {
+    width: 75%;
+    margin: 5vh;
+    text-align: center;
+  }
+  &-option-question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 0 0 0;
+    &-icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      &-option {
+        width: 40%;
+        height: 109px;
+        margin: 1vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        svg {
+          width: 20%;
+        }
+        p {
+          color: black;
+          font-weight: 900;
+        }
+        &-mailing-address {
+          text-align: center;
+          margin: 1vh;
+        }
+      }
+    }
+  }
+  &-video {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      border: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &-buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10vh;
+  }
+  &-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    #arrow {
+      width: 10%;
+    }
+    img {
+      width: 25%;
+      padding: 2vh;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .giving {
+      &-desc {
+        width: 90%;
+      }
+      &-buttons {
+        width: 80%;
+      }
+      &-images {
+        #arrow {
+          width: 20%;
+        }
+        img {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
