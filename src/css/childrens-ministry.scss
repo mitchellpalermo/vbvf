@@ -38,6 +38,16 @@
       width: 60%;
     }
   }
+  &-material-sign-up {
+    display: flex;
+    margin: 5vh;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    p {
+      width: 70%;
+    }
+  }
   &-check-in {
     width: 100%;
     display: flex;

@@ -11,6 +11,7 @@ import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looki
 import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
 import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
+import { Button } from "reactstrap";
 
 export default function ChildrensMinistry() {
   return (
@@ -35,6 +36,20 @@ export default function ChildrensMinistry() {
           verse={Content.scriptureVerse.verse}
           reference={Content.scriptureVerse.reference}
         />
+      </div>
+      <div className="childrens-ministry-material-sign-up">
+        <p>
+          We're sending out biblical children's church materials every week. If
+          you're interested in receiving videos, worksheets, and other
+          materials, go ahead and sign up here.
+        </p>
+        <Button
+          size="lg"
+          color="primary"
+          href="https://vbvf.churchcenter.com/people/forms/118844?open-in-church-center-modal=true"
+        >
+          Sign up
+        </Button>
       </div>
       <div className="childrens-ministry-check-in">
         <img alt="family registering child" src={Checkin} />
