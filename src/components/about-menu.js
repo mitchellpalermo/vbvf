@@ -6,16 +6,24 @@ const AboutMenu = () => {
   return (
     <div className="about-menu">
       <Nav>
-        <NavLink activeClassName="active" href="/about/faq">
+        <NavLink exact activeClassName="currentlyActive" href="/about/faq">
           FAQ
         </NavLink>
-        <NavLink activeClassName="active" href="/about/leadership">
+        <NavLink
+          exact
+          activeClassName="currentlyActive"
+          href="/about/leadership"
+        >
           Leadership
         </NavLink>
-        <NavLink activeClassName="active" href="/about/our-story">
+        <NavLink
+          exact
+          activeClassName="currentlyActive"
+          href="/about/our-story"
+        >
           Our Story
         </NavLink>
-        <NavLink activeClassName="active" href="/about/beliefs">
+        <NavLink exact activeClassName="currentlyActive" href="/about/beliefs">
           Our Beliefs
         </NavLink>
       </Nav>

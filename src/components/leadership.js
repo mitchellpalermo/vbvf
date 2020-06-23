@@ -48,8 +48,7 @@ export default function Leadership() {
         <PhotoTitle photo={Jerry} name={"Jerry Smith"} title={"Facilities"} />
       </div>
 
-      <h2>Ministry Directors</h2>
-
+      <h2>Pastors</h2>
       <div className="leadership-photo-array">
         <PhotoTitle
           photo={Wesley}
@@ -66,7 +65,11 @@ export default function Leadership() {
           name={"Mike Morris"}
           title={"Associate Pastor"}
         />
+      </div>
 
+      <h2>Ministry Directors</h2>
+
+      <div className="leadership-photo-array">
         <PhotoTitle
           photo={Sofi}
           name={"Sofi Smith"}

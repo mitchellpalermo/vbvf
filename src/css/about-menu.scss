@@ -10,8 +10,9 @@ $gold: #e8b021;
   a:hover {
     color: $green;
   }
-  .active {
+  .currentlyActive {
     text-decoration: underline;
+    color: $gold;
   }
   @media screen and (max-width: 600px) {
     display: flex;
