@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button } from "reactstrap";
 
 import "../../css/small-groups.scss";
@@ -13,14 +13,6 @@ import { onIphone } from "../../util/index";
 import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
-  const [zoomLevel, setZoomLevel] = useState(9);
-  useEffect(() => {
-    if (onIphone) {
-      setZoomLevel(9);
-    } else {
-      setZoomLevel(10);
-    }
-  }, []);
   return (
     <div className="small-group">
       <div className="small-group-header">
