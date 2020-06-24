@@ -9,11 +9,8 @@ import Juvie from "../../images/youth-assets/juvie_cropped.jpg";
 import Maria from "../../images/youth-assets/maria_cropped.jpg";
 
 import Wesley from "../../images/leadership_photos/Wesley_Livingston.jpeg";
-import Smile from "../../images/youth-assets/smile.jpg";
-import HungryHippos from "../../images/youth-assets/hungry_hippos.jpg";
-import TableHockey from "../../images/youth-assets/table_hockey.jpg";
-import StaffCard from "../staff-card";
 import StaffInfo from "../staff-info";
+import { Button } from "reactstrap";
 
 export default function YouthMinistry() {
   const faqList = Content.faq.map((question) => (
@@ -25,7 +22,7 @@ export default function YouthMinistry() {
     </li>
   ));
   return (
-    <div className="youth-page-container">
+    <div className="youth">
       <div className="youth-header">
         <img
           className="youth-header-logo"
@@ -33,7 +30,21 @@ export default function YouthMinistry() {
           alt="Logos Student Ministry Logo"
         />
       </div>
-      <div className="description-container">
+      <div className="youth-virtual-meeting">
+        <p>
+          We're still meeting virtually! If you're interested in getting more
+          details about how students can participate in Logos Student Ministry,
+          let us know!
+        </p>
+        <Button
+          color="primary"
+          size="lg"
+          href="https://vbvf.churchcenter.com/people/forms/113476?open-in-church-center-modal=true"
+        >
+          Sign Up
+        </Button>
+      </div>
+      <div className="youth-description">
         <ScriptureVerse
           verse={Content.scriptureVerse.verse}
           reference={Content.scriptureVerse.reference}
@@ -54,7 +65,7 @@ export default function YouthMinistry() {
         bio={Content.leader.bio}
         image={Wesley}
       />
-      <div className="faq">
+      <div className="youth-faq">
         <h2>Logos FAQ</h2>
         <ul>{faqList}</ul>
       </div>

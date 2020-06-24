@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
 import { getVideos, getDocumentIds, buildLessons } from "../util/index";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Content from "../content/study-content";
 import LessonBlock from "./lesson-block";
@@ -13,7 +13,7 @@ export default function StudyPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [lessons, setLessons] = useState([]);
   //using the url param to search through studies and grab the right one
-  const study = Content.studies.find((study) => study.url == studyId);
+  const study = Content.studies.find((study) => study.url === studyId);
 
   useEffect(() => {
     const videos = getVideos(study.vimeoFolder); //videos at data.data
@@ -26,7 +26,7 @@ export default function StudyPage() {
       });
       setIsLoading(false);
     });
-  }, []);
+  }, [study.dropBoxFolder, study.vimeoFolder]);
   console.log(lessons);
   return (
     <div className="study-container">

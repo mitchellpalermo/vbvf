@@ -20,6 +20,7 @@ import {
 import { Link } from "react-router-dom";
 import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
+import { onIphone } from "../util/index";
 
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,25 +34,6 @@ const GlobalNav = (props) => {
     }
     setModal(!modal);
   };
-  function mapsSelector() {
-    if (
-      /* if we're on iOS, open in Apple Maps */
-      navigator.platform.indexOf("iPhone") != -1 ||
-      navigator.platform.indexOf("iPad") != -1 ||
-      navigator.platform.indexOf("iPod") != -1
-    ) {
-      window.open(
-        "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
-
-        //maps.google.com/maps/place/Verse+By+Verse+Fellowship/@29.5490497,-98.4836892&amp;ll=&amp;destination=Verse+By+Verse+Fellowship"
-      );
-    } else {
-      /* else use Google */
-      window.open(
-        "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
-      );
-    }
-  }
 
   return (
     <div>
@@ -85,7 +67,19 @@ const GlobalNav = (props) => {
                     <div>
                       <h2>Location</h2>
                       <p>531 E Nakoma St. San Antonio, TX 78216</p>
-                      <Button outline color="dark" onClick={mapsSelector}>
+                      <Button
+                        outline
+                        color="dark"
+                        onClick={() => {
+                          onIphone
+                            ? window.open(
+                                "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
+                              )
+                            : window.open(
+                                "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
+                              );
+                        }}
+                      >
                         Open in Maps
                       </Button>
                       <p className="contact-page-link">
@@ -106,7 +100,7 @@ const GlobalNav = (props) => {
               </Modal>
             </NavItem>
             <NavItem>
-              <NavLink href="/about">About</NavLink>
+              <NavLink href="/about/faq">About</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
@@ -147,12 +141,15 @@ const GlobalNav = (props) => {
               <NavLink href="/bible-studies">Bible Studies</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://vbvf.churchcenter.com/giving">
-                Give
-              </NavLink>
+              <NavLink href="/giving">Give</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/sermon-redirect">Sermons</NavLink>
+              <NavLink
+                target="_blank"
+                href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
+              >
+                Sermons
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/contact">Contact</NavLink>

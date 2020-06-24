@@ -1,0 +1,15 @@
+.our-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-text {
+    width: 75%;
+  }
+  @media screen {
+    .our-story {
+      &-text {
+        width: 90%;
+      }
+    }
+  }
+}

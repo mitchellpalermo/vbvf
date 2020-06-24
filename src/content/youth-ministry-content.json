@@ -12,8 +12,7 @@
     "Wesley Livingston",
     "Leesha Schupert",
     "Juvie Peña",
-    "Maria Pedersen",
-    "Paul Cooper"
+    "Maria Pedersen"
   ],
   "faq": [
     {
@@ -22,15 +21,15 @@
     },
     {
       "question": "As a parent, can I come check out Logos Student Ministry?",
-      "answer": "As a Student Ministry we believe in the full safety and security of our students in our space. Each Small Group leader and adult present in the FlexRoom during a Logos Gathering, has to take a background check prior to being in our space. However, if you want to come and check out our gathering space, please connect with the Youth Ministry Director or email wesley.livingston@vbvf.org so that a member on our team can host you on that day."
+      "answer": "As a Student Ministry we believe in the full safety and security of our students in our space. Each Small Group leader and adult present in the FlexRoom during a Logos Gathering, has to take a background check prior to being in our space. However, if you want to come and check out our gathering space, please connect with the Youth Ministry Director or email pastorwesley@vbvf.org so that a member on our team can host you on that day."
     },
     {
       "question": "Where does Logos Student Ministry meet?",
       "answer": "We meet every Tuesday in the FlexRoom at Verse by Verse Fellowship ( 551 E Nakoma Dr, San Antonio, TX 78216) from 6:30pm - 8:30pm."
     },
     {
-      "question": "What's the best way to get updates on what is happening in Passion Students?",
-      "answer": "The best way to receive updates from out Team is by signing up on our email list. Scroll to the bottom of this page and sign-up for more information and to start receiving updates. Our team will be sending out weekly digital newsletters that will detail the upcoming news and need-to know for the week."
+      "question": "What's the best way to get updates on what is happening in Logos Student Ministry",
+      "answer": "The best way to receive updates from our team is by signing up on our email list. Scroll to the bottom of this page and sign-up for more information and to start receiving updates. Our team will be sending out weekly digital newsletters that will detail the upcoming news and need-to know for the week."
     },
     {
       "question": "How do I become a youth leader within Logos Student Ministry",
@@ -38,13 +37,13 @@
     },
     {
       "question": "How do I get in touch with the Logos Student Ministry team?",
-      "answer": "The best way to get in touch with our team is to fill out the email form below or email Wesley Livingston ,Youth Ministry Director, at wesley.livingston@vbvf.org with any questions you may have."
+      "answer": "The best way to get in touch with our team is to email Wesley Livingston, at pastorwesley@vbvf.org with any questions you may have."
     }
   ],
   "leader": {
     "name": "Wesley Livingston",
-    "role": "Youth Ministry Director",
-    "email": "wesley.livingston@vbvf.org",
+    "role": "Associate Pastor",
+    "email": "pastorwesley@vbvf.org",
     "bio": "In addition to serving as the Youth Ministry Director, Wesley serves as a teacher in San Antonio ISD (SAISD), an inner-city school district. He is passionate about people and developing leaders into transforming agents of change to the Glory of God. He believes that as followers of Christ, we can best impact our world by living out transformed lives by being effectual doers of the word and not by simply being hearers that delude themselves."
   }
 }

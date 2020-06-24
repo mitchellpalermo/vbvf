@@ -3,9 +3,10 @@ import "./css/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/footer";
 import ConnectPage from "./containers/connect-page";
-import About from "./containers/about";
+
 import StudyAggregator from "./containers/study-aggregator";
 import SermonRedirect from "./containers/sermon-redirect";
+import GivingRedirect from "./containers/giving-redirect";
 import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
 import NotFound from "./containers/notfound";
@@ -19,6 +20,12 @@ import Contact from "./containers/contact";
 import ScrollToTop from "./components/scroll-to-top";
 import StudyPage from "./components/study-page";
 import Livestream from "./containers/livestream";
+import CoronaVirus from "./containers/corona-virus";
+import FAQ from "./components/faq";
+import OurStory from "./components/our-story";
+import Beliefs from "./components/beliefs";
+import Leadership from "./components/leadership";
+import Giving from "./containers/giving";
 
 function App() {
   return (
@@ -29,12 +36,17 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/connect" component={ConnectPage} />
-          <Route exact path="/about" component={About} />
+          <Route exact path="/about/faq" component={FAQ} />
+          <Route exact path="/about/leadership" component={Leadership} />
+          <Route exact path="/about/our-story" component={OurStory} />
+          <Route exact path="/giving" component={Giving} />
+          <Route exact path="/about/beliefs" component={Beliefs} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/bible-studies" component={StudyAggregator} />
           <Route exact path="/livestream" component={Livestream} />
           <Route path="/bible-studies/:studyId" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
+          <Route exact path="/giving-redirect" component={GivingRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route
             exact
@@ -57,6 +69,7 @@ function App() {
             component={SmallGroups}
           />
           <Route exact path="/ministries/serve" component={Serve} />
+          <Route exact path="/corona-virus" component={CoronaVirus} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

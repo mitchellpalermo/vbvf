@@ -4,9 +4,7 @@ import "../css/home.scss";
 import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import PreachingTheWord from "../images/preaching_the_word.png";
-import EndTimesPromo from "../images/end_times_promo.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
-import RevelationLogo from "../images/revelation_logo.png";
 import { Link } from "react-router-dom";
 import MissionBanner from "../components/mission-banner";
 import BibleStudyContent from "../content/study-content.json";
@@ -17,7 +15,7 @@ const Home = () => {
       <div className="main-header">
         <div className="main-header-titles">
           <h1>
-            Come find what you've been missing
+            Trust in the Word
             <h2>John 1:1</h2>
           </h1>
 
@@ -28,8 +26,8 @@ const Home = () => {
               </Button>
             </div>
             <div className="button">
-              <Button href="/about" color="light">
-                What to expect
+              <Button href="/corona-virus" color="light">
+                Regathering Details
               </Button>
             </div>
           </div>
@@ -50,7 +48,11 @@ const Home = () => {
           <img src={ConnectionImage} alt="connection meeting logo" />
         </div>
         <div className="secondary-content-block">
-          <img src={PreachingTheWord} alt="Preaching the word logo" />
+          <img
+            id="preaching-word-image"
+            src={PreachingTheWord}
+            alt="Preaching the word logo"
+          />
           <div className="secondary-content-block-words">
             <h2>Heard us on the Radio?</h2>
             <p style={{ textAlign: "center" }}>
@@ -62,10 +64,15 @@ const Home = () => {
               of God, so we’re Preaching the Word on KSLR AM630. Click the
               button below if want to hear more of our current series on the
               book of Matthew.
-              <a href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew">
+              <Link
+                to={{
+                  pathname: "/sermon-redirect",
+                  deepDive: "bible-studies/gospel-of-matthew",
+                }}
+              >
                 {" "}
                 Listen to Matthew series
-              </a>
+              </Link>
             </p>
           </div>
         </div>
@@ -74,6 +81,7 @@ const Home = () => {
         <div className="series-promo" id="ephesians-series">
           <span className="series-promo-desc">
             <h2>Ephesians Study</h2>
+            {/* <img alt="" src={ChurchIcon} /> */}
             <p>{BibleStudyContent.studies[0].description}</p>
             <Button outline color="light" href="/bible-studies/ephesians">
               Listen to {BibleStudyContent.studies[0].name}
@@ -90,13 +98,16 @@ const Home = () => {
               rounding out the full story of Jesus’ arrival and work on earth.
               Every Christian can profit from such a grounding.
             </p>
-            <Button
-              outline
-              color="light"
-              href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
+            <Link
+              to={{
+                pathname: "/sermon-redirect",
+                deepDive: "bible-studies/gospel-of-matthew",
+              }}
             >
-              Listen to Matthew
-            </Button>
+              <Button outline color="light">
+                Listen to Matthew
+              </Button>
+            </Link>
           </span>
           <img src={CrownOfThorns} alt="crown of thorns" />
         </div>

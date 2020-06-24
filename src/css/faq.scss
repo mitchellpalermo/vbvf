@@ -1,0 +1,28 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-questions {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1,
+    h4 {
+      text-align: center;
+    }
+    p {
+      width: 50%;
+    }
+  }
+  @media screen {
+    .faq {
+      &-questions {
+        width: 100%;
+        p {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

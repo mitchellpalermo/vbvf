@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/leadership.css";
+import "../css/leadership.scss";
 
 import Stephen from "../images/leadership_photos/Stephen_Armstrong.jpeg";
 import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
@@ -19,15 +19,18 @@ import Kyle from "../images/leadership_photos/Kyle_Mounts.jpeg";
 
 import PhotoTitle from "../components/photo-title";
 
+import AboutMenu from "./about-menu";
+
 export default function Leadership() {
   return (
-    <div className="leadership-container">
+    <div className="leadership">
+      <AboutMenu />
       <h1>Leadership</h1>
       <br />
 
       <h2>Elders</h2>
 
-      <div className="photo-array">
+      <div className="leadership-photo-array">
         <PhotoTitle
           photo={Stephen}
           name={"Stephen Armstrong"}
@@ -35,19 +38,18 @@ export default function Leadership() {
         />
 
         <PhotoTitle photo={Tom} name={"Tom Didier"} title={"Discipleship"} />
-        <PhotoTitle photo={Bob} name={"Tom Didier"} title={"Security"} />
+        <PhotoTitle photo={Bob} name={"Bob Butler"} title={"Security"} />
         <PhotoTitle
           photo={Jim}
-          name={"Tom Didier"}
+          name={"Jim Rowland"}
           title={"Chief Operations Officer"}
         />
-        <PhotoTitle photo={John} name={"Tom Didier"} title={"Finance"} />
-        <PhotoTitle photo={Jerry} name={"Tom Didier"} title={"Facilities"} />
+        <PhotoTitle photo={John} name={"John O'Neill"} title={"Finance"} />
+        <PhotoTitle photo={Jerry} name={"Jerry Smith"} title={"Facilities"} />
       </div>
 
-      <h2>Ministry Directors</h2>
-
-      <div className="photo-array">
+      <h2>Pastors</h2>
+      <div className="leadership-photo-array">
         <PhotoTitle
           photo={Wesley}
           name={"Wesley Livingston"}
@@ -63,7 +65,11 @@ export default function Leadership() {
           name={"Mike Morris"}
           title={"Associate Pastor"}
         />
+      </div>
 
+      <h2>Ministry Directors</h2>
+
+      <div className="leadership-photo-array">
         <PhotoTitle
           photo={Sofi}
           name={"Sofi Smith"}

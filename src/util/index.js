@@ -2,6 +2,19 @@ import axios from "axios";
 
 require("dotenv").config();
 
+export function onIphone() {
+  if (
+    /* if we're on iOS, open in Apple Maps */
+    navigator.platform.indexOf("iPhone") !== -1 ||
+    navigator.platform.indexOf("iPad") !== -1 ||
+    navigator.platform.indexOf("iPod") !== -1
+  ) {
+    return true;
+  } else {
+    /* else use Google */
+  }
+}
+
 export async function getVideos(vimeoFolder) {
   const options = {
     method: "GET",
@@ -112,7 +125,7 @@ export async function buildLessons(videos, documents) {
     var lessonObj = {};
     lessonObj.video = video;
     lessonObj.document = documents.data.entries.find(
-      (document) => document.name.split(".")[0] == lessonObj.video.name
+      (document) => document.name.split(".")[0] === lessonObj.video.name
     );
 
     lessonObj.id = video.name;

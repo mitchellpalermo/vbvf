@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../css/contact.scss";
 
 export default function Contact() {
   const checkBox = {
-    margin: "5px;"
+    margin: "5px;",
   };
   return (
     <div className="contact-container">
@@ -49,7 +49,9 @@ export default function Contact() {
       <div className="contact-info-container">
         <div className="contact-info">
           <h4>Email</h4>
-          <p>info@vbvf.org</p>
+          <p>
+            <a href="mailto:info@vbvf.org">info@vbvf.org</a>
+          </p>
         </div>
         <div className="contact-info">
           <h4>Mailing Address</h4>

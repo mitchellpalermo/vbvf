@@ -1,9 +1,17 @@
-.studies-container {
+.studies {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  &-desc {
+    margin: 5vh;
+    width: 75%;
+    h1 {
+      text-align: center;
+    }
+  }
 
   .study-link {
     width: 30%;

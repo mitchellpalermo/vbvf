@@ -4,7 +4,7 @@ body {
 
 .main-header {
   position: relative;
-  background: url(../images/home_page_header.jpg);
+  background: url(../images/hand_raised_compressed.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -14,7 +14,7 @@ body {
   min-height: 85vh;
   &-titles {
     max-width: 50%;
-    text-align: left;
+    text-align: center;
     justify-self: flex-start;
     padding: 150px 0px 100px 0px;
     h1 {
@@ -75,6 +75,10 @@ body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
     url(../images/ephesians_background.jpg);
   background-size: cover;
+  img {
+    padding: 5vh 0 5vh 0;
+    height: 50vh;
+  }
 }
 
 #matthew-series {
@@ -125,16 +129,23 @@ body {
     margin: 1vh;
   }
 
-  .secondary-content-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    &-words {
-      width: 75%;
+  .secondary-content {
+    margin: 0;
+    &-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-words {
+        width: 90%;
+      }
+      img {
+        width: 100%;
+        margin: 0;
+      }
     }
-    img {
-      width: 100%;
-    }
+  }
+  #preaching-word-image {
+    width: 95%;
   }
   #connection-meeting {
     flex-direction: column-reverse;
@@ -145,7 +156,7 @@ body {
     align-items: center;
     padding-bottom: 2vh;
     &-desc {
-      width: 85%;
+      width: 90%;
     }
     img {
       width: 90%;

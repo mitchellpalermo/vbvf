@@ -4,7 +4,6 @@ import Sofi from "../../images/leadership_photos/Sofi_Smith.jpeg";
 import JourneyLogo from "../../images/logos/journey-logo.png";
 import Checkin from "../..//images/childrens-ministry/checkin.jpg";
 import "../../css/childrens-ministry.scss";
-import { Button } from "reactstrap";
 import ScriptureVerse from "../scripture-verse";
 import Coloring from "../../images/childrens-ministry/coloring.jpg";
 import JonTeaching from "../../images/childrens-ministry/jon_teaching.jpg";
@@ -12,35 +11,49 @@ import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looki
 import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
 import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
+import { Button } from "reactstrap";
 
 export default function ChildrensMinistry() {
   return (
-    <div className="childrens-ministry-page-container">
-      <div className="childrens-header">
-        <img id="childrens-logo" alt="Journey Kids Logo" src={JourneyLogo} />
+    <div className="childrens-ministry">
+      <div className="childrens-ministry-header">
+        <img
+          className="childrens-ministry-header-logo"
+          alt="Journey Kids Logo"
+          src={JourneyLogo}
+        />
 
-        <div className="photo-collage">
+        <div className="childrens-ministry-header-photo-collage">
           <img alt="children-coloring" src={Coloring}></img>
           <img alt="children-looking" src={LittleGirlLooking}></img>
           <img alt="children-learning" src={JonTeaching}></img>
           <img alt="children-listening" src={JayTeaching}></img>
         </div>
       </div>
-      <div className="mission-container">
+      <div className="childrens-ministry-mission">
         <p>{Content.firstRow.body}</p>
         <ScriptureVerse
           verse={Content.scriptureVerse.verse}
           reference={Content.scriptureVerse.reference}
         />
       </div>
-      <div className="check-in-section">
+      <div className="childrens-ministry-material-sign-up">
+        <p>
+          We're sending out biblical children's church materials every week. If
+          you're interested in receiving videos, worksheets, and other
+          materials, go ahead and sign up here.
+        </p>
+        <Button
+          size="lg"
+          color="primary"
+          href="https://vbvf.churchcenter.com/people/forms/118844?open-in-church-center-modal=true"
+        >
+          Sign up
+        </Button>
+      </div>
+      <div className="childrens-ministry-check-in">
         <img alt="family registering child" src={Checkin} />
-        <div className="info-button-container">
-          <p>{Content.secondRow.body}</p>
-          <Button outline size="lg" color="primary">
-            Get Info
-          </Button>
-        </div>
+        <p>{Content.secondRow.body}</p>
       </div>
       <StaffInfo
         name={Content.leader.name}
