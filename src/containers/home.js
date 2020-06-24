@@ -48,7 +48,11 @@ const Home = () => {
           <img src={ConnectionImage} alt="connection meeting logo" />
         </div>
         <div className="secondary-content-block">
-          <img src={PreachingTheWord} alt="Preaching the word logo" />
+          <img
+            id="preaching-word-image"
+            src={PreachingTheWord}
+            alt="Preaching the word logo"
+          />
           <div className="secondary-content-block-words">
             <h2>Heard us on the Radio?</h2>
             <p style={{ textAlign: "center" }}>

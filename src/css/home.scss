@@ -129,16 +129,23 @@ body {
     margin: 1vh;
   }
 
-  .secondary-content-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    &-words {
-      width: 75%;
+  .secondary-content {
+    margin: 0;
+    &-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &-words {
+        width: 90%;
+      }
+      img {
+        width: 100%;
+        margin: 0;
+      }
     }
-    img {
-      width: 100%;
-    }
+  }
+  #preaching-word-image {
+    width: 95%;
   }
   #connection-meeting {
     flex-direction: column-reverse;
@@ -149,7 +156,7 @@ body {
     align-items: center;
     padding-bottom: 2vh;
     &-desc {
-      width: 85%;
+      width: 90%;
     }
     img {
       width: 90%;
