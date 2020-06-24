@@ -66,31 +66,36 @@
   }
 
   @media screen and (max-width: 800px) {
-    .childrens-header {
-      width: 100%;
-      flex-direction: column;
-
-      #childrens-logo {
-        width: 80%;
-        height: auto;
-        padding: 20px;
-      }
-      .photo-collage {
-        max-width: 90%;
-        img {
-          width: 50%;
-          padding: 5px;
+    .childrens-ministry {
+      &-header {
+        &-logo {
+          width: 80%;
+          height: auto;
+          padding: 20px;
+        }
+        &-photo-collage {
+          max-width: 90%;
+          img {
+            width: 50%;
+            padding: 5px;
+          }
         }
       }
     }
-    .mission-container {
+    &-material-sign-up {
+      flex-direction: column;
+      p {
+        width: 100%;
+      }
+    }
+    &-mission {
       width: 100%;
       flex-direction: column-reverse;
       p {
         width: 90%;
       }
     }
-    .check-in-section {
+    &-check-in {
       width: 90%;
       display: flex;
       flex-direction: column;
@@ -98,9 +103,6 @@
       img {
         width: 100%;
         margin-bottom: 20px;
-      }
-      .info-button-container {
-        width: 90%;
       }
     }
   }
