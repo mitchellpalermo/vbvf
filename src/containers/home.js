@@ -45,10 +45,15 @@ const Home = () => {
               church. <Link to="connect/">Learn More</Link>
             </p>
           </div>
-          <img src={ConnectionImage} alt="connection meeting logo" />
+          <img
+            loading="lazy"
+            src={ConnectionImage}
+            alt="connection meeting logo"
+          />
         </div>
         <div className="secondary-content-block">
           <img
+            loading="lazy"
             id="preaching-word-image"
             src={PreachingTheWord}
             alt="Preaching the word logo"
@@ -109,7 +114,7 @@ const Home = () => {
               </Button>
             </Link>
           </span>
-          <img src={CrownOfThorns} alt="crown of thorns" />
+          <img loading="lazy" src={CrownOfThorns} alt="crown of thorns" />
         </div>
       </div>
     </div>

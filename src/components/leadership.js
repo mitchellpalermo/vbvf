@@ -32,35 +32,60 @@ export default function Leadership() {
 
       <div className="leadership-photo-array">
         <PhotoTitle
+          isLazy="eager"
           photo={Stephen}
           name={"Stephen Armstrong"}
           title={"Senior Pastor"}
         />
 
-        <PhotoTitle photo={Tom} name={"Tom Didier"} title={"Discipleship"} />
-        <PhotoTitle photo={Bob} name={"Bob Butler"} title={"Security"} />
         <PhotoTitle
+          isLazy="eager"
+          photo={Tom}
+          name={"Tom Didier"}
+          title={"Discipleship"}
+        />
+        <PhotoTitle
+          isLazy="eager"
+          photo={Bob}
+          name={"Bob Butler"}
+          title={"Security"}
+        />
+        <PhotoTitle
+          isLazy="eager"
           photo={Jim}
           name={"Jim Rowland"}
           title={"Chief Operations Officer"}
         />
-        <PhotoTitle photo={John} name={"John O'Neill"} title={"Finance"} />
-        <PhotoTitle photo={Jerry} name={"Jerry Smith"} title={"Facilities"} />
+        <PhotoTitle
+          isLazy="eager"
+          photo={John}
+          name={"John O'Neill"}
+          title={"Finance"}
+        />
+        <PhotoTitle
+          isLazy="eager"
+          photo={Jerry}
+          name={"Jerry Smith"}
+          title={"Facilities"}
+        />
       </div>
 
       <h2>Pastors</h2>
       <div className="leadership-photo-array">
         <PhotoTitle
+          isLazy="lazy"
           photo={Wesley}
           name={"Wesley Livingston"}
           title={"Youth Pastor"}
         />
         <PhotoTitle
+          isLazy="lazy"
           photo={Charlie}
           name={"Charlie Haley"}
           title={"Worship Pastor"}
         />
         <PhotoTitle
+          isLazy="lazy"
           photo={Mike}
           name={"Mike Morris"}
           title={"Associate Pastor"}
@@ -71,28 +96,38 @@ export default function Leadership() {
 
       <div className="leadership-photo-array">
         <PhotoTitle
+          isLazy="lazy"
           photo={Sofi}
           name={"Sofi Smith"}
           title={"Childrens' Ministry Director"}
         />
 
         <PhotoTitle
+          isLazy="lazy"
           photo={Jan}
           name={"Jan Worrell"}
           title={"Women's Ministry Director"}
         />
-        <PhotoTitle photo={Linda} name={"Linda Briley"} title={"Finances"} />
         <PhotoTitle
+          isLazy="lazy"
+          photo={Linda}
+          name={"Linda Briley"}
+          title={"Finances"}
+        />
+        <PhotoTitle
+          isLazy="lazy"
           photo={Kathy}
           name={"Kathy Smith"}
           title={"Administration Director"}
         />
         <PhotoTitle
+          isLazy="lazy"
           photo={Kyle}
           name={"Kyle Mounts"}
           title={"Audio/Visual Coordinator"}
         />
         <PhotoTitle
+          isLazy="lazy"
           photo={Mitch}
           name={"Mitch Palermo"}
           title={"Web Developer"}
