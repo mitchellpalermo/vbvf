@@ -3,7 +3,6 @@ import "../css/home.scss";
 
 import { Button } from "reactstrap";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
-import PreachingTheWord from "../images/preaching_the_word.png";
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
 import MissionBanner from "../components/mission-banner";
@@ -45,36 +44,11 @@ const Home = () => {
               church. <Link to="connect/">Learn More</Link>
             </p>
           </div>
-          <img src={ConnectionImage} alt="connection meeting logo" />
-        </div>
-        <div className="secondary-content-block">
           <img
-            id="preaching-word-image"
-            src={PreachingTheWord}
-            alt="Preaching the word logo"
+            loading="lazy"
+            src={ConnectionImage}
+            alt="connection meeting logo"
           />
-          <div className="secondary-content-block-words">
-            <h2>Heard us on the Radio?</h2>
-            <p style={{ textAlign: "center" }}>
-              Gospel of Matthew <br /> on AM 630 <br />
-              Monday-Friday at 6:30pm
-            </p>
-            <p>
-              VBVF has a heart to see all of San Antonio understanding the word
-              of God, so we’re Preaching the Word on KSLR AM630. Click the
-              button below if want to hear more of our current series on the
-              book of Matthew.
-              <Link
-                to={{
-                  pathname: "/sermon-redirect",
-                  deepDive: "bible-studies/gospel-of-matthew",
-                }}
-              >
-                {" "}
-                Listen to Matthew series
-              </Link>
-            </p>
-          </div>
         </div>
       </div>
       <div>
@@ -109,7 +83,7 @@ const Home = () => {
               </Button>
             </Link>
           </span>
-          <img src={CrownOfThorns} alt="crown of thorns" />
+          <img loading="lazy" src={CrownOfThorns} alt="crown of thorns" />
         </div>
       </div>
     </div>
