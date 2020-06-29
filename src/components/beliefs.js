@@ -46,7 +46,7 @@ export default function Beliefs() {
         </p>
         <h3>Scripture</h3>
         <p>
-          TWe believe that the Scriptures have given us everything pertaining to
+          We believe that the Scriptures have given us everything pertaining to
           life and godliness, including not only salvation from the penalty of
           sin but instruction in righteousness for present sanctification and
           service to the glory of God. God is the final authority as revealed in
