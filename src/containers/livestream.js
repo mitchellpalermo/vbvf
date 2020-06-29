@@ -56,12 +56,13 @@ export default function Livestream() {
 
   function renderVideoContent(day) {
     console.log(day.getDay + day.getHours());
-    if (day.getDay() === 0 && day.getHours() >= 10) {
+    if (day.getDay() === 0 && day.getHours() >= 10 && day.getHours() <= 13) {
       return sundayStream;
     } else if (
       day.getDay() === 2 &&
       day.getHours() >= 17 &&
-      day.getMinutes() > 30
+      day.getMinutes() > 30 &&
+      day.getHours() <= 21
     ) {
       return tuesdayStream;
     } else if (day.getDay() !== 2 || day.getDay() !== 0) {

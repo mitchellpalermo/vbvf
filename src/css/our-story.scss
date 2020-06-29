@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   &-text {
-    width: 75%;
+    width: 55%;
   }
-  @media screen {
-    .our-story {
-      &-text {
-        width: 90%;
-      }
+}
+@media screen and (max-width: 800px) {
+  .our-story {
+    &-text {
+      width: 90%;
     }
   }
 }
