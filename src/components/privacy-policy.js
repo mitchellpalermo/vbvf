@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
           What personally identifiable information of yours is collected through
           the Site;
         </li>
-        <li>Whao collects such information;</li>
+        <li>Who collects such information;</li>
         <li>How such information is used;</li>
         <li>With whom your information may be shared;</li>
         <li>
