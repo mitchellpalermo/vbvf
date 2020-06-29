@@ -61,7 +61,8 @@ export default function Livestream() {
     } else if (
       day.getDay() === 2 &&
       day.getHours() >= 17 &&
-      day.getMinutes() > 30
+      day.getMinutes() > 30 &&
+      day.getHours() <= 21
     ) {
       return tuesdayStream;
     } else if (day.getDay() !== 2 || day.getDay() !== 0) {
