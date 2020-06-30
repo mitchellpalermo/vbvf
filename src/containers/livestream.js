@@ -87,10 +87,9 @@ export default function Livestream() {
       <h1>Livestream</h1>
       <p className="livestream-body">
         Verse by Verse Fellowship livestreams its Tuesday and Sunday services.
-        While there's not a service streaming right now, please feel free to
-        check out some of our recent services below. Recordings of our services
-        are available on our <Link to="/bible-studies">Bible Studies</Link>{" "}
-        page.
+        If there's not a service streaming right now, please feel free to check
+        out some of our recent services below. Recordings of our services are
+        available on our <Link to="/bible-studies">Bible Studies</Link> page.
       </p>
 
       {isLoading ? (
