@@ -15,7 +15,7 @@ export default function CoronaVirus() {
           Given the continuing increase in COVID-19 cases in Bexar County, VBVF
           has suspended all public meetings in our building until further
           notice. We believe waiting until the pandemic is under control is in
-          the best interests of our church body and the city of San Antonio.
+          the best interest of our church body and the city of San Antonio.
         </p>
         <p>
           Meanwhile, we encourage you to continue worshiping with us remotely by
