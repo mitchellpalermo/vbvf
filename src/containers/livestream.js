@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
-import "../css/livestream.scss";
-import { Link } from "react-router-dom";
 import { getVideos } from "../util/index";
-import { Spinner, Button } from "reactstrap";
-import { getDocumentIds, getStudyNotes } from "../util/index";
+import { Link } from "react-router-dom";
+import { Spinner } from "reactstrap";
+import Stream from "../components/livestreams/stream";
 import Content from "../content/study-content";
-
-import DocumentIcon from "../images/lesson-page/document.svg";
+import "../css/livestream.scss";
 
 export default function Livestream() {
-  const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
-  const [studyMaterials, setStudyMaterials] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
-  const [studyMaterialsIsLoading, setStudyMaterialsIsLoading] = useState(true);
-
   const ephesians = Content.studies[0];
+
+  const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
+
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getVideos("1553779").then((vidArr) => {
@@ -23,22 +20,8 @@ export default function Livestream() {
     });
   }, []);
 
-  useEffect(() => {
-    getDocumentIds(ephesians.dropBoxFolder).then((docIdArr) => {
-      const arrLength = docIdArr.data.entries.length - 1;
-      const document = docIdArr.data.entries[arrLength];
-      console.log(arrLength);
-      console.log(docIdArr.data.entries);
-      getStudyNotes(document).then((studyMaterial) => {
-        setStudyMaterials(studyMaterial);
-        setStudyMaterialsIsLoading(false);
-      });
-    });
-  }, []);
-
-  let today = new Date();
-
-  const day = (today) => {
+  const day = () => {
+    let today = new Date();
     if (
       today.getDay() === 2 &&
       today.getHours() >= 18 &&
@@ -63,49 +46,6 @@ export default function Livestream() {
       out some of our recent services below. Recordings of our services are
       available on our <Link to="/bible-studies">Bible Studies</Link> page.
     </p>
-  );
-
-  const sundayStream = (
-    <div className="livestream-video-player">
-      <iframe
-        title="Sunday Service"
-        src="https://vimeo.com/event/51649/embed"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-      ></iframe>
-    </div>
-  );
-  const tuesdayStream = (
-    <>
-      <div className="livestream-content-video-player">
-        <iframe
-          title="Tuesday Service"
-          src="https://vimeo.com/event/49116/embed"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-        ></iframe>
-      </div>
-      <div>
-        {studyMaterialsIsLoading ? (
-          <>
-            <p>Loading Study Notes</p> <Spinner color="dark" />
-          </>
-        ) : (
-          <div className="livestream-content-info">
-            <div>
-              <h2>{ephesians.name}</h2>
-              <p>{ephesians.description}</p>
-            </div>
-            <Button href={studyMaterials.href}>
-              Follow along with today's study materials
-              <img src={DocumentIcon} />
-            </Button>
-          </div>
-        )}
-      </div>
-    </>
   );
 
   const streamArchive = () => {
@@ -133,13 +73,32 @@ export default function Livestream() {
           <Spinner color="dark" />
         </>
       ) : (
-        <div className="livestream-content">
-          {tuesdayStream}
-          {/* {day === "tuesday"
-            ? tuesdayStream
-            : day === "sunday"
-            ? sundayStream
-            : streamArchive()} */}
+        <div>
+          {day === "tuesday" ? (
+            <Stream
+              streamUrl="https://vimeo.com/event/49116/embed"
+              title={ephesians.name}
+              description={ephesians.description}
+              dropBoxFolder={ephesians.dropBoxFolder}
+              seriesLink="/bible-studies/ephesians"
+            />
+          ) : day === "sunday" ? (
+            <Stream
+              streamUrl="https://vimeo.com/event/51649/embed"
+              title="Gospel of Matthew"
+              description="As we present this important book, we’ll give careful attention to
+              the details without losing sight of Matthew’s major ideas and
+              themes. Together with our previous studies in Luke and John, we’re
+              rounding out the full story of Jesus’ arrival and work on earth.
+              Every Christian can profit from such a grounding."
+              seriesLink={{
+                pathname: "/sermon-redirect",
+                deepDive: "bible-studies/gospel-of-matthew",
+              }}
+            />
+          ) : (
+            streamArchive()
+          )}
         </div>
       )}
     </div>

@@ -8,40 +8,4 @@ $green: #4f5957;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5vh;
-  &-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &-info {
-      display: flex;
-      align-items: center;
-
-      p {
-        width: 80%;
-      }
-      img {
-        width: 5%;
-        margin: 2vh;
-      }
-      a {
-        color: $green;
-      }
-    }
-    &-video-player {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-
-      iframe {
-        position: absolute;
-        border: 0;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-      }
-    }
-  }
 }
