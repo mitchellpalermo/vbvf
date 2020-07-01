@@ -12,15 +12,10 @@ export default function CoronaVirus() {
 
       <div className="corona-desc">
         <p>
-          In early June, we selected a tentative reopening date of June 13th and
-          14th, but after a sudden increase in COVID-19 cases in Bexar County,
-          we have postponed the restart of weekly services until at least July
-          11, 2020. We hope to provide another update by early July.
-        </p>
-        <p>
-          Obviously, we are disappointed by an additional delay, but we believe
-          waiting until cases of COVID-19 diminish further is in the best
-          interests of our church body and the city of San Antonio.
+          Given the continuing increase in COVID-19 cases in Bexar County, VBVF
+          has suspended all public meetings in our building until further
+          notice. We believe waiting until the pandemic is under control is in
+          the best interest of our church body and the city of San Antonio.
         </p>
         <p>
           Meanwhile, we encourage you to continue worshiping with us remotely by
