@@ -9,14 +9,18 @@ export default function Stream(props) {
   const [studyMaterialsIsLoading, setStudyMaterialsIsLoading] = useState(true);
 
   useEffect(() => {
-    getDocumentIds(props.dropBoxFolder).then((docIdArr) => {
-      const arrLength = docIdArr.data.entries.length - 1;
-      const document = docIdArr.data.entries[arrLength];
-      getStudyNotes(document).then((studyMaterial) => {
-        setStudyMaterials(studyMaterial);
-        setStudyMaterialsIsLoading(false);
+    if (props.dropBoxFolder) {
+      getDocumentIds(props.dropBoxFolder).then((docIdArr) => {
+        const arrLength = docIdArr.data.entries.length - 1;
+        const document = docIdArr.data.entries[arrLength];
+        getStudyNotes(document).then((studyMaterial) => {
+          setStudyMaterials(studyMaterial);
+          setStudyMaterialsIsLoading(false);
+        });
       });
-    });
+    } else {
+      setStudyMaterialsIsLoading(false);
+    }
   }, []);
 
   return (
@@ -39,16 +43,25 @@ export default function Stream(props) {
           <>
             <div className="stream-info-title-link">
               <h2>{props.title}</h2>
-              <a
-                target="blank"
-                rel="noopener noreferrer"
-                href="#"
-                onClick={() => window.open(studyMaterials.href)}
-              >
-                View study materials
-              </a>
+              <div>
+                <span>
+                  We encourage you to follow along in the provided study
+                  materials.
+                </span>
+                {studyMaterials != null && (
+                  <a
+                    target="blank"
+                    rel="noopener noreferrer"
+                    href="#"
+                    onClick={() => window.open(studyMaterials.href)}
+                  >
+                    View study materials
+                  </a>
+                )}
+              </div>
             </div>
             <p>{props.description}</p>
+
             <Link to={props.seriesLink}>Watch the rest of this series</Link>
           </>
         )}

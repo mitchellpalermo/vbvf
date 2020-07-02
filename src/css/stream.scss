@@ -5,20 +5,24 @@ $darkNavy: #2e3c49;
 $green: #4f5957;
 
 .stream {
-  width: 90%;
+  width: 85%;
   &-info {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     &-title-link {
-      width: 50%;
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
       align-self: flex-start;
+      align-items: center;
+      margin: 2vh 0 2vh 0;
+      h2 {
+        align-self: flex-start;
+      }
       a {
+        margin: 2vh;
         text-decoration: none;
         background: $lightNavy;
         color: white;
