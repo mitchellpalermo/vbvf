@@ -11,6 +11,9 @@ $green: #4f5957;
   &-archive {
     width: 85%;
     align-self: center;
+    h3 {
+      margin: 5vh 0 1vh 0;
+    }
     &-video-player {
       overflow: hidden;
       padding-bottom: 56.25%;
