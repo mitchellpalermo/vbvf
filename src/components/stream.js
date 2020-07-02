@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getDocumentIds, getStudyNotes } from "../../util/index";
+import { getDocumentIds, getStudyNotes } from "../util/index";
 import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
-import "../../css/stream.scss";
+import "../css/stream.scss";
 
 export default function Stream(props) {
   const [studyMaterials, setStudyMaterials] = useState(null);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getVideos } from "../util/index";
 import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
-import Stream from "../components/livestreams/stream";
+import Stream from "../components/stream";
 import Content from "../content/study-content";
 import "../css/livestream.scss";
 
