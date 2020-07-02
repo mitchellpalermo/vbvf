@@ -1,0 +1,73 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+
+.stream {
+  width: 85%;
+  &-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title-link {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      align-items: center;
+      margin: 2vh 0 2vh 0;
+      h2 {
+        align-self: flex-start;
+      }
+      button {
+        margin: 2vh;
+        text-decoration: none;
+        background: $lightNavy;
+        color: white;
+        padding: 5px 10px 5px 10px;
+        border-radius: 15px;
+        border: 0;
+        transition: background 0.2s;
+        &:hover {
+          background: $darkNavy;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &-video-player {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    iframe {
+      position: absolute;
+      border: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .stream {
+    width: 90%;
+    &-info {
+      p {
+        width: 100%;
+      }
+      &-title-link {
+        h2 {
+          align-self: center;
+        }
+        text-align: center;
+        flex-direction: column;
+      }
+    }
+  }
+}

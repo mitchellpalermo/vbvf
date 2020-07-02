@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
-import "../css/livestream.scss";
-import { Link } from "react-router-dom";
 import { getVideos } from "../util/index";
+import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
+import Stream from "../components/stream";
+import Content from "../content/study-content";
+import "../css/livestream.scss";
 
 export default function Livestream() {
+  const ephesians = Content.studies[0];
+
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,67 +20,45 @@ export default function Livestream() {
     });
   }, []);
 
-  let today = new Date();
-
-  const contStyle = {
-    padding: "56.25% 0 0 0",
-    position: "relative",
-  };
-  const vidStyle = {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-  };
-
-  const sundayStream = (
-    <div style={contStyle}>
-      <iframe
-        title="Sunday Service"
-        src="https://vimeo.com/event/51649/embed"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        style={vidStyle}
-      ></iframe>
-    </div>
-  );
-  const tuesdayStream = (
-    <div style={contStyle}>
-      <iframe
-        title="Tuesday Service"
-        src="https://vimeo.com/event/49116/embed"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        style={vidStyle}
-      ></iframe>
-    </div>
-  );
-
-  function renderVideoContent(day) {
-    console.log(day.getDay + day.getHours());
-    if (day.getDay() === 0 && day.getHours() >= 10 && day.getHours() <= 13) {
-      return sundayStream;
-    } else if (
-      day.getDay() === 2 &&
-      day.getHours() >= 17 &&
-      day.getHours() <= 21
+  const day = () => {
+    let today = new Date();
+    if (
+      today.getDay() === 2 &&
+      today.getHours() >= 18 &&
+      today.getHours() <= 23
     ) {
-      return tuesdayStream;
-    } else if (day.getDay() !== 2 || day.getDay() !== 0) {
-      return sundayArchiveVideos.slice(0, 3).map((video) => (
-        <>
-          <h3>{video.name}</h3>
-          <div
-            className="livestream-video-player"
-            dangerouslySetInnerHTML={createMarkup(video)}
-          ></div>
-        </>
-      ));
+      return "tuesday";
+    } else if (
+      today.getDay() === 0 &&
+      today.getHours() >= 10 &&
+      today.getHours() <= 13
+    ) {
+      return "sunday";
+    } else {
+      return null;
     }
-  }
+  };
+
+  const noStreamMessage = (
+    <p>
+      Verse by Verse Fellowship livestreams its Tuesday and Sunday services.
+      While there's not a service streaming right now, please feel free to check
+      out some of our recent services below. Recordings of our services are
+      available on our <Link to="/bible-studies">Bible Studies</Link> page.
+    </p>
+  );
+
+  const streamArchive = () => {
+    return sundayArchiveVideos.slice(0, 3).map((video) => (
+      <>
+        <h3>{video.name}</h3>
+        <div
+          className="livestream-archive-video-player"
+          dangerouslySetInnerHTML={createMarkup(video)}
+        ></div>
+      </>
+    ));
+  };
 
   function createMarkup(video) {
     return { __html: video.embed.html };
@@ -84,20 +67,42 @@ export default function Livestream() {
   return (
     <div className="livestream">
       <h1>Livestream</h1>
-      <p className="livestream-body">
-        Verse by Verse Fellowship livestreams its Tuesday and Sunday services.
-        If there's not a service streaming right now, please feel free to check
-        out some of our recent services below. Recordings of our services are
-        available on our <Link to="/bible-studies">Bible Studies</Link> page.
-      </p>
-
       {isLoading ? (
         <>
           <p>Loading Services</p>
           <Spinner color="dark" />
         </>
       ) : (
-        <div className="livestream-video">{renderVideoContent(today)}</div>
+        <>
+          {day === "tuesday" ? (
+            <Stream
+              streamUrl="https://vimeo.com/event/49116/embed"
+              title={ephesians.name}
+              description={ephesians.description}
+              dropBoxFolder={ephesians.dropBoxFolder}
+              seriesLink="/bible-studies/ephesians"
+            />
+          ) : day === "sunday" ? (
+            <Stream
+              streamUrl="https://vimeo.com/event/51649/embed"
+              title="Gospel of Matthew"
+              description="As we present this important book, we’ll give careful attention to
+              the details without losing sight of Matthew’s major ideas and
+              themes. Together with our previous studies in Luke and John, we’re
+              rounding out the full story of Jesus’ arrival and work on earth.
+              Every Christian can profit from such a grounding."
+              seriesLink={{
+                pathname: "/sermon-redirect",
+                deepDive: "bible-studies/gospel-of-matthew",
+              }}
+            />
+          ) : (
+            <div className="livestream-archive">
+              <div>{noStreamMessage}</div>
+              {streamArchive()}
+            </div>
+          )}
+        </>
       )}
     </div>
   );
