@@ -53,7 +53,7 @@ export default function Livestream() {
       <>
         <h3>{video.name}</h3>
         <div
-          className="livestream-video-player"
+          className="livestream-archive-video-player"
           dangerouslySetInnerHTML={createMarkup(video)}
         ></div>
       </>
@@ -73,7 +73,7 @@ export default function Livestream() {
           <Spinner color="dark" />
         </>
       ) : (
-        <div>
+        <>
           {day === "tuesday" ? (
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
@@ -97,9 +97,12 @@ export default function Livestream() {
               }}
             />
           ) : (
-            streamArchive()
+            <div className="livestream-archive">
+              <div>{noStreamMessage}</div>
+              {streamArchive()}
+            </div>
           )}
-        </div>
+        </>
       )}
     </div>
   );
