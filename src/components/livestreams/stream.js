@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getDocumentIds, getStudyNotes } from "../../util/index";
 import { Link } from "react-router-dom";
-import { Spinner, Button } from "reactstrap";
+import { Spinner } from "reactstrap";
 import "../../css/stream.scss";
 
 export default function Stream(props) {
-  const [studyMaterials, setStudyMaterials] = useState(true);
+  const [studyMaterials, setStudyMaterials] = useState(null);
   const [studyMaterialsIsLoading, setStudyMaterialsIsLoading] = useState(true);
 
   useEffect(() => {
-    if (props.dropBoxFolder) {
+    if (props.dropBoxFolder != null) {
       getDocumentIds(props.dropBoxFolder).then((docIdArr) => {
         const arrLength = docIdArr.data.entries.length - 1;
         const document = docIdArr.data.entries[arrLength];
@@ -21,7 +21,7 @@ export default function Stream(props) {
     } else {
       setStudyMaterialsIsLoading(false);
     }
-  }, []);
+  }, [props.dropBoxFolder]);
 
   return (
     <div className="stream">
@@ -43,22 +43,21 @@ export default function Stream(props) {
           <>
             <div className="stream-info-title-link">
               <h2>{props.title}</h2>
-              <div>
-                <span>
-                  We encourage you to follow along in the provided study
-                  materials.
-                </span>
-                {studyMaterials != null && (
-                  <a
+              {studyMaterials && (
+                <div>
+                  <span>
+                    We encourage you to follow along in the provided study
+                    materials.
+                  </span>
+                  <button
                     target="blank"
                     rel="noopener noreferrer"
-                    href="#"
                     onClick={() => window.open(studyMaterials.href)}
                   >
                     View study materials
-                  </a>
-                )}
-              </div>
+                  </button>
+                </div>
+              )}
             </div>
             <p>{props.description}</p>
 

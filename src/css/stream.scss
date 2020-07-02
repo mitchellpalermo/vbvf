@@ -21,13 +21,14 @@ $green: #4f5957;
       h2 {
         align-self: flex-start;
       }
-      a {
+      button {
         margin: 2vh;
         text-decoration: none;
         background: $lightNavy;
         color: white;
         padding: 5px 10px 5px 10px;
         border-radius: 15px;
+        border: 0;
         transition: background 0.2s;
         &:hover {
           background: $darkNavy;
@@ -52,15 +53,20 @@ $green: #4f5957;
       width: 100%;
     }
   }
-  @media screen and (max-width: 800px) {
-    .stream {
-      width: 100%;
-      &-info-title-link {
+}
+@media screen and (max-width: 800px) {
+  .stream {
+    width: 90%;
+    &-info {
+      p {
         width: 100%;
-        flex-direction: column;
-        a {
-          margin: 2vh;
+      }
+      &-title-link {
+        h2 {
+          align-self: center;
         }
+        text-align: center;
+        flex-direction: column;
       }
     }
   }
