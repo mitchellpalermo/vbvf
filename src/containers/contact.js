@@ -41,7 +41,8 @@ const Contact = () => {
         })}
       >
         {(formik) => (
-          <Form className="contact" data-netlify="true" method="POST">
+          <Form className="contact" method="post">
+            <input type="hidden" name="form-name" value="contact" />
             <Field
               className="contact-text-field"
               name="firstName"
