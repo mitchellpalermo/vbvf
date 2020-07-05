@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/contact.scss";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 
 const Contact = () => {
@@ -16,6 +16,10 @@ const Contact = () => {
           lastName: "",
           phoneNumber: "",
           email: "",
+          contactOptions: [
+            { name: "Phone", value: false },
+            { name: "Email", value: false },
+          ],
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -30,8 +34,10 @@ const Contact = () => {
           email: Yup.string()
             .email("Invalid email address")
             .required("Required"),
-          contactByPhone: Yup.bool().oneOf([true]),
-          contactByEmail: Yup.bool().oneOf([true]),
+          contactOptions: Yup.array().min(
+            1,
+            "Please Select a Contact Preference"
+          ),
           message: Yup.string()
             .min(5, "Please write a little more.")
             .required("Required"),
@@ -68,14 +74,23 @@ const Contact = () => {
             <ErrorMessage name="email" />
             <h3>How should we contact you?</h3>
             <div className="checkbox-group">
-              <div className="checkbox">
-                <Field type="checkbox" name="contactByPhone" />
-                <label htmlFor="contactByEmail">Phone</label>
-              </div>
-              <div className="checkbox">
-                <Field type="checkbox" name="contactByEmail" />
-                <label htmlFor="contactByEmail">Email</label>
-              </div>
+              <FieldArray
+                name="contact-options"
+                render={() => (
+                  <>
+                    {formik.values.contactOptions.map((option, index) => (
+                      <div key={index}>
+                        <label>{option.name}</label>
+                        <Field
+                          name={`contactOptions.${index}`}
+                          type="checkbox"
+                          value={`contactOptions.${index}.value`}
+                        />
+                      </div>
+                    ))}
+                  </>
+                )}
+              />
             </div>
             <Field
               component="textarea"
