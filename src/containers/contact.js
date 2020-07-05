@@ -39,9 +39,6 @@ const Contact = () => {
             .min(5, "Please write a little more.")
             .required("Please type your question here."),
         })}
-        onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
-        }}
       >
         {(formik) => (
           <Form className="contact" data-netlify="true" method="POST">
