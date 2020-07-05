@@ -21,42 +21,52 @@ const Contact = () => {
         validationSchema={Yup.object({
           firstName: Yup.string()
             .max(15, "Must be 15 characters or less.")
-            .required("Required"),
+            .required("First Name Required"),
           lastName: Yup.string()
             .max(20, "Must be 20 characters or less.")
-            .required("Required"),
+            .required("Last Name Required"),
           phoneNumber: Yup.string()
             .matches(phoneRegExp, "Please enter a valid phone number")
-            .required("Required"),
+            .required("Phone Number Required"),
           email: Yup.string()
             .email("Invalid email address")
-            .required("Required"),
+            .required("Email Address Required"),
           contactOptions: Yup.array().min(
             1,
             "Please Select a Contact Preference"
           ),
-          message: Yup.string().min(5, "Please write a little more."),
+          message: Yup.string()
+            .min(5, "Please write a little more.")
+            .required("Please type your question here."),
         })}
         onSubmit={(values) => {
           alert(JSON.stringify(values, null, 2));
         }}
       >
         {(formik) => (
-          <Form className="contact" onSubmit={formik.handleSubmit}>
+          <Form className="contact" data-netlify="true" method="POST">
             <Field
               className="contact-text-field"
               name="firstName"
               {...formik.getFieldProps("firstName")}
               placeholder="First Name"
             />
-            <ErrorMessage className="contact-error-message" name="firstName" />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="firstName"
+            />
             <Field
               className="contact-text-field"
               name="lastName"
               {...formik.getFieldProps("lastName")}
               placeholder="Last Name"
             />
-            <ErrorMessage className="contact-error-message" name="lastName" />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="lastName"
+            />
             <Field
               className="contact-text-field"
               name="phoneNumber"
@@ -64,16 +74,21 @@ const Contact = () => {
               placeholder="000-000-0000"
             />
             <ErrorMessage
-              className="contact-error-message"
+              component="div"
               name="phoneNumber"
-            />
+              className="contact-error-message"
+            ></ErrorMessage>
             <Field
               className="contact-text-field"
               name="email"
               {...formik.getFieldProps("email")}
               placeholder="Email"
             />
-            <ErrorMessage className="contact-error-message" name="email" />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="email"
+            />
             <h3>How should we contact you?</h3>
             <div role="group" className="contact-checkbox-group">
               <label>
@@ -84,12 +99,14 @@ const Contact = () => {
                 <Field type="checkbox" name="contactOptions" value="Email" />
                 Email
               </label>
-              <ErrorMessage
-                className="contact-error-message"
-                name="contactOptions"
-              />
             </div>
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="contactOptions"
+            />
             <Field
+              className="contact-text-area"
               component="textarea"
               rows="10"
               cols="50"
@@ -97,26 +114,33 @@ const Contact = () => {
               {...formik.getFieldProps("message")}
               placeholder="What can we help you with?"
             />
-            <ErrorMessage className="contact-error-message" name="message" />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="message"
+            />
             <button type="submit">Submit</button>
           </Form>
         )}
       </Formik>
 
       <div className="contact-info">
-        <h2>Verse by Verse Fellowship Contact Info</h2>
-        <div className="contact-info-group">
-          <div className="contact-info">
+        <h2>
+          <span className="highlight">Verse by Verse Fellowship</span> Contact
+          Info
+        </h2>
+        <div className="contact-info-block-group">
+          <div className="contact-info-block">
             <h4>Email</h4>
             <p>
               <a href="mailto:info@vbvf.org">info@vbvf.org</a>
             </p>
           </div>
-          <div className="contact-info">
+          <div className="contact-info-block">
             <h4>Mailing Address</h4>
             <p>814 Arion Parkway, #410 San Antonio, TX 78216</p>
           </div>
-          <div className="contact-info">
+          <div className="contact-info-block">
             <h4>Phone Number</h4>
             <p>210-460-7556</p>
           </div>
