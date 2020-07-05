@@ -1,67 +1,153 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import "../css/contact.scss";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
-export default function Contact() {
-  const checkBox = {
-    margin: "5px;",
-  };
+const Contact = () => {
+  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
   return (
-    <div className="contact-container">
-      <h3>Have a question? Need prayer?</h3>
+    <div className="contact">
+      <h3>Have a question? Need Prayer?</h3>
       <h1>Contact Us</h1>
-      <Form name="contact" method="post">
-        <input type="hidden" name="form-name" value="contact" />
-        <FormGroup>
-          <FormGroup>
-            <Input name="name" type="text" placeholder="Name"></Input>
-          </FormGroup>
-          <FormGroup>
-            <Input name="email" type="email" placeholder="Email"></Input>
-          </FormGroup>
-          <FormGroup>
-            <Input name="phone_number" type="text" placeholder="Phone"></Input>
-          </FormGroup>
-        </FormGroup>
-        <div className="text-center">
-          <legend>How should we contact you?</legend>
-          <FormGroup className="checkbox-container">
-            <Label inline style={checkBox}>
-              <Input name="phone_checkbox" type="checkbox" />
-              Phone
-            </Label>
-            <Label>
-              <Input name="email_checkbox" type="checkbox" />
-              Email
-            </Label>
-          </FormGroup>
-        </div>
-        <FormGroup>
-          <Input type="textarea" rows="10" cols="50" placeholder="Message" />
-        </FormGroup>
-        <div className="text-right">
-          <Button outline large white type="submit">
-            Submit
-          </Button>
-        </div>
-      </Form>
+      <Formik
+        initialValues={{
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          email: "",
+          contactOptions: [],
+        }}
+        validationSchema={Yup.object({
+          firstName: Yup.string()
+            .max(15, "Must be 15 characters or less.")
+            .required("First Name Required"),
+          lastName: Yup.string()
+            .max(20, "Must be 20 characters or less.")
+            .required("Last Name Required"),
+          phoneNumber: Yup.string()
+            .matches(phoneRegExp, "Please enter a valid phone number")
+            .required("Phone Number Required"),
+          email: Yup.string()
+            .email("Invalid email address")
+            .required("Email Address Required"),
+          contactOptions: Yup.array().min(
+            1,
+            "Please Select a Contact Preference"
+          ),
+          message: Yup.string()
+            .min(5, "Please write a little more.")
+            .required("Please type your question here."),
+        })}
+        onSubmit={(values) => {
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        {(formik) => (
+          <Form className="contact" data-netlify="true" method="POST">
+            <Field
+              className="contact-text-field"
+              name="firstName"
+              {...formik.getFieldProps("firstName")}
+              placeholder="First Name"
+            />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="firstName"
+            />
+            <Field
+              className="contact-text-field"
+              name="lastName"
+              {...formik.getFieldProps("lastName")}
+              placeholder="Last Name"
+            />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="lastName"
+            />
+            <Field
+              className="contact-text-field"
+              name="phoneNumber"
+              {...formik.getFieldProps("phoneNumber")}
+              placeholder="000-000-0000"
+            />
+            <ErrorMessage
+              component="div"
+              name="phoneNumber"
+              className="contact-error-message"
+            ></ErrorMessage>
+            <Field
+              className="contact-text-field"
+              name="email"
+              {...formik.getFieldProps("email")}
+              placeholder="Email"
+            />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="email"
+            />
+            <h3>How should we contact you?</h3>
+            <div role="group" className="contact-checkbox-group">
+              <label>
+                <Field type="checkbox" name="contactOptions" value="Phone" />
+                Phone
+              </label>
+              <label>
+                <Field type="checkbox" name="contactOptions" value="Email" />
+                Email
+              </label>
+            </div>
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="contactOptions"
+            />
+            <Field
+              className="contact-text-area"
+              component="textarea"
+              rows="10"
+              cols="50"
+              name="message"
+              {...formik.getFieldProps("message")}
+              placeholder="What can we help you with?"
+            />
+            <ErrorMessage
+              component="div"
+              className="contact-error-message"
+              name="message"
+            />
+            <button type="submit">Submit</button>
+          </Form>
+        )}
+      </Formik>
 
-      <div className="contact-info-container">
-        <div className="contact-info">
-          <h4>Email</h4>
-          <p>
-            <a href="mailto:info@vbvf.org">info@vbvf.org</a>
-          </p>
-        </div>
-        <div className="contact-info">
-          <h4>Mailing Address</h4>
-          <p>814 Arion Parkway, #410 San Antonio, TX 78216</p>
-        </div>
-        <div className="contact-info">
-          <h4>Phone Number</h4>
-          <p>210-460-7556</p>
+      <div className="contact-info">
+        <h2>
+          <span className="highlight">Verse by Verse Fellowship</span> Contact
+          Info
+        </h2>
+        <div className="contact-info-block-group">
+          <div className="contact-info-block">
+            <h4>Email</h4>
+            <p>
+              <a href="mailto:info@vbvf.org">info@vbvf.org</a>
+            </p>
+          </div>
+          <div className="contact-info-block">
+            <h4>Mailing Address</h4>
+            <p>814 Arion Parkway, #410 San Antonio, TX 78216</p>
+          </div>
+          <div className="contact-info-block">
+            <h4>Phone Number</h4>
+            <p>210-460-7556</p>
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Contact;
