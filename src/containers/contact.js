@@ -6,17 +6,41 @@ import * as Yup from "yup";
 const Contact = () => {
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   return (
     <div className="contact">
       <h3>Have a question? Need Prayer?</h3>
       <h1>Contact Us</h1>
       <Formik
         initialValues={{
+          "bot-field": "",
+          "form-name": "contact",
           firstName: "",
           lastName: "",
           phoneNumber: "",
           email: "",
           contactOptions: [],
+        }}
+        onSubmit={(values, actions) => {
+          fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...values }),
+          })
+            .then(() => {
+              actions.resetForm();
+            })
+            .catch(() => {
+              console.error();
+            })
+            .finally(() => actions.setSubmitting(false));
         }}
         validationSchema={Yup.object({
           firstName: Yup.string()
@@ -41,8 +65,9 @@ const Contact = () => {
         })}
       >
         {(formik) => (
-          <Form className="contact" method="post">
-            <input type="hidden" name="form-name" value="contact" />
+          <Form className="contact" method="POST">
+            <Field type="hidden" name="bot-field" />
+            <Field type="hidden" name="form-name" />
             <Field
               className="contact-text-field"
               name="firstName"
