@@ -26,7 +26,7 @@ export async function getVideos(vimeoFolder) {
   return axios(options);
 }
 
-export function getDocumentIds(dropBoxFolder) {
+export async function getDocumentIds(dropBoxFolder) {
   var options = {
     method: "POST",
     url: "https://api.dropboxapi.com/2/files/list_folder",
