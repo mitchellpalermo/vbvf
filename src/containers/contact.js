@@ -21,6 +21,7 @@ const Contact = () => {
     },
   };
 
+  // encodes the form output as something netlify can understand
   const encode = (data) => {
     return Object.keys(data)
       .map(
@@ -33,6 +34,7 @@ const Contact = () => {
     <div className="contact">
       <h3>Have a question? Need Prayer?</h3>
       <h1>Contact Us</h1>
+      {/* renders confirmation component when form is submitted */}
       {isFormSubmitted ? (
         <div className="contact-submitted">
           <div className="contact-submitted-check-container">
@@ -53,7 +55,7 @@ const Contact = () => {
               />
             </motion.svg>
           </div>
-          <p>Thanks for reaching out! We'll be in touch shortly </p>
+          <p>Thanks for reaching out! We'll be in touch shortly.</p>
         </div>
       ) : (
         <Formik
@@ -88,12 +90,25 @@ const Contact = () => {
             lastName: Yup.string()
               .max(20, "Must be 20 characters or less.")
               .required("Last Name Required"),
-            phoneNumber: Yup.string()
-              .matches(phoneRegExp, "Please enter a valid phone number")
-              .required("Phone Number Required"),
-            email: Yup.string()
-              .email("Invalid email address")
-              .required("Email Address Required"),
+            //only required when contact options preference contains phone
+            phoneNumber: Yup.string().when("contactOptions", {
+              is: (val) => val.includes("Phone") === true,
+              then: Yup.string()
+                .required("Phone Number Required")
+                .matches(phoneRegExp, "Please enter a valid phone number"),
+              otherwise: Yup.string().matches(
+                phoneRegExp,
+                "Please enter a valid phone number"
+              ),
+            }),
+            //only required when contact options preference contains email
+            email: Yup.string().when("contactOptions", {
+              is: (val) => val.includes("Email") === true,
+              then: Yup.string()
+                .email("Invalid email address")
+                .required("Email Address Required"),
+              otherwise: Yup.string().email("Invalid email address"),
+            }),
             contactOptions: Yup.array().min(
               1,
               "Please Select a Contact Preference"
