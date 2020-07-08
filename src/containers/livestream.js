@@ -20,25 +20,24 @@ export default function Livestream() {
     });
   }, []);
 
-  const day = "monday";
-  // const day = () => {
-  //   let today = new Date();
-  //   if (
-  //     today.getDay() === 2 &&
-  //     today.getHours() >= 18 &&
-  //     today.getHours() <= 23
-  //   ) {
-  //     return "tuesday";
-  //   } else if (
-  //     today.getDay() === 0 &&
-  //     today.getHours() >= 10 &&
-  //     today.getHours() <= 13
-  //   ) {
-  //     return "sunday";
-  //   } else {
-  //     return null;
-  //   }
-  // };
+  const day = () => {
+    let today = new Date();
+    if (
+      today.getDay() === 2 &&
+      today.getHours() >= 18 &&
+      today.getHours() <= 23
+    ) {
+      return "tuesday";
+    } else if (
+      today.getDay() === 0 &&
+      today.getHours() >= 10 &&
+      today.getHours() <= 13
+    ) {
+      return "sunday";
+    } else {
+      return null;
+    }
+  };
 
   const noStreamMessage = (
     <p>
