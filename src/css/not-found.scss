@@ -1,0 +1,42 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10vh auto auto auto;
+  text-align: center;
+  h1 {
+    font-weight: bolder;
+    font-size: 4em;
+  }
+  h3 {
+    width: 50%;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 2vh;
+      a {
+        margin: 2vh;
+        text-decoration: none;
+        background: $lightNavy;
+        color: white;
+        padding: 5px 10px 5px 10px;
+        border-radius: 15px;
+        font-size: 1.2em;
+        border: 0;
+        transition: background 0.2s;
+        &:hover {
+          background: $darkNavy;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
