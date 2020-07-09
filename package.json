@@ -9,6 +9,7 @@
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "framer-motion": "^1.11.1",
+    "lodash.sortby": "^4.7.0",
     "node-sass": "^4.13.0",
     "pigeon-maps": "0.15.0",
     "pigeon-marker": "^0.3.4",
