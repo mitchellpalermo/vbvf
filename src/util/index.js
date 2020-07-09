@@ -2,6 +2,14 @@ import axios from "axios";
 
 require("dotenv").config();
 
+const sanityClient = require("@sanity/client");
+const sanity = sanityClient({
+  projectId: "bhphg9ym",
+  dataset: "production",
+  token: process.env.REACT_APP_SANITY_TOKEN,
+  useCdn: true,
+});
+
 export function onIphone() {
   if (
     /* if we're on iOS, open in Apple Maps */
