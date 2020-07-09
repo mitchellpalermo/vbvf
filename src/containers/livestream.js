@@ -31,7 +31,7 @@ export default function Livestream() {
       today.getHours() >= 18 &&
       today.getHours() <= 23
     ) {
-      if (process.env.REACT_APP_STREAM != "none") {
+      if (process.env.REACT_APP_STREAM !== "none") {
         return process.env.REACT_APP_STREAM;
       } else {
         return "tuesday";
@@ -41,7 +41,7 @@ export default function Livestream() {
       today.getHours() >= 10 &&
       today.getHours() <= 13
     ) {
-      if (process.env.REACT_APP_STREAM != "none") {
+      if (process.env.REACT_APP_STREAM !== "none") {
         return process.env.REACT_APP_STREAM;
       } else {
         return "sunday";
