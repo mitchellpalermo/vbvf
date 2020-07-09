@@ -18,6 +18,7 @@ export default function Livestream() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    //fetching sunday service archive videos
     getVideos("1553779").then((vidArr) => {
       setSundayArchiveVideos(vidArr.data.data);
       setIsLoading(false);
@@ -27,21 +28,23 @@ export default function Livestream() {
   const day = () => {
     let today = new Date();
     if (
-      today.getDay() === 2 &&
-      today.getHours() >= 18 &&
-      today.getHours() <= 23
+      today.getDay() === 2 && //tuesday
+      today.getHours() >= 18 && //between 6pm
+      today.getHours() <= 23 // and 9pm
     ) {
       if (process.env.REACT_APP_STREAM !== "none") {
+        //check env var for value
         return process.env.REACT_APP_STREAM;
       } else {
         return "tuesday";
       }
     } else if (
-      today.getDay() === 0 &&
-      today.getHours() >= 10 &&
-      today.getHours() <= 13
+      today.getDay() === 0 && //sunday
+      today.getHours() >= 10 && //between 10am
+      today.getHours() <= 13 // and 1pm
     ) {
       if (process.env.REACT_APP_STREAM !== "none") {
+        //check env var for value
         return process.env.REACT_APP_STREAM;
       } else {
         return "sunday";
@@ -65,7 +68,6 @@ export default function Livestream() {
       sundayArchiveVideos,
       "last_user_action_event_date"
     ).reverse();
-    console.log(sortedVideos);
     return sortedVideos.slice(0, 3).map((video) => (
       <>
         <h3>{video.name}</h3>
