@@ -6,6 +6,10 @@ import Stream from "../components/stream";
 import Content from "../content/study-content";
 import "../css/livestream.scss";
 
+require("dotenv").config();
+
+var sortBy = require("lodash.sortby");
+
 export default function Livestream() {
   const ephesians = Content.studies[0];
 
@@ -27,13 +31,21 @@ export default function Livestream() {
       today.getHours() >= 18 &&
       today.getHours() <= 23
     ) {
-      return "tuesday";
+      if (process.env.REACT_APP_STREAM != "none") {
+        return process.env.REACT_APP_STREAM;
+      } else {
+        return "tuesday";
+      }
     } else if (
       today.getDay() === 0 &&
       today.getHours() >= 10 &&
       today.getHours() <= 13
     ) {
-      return "sunday";
+      if (process.env.REACT_APP_STREAM != "none") {
+        return process.env.REACT_APP_STREAM;
+      } else {
+        return "sunday";
+      }
     } else {
       return null;
     }
@@ -49,7 +61,12 @@ export default function Livestream() {
   );
 
   const streamArchive = () => {
-    return sundayArchiveVideos.slice(0, 3).map((video) => (
+    const sortedVideos = sortBy(
+      sundayArchiveVideos,
+      "last_user_action_event_date"
+    ).reverse();
+    console.log(sortedVideos);
+    return sortedVideos.slice(0, 3).map((video) => (
       <>
         <h3>{video.name}</h3>
         <div
@@ -74,7 +91,7 @@ export default function Livestream() {
         </>
       ) : (
         <>
-          {day === "tuesday" ? (
+          {day() === "tuesday" ? ( //if it's tuesday return tuesday stream
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
               title={ephesians.name}
@@ -82,7 +99,7 @@ export default function Livestream() {
               dropBoxFolder={ephesians.dropBoxFolder}
               seriesLink="/bible-studies/ephesians"
             />
-          ) : day === "sunday" ? (
+          ) : day() === "sunday" ? ( //return sunday stream
             <Stream
               streamUrl="https://vimeo.com/event/51649/embed"
               title="Gospel of Matthew"
@@ -97,6 +114,7 @@ export default function Livestream() {
               }}
             />
           ) : (
+            //return livestream archive
             <div className="livestream-archive">
               <div>{noStreamMessage}</div>
               {streamArchive()}
