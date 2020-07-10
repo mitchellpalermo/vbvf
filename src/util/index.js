@@ -3,11 +3,10 @@ import axios from "axios";
 require("dotenv").config();
 
 const sanityClient = require("@sanity/client");
-const sanity = sanityClient({
+
+export const sanity = sanityClient({
   projectId: "bhphg9ym",
   dataset: "production",
-  token: process.env.REACT_APP_SANITY_TOKEN,
-  useCdn: true,
 });
 
 export function onIphone() {
@@ -27,6 +26,16 @@ export async function getVideos(vimeoFolder) {
   const options = {
     method: "GET",
     url: `https://api.vimeo.com/me/projects/${vimeoFolder}/videos?direction=desc`,
+    headers: {
+      Authorization: process.env.REACT_APP_VIMEO_KEY,
+    },
+  };
+  return axios(options);
+}
+export async function getSingleVideo(videoId) {
+  const options = {
+    method: "GET",
+    url: `https://api.vimeo.com/videos/${videoId}`,
     headers: {
       Authorization: process.env.REACT_APP_VIMEO_KEY,
     },
