@@ -1,0 +1,90 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+
+.unit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 3vh;
+  &-description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 3vh 0 0;
+    &-title {
+      text-align: left;
+      font-weight: 700;
+    }
+  }
+  &-lesson {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background: $sand;
+    padding: 2vh;
+    border-radius: 20px;
+    h4 {
+      margin-top: 2vh;
+      align-self: center;
+    }
+    &-video-container {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      iframe {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    &-worksheets {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+
+      button {
+        margin: 2vh;
+        text-decoration: none;
+        background: $lightNavy;
+        color: white;
+        padding: 5px 10px 5px 10px;
+        border-radius: 15px;
+        border: 0;
+        transition: background 0.2s;
+        &:hover {
+          background: $darkNavy;
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .description {
+      width: 90%;
+      align-items: center;
+      margin: 0;
+
+      &-title {
+        text-align: center;
+        font-weight: 700;
+      }
+    }
+    .lesson-list {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
