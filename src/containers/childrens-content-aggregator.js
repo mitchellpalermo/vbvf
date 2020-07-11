@@ -15,7 +15,7 @@ export default function ChildrensContentAggregator() {
   useEffect(() => {
     sanity.fetch(query).then((results) => setChildrensUnits(results));
   }, []);
-  console.log(childrensUnits);
+
   return (
     <div className="units">
       <div className="units-desc">

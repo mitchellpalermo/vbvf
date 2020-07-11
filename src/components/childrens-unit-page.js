@@ -36,7 +36,6 @@ export default function ChildrensUnitPage() {
     });
   }, []);
 
-  console.log(unit);
   return (
     <div className="unit">
       {isLoading ? (
