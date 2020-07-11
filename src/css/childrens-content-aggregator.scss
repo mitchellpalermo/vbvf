@@ -1,0 +1,35 @@
+.units {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &-desc {
+    margin: 5vh;
+    width: 75%;
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .unit-link {
+    width: 30%;
+    height: auto;
+    text-align: center;
+    color: black;
+    :hover {
+      text-decoration: none;
+    }
+  }
+  .unit-icon {
+    text-align: center;
+    margin: 2vh;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 800px) {
+    .unit-link {
+      width: 50%;
+    }
+  }
+}
