@@ -6,15 +6,15 @@ import { Card, CardTitle, CardSubtitle } from "reactstrap";
 import { sanity } from "../util/index";
 
 export default function ChildrensContentAggregator() {
-  const query = `*[_type == "childrensUnit"] {
+  const query = `*[_type == "childrensUnit"] | order(unitNumber asc) {
     unitNumber,
-    subtitle
+    title
   }`;
   const [childrensUnits, setChildrensUnits] = useState([]);
 
   useEffect(() => {
     sanity.fetch(query).then((results) => setChildrensUnits(results));
-  }, []);
+  }, [query]);
 
   return (
     <div className="units">
@@ -30,7 +30,7 @@ export default function ChildrensContentAggregator() {
           <div className="unit-icon">
             <Card body>
               <CardTitle>{`Unit ${unit.unitNumber}`}</CardTitle>
-              <CardSubtitle>{unit.subtitle}</CardSubtitle>
+              <CardSubtitle>{unit.title}</CardSubtitle>
             </Card>
           </div>
         </Link>

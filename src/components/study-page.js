@@ -27,7 +27,7 @@ export default function StudyPage() {
       setIsLoading(false);
     });
   }, [study.dropBoxFolder, study.vimeoFolder]);
-  console.log(lessons);
+
   return (
     <div className="study-container">
       <div className="description">

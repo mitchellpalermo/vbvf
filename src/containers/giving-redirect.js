@@ -8,7 +8,6 @@ import { Button } from "reactstrap";
 const GivingRedirect = (props) => {
   const [counter, setCounter] = useState("10");
 
-  console.log(props);
   useEffect(() => {
     counter >= 1
       ? setTimeout(() => {
@@ -18,7 +17,6 @@ const GivingRedirect = (props) => {
   }, [counter, props.location.deepDive]);
 
   function givingRedirect(path) {
-    console.log(path);
     window.location.replace(`https://vbvf.churchcenter.com/giving`);
   }
 
