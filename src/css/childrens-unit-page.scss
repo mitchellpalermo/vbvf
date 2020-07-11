@@ -8,28 +8,39 @@ $green: #4f5957;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+
   margin: 3vh;
   &-description {
     width: 50%;
     display: flex;
     flex-direction: column;
-    margin: 0 3vh 0 0;
+
     &-title {
       text-align: left;
       font-weight: 700;
     }
   }
-  &-lesson {
+  .loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-lesson-list {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-lesson {
     display: flex;
     flex-direction: column;
     background: $sand;
     padding: 2vh;
     border-radius: 20px;
+    margin: 3vh;
+    text-align: center;
     h4 {
       margin-top: 2vh;
-      align-self: center;
     }
     &-video-container {
       overflow: hidden;
@@ -67,23 +78,23 @@ $green: #4f5957;
       }
     }
   }
-
-  @media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 800px) {
+  .unit {
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    .description {
+    margin: auto;
+    overflow: hidden;
+    &-description {
       width: 90%;
-      align-items: center;
-      margin: 0;
-
       &-title {
         text-align: center;
         font-weight: 700;
       }
     }
-    .lesson-list {
-      width: 100%;
+    &-lesson-list {
+      width: 90%;
+      align-items: center;
       text-align: center;
     }
   }
