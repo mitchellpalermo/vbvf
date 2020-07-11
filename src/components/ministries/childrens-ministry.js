@@ -11,7 +11,6 @@ import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looki
 import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
 import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
-import { Link } from "react-router-dom";
 
 export default function ChildrensMinistry() {
   return (
