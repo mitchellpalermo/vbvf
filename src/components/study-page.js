@@ -51,9 +51,10 @@ export default function StudyPage() {
             <Spinner color="dark" />
           </>
         ) : (
-          lessons.map((lesson) => (
-            <LessonBlock key={lesson.title} {...lesson} />
-          ))
+          lessons.map(
+            (lesson) =>
+              lesson.videoId && <LessonBlock key={lesson.title} {...lesson} />
+          )
         )}
       </div>
     </div>
