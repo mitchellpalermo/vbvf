@@ -68,7 +68,11 @@ const Home = () => {
             <h2>{series.title} Study</h2>
             {/* <img alt="" src={ChurchIcon} /> */}
             <p>{series.description}</p>
-            <Button outline color="light" href="/bible-studies/ephesians">
+            <Button
+              outline
+              color="light"
+              href={`/bible-studies/${series.title}`}
+            >
               Listen to {series.title}
             </Button>
           </span>
