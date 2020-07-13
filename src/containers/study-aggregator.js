@@ -24,7 +24,7 @@ export default function StudyAggregator() {
         <CardImg
           top
           width="100%"
-          src={sanityUrlFor(study.seriesImage).url()}
+          src={sanityUrlFor(study.seriesImage).width(400).url()}
           alt={`${study.title} Image`}
         />
         <Card body>
