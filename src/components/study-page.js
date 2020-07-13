@@ -24,7 +24,7 @@ export default function StudyPage() {
     "notesUrl": notes.asset->url,
     videoId
   }`;
-  const params = { studyName };
+  const params = { studyName: studyName.replace("-", " ") };
 
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
