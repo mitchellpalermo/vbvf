@@ -19,7 +19,7 @@ export default function Livestream() {
 
   useEffect(() => {
     sanity.fetch(ephesiansQuery).then((series) => setSeries(series[0]));
-  }, []);
+  }, [ephesiansQuery]);
 
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
 

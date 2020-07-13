@@ -34,6 +34,7 @@ export default function StudyPage() {
       setLessons(lessons);
       setIsLoading(false);
     });
+    //eslint-disable-next-line
   }, [lessonQuery, seriesQuery]);
 
   return (

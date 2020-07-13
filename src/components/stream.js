@@ -18,6 +18,7 @@ export default function Stream(props) {
       setStudyMaterials(document);
       setStudyMaterialsIsLoading(false);
     });
+    //eslint-disable-next-line
   }, [docQuery]);
 
   return (
