@@ -40,7 +40,7 @@ export default function Stream(props) {
           <>
             <div className="stream-info-title-link">
               <h2>{props.title}</h2>
-              {studyMaterials && (
+              {studyMaterials?.notesUrl && (
                 <div>
                   <span>
                     We encourage you to follow along in the provided study
