@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import imageUrlBuilder from "@sanity/image-url";
 require("dotenv").config();
 
 const sanityClient = require("@sanity/client");
@@ -8,6 +8,12 @@ export const sanity = sanityClient({
   projectId: "bhphg9ym",
   dataset: "production",
 });
+
+const builder = imageUrlBuilder(sanity);
+
+export function sanityUrlFor(source) {
+  return builder.image(source);
+}
 
 export function onIphone() {
   if (

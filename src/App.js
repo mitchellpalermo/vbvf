@@ -46,7 +46,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/livestream" component={Livestream} />
           <Route exact path="/bible-studies" component={StudyAggregator} />
-          <Route path="/bible-studies/:studyId" component={StudyPage} />
+          <Route path="/bible-studies/:studyName" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/giving-redirect" component={GivingRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
