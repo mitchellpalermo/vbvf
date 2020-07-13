@@ -30,7 +30,11 @@ export default function ChildrensMinistry() {
         </div>
       </div>
       <div className="childrens-ministry-material-sign-up">
-        <p>We're creating free children's church materials every week.</p>
+        <p style={{ fontWeight: "bolder" }}>
+          We believe that biblical teaching and learning should continue at
+          home. Journey Kids is excited to offer weekly discipleship resources
+          for parents to use with their children.
+        </p>
         <a className="button" href="/childrens-content">
           View Resources
         </a>

@@ -8,6 +8,7 @@ export default function PhotoTitle(props) {
       <p>
         {props.name}
         <span>{props.title}</span>
+        <span>{props.email}</span>
       </p>
     </div>
   );

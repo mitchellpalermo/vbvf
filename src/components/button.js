@@ -1,20 +1,10 @@
-import React, { useState } from "react";
-import "../css/button.css";
+import React from "react";
+import "../css/button.scss";
 
-const Button = props => {
-  const [isShowing, setShowing] = useState(false);
-
-  const toggle = () => {
-    setShowing(!isShowing);
-  };
-
+const Button = (props) => {
   return (
-    <button
-      className="button-housing"
-      onMouseEnter={toggle}
-      onMouseLeave={toggle}
-    >
-      {props.title} <span className={isShowing ? "showing" : null} />
+    <button className="style-me" onClick={props.buttonFunc}>
+      {props.title}
     </button>
   );
 };

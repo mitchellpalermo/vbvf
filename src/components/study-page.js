@@ -1,38 +1,47 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
-import { getVideos, getDocumentIds, buildLessons } from "../util/index";
+import { sanity } from "../util/index";
 import { useParams } from "react-router-dom";
 
-import Content from "../content/study-content";
 import LessonBlock from "./lesson-block";
 
 import "../css/study-page.scss";
 
 export default function StudyPage() {
-  let { studyId } = useParams();
+  let { studyName } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const [lessons, setLessons] = useState([]);
-  //using the url param to search through studies and grab the right one
-  const study = Content.studies.find((study) => study.url === studyId);
+  const [series, setSeries] = useState({});
+  const [lessons, setLessons] = useState({});
+
+  const seriesQuery = `*[_type == 'series' && title == $studyName]{
+    title, 
+    seriesImage,
+    description
+  }`;
+
+  const lessonQuery = `*[_type == 'lesson' && series->title == $studyName] | order(title) {
+    title,
+    "notesUrl": notes.asset->url,
+    videoId
+  }`;
+  const params = { studyName: studyName.replace("-", " ") };
 
   useEffect(() => {
-    const videos = getVideos(study.vimeoFolder); //videos at data.data
-    const documents = getDocumentIds(study.dropBoxFolder); //docs at data.entries
-
-    Promise.all([videos, documents]).then((values) => {
-      buildLessons(values[0], values[1]).then((lessons) => {
-        lessons.sort((a, b) => a.video.name.localeCompare(b.video.name)); //sorting lessons alphabetically
-        setLessons(lessons);
-      });
+    sanity.fetch(seriesQuery, params).then((series) => {
+      setSeries(series[0]);
+    });
+    sanity.fetch(lessonQuery, params).then((lessons) => {
+      setLessons(lessons);
       setIsLoading(false);
     });
-  }, [study.dropBoxFolder, study.vimeoFolder]);
+    //eslint-disable-next-line
+  }, [lessonQuery, seriesQuery]);
 
   return (
     <div className="study-container">
       <div className="description">
-        <h3 className="description-title">{study.name}</h3>
-        <p className="description-body">{study.description}</p>
+        <h3 className="description-title">{series.title}</h3>
+        <p className="description-body">{series.description}</p>
       </div>
       <div className="lesson-list">
         <h3 className="lesson-list-title">Available Lessons</h3>
@@ -42,7 +51,9 @@ export default function StudyPage() {
             <Spinner color="dark" />
           </>
         ) : (
-          lessons.map((lesson) => <LessonBlock key={lesson.id} {...lesson} />)
+          lessons.map((lesson) => (
+            <LessonBlock key={lesson.title} {...lesson} />
+          ))
         )}
       </div>
     </div>
