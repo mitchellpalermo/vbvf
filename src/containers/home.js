@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/home.scss";
 
 import { Button } from "reactstrap";
@@ -6,9 +6,20 @@ import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
 import MissionBanner from "../components/mission-banner";
-import BibleStudyContent from "../content/study-content.json";
+
+import { sanity } from "../util/index";
 
 const Home = () => {
+  const [series, setSeries] = useState({});
+  const ephesiansQuery = `*[_type == "series" && title == "Ephesians"]{
+  title,
+  description
+}`;
+
+  useEffect(() => {
+    sanity.fetch(ephesiansQuery).then((series) => setSeries(series[0]));
+  }, []);
+
   return (
     <div>
       <div className="main-header">
@@ -54,11 +65,11 @@ const Home = () => {
       <div>
         <div className="series-promo" id="ephesians-series">
           <span className="series-promo-desc">
-            <h2>Ephesians Study</h2>
+            <h2>{series.title} Study</h2>
             {/* <img alt="" src={ChurchIcon} /> */}
-            <p>{BibleStudyContent.studies[0].description}</p>
+            <p>{series.description}</p>
             <Button outline color="light" href="/bible-studies/ephesians">
-              Listen to {BibleStudyContent.studies[0].name}
+              Listen to {series.title}
             </Button>
           </span>
         </div>

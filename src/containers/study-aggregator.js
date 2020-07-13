@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import "../css/study-aggregator.scss";
 import { Link } from "react-router-dom";
 import { Card, CardTitle, CardImg, CardSubtitle } from "reactstrap";

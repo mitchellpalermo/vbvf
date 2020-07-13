@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../css/lesson-block.scss";
 import PlayIcon from "../images/lesson-page/play-outline.svg";
 import DocumentIcon from "../images/lesson-page/document.svg";
-import { Modal, ModalHeader, ModalBody, Button } from "reactstrap";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
+import Button from "./button";
 
 export default function LessonBlock(props) {
   const [modal, setModal] = useState(false);
@@ -31,11 +32,9 @@ export default function LessonBlock(props) {
                 </div>
                 <div className="lesson-modal-button">
                   <Button
-                    color="info"
-                    onClick={() => window.open(props.notesUrl)}
-                  >
-                    Download notes
-                  </Button>
+                    title="Download notes"
+                    buttonFunc={() => window.open(props.notesUrl)}
+                  />
                 </div>
               </div>
             </ModalBody>

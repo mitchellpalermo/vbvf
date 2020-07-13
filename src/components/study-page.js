@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
-import { sanity, sanityUrlFor } from "../util/index";
+import { sanity } from "../util/index";
 import { useParams } from "react-router-dom";
 
 import LessonBlock from "./lesson-block";
