@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 
 import "../css/childrens-content-aggregator.scss";
 import { Link } from "react-router-dom";
-import { Card, CardTitle, CardSubtitle } from "reactstrap";
-import { sanity } from "../util/index";
+import { Card, CardTitle, CardSubtitle, CardImg } from "reactstrap";
+import { sanity, sanityUrlFor } from "../util/index";
 
 export default function ChildrensContentAggregator() {
   const query = `*[_type == "childrensUnit"] | order(unitNumber asc) {
     unitNumber,
-    title
+    title,
+    seriesImage
   }`;
   const [childrensUnits, setChildrensUnits] = useState([]);
 
@@ -29,6 +30,12 @@ export default function ChildrensContentAggregator() {
         >
           <div className="unit-icon">
             <Card body>
+              <CardImg
+                top
+                width="100%"
+                src={sanityUrlFor(unit.seriesImage).width(400).url()}
+                alt={`${unit.title} Image`}
+              />
               <CardTitle>{`Unit ${unit.unitNumber}`}</CardTitle>
               <CardSubtitle>{unit.title}</CardSubtitle>
             </Card>
