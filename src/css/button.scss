@@ -1,0 +1,18 @@
+$darkNavy: #2e3c49;
+$lightNavy: #66788d;
+
+.style-me {
+  margin: 2vh;
+  text-decoration: none;
+  background: $lightNavy;
+  color: white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  border: 0;
+  transition: background 0.2s;
+  &:hover {
+    background: $darkNavy;
+    text-decoration: none;
+    color: white;
+  }
+}

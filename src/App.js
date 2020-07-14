@@ -26,6 +26,8 @@ import OurStory from "./components/our-story";
 import Beliefs from "./components/beliefs";
 import Leadership from "./components/leadership";
 import Giving from "./containers/giving";
+import ChildrensUnitPage from "./components/childrens-unit-page";
+import ChildrensContentAggregator from "./containers/childrens-content-aggregator";
 
 function App() {
   return (
@@ -42,9 +44,9 @@ function App() {
           <Route exact path="/giving" component={Giving} />
           <Route exact path="/about/beliefs" component={Beliefs} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/bible-studies" component={StudyAggregator} />
           <Route exact path="/livestream" component={Livestream} />
-          <Route path="/bible-studies/:studyId" component={StudyPage} />
+          <Route exact path="/bible-studies" component={StudyAggregator} />
+          <Route path="/bible-studies/:studyName" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/giving-redirect" component={GivingRedirect} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
@@ -62,6 +64,16 @@ function App() {
             exact
             path="/ministries/childrens-ministry"
             component={ChildrensMinistry}
+          />
+          <Route
+            exact
+            path="/childrens-content"
+            component={ChildrensContentAggregator}
+          />
+          <Route
+            exact
+            path="/childrens-content/:unitId"
+            component={ChildrensUnitPage}
           />
           <Route
             exact

@@ -3,7 +3,7 @@ import { getVideos } from "../util/index";
 import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import Stream from "../components/stream";
-import Content from "../content/study-content";
+import { sanity } from "../util/index";
 import "../css/livestream.scss";
 
 require("dotenv").config();
@@ -11,7 +11,15 @@ require("dotenv").config();
 var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
-  const ephesians = Content.studies[0];
+  const [series, setSeries] = useState({});
+  const ephesiansQuery = `*[_type == "series" && title == "Ephesians"]{
+  title,
+  description
+}`;
+
+  useEffect(() => {
+    sanity.fetch(ephesiansQuery).then((series) => setSeries(series[0]));
+  }, [ephesiansQuery]);
 
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
 
@@ -50,6 +58,10 @@ export default function Livestream() {
         return "sunday";
       }
     } else {
+      if (process.env.REACT_APP_STREAM !== "none") {
+        //check env var for value
+        return process.env.REACT_APP_STREAM;
+      }
       return null;
     }
   };
@@ -96,10 +108,9 @@ export default function Livestream() {
           {day() === "tuesday" ? ( //if it's tuesday return tuesday stream
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
-              title={ephesians.name}
-              description={ephesians.description}
-              dropBoxFolder={ephesians.dropBoxFolder}
-              seriesLink="/bible-studies/ephesians"
+              title={series.title}
+              description={series.description}
+              seriesLink={`/bible-studies/${series.title}`}
             />
           ) : day() === "sunday" ? ( //return sunday stream
             <Stream

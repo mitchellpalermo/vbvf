@@ -11,7 +11,6 @@ import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looki
 import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
 import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
-import { Button } from "reactstrap";
 
 export default function ChildrensMinistry() {
   return (
@@ -30,6 +29,16 @@ export default function ChildrensMinistry() {
           <img alt="children-listening" src={JayTeaching}></img>
         </div>
       </div>
+      <div className="childrens-ministry-material-sign-up">
+        <p style={{ fontWeight: "bolder" }}>
+          We believe that biblical teaching and learning should continue at
+          home. Journey Kids is excited to offer weekly discipleship resources
+          for parents to use with their children.
+        </p>
+        <a className="button" href="/childrens-content">
+          View Resources
+        </a>
+      </div>
       <div className="childrens-ministry-mission">
         <p>{Content.firstRow.body}</p>
         <ScriptureVerse
@@ -37,20 +46,7 @@ export default function ChildrensMinistry() {
           reference={Content.scriptureVerse.reference}
         />
       </div>
-      <div className="childrens-ministry-material-sign-up">
-        <p>
-          We're sending out biblical children's church materials every week. If
-          you're interested in receiving videos, worksheets, and other
-          materials, go ahead and sign up here.
-        </p>
-        <Button
-          size="lg"
-          color="primary"
-          href="https://vbvf.churchcenter.com/people/forms/118844?open-in-church-center-modal=true"
-        >
-          Sign up
-        </Button>
-      </div>
+
       <div className="childrens-ministry-check-in">
         <img alt="family registering child" src={Checkin} />
         <p>{Content.secondRow.body}</p>

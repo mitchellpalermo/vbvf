@@ -8,7 +8,6 @@ import { Button } from "reactstrap";
 const SermonRedirect = (props) => {
   const [counter, setCounter] = useState("10");
 
-  console.log(props);
   useEffect(() => {
     counter >= 1
       ? setTimeout(() => {
@@ -18,7 +17,6 @@ const SermonRedirect = (props) => {
   }, [counter, props.location.deepDive]);
 
   function verseByVerseRedirect(path) {
-    console.log(path);
     window.location.replace(`https://www.versebyverseministry.org/${path}`);
   }
 

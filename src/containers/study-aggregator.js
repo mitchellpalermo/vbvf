@@ -1,19 +1,34 @@
-import React from "react";
-import Content from "../content/study-content";
+import React, { useState, useEffect } from "react";
 import "../css/study-aggregator.scss";
 import { Link } from "react-router-dom";
-import { Card, CardTitle } from "reactstrap";
+import { Card, CardTitle, CardImg } from "reactstrap";
+import { sanity, sanityUrlFor } from "../util/index";
 
 export default function StudyAggregator() {
-  const studies = Content.studies.map((study) => (
+  const query = `*[_type == "series"] {
+    title,
+    seriesImage
+  }`;
+  const [series, setSeries] = useState([]);
+
+  useEffect(() => {
+    sanity.fetch(query).then((results) => setSeries(results));
+  }, [query]);
+  const studies = series.map((study) => (
     <Link
-      key={study.name}
+      key={study.title}
       className="study-link"
-      to={`bible-studies/${study.url}`}
+      to={`bible-studies/${study.title.replace(" ", "-")}`}
     >
       <div className="study-icon">
+        <CardImg
+          top
+          width="100%"
+          src={sanityUrlFor(study.seriesImage).width(400).url()}
+          alt={`${study.title} Image`}
+        />
         <Card body>
-          <CardTitle>{study.name}</CardTitle>
+          <CardTitle>{study.title}</CardTitle>
         </Card>
       </div>
     </Link>
