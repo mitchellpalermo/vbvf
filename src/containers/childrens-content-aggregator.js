@@ -33,7 +33,7 @@ export default function ChildrensContentAggregator() {
               <CardImg
                 top
                 width="100%"
-                src={sanityUrlFor(unit.seriesImage).width(400).url()}
+                src={sanityUrlFor(unit.seriesImage).width(500).url()}
                 alt={`${unit.title} Image`}
               />
               <CardTitle>{`Unit ${unit.unitNumber}`}</CardTitle>
