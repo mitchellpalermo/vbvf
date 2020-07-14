@@ -7,6 +7,7 @@ const sanityClient = require("@sanity/client");
 export const sanity = sanityClient({
   projectId: "bhphg9ym",
   dataset: "production",
+  useCDN: true,
 });
 
 const builder = imageUrlBuilder(sanity);
