@@ -67,6 +67,7 @@ const Contact = () => {
             phoneNumber: "",
             email: "",
             contactOptions: [],
+            localToSa: "",
           }}
           onSubmit={(values, actions) => {
             fetch("/", {
@@ -109,6 +110,9 @@ const Contact = () => {
                 .required("Email Address Required"),
               otherwise: Yup.string().email("Invalid email address"),
             }),
+            localToSa: Yup.string().required(
+              "Please let us know if you're located in San Antonio."
+            ),
             contactOptions: Yup.array().min(
               1,
               "Please Select a Contact Preference"
@@ -117,6 +121,7 @@ const Contact = () => {
               .min(5, "Please write a little more.")
               .required("Please type your question here."),
           })}
+          setFieldValue
         >
           {(formik) => (
             <Form className="contact" method="POST">
@@ -166,7 +171,23 @@ const Contact = () => {
                 className="contact-error-message"
                 name="email"
               />
-              <h3>How should we contact you?</h3>
+              <h4>Are you located in San Antonio?</h4>
+              <div role="group" className="contact-checkbox-group">
+                <label>
+                  <Field type="radio" name="localToSa" value="Yes" />
+                  Yes
+                </label>
+                <label>
+                  <Field type="radio" name="localToSa" value="No" />
+                  No
+                </label>
+              </div>
+              <ErrorMessage
+                name="localToSa"
+                component="div"
+                className="contact-error-message"
+              />
+              <h4>How should we contact you?</h4>
               <div role="group" className="contact-checkbox-group">
                 <label>
                   <Field type="checkbox" name="contactOptions" value="Phone" />
