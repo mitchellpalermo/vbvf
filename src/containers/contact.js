@@ -121,7 +121,6 @@ const Contact = () => {
               .min(5, "Please write a little more.")
               .required("Please type your question here."),
           })}
-          setFieldValue
         >
           {(formik) => (
             <Form className="contact" method="POST">
