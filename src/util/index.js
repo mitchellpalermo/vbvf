@@ -2,12 +2,12 @@ import axios from "axios";
 import imageUrlBuilder from "@sanity/image-url";
 require("dotenv").config();
 
-const sanityClient = require("@sanity/client");
+const SanityClient = require("@sanity/client");
 
-export const sanity = sanityClient({
+export const sanity = new SanityClient({
   projectId: "bhphg9ym",
   dataset: "production",
-  useCDN: true,
+  useCdn: true,
 });
 
 const builder = imageUrlBuilder(sanity);
