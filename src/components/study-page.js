@@ -40,7 +40,6 @@ export default function StudyPage() {
     //eslint-disable-next-line
   }, [lessonQuery, seriesQuery]);
 
-  //render the lesson if it has either audio or video content
   const hasContent = (lesson) => {
     if (lesson.videoId || lesson.audioLink) {
       return true;
@@ -54,6 +53,7 @@ export default function StudyPage() {
       <div className="description">
         <h3 className="description-title">{series.title}</h3>
         <p className="description-body">{series.description}</p>
+        {/* render link to series on the ministry site if there is one */}
         {series.ministrySeriesLink && (
           <div className="description-body-ministry-link">
             <p>
