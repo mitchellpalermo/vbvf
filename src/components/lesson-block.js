@@ -20,17 +20,6 @@ export default function LessonBlock(props) {
           Watch
         </span>
       )}
-      {props.audioLink && (
-        <span
-          className="lesson-block-icon"
-          onClick={() => {
-            window.open(props.audioLink);
-          }}
-        >
-          <img alt="audio icon" src={AudioIcon} />
-          Listen
-        </span>
-      )}
       <Modal isOpen={modal} toggle={modalToggle} size="lg">
         <ModalHeader toggle={modalToggle}>{props.title}</ModalHeader>
         <ModalBody>
@@ -51,15 +40,29 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <span
-        className="lesson-block-icon"
-        role="button"
-        onClick={() => window.open(props.notesUrl)}
-        target="_blank"
-      >
-        <img alt="play icon" src={DocumentIcon} />
-        Notes
-      </span>
+
+      {props.audioLink && (
+        <span
+          className="lesson-block-icon"
+          onClick={() => {
+            window.open(props.audioLink);
+          }}
+        >
+          <img alt="audio icon" src={AudioIcon} />
+          Listen
+        </span>
+      )}
+      {props.notesUrl && (
+        <span
+          className="lesson-block-icon"
+          role="button"
+          onClick={() => window.open(props.notesUrl)}
+          target="_blank"
+        >
+          <img alt="play icon" src={DocumentIcon} />
+          Notes
+        </span>
+      )}
     </div>
   );
 }
