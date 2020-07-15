@@ -13,10 +13,13 @@ export default function Stream(props) {
   }`;
   const params = { seriesName: props.title };
   useEffect(() => {
-    sanity.fetch(docQuery, params).then((document) => {
-      setStudyMaterials(document);
-      setStudyMaterialsIsLoading(false);
-    });
+    sanity
+      .fetch(docQuery, params)
+      .then((document) => {
+        setStudyMaterials(document);
+      })
+      .catch((error) => console.log(error));
+    setStudyMaterialsIsLoading(false);
     //eslint-disable-next-line
   }, [docQuery]);
 
