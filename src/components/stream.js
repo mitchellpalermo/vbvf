@@ -14,7 +14,6 @@ export default function Stream(props) {
   const params = { seriesName: props.title };
   useEffect(() => {
     sanity.fetch(docQuery, params).then((document) => {
-      console.log(document);
       setStudyMaterials(document);
       setStudyMaterialsIsLoading(false);
     });

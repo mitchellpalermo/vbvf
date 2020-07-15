@@ -39,13 +39,3 @@ export async function getVideos(vimeoFolder) {
   };
   return axios(options);
 }
-export async function getSingleVideo(videoId) {
-  const options = {
-    method: "GET",
-    url: `https://api.vimeo.com/videos/${videoId}`,
-    headers: {
-      Authorization: process.env.REACT_APP_VIMEO_KEY,
-    },
-  };
-  return axios(options);
-}
