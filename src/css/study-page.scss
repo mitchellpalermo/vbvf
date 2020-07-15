@@ -1,3 +1,9 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+
 .study-container {
   display: flex;
   flex-direction: row;
@@ -12,6 +18,12 @@
     &-title {
       text-align: left;
       font-weight: 700;
+    }
+    &-body-ministry-link {
+      text-align: center;
+      p {
+        color: $darkNavy;
+      }
     }
   }
   .lesson-list {

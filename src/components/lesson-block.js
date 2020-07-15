@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/lesson-block.scss";
 import PlayIcon from "../images/lesson-page/play-outline.svg";
 import DocumentIcon from "../images/lesson-page/document.svg";
+import AudioIcon from "../images/lesson-page/music-notes.svg";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import Button from "./button";
 
@@ -13,10 +14,13 @@ export default function LessonBlock(props) {
   return (
     <div className="lesson-block">
       <h4 className="lesson-block-title">{props.title}</h4>
-      <span className="lesson-block-icon" onClick={modalToggle}>
-        <img alt="play icon" src={PlayIcon} />
-        Watch
-      </span>
+      {/* render video */}
+      {props.videoId && (
+        <span className="lesson-block-icon" onClick={modalToggle}>
+          <img alt="play icon" src={PlayIcon} />
+          Watch
+        </span>
+      )}
       <Modal isOpen={modal} toggle={modalToggle} size="lg">
         <ModalHeader toggle={modalToggle}>{props.title}</ModalHeader>
         <ModalBody>
@@ -37,15 +41,30 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <span
-        className="lesson-block-icon"
-        role="button"
-        onClick={() => window.open(props.notesUrl)}
-        target="_blank"
-      >
-        <img alt="play icon" src={DocumentIcon} />
-        Notes
-      </span>
+      {/* render audio */}
+      {props.audioLink && (
+        <span
+          className="lesson-block-icon"
+          onClick={() => {
+            window.open(props.audioLink);
+          }}
+        >
+          <img alt="audio icon" src={AudioIcon} />
+          Listen
+        </span>
+      )}
+      {/* render notes */}
+      {props.notesUrl && (
+        <span
+          className="lesson-block-icon"
+          role="button"
+          onClick={() => window.open(props.notesUrl)}
+          target="_blank"
+        >
+          <img alt="play icon" src={DocumentIcon} />
+          Notes
+        </span>
+      )}
     </div>
   );
 }
