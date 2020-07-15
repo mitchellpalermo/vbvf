@@ -14,6 +14,7 @@ export default function LessonBlock(props) {
   return (
     <div className="lesson-block">
       <h4 className="lesson-block-title">{props.title}</h4>
+      {/* render video */}
       {props.videoId && (
         <span className="lesson-block-icon" onClick={modalToggle}>
           <img alt="play icon" src={PlayIcon} />
@@ -40,7 +41,7 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-
+      {/* render audio */}
       {props.audioLink && (
         <span
           className="lesson-block-icon"
@@ -52,6 +53,7 @@ export default function LessonBlock(props) {
           Listen
         </span>
       )}
+      {/* render notes */}
       {props.notesUrl && (
         <span
           className="lesson-block-icon"
