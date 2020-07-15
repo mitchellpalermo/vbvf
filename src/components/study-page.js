@@ -35,7 +35,6 @@ export default function StudyPage() {
     });
     sanity.fetch(lessonQuery, params).then((lessons) => {
       setLessons(lessons);
-      console.log(lessons);
       setIsLoading(false);
     });
     //eslint-disable-next-line
