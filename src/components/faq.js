@@ -12,7 +12,10 @@ export default function FAQ() {
       <div className="faq-questions">
         <h1>{faq.title}</h1>
         <h4>{faq.locationQuestion.title}</h4>
-        <p>{faq.locationQuestion.body}</p>
+        <p>
+          {faq.locationQuestion.body} Visit our{" "}
+          <Link to="/livestream">Livestream page to view our services.</Link>
+        </p>
         <h4>{faq.dressQuestion.title}</h4>
         <p>{faq.dressQuestion.body}</p>
 
@@ -28,15 +31,9 @@ export default function FAQ() {
           truths of the Bible, so they can grow up to love the Word. In our VBVF
           Children’s Ministry, children birth through 5th grade will be able to
           learn Bible lessons in a safe environment, from loving teachers
-          committed to ministering to children. Our Children’s ministry is
-          committed to the safety of our children. Please plan on arriving a few
-          minutes early to register your child with our Children’s ministry
-          staff. Our youth ministry is designed to disciple students into adults
-          who love God and own their faith. Our leaders are committed to come
-          alongside parents in guiding students to mature through various stages
-          of discipleship: learning the word, living according to the call,
-          serving the body, reaching out to the lost, and stepping up into
-          leadership.
+          committed to ministering to children. Visit our{" "}
+          <Link to="/childrens-ministry">Children's Ministry page</Link> for
+          more information.
         </p>
         <h4>How do I become a part of VBVF?</h4>
         <p>
