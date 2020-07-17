@@ -11,7 +11,7 @@ export default function ChildrensUnitPage() {
   const [unit, setUnit] = useState({});
   const [lessons, setLessons] = useState({});
 
-  const unitQuery = `*[_type == "childrensUnit" && unitNumber == $unitNumber] {
+  const unitQuery = `*[_type == "childrensUnit" && unitNumber == $unitNumber] [0] {
     unitNumber,
     title,
     description
@@ -22,7 +22,8 @@ export default function ChildrensUnitPage() {
   videoId,
   "olderUrl" : olderWorksheet.asset->url,
   "youngerUrl":youngerWorksheet.asset->url,
-  "preschoolUrl":preschoolWorksheet.asset->url
+  "preschoolUrl":preschoolWorksheet.asset->url,
+  "number": lessonNumber
 }`;
   const params = { unitNumber: unitId.split("-")[1] };
   useEffect(() => {
@@ -46,12 +47,12 @@ export default function ChildrensUnitPage() {
       ) : (
         <div className="unit-description">
           <h3 className="unit-description-title">
-            {`Unit ${unit[0].unitNumber} - ${unit[0].title}`}
+            {`Unit ${unit.unitNumber} - ${unit.title}`}
           </h3>
-          <p className="unit-description-body">{unit[0].description}</p>
+          <p className="unit-description-body">{unit.description}</p>
         </div>
       )}
-      <div className="lesson-list">
+      <div className="unit-lesson-list">
         {isLoading ? (
           <div className="loading-spinner">
             <p>Loading Lessons</p>
@@ -59,17 +60,12 @@ export default function ChildrensUnitPage() {
           </div>
         ) : (
           lessons.map((lesson, index) => (
-            <div className="unit-lesson" key="index">
-              <h3>{lesson.title}</h3>
-              <div className="unit-lesson-video-container">
-                <iframe
-                  allowFullScreen
-                  title={lesson.title}
-                  src={`https://player.vimeo.com/video/${lesson.videoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=175387`}
-                ></iframe>
-              </div>
-              <h4>Download Worksheets</h4>
-              <div className="unit-lesson-worksheets">
+            <div className="unit-lesson-list-item" key="index">
+              <h3>
+                {lesson.title} <span>Lesson {lesson.number}</span>
+              </h3>
+
+              <div className="unit-lesson-list-item-worksheets">
                 <button
                   target="blank"
                   rel="noopener noreferrer"

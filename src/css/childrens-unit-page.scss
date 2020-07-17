@@ -25,55 +25,60 @@ $green: #4f5957;
     flex-direction: column;
     align-items: center;
   }
+  .video-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    iframe {
+      position: absolute;
+      border: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
   &-lesson-list {
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  &-lesson {
-    display: flex;
-    flex-direction: column;
-    background: $sand;
-    padding: 2vh;
-    border-radius: 20px;
-    margin: 3vh;
-    text-align: center;
-    h4 {
-      margin-top: 2vh;
-    }
-    &-video-container {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-      iframe {
-        position: absolute;
-        border: 0;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-      }
-    }
-    &-worksheets {
+    &-item {
+      width: 100%;
       display: flex;
       flex-direction: row;
-      align-items: center;
       justify-content: space-evenly;
+      align-items: center;
+      padding: 2vh;
+      border-top: 2px solid rgba(46, 60, 73, 0.4);
+      text-align: center;
 
-      button {
-        margin: 2vh;
-        text-decoration: none;
-        background: $lightNavy;
-        color: white;
-        padding: 5px 10px 5px 10px;
-        border-radius: 15px;
-        border: 0;
-        transition: background 0.2s;
-        &:hover {
-          background: $darkNavy;
+      h3 {
+        span {
+          font-size: 0.7em;
+          display: block;
+        }
+      }
+
+      &-worksheets {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        button {
+          margin: 2vh;
           text-decoration: none;
+          background: $lightNavy;
           color: white;
+          padding: 5px 10px 5px 10px;
+          border-radius: 15px;
+          border: 0;
+          transition: background 0.2s;
+          &:hover {
+            background: $darkNavy;
+            text-decoration: none;
+            color: white;
+          }
         }
       }
     }
