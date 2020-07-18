@@ -4,16 +4,19 @@ import { Spinner } from "reactstrap";
 import { sanity } from "../util/index";
 import { useParams } from "react-router-dom";
 import "../css/childrens-unit-page.scss";
+import { Link } from "react-router-dom";
 
 export default function ChildrensUnitPage() {
   let { unitId } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [unit, setUnit] = useState({});
   const [lessons, setLessons] = useState({});
+  const [currentLesson, setCurrentLesson] = useState({});
 
-  const unitQuery = `*[_type == "childrensUnit" && unitNumber == $unitNumber] {
+  const unitQuery = `*[_type == "childrensUnit" && unitNumber == $unitNumber] [0] {
     unitNumber,
     title,
+    seriesImage,
     description
   }`;
   //using the url param to query Sanity for the Unit's videos and documents sorted by lesson
@@ -22,7 +25,8 @@ export default function ChildrensUnitPage() {
   videoId,
   "olderUrl" : olderWorksheet.asset->url,
   "youngerUrl":youngerWorksheet.asset->url,
-  "preschoolUrl":preschoolWorksheet.asset->url
+  "preschoolUrl":preschoolWorksheet.asset->url,
+  "number": lessonNumber
 }`;
   const params = { unitNumber: unitId.split("-")[1] };
   useEffect(() => {
@@ -31,6 +35,7 @@ export default function ChildrensUnitPage() {
     });
     sanity.fetch(lessonQuery, params).then((lesson) => {
       setLessons(lesson);
+      setCurrentLesson(lesson[0]);
       setIsLoading(false);
     });
     //eslint-disable-next-line
@@ -44,14 +49,31 @@ export default function ChildrensUnitPage() {
           <Spinner color="dark" />
         </div>
       ) : (
-        <div className="unit-description">
-          <h3 className="unit-description-title">
-            {`Unit ${unit[0].unitNumber} - ${unit[0].title}`}
-          </h3>
-          <p className="unit-description-body">{unit[0].description}</p>
+        <div className="unit-content">
+          <div className="unit-content-assets">
+            <Link to="/childrens-content">Back to Children's Content</Link>
+            <h3 className="unit-content-assets-title">
+              {`Unit ${unit.unitNumber} - ${unit.title}`}
+            </h3>
+
+            <p className="unit-content-assets-body">{unit.description}</p>
+          </div>
+
+          <div className="unit-content-video">
+            <iframe
+              allowFullScreen
+              title={currentLesson.title}
+              src={`https://player.vimeo.com/video/${currentLesson.videoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=175387`}
+            ></iframe>
+          </div>
+          <h5>
+            {" "}
+            Currently Playing: Lesson {currentLesson.number}{" "}
+            {currentLesson.title}
+          </h5>
         </div>
       )}
-      <div className="lesson-list">
+      <div className="unit-lesson-list">
         {isLoading ? (
           <div className="loading-spinner">
             <p>Loading Lessons</p>
@@ -59,38 +81,56 @@ export default function ChildrensUnitPage() {
           </div>
         ) : (
           lessons.map((lesson, index) => (
-            <div className="unit-lesson" key="index">
-              <h3>{lesson.title}</h3>
-              <div className="unit-lesson-video-container">
-                <iframe
-                  allowFullScreen
-                  title={lesson.title}
-                  src={`https://player.vimeo.com/video/${lesson.videoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=175387`}
-                ></iframe>
-              </div>
-              <h4>Download Worksheets</h4>
-              <div className="unit-lesson-worksheets">
-                <button
-                  target="blank"
-                  rel="noopener noreferrer"
-                  onClick={() => window.open(lesson.preschoolUrl)}
-                >
-                  Preschool
-                </button>
-                <button
-                  target="blank"
-                  rel="noopener noreferrer"
-                  onClick={() => window.open(lesson.youngerUrl)}
-                >
-                  Kinder-2nd Grade
-                </button>
-                <button
-                  target="blank"
-                  rel="noopener noreferrer"
-                  onClick={() => window.open(lesson.olderUrl)}
-                >
-                  3rd-5th Grade
-                </button>
+            <div
+              className={`unit-lesson-list-item ${
+                lesson.title === currentLesson.title ? "active" : " "
+              }`}
+              key="index"
+            >
+              <button
+                className="mobile-play-button"
+                onClick={() => setCurrentLesson(lesson)}
+              >
+                <h4>Play Lesson {lesson.number}</h4>
+              </button>
+              <button
+                className="play-button"
+                onClick={() => setCurrentLesson(lesson)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M4 4l12 6-12 6z" />
+                </svg>
+                <h5>Play Lesson</h5>
+              </button>
+              <h3 className="desktop-title">
+                {lesson.title} <span>Lesson {lesson.number}</span>
+              </h3>
+
+              <div className="unit-lesson-list-item-worksheets">
+                <h6>Download Worksheets</h6>
+                <div className="unit-lesson-list-item-worksheets-group">
+                  <button
+                    target="blank"
+                    rel="noopener noreferrer"
+                    onClick={() => window.open(lesson.preschoolUrl)}
+                  >
+                    Preschool
+                  </button>
+                  <button
+                    target="blank"
+                    rel="noopener noreferrer"
+                    onClick={() => window.open(lesson.youngerUrl)}
+                  >
+                    Kinder-2nd Grade
+                  </button>
+                  <button
+                    target="blank"
+                    rel="noopener noreferrer"
+                    onClick={() => window.open(lesson.olderUrl)}
+                  >
+                    3rd-5th Grade
+                  </button>
+                </div>
               </div>
             </div>
           ))
