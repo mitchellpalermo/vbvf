@@ -8,37 +8,56 @@ $green: #4f5957;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin: 3vh;
-  &-description {
-    width: 50%;
+
+  a {
+    margin: 1vh;
+  }
+
+  &-content {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
-    &-title {
-      text-align: left;
-      font-weight: 700;
+    &-assets {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        text-align: left;
+        font-weight: 700;
+        margin-top: 2vh;
+      }
+    }
+    &-video {
+      width: 90%;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      iframe {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    h5 {
+      text-align: center;
+      margin: 1vh;
     }
   }
+
   .loading-spinner {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .video-container {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    iframe {
-      position: absolute;
-      border: 0;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-    }
-  }
   &-lesson-list {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,7 +71,29 @@ $green: #4f5957;
       border-top: 2px solid rgba(46, 60, 73, 0.4);
       text-align: center;
 
+      h4.mobile-title {
+        display: none;
+      }
+      button.mobile-play-button {
+        display: none;
+      }
+      button.play-button {
+        background: $lightNavy;
+        border: none;
+        border-radius: 25px;
+        padding: 1vh;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        transition-property: transform;
+        transition: ease-in-out 0.2s;
+        transform: translate(0px, 0px);
+        &:hover {
+          transition: ease-in-out 0.2s;
+          transform: translate(0px, -5px);
+        }
+      }
+
       h3 {
+        width: 20%;
         span {
           font-size: 0.7em;
           display: block;
@@ -61,7 +102,7 @@ $green: #4f5957;
 
       &-worksheets {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
 
@@ -82,6 +123,9 @@ $green: #4f5957;
         }
       }
     }
+    .active {
+      background: $sand;
+    }
   }
 }
 @media screen and (max-width: 800px) {
@@ -98,9 +142,46 @@ $green: #4f5957;
       }
     }
     &-lesson-list {
-      width: 90%;
+      width: 100%;
       align-items: center;
       text-align: center;
+      &-item {
+        flex-direction: row;
+
+        h3.desktop-title {
+          display: none;
+        }
+        button.play-button {
+          display: none;
+        }
+        button.mobile-play-button {
+          display: block;
+          width: 100%;
+          background: $lightNavy;
+          border: none;
+          border-radius: 25px;
+          padding: 1vh;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          transition-property: transform;
+          transition: ease-in-out 0.2s;
+          transform: translate(0px, 0px);
+          color: white;
+          &:hover {
+            transition: ease-in-out 0.2s;
+            transform: translate(0px, -5px);
+          }
+        }
+        h5 {
+          display: none;
+        }
+        flex-direction: row;
+        &-worksheets {
+          display: block;
+          button {
+            margin: 1vh;
+          }
+        }
+      }
     }
   }
 }
