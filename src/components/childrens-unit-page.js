@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
-
+import smoothscroll from "smoothscroll-polyfill";
 import { sanity } from "../util/index";
 import { useParams } from "react-router-dom";
 import "../css/childrens-unit-page.scss";
@@ -12,7 +12,7 @@ export default function ChildrensUnitPage() {
   const [unit, setUnit] = useState({});
   const [lessons, setLessons] = useState({});
   const [currentLesson, setCurrentLesson] = useState({});
-
+  smoothscroll.polyfill();
   const unitQuery = `*[_type == "childrensUnit" && unitNumber == $unitNumber] [0] {
     unitNumber,
     title,
@@ -89,13 +89,19 @@ export default function ChildrensUnitPage() {
             >
               <button
                 className="mobile-play-button"
-                onClick={() => setCurrentLesson(lesson)}
+                onClick={() => {
+                  setCurrentLesson(lesson);
+                  window.scroll({ top: 0, left: 0, behavior: "smooth" });
+                }}
               >
                 <h4>Play Lesson {lesson.number}</h4>
               </button>
               <button
                 className="play-button"
-                onClick={() => setCurrentLesson(lesson)}
+                onClick={() => {
+                  setCurrentLesson(lesson);
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M4 4l12 6-12 6z" />
