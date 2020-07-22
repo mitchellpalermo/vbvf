@@ -170,7 +170,7 @@ const Contact = () => {
                 className="contact-error-message"
                 name="email"
               />
-              <h4>Are you located in San Antonio?</h4>
+              <h4>Are you located in the San Antonio area?</h4>
               <div role="group" className="contact-checkbox-group">
                 <label>
                   <Field type="radio" name="localToSa" value="Yes" />
