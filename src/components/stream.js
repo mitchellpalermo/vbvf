@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import "../css/stream.scss";
 import { sanity } from "../util/index";
+import ConnectWidget from "../components/connect-widget";
 
 export default function Stream(props) {
   const [studyMaterials, setStudyMaterials] = useState(null);
@@ -42,7 +43,6 @@ export default function Stream(props) {
         ) : (
           <>
             <div className="stream-info-title-link">
-              <h2>{props.title}</h2>
               {studyMaterials?.notesUrl && (
                 <div>
                   <span>
@@ -59,11 +59,16 @@ export default function Stream(props) {
                 </div>
               )}
             </div>
-            <p>{props.description}</p>
-
-            <Link to={props.seriesLink}>Watch the rest of this series</Link>
           </>
         )}
+      </div>
+      <div className="stream-supporting-materials">
+        <ConnectWidget />
+        <div className="stream-supporting-materials-from-cms">
+          <h2>{props.title}</h2>
+          <p>{props.description}</p>
+          <Link to={props.seriesLink}>Watch the rest of this series</Link>
+        </div>
       </div>
     </div>
   );

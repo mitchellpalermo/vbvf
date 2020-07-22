@@ -113,19 +113,21 @@ export default function Livestream() {
               seriesLink={`/bible-studies/${series.title}`}
             />
           ) : day() === "sunday" ? ( //return sunday stream
-            <Stream
-              streamUrl="https://vimeo.com/event/51649/embed"
-              title="Gospel of Matthew"
-              description="As we present this important book, we’ll give careful attention to
+            <>
+              <Stream
+                streamUrl="https://vimeo.com/event/51649/embed"
+                title="Gospel of Matthew"
+                description="As we present this important book, we’ll give careful attention to
               the details without losing sight of Matthew’s major ideas and
               themes. Together with our previous studies in Luke and John, we’re
               rounding out the full story of Jesus’ arrival and work on earth.
               Every Christian can profit from such a grounding."
-              seriesLink={{
-                pathname: "/sermon-redirect",
-                deepDive: "bible-studies/gospel-of-matthew",
-              }}
-            />
+                seriesLink={{
+                  pathname: "/sermon-redirect",
+                  deepDive: "bible-studies/gospel-of-matthew",
+                }}
+              />
+            </>
           ) : (
             //return livestream archive
             <div className="livestream-archive">
