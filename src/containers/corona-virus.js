@@ -11,11 +11,22 @@ export default function CoronaVirus() {
       </h1>
 
       <div className="corona-desc">
+        <div className="corona-desc-video-player">
+          <iframe
+            title="corona virus update"
+            src="https://player.vimeo.com/video/444721765?color=ffffff&title=0&byline=0&portrait=0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p style={{ textAlign: "center" }}>
+          Please watch Pastor Steve's video update on our plans for regathering.
+        </p>
         <p>
-          Given the continuing increase in COVID-19 cases in Bexar County, VBVF
-          has suspended all public meetings in our building until further
-          notice. We believe waiting until the pandemic is under control is in
-          the best interest of our church body and the city of San Antonio.
+          Given the ongoing risk of COVID-19 in Bexar County, VBVF has suspended
+          all public meetings in our building until further notice. We believe
+          waiting until the pandemic is under control is in the best interest of
+          our church body and the city of San Antonio.
         </p>
         <p>
           Meanwhile, we encourage you to continue worshiping with us remotely by

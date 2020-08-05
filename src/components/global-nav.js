@@ -146,19 +146,12 @@ const GlobalNav = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href="/bible-studies">Bible Studies</NavLink>
+              <NavLink href="/bible-studies">Bible Teaching</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/giving">Give</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink
-                target="_blank"
-                href="https://www.versebyverseministry.org/bible-studies/gospel-of-matthew"
-              >
-                Sermons
-              </NavLink>
-            </NavItem>
+
             <NavItem>
               <NavLink href="/contact">Contact</NavLink>
             </NavItem>
