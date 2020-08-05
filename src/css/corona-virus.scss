@@ -12,7 +12,29 @@
     color: goldenrod;
   }
   &-desc {
-    width: 80%;
+    width: 70%;
     margin: 5vh;
+    &-video-player {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+
+      iframe {
+        position: absolute;
+        border: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    p {
+      margin: 5vh 0 0 0;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .corona-desc {
+    width: 90%;
   }
 }
