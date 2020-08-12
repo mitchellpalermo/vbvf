@@ -1,3 +1,4 @@
+$gold: #e8b021;
 .staff-info-container {
   max-width: 90%;
   display: flex;
@@ -14,8 +15,10 @@
     max-width: 50%;
     h2 {
       text-align: center;
+      mix-blend-mode: normal;
     }
     p {
+      color: black;
       max-width: 90%;
       margin: 20px;
       align-self: flex-start;

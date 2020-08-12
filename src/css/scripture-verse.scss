@@ -1,5 +1,5 @@
 .scripture-container {
-  width: 40%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +10,8 @@
   .scripture-verse {
     font-size: 1.2em;
     font-weight: 200;
-    color: gray;
+    color: rgb(202, 187, 187);
+    mix-blend-mode: difference;
   }
   .scripture-reference {
     margin: 10px;

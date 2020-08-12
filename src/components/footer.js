@@ -1,15 +1,15 @@
 import React from "react";
 import FacebookLogo from "../images/logos/facebook_logo.png";
 import InstagramLogo from "../images/logos/instagram_logo.png";
-import "../css/footer.css";
+import "../css/footer.scss";
 
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <div className="footer">
       <p>Follow VBVF Online</p>
-      <div className="icon-container">
+      <div className="footer-icons">
         <a href="https://www.facebook.com/vbvfellowship/">
           <img src={FacebookLogo} alt="Facebook Logo" />
         </a>
@@ -17,7 +17,7 @@ const Footer = () => {
           <img src={InstagramLogo} alt="Instagram Logo" />
         </a>
       </div>
-      <ul className="disclosure-container">
+      <ul className="footer-disclosures">
         <li>
           <Link to="/privacy-policy">Privacy Policy</Link>
         </li>
@@ -26,7 +26,7 @@ const Footer = () => {
         </li>
       </ul>
 
-      <p className="copyright">&#169; 2019 Verse By Verse Fellowship</p>
+      <p className="footer-copyright">&#169; 2019 Verse By Verse Fellowship</p>
     </div>
   );
 };

@@ -1,18 +1,25 @@
 $darkNavy: #2e3c49;
 $lightNavy: #66788d;
 
-.style-me {
-  margin: 2vh;
+.button {
   text-decoration: none;
   background: $lightNavy;
   color: white;
-  padding: 5px 10px 5px 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 0;
   transition: background 0.2s;
   &:hover {
     background: $darkNavy;
     text-decoration: none;
     color: white;
+  }
+  &.sm {
+    padding: 5px 10px 5px 10px;
+  }
+  &.md {
+    padding: 10px 20px 10px 20px;
+  }
+  &.lg {
+    padding: 15px 30px 15px 30px;
   }
 }
