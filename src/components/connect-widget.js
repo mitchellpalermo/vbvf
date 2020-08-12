@@ -43,22 +43,25 @@ export default function ConnectWidget() {
       <h5>Get in Touch</h5>
       <div className="connect-widget-button-container">
         <Button
-          buttonFunc={() =>
-            window.open(
-              "https://vbvf.churchcenter.com/people/forms/26636?open-in-church-center-modal=true"
-            )
-          }
+          size="small"
+          link="https://vbvf.churchcenter.com/people/forms/26636?open-in-church-center-modal=true"
           title="Connect with us"
         />
         <Button
-          buttonFunc={() =>
-            window.open(
-              "https://vbvf.churchcenter.com/people/forms/34407?open-with-church-center-modal=true"
-            )
-          }
+          size="small"
+          link="https://vbvf.churchcenter.com/people/forms/34407?open-in-church-center-modal=true"
           title="Prayer Request"
         />
       </div>
+      <h5>Give to VBVF</h5>
+      <Button
+        size="medium"
+        title="Give now"
+        buttonFunc={() => {
+          window.fathom.trackGoal("7KDLHSBK", 0);
+        }}
+        link="https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"
+      />
     </div>
   );
 }

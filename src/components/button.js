@@ -13,9 +13,11 @@ const Button = (props) => {
   };
 
   return (
-    <button className={`button ${size()}`} onClick={props.buttonFunc}>
-      {props.title}
-    </button>
+    <a href={props.link ? props.link : "#0"}>
+      <button className={`button ${size()}`} onClick={props.buttonFunc}>
+        {props.title}
+      </button>
+    </a>
   );
 };
 export default Button;
