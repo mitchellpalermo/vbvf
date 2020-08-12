@@ -2,13 +2,10 @@ import React from "react";
 
 import Sofi from "../../images/leadership_photos/Sofi_Smith.jpeg";
 import JourneyLogo from "../../images/logos/journey-logo.png";
-import Checkin from "../..//images/childrens-ministry/checkin.jpg";
+import SofiJonBTS from "../..//images/childrens-ministry/sofi_jon_bts.jpg";
 import "../../css/childrens-ministry.scss";
 import ScriptureVerse from "../scripture-verse";
-import Coloring from "../../images/childrens-ministry/coloring.jpg";
-import JonTeaching from "../../images/childrens-ministry/jon_teaching.jpg";
-import LittleGirlLooking from "../../images/childrens-ministry/little_girl_looking.jpg";
-import JayTeaching from "../../images/childrens-ministry/jay-teaching-kids.jpg";
+import Button from "../button";
 import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
 
@@ -21,24 +18,8 @@ export default function ChildrensMinistry() {
           alt="Journey Kids Logo"
           src={JourneyLogo}
         />
+      </div>
 
-        <div className="childrens-ministry-header-photo-collage">
-          <img alt="children-coloring" src={Coloring}></img>
-          <img alt="children-looking" src={LittleGirlLooking}></img>
-          <img alt="children-learning" src={JonTeaching}></img>
-          <img alt="children-listening" src={JayTeaching}></img>
-        </div>
-      </div>
-      <div className="childrens-ministry-material-sign-up">
-        <p style={{ fontWeight: "bolder" }}>
-          We believe that biblical teaching and learning should continue at
-          home. Journey Kids is excited to offer weekly discipleship resources
-          for parents to use with their children.
-        </p>
-        <a className="button" href="/childrens-content">
-          View Resources
-        </a>
-      </div>
       <div className="childrens-ministry-mission">
         <p>{Content.firstRow.body}</p>
         <ScriptureVerse
@@ -47,9 +28,36 @@ export default function ChildrensMinistry() {
         />
       </div>
 
-      <div className="childrens-ministry-check-in">
-        <img alt="family registering child" src={Checkin} />
-        <p>{Content.secondRow.body}</p>
+      <div className="childrens-ministry-materials">
+        <div className="button-container">
+          <h2>
+            Biblically grounded
+            <br /> childrens' material
+          </h2>
+          <p>New videos and activities every week</p>
+          <Button
+            size="medium"
+            title="View resources"
+            buttonFunc={() => {
+              window.open("/childrens-content");
+            }}
+          />
+        </div>
+        <img alt="ministry leaders filming content" src={SofiJonBTS} />
+      </div>
+      <div className="childrens-ministry-sign-up">
+        <h4>
+          Join our email list to receive notifications about new children's
+          learning materials, events and other announcements.
+        </h4>
+        <Button
+          size="large"
+          title="Sign me up"
+          buttonFunc={() => {
+            window.location.href =
+              "https://vbvf.churchcenter.com/people/forms/118844?open-in-church-center-modal=true";
+          }}
+        />
       </div>
       <StaffInfo
         name={Content.leader.name}

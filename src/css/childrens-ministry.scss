@@ -8,6 +8,14 @@ $green: #4f5957;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(../images/childrens-ministry/Intersect.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h2 {
+    font-weight: 800;
+  }
 
   &-header {
     width: 100%;
@@ -21,108 +29,81 @@ $green: #4f5957;
       padding: 20px;
       margin: 3vh;
     }
-    &-photo-collage {
-      max-width: 70%;
-      img {
-        width: 50%;
-        padding: 10px;
-      }
-    }
   }
 
   &-mission {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 5vh;
-    margin-top: 3vh;
-    background: #2e3c49;
+    margin: 3vh 0 10vh 0;
 
     p {
-      color: white;
-      width: 60%;
-    }
-  }
-  &-material-sign-up {
-    display: flex;
-    margin: 5vh;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background: $sand;
-    border-radius: 25px;
-    padding: 2vh;
-    .button {
-      margin: 2vh;
-      text-decoration: none;
-      background: $lightNavy;
-      color: white;
-      padding: 5px 10px 5px 10px;
-      border-radius: 15px;
-      border: 0;
-      transition: background 0.2s;
-      &:hover {
-        background: $darkNavy;
-        text-decoration: none;
-        color: white;
-      }
-    }
-    p {
+      margin: 0 5vh 0 0;
       width: 70%;
     }
   }
-  &-check-in {
+
+  &-materials {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     padding: 5vh;
+    margin: 0 0 5vh 0;
+    h2 {
+      color: $gold;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     img {
-      width: 50%;
-      border-radius: 20px;
+      border-radius: 10px;
     }
-    p {
-      width: 40%;
+  }
+  &-sign-up {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh 0 20vh 0;
+    h4 {
+      text-align: center;
+      margin-bottom: 2vh;
+      color: $green;
     }
   }
 }
 @media screen and (max-width: 800px) {
   .childrens-ministry {
+    background-size: cover;
     &-header {
       &-logo {
         width: 80%;
-        height: auto;
-        padding: 20px;
-      }
-      &-photo-collage {
-        max-width: 90%;
-        img {
-          width: 50%;
-          padding: 5px;
-        }
       }
     }
-    &-material-sign-up {
+
+    &-mission {
+      width: 100%;
       flex-direction: column;
       p {
         width: 100%;
+        margin: 0 0 5vh 0;
       }
     }
-    &-mission {
-      width: 100%;
-      flex-direction: column-reverse;
-      p {
-        width: 90%;
-      }
-    }
-    &-check-in {
+    &-materials {
       width: 100%;
       flex-direction: column;
       padding: 0;
+      text-align: center;
+
       img {
         width: 100%;
         margin-bottom: 20px;
@@ -130,6 +111,17 @@ $green: #4f5957;
       }
       p {
         width: 90%;
+      }
+      .button-container {
+        align-items: center;
+        margin: 0 0 3vh 0;
+      }
+    }
+    &-sign-up {
+      flex-direction: column;
+      margin: 0 0 10vh 0;
+      p {
+        width: 100%;
       }
     }
   }

@@ -1,0 +1,45 @@
+.footer {
+  z-index: 1;
+  position: static;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 20vh;
+  padding-top: 5vh;
+  a {
+    text-decoration: none;
+    font-weight: 400;
+  }
+  ul {
+    list-style: none;
+    li {
+      margin: 5px;
+    }
+  }
+
+  &-icons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    img {
+      margin: 10px;
+      height: 40px;
+      width: auto;
+    }
+  }
+  &-disclosures {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+  }
+  &-copyright {
+    color: white;
+    font-size: 0.75em;
+  }
+}

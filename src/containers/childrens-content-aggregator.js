@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "../components/button";
+
 import "../css/childrens-content-aggregator.scss";
 import { Link } from "react-router-dom";
 import { Card, CardTitle, CardSubtitle, CardImg } from "reactstrap";
@@ -21,18 +21,6 @@ export default function ChildrensContentAggregator() {
     <div className="units">
       <div className="units-desc">
         <h1>Children's Teaching Materials</h1>
-        <div className="resource-sign-up">
-          <p>
-            Join our email list to receive notifications about new children's
-            learning materials, events and other announcements.
-          </p>
-          <Button
-            title="Sign Up"
-            buttonFunc={() =>
-              window.open("https://vbvf.churchcenter.com/people/forms/118844")
-            }
-          />
-        </div>
       </div>
       {childrensUnits.map((unit) => (
         <Link
