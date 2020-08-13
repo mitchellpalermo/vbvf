@@ -3,7 +3,7 @@ import { Spinner } from "reactstrap";
 import smoothscroll from "smoothscroll-polyfill";
 import { sanity } from "../util/index";
 import { useParams } from "react-router-dom";
-import "../css/childrens-unit-page.scss";
+import "../css/childrens/childrens-unit-page.scss";
 import { Link } from "react-router-dom";
 
 export default function ChildrensUnitPage() {
