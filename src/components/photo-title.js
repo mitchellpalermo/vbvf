@@ -7,8 +7,9 @@ export default function PhotoTitle(props) {
       <img loading={props.isLazy} src={props.photo} alt={props.name} />
       <p>
         {props.name}
-        <span>{props.title}</span>
-        <span>{props.email}</span>
+        {props.title ? <span>{props.title}</span> : null}
+        {props.role ? <span>{props.role}</span> : null}
+        {props.email ? <span>{props.email}</span> : null}
       </p>
     </div>
   );
