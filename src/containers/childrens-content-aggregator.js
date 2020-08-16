@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "../css/childrens-content-aggregator.scss";
+import "../css/childrens/childrens-content-aggregator.scss";
 import { Link } from "react-router-dom";
 import { Card, CardTitle, CardSubtitle, CardImg } from "reactstrap";
 import { sanity, sanityUrlFor } from "../util/index";

@@ -3,7 +3,7 @@ import React from "react";
 import Sofi from "../../images/leadership_photos/Sofi_Smith.jpeg";
 import JourneyLogo from "../../images/logos/journey-logo.png";
 import SofiJonBTS from "../..//images/childrens-ministry/sofi_jon_bts.jpg";
-import "../../css/childrens-ministry.scss";
+import "../../css/childrens/childrens-ministry.scss";
 import ScriptureVerse from "../scripture-verse";
 import Button from "../button";
 import Content from "../../content/childrens-ministry-content";
