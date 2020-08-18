@@ -14,6 +14,9 @@ $green: #4f5957;
     display: flex;
     flex-direction: column;
   }
+  h5 {
+    margin-top: 10px;
+  }
 }
 @media screen and (max-width: 800px) {
   .connect-widget {

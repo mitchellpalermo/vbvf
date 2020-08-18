@@ -48,7 +48,7 @@ export default function Leadership() {
           isLazy="eager"
           photo={Bob}
           name={"Bob Butler"}
-          title={"Security"}
+          title={"Missions"}
         />
         <PhotoTitle
           isLazy="eager"
@@ -77,14 +77,16 @@ export default function Leadership() {
           photo={Wesley}
           name={"Wesley Livingston"}
           email="pastorwesley@vbvf.org"
-          title={"Youth Pastor"}
+          title={"Associate Pastor"}
+          role={"Online and Youth Ministry"}
         />
         <PhotoTitle
           isLazy="lazy"
           photo={Charlie}
           name={"Charlie Haley"}
           email="pastorcharlie@vbvf.org"
-          title={"Worship Pastor"}
+          title={"Associate Pastor"}
+          role={"Worship"}
         />
         <PhotoTitle
           isLazy="lazy"
@@ -131,8 +133,7 @@ export default function Leadership() {
           isLazy="lazy"
           photo={Kyle}
           name={"Kyle Mounts"}
-          email="kyle.mounts@vbvf.org"
-          title={"Audio/Visual Coordinator"}
+          email={"Production Director"}
         />
         <PhotoTitle
           isLazy="lazy"
