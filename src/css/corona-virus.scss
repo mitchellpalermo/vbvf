@@ -14,22 +14,17 @@
   &-desc {
     width: 70%;
     margin: 5vh;
-    &-video-player {
-      overflow: hidden;
-      padding-bottom: 56.25%;
-      position: relative;
-
-      iframe {
-        position: absolute;
-        border: 0;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
+    ul {
+      list-style-type: none;
+      li {
+        margin: 3vh 0 0 0;
+        p {
+          margin: 0;
+        }
       }
     }
     p {
-      margin: 5vh 0 0 0;
+      margin: 5vh 0 5vh 0;
     }
   }
 }

@@ -10,28 +10,28 @@ import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
 
 export default function ChildrensMinistry() {
-  const weeklyActivities = [
-    {
-      title: "Prayer Night",
-      desc:
-        "We all have needs and the church is called to carry the burdens and praises of life together. Join us every 2nd and 4th Sunday of every month at 6:30pm",
-    },
-    {
-      title: "Devo Day",
-      desc:
-        "Weekly we join together via zoom for a short lesson, game and fellowship with children currently in  3rd, 4th and 5th grade. Join us every Thursday at 630PM via zoom, as we have fun while coming together in God’s Word.",
-    },
-    {
-      title: "Story Time",
-      desc:
-        "We would love for your young children, grades PreK through 2nd, to join us for a vibrant and alive story time. The reading will take place via Zoom, Every 1st, 3rd & 5th Monday. We will enjoy a time or short worship, reading and other fun stuff!",
-    },
-    {
-      title: "Packet Pickup",
-      desc:
-        "Come pick up a packet filled with crafts, activity pages and much more on the last Friday of each month. We will distribute packets at 1PM, in the VBVF Church parking lot.",
-    },
-  ];
+  // const weeklyActivities = [
+  //   {
+  //     title: "Prayer Night",
+  //     desc:
+  //       "We all have needs and the church is called to carry the burdens and praises of life together. Join us every 2nd and 4th Sunday of every month at 6:30pm",
+  //   },
+  //   {
+  //     title: "Devo Day",
+  //     desc:
+  //       "Weekly we join together via zoom for a short lesson, game and fellowship with children currently in  3rd, 4th and 5th grade. Join us every Thursday at 630PM via zoom, as we have fun while coming together in God’s Word.",
+  //   },
+  //   {
+  //     title: "Story Time",
+  //     desc:
+  //       "We would love for your young children, grades PreK through 2nd, to join us for a vibrant and alive story time. The reading will take place via Zoom, Every 1st, 3rd & 5th Monday. We will enjoy a time or short worship, reading and other fun stuff!",
+  //   },
+  //   {
+  //     title: "Packet Pickup",
+  //     desc:
+  //       "Come pick up a packet filled with crafts, activity pages and much more on the last Friday of each month. We will distribute packets at 1PM, in the VBVF Church parking lot.",
+  //   },
+  // ];
 
   return (
     <div className="childrens-ministry">
