@@ -28,6 +28,7 @@ import Leadership from "./components/leadership";
 import Giving from "./containers/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./containers/childrens-content-aggregator";
+import WhatsHappening from "./containers/whats-happening";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/connect" component={ConnectPage} />
+          {/* <Route exact path="/news" component={WhatsHappening} /> */}
           <Route exact path="/about/faq" component={FAQ} />
           <Route exact path="/about/leadership" component={Leadership} />
           <Route exact path="/about/our-story" component={OurStory} />
