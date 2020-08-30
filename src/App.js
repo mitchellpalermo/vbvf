@@ -28,7 +28,7 @@ import Leadership from "./components/leadership";
 import Giving from "./containers/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./containers/childrens-content-aggregator";
-import WhatsHappening from "./containers/whats-happening";
+//import WhatsHappening from "./containers/whats-happening";
 
 function App() {
   return (
