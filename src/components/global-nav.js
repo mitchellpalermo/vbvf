@@ -74,7 +74,7 @@ const GlobalNav = (props) => {
                     </div>
                     <div>
                       <h2>Location</h2>
-                      <p>511 E Nakoma St. San Antonio, TX 78216</p>
+                      <p>551 E Nakoma St. San Antonio, TX 78216</p>
                       <Button
                         outline
                         color="dark"
