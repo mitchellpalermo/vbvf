@@ -39,7 +39,7 @@ export default function FAQ() {
         <p>
           Our church enthusiastically welcomes anyone to meet and worship with
           us every week…no strings attached! If you’re interested in learning
-          more about our church you can learn more on our{" "}
+          more about our church please visit our{" "}
           <Link to="/connect">Connect Page</Link>.
         </p>
         <h4>How do I join a small group?</h4>
