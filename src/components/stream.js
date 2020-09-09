@@ -64,11 +64,11 @@ export default function Stream(props) {
       </div>
       <div className="stream-supporting-materials">
         <ConnectWidget />
-        <div className="stream-supporting-materials-from-cms">
+        {/* <div className="stream-supporting-materials-from-cms">
           <h2>{props.title}</h2>
           <p>{props.description}</p>
           <Link to={props.seriesLink}>Watch the rest of this series</Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
