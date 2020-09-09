@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import "../css/stream.scss";
 import { sanity } from "../util/index";
