@@ -12,14 +12,14 @@ var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
   const [series, setSeries] = useState({});
-  const ephesiansQuery = `*[_type == "series" && title == "Ephesians"]{
+  const midWeekQuery = `*[_type == "series" && title == "2 Samuel"]{
   title,
   description
 }`;
 
   useEffect(() => {
-    sanity.fetch(ephesiansQuery).then((series) => setSeries(series[0]));
-  }, [ephesiansQuery]);
+    sanity.fetch(midWeekQuery).then((series) => setSeries(series[0]));
+  }, [midWeekQuery]);
 
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
 
@@ -36,7 +36,7 @@ export default function Livestream() {
   const day = () => {
     let today = new Date();
     if (
-      today.getDay() === 2 && //tuesday
+      today.getDay() === 3 && //wednesday
       today.getHours() >= 18 && //between 6pm
       today.getHours() <= 23 // and 9pm
     ) {
@@ -44,7 +44,7 @@ export default function Livestream() {
         //check env var for value
         return process.env.REACT_APP_STREAM;
       } else {
-        return "tuesday";
+        return "wednesday";
       }
     } else if (
       today.getDay() === 0 && //sunday
@@ -68,7 +68,7 @@ export default function Livestream() {
 
   const noStreamMessage = (
     <p>
-      Verse by Verse Fellowship livestreams its Tuesday and Sunday services.
+      Verse by Verse Fellowship livestreams its Wednesday and Sunday services.
       While there's not a service streaming right now, please feel free to check
       out some of our recent services below. Recordings of our services are
       available on our <Link to="/bible-studies">Bible Studies</Link> page.
@@ -105,7 +105,7 @@ export default function Livestream() {
         </>
       ) : (
         <>
-          {day() === "tuesday" ? ( //if it's tuesday return tuesday stream
+          {day() === "wednesday" ? ( //if it's wednesday return wednesday stream
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
               title={series.title}

@@ -19,16 +19,25 @@ export default function CoronaVirus() {
         </p>
         <ul>
           <li>
-            <h4>Women’s Bible Study in Ecclesiastes</h4>{" "}
-            <p>Tuesdays at 10:00 AM starting September 8th</p>
+            <h5>Women’s Bible Study</h5> <h6>Teaching in Ecclesiastes</h6>
+            <p>
+              Tuesdays at 10:00 AM <br /> September 8th
+            </p>
           </li>
           <li>
-            <h4>Adult Midweek Bible study in 2 Samuel</h4>{" "}
-            <p>Wednesdays at 7:00 PM starting September 9th</p>
+            <h5>Adult Midweek Bible Study</h5>
+            <h6> Teaching in 2 Samuel</h6>
+            <p>
+              Wednesdays at 7:00 PM <br /> September 9th
+            </p>
           </li>
           <li>
-            <h4>Weekly Worship Service with teaching through Matthew</h4>{" "}
-            <p>Sundays at 10:30 AM starting September 20th</p>
+            <h5>Weekend Worship Service</h5>
+            <h6>Teaching in Matthew</h6>
+            <p>
+              Sundays at 10:30 AM <br />
+              September 20th
+            </p>
           </li>
         </ul>
         <p>

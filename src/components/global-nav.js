@@ -55,22 +55,16 @@ const GlobalNav = (props) => {
                 <ModalBody>
                   <div className="service-time-modal">
                     <div>
-                      <h2>All services are suspended at this time.</h2>
-                      <p>
-                        For more information please visit our{" "}
-                        <Link onClick={dualToggle} to="/corona-virus">
-                          Regathering Page
-                        </Link>
-                        .
-                      </p>
-                      {/* <h2>Weekend Services</h2>
-                      <p>Saturday - 5:30pm</p>
+                      <h2>Weekend Service</h2>
+
                       <p>Sunday - 10:30am</p>
                     </div>
                     <div>
                       <h2>Mid-Week Studies</h2>
-                      <p>Tuesday - 7:00pm</p>
-                      <p>Women's Bible Study Tuesday - 10:00am</p> */}
+                      <p>Wednesday - 7:00pm</p>
+                      <p>
+                        Women's Bible Study <br></br> Tuesday - 10:00am
+                      </p>
                     </div>
                     <div>
                       <h2>Location</h2>
@@ -88,7 +82,7 @@ const GlobalNav = (props) => {
                               );
                         }}
                       >
-                        Open in Maps
+                        Open Map
                       </Button>
                       <p className="contact-page-link">
                         Looking for our <strong>mailing address?</strong> Check
