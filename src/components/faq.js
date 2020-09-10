@@ -12,10 +12,7 @@ export default function FAQ() {
       <div className="faq-questions">
         <h1>{faq.title}</h1>
         <h4>{faq.locationQuestion.title}</h4>
-        <p>
-          {faq.locationQuestion.body} Visit our{" "}
-          <Link to="/livestream">Livestream page to view our services.</Link>
-        </p>
+        <p>{faq.locationQuestion.body}</p>
         <h4>{faq.dressQuestion.title}</h4>
         <p>{faq.dressQuestion.body}</p>
 
