@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/home.scss";
 
-import { Button } from "reactstrap";
+import Button from "../components/button";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
@@ -50,12 +50,13 @@ const Home = () => {
       <div className="secondary-content">
         <div id="connection-meeting" className="secondary-content-block">
           <div className="secondary-content-block-words">
-            <h2>Connection Meeting</h2>
+            <h2>Connect with us!</h2>
             <p>
-              Learn about our vision, beliefs and how you can join in our
-              journey. Attend a connect meeting to learn how to make VBVF your
-              church. <Link to="connect/">Learn More</Link>
+              Hear about our vision, beliefs and how you can join in our
+              journey. Visit our Connect Page to learn how you can make VBVF
+              your church.
             </p>
+            <Button link="/connect" size="medium" title="Connect Page" />
           </div>
           <img
             loading="lazy"
