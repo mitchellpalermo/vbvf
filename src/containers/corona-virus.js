@@ -50,8 +50,8 @@ export default function CoronaVirus() {
         <p>
           We will continue to <Link to="/livestream">livestream</Link> our
           weekend worship service on Sundays at 10:30 AM and our midweek Bible
-          study on Tuesday nights at 7:00 PM. You can also check out all of our
-          previous and current bible studies{" "}
+          study on Wednesday nights at 7:00 PM. You can also check out all of
+          our previous and current bible studies{" "}
           <Link to="/bible-studies">here</Link>.
         </p>
         <p>
