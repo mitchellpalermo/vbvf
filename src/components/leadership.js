@@ -134,6 +134,7 @@ export default function Leadership() {
           photo={Kyle}
           name={"Kyle Mounts"}
           email="kyle.mounts@vbvf.org"
+          title={"Production Director"}
         />
         <PhotoTitle
           isLazy="lazy"
