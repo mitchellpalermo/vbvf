@@ -32,16 +32,12 @@ const Home = () => {
           </h1>
 
           <div className="main-header-buttons">
-            <div className="button">
-              <Button href="/livestream" color="light">
-                View Livestream
-              </Button>
-            </div>
-            <div className="button">
-              <Button href="/corona-virus" color="light">
-                Regathering Details
-              </Button>
-            </div>
+            <Button link="/livestream" size="medium" title="View Livestream" />
+            <Button
+              link="/corona-virus"
+              size="medium"
+              title="Regathering Details"
+            />
           </div>
         </div>
         <span className="see-more-arrow" />
@@ -72,12 +68,10 @@ const Home = () => {
             {/* <img alt="" src={ChurchIcon} /> */}
             <p>{series.description}</p>
             <Button
-              outline
-              color="light"
-              href={`/bible-studies/${series.title}`}
-            >
-              Listen to {series.title}
-            </Button>
+              title={`Listen to ${series.title}`}
+              size="small"
+              link={`/bible-studies/${series.title}`}
+            />
           </span>
         </div>
         <div className="series-promo" id="matthew-series">
@@ -96,9 +90,7 @@ const Home = () => {
                 deepDive: "bible-studies/gospel-of-matthew",
               }}
             >
-              <Button outline color="light">
-                Listen to Matthew
-              </Button>
+              <Button size="small" title="Listen to Matthew" />
             </Link>
           </span>
           <img loading="lazy" src={CrownOfThorns} alt="crown of thorns" />

@@ -9,6 +9,8 @@ $lightNavy: #66788d;
   border: 0;
   transition: background 0.2s;
   margin: 5px 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
   &:hover {
     background: $darkNavy;
     text-decoration: none;
