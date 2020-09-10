@@ -4,7 +4,9 @@ body {
 
 .main-header {
   position: relative;
-  background: url(../images/hand_raised_compressed.jpg);
+
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../images/vbvf_header.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

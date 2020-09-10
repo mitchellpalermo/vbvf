@@ -15,9 +15,16 @@
     width: 70%;
     margin: 5vh;
     ul {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: row wrap;
       list-style-type: none;
       li {
-        margin: 3vh 0 0 0;
+        width: 30%;
+        text-align: center;
+
         p {
           margin: 0;
         }
@@ -31,5 +38,11 @@
 @media screen and (max-width: 800px) {
   .corona-desc {
     width: 90%;
+    ul {
+      flex-direction: column;
+      li {
+        width: 100%;
+      }
+    }
   }
 }

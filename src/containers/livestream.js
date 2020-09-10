@@ -12,14 +12,14 @@ var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
   const [series, setSeries] = useState({});
-  const ephesiansQuery = `*[_type == "series" && title == "2 Samuel"]{
+  const midWeekQuery = `*[_type == "series" && title == "2 Samuel"]{
   title,
   description
 }`;
 
   useEffect(() => {
-    sanity.fetch(ephesiansQuery).then((series) => setSeries(series[0]));
-  }, [ephesiansQuery]);
+    sanity.fetch(midWeekQuery).then((series) => setSeries(series[0]));
+  }, [midWeekQuery]);
 
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
 
@@ -105,7 +105,7 @@ export default function Livestream() {
         </>
       ) : (
         <>
-          {day() === "tuesday" ? ( //if it's tuesday return tuesday stream
+          {day() === "wednesday" ? ( //if it's wednesday return wednesday stream
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
               title={series.title}

@@ -25,8 +25,10 @@ const Home = () => {
       <div className="main-header">
         <div className="main-header-titles">
           <h1>
-            Trust in the Word
-            <h2>John 1:1</h2>
+            Welcome Back
+            <h2 style={{ fontWeight: "500" }}>
+              Weekend services starting September 20th
+            </h2>
           </h1>
 
           <div className="main-header-buttons">

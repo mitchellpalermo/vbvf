@@ -41,7 +41,7 @@ const ConnectPage = () => {
               <h2>2</h2>
               <ConnectionStep
                 copy="Attend a Connection Meeting. Sign up using the link below."
-                link="https://vbvf.churchcenter.com/registrations/events/342417"
+                link="https://vbvf.churchcenter.com/registrations/events/category/21158"
                 buttonText="Connection Meeting"
               />
             </li>
