@@ -17,8 +17,8 @@ const ConnectPage = () => {
             opportunity to hear more about our church distinctives, our history,
             vision, beliefs and style of ministry. Meet Pastor Steve and the
             other VBVF pastors, ask questions and get to know us. The meeting
-            takes place on the first weekend of the month at 4:00 PM at the
-            church, just prior to our regular Saturday evening service.
+            takes place on the first weekend of the month in the Flex Room right
+            after the Sunday service.
           </p>
         </div>
         <img src={Attendee} alt="vbvf member in connection meeting" />
