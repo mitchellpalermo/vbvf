@@ -29,8 +29,10 @@ export default function FAQ() {
           Children’s Ministry, children birth through 5th grade will be able to
           learn Bible lessons in a safe environment, from loving teachers
           committed to ministering to children. Visit our{" "}
-          <Link to="/childrens-ministry">Children's Ministry page</Link> for
-          more information.
+          <Link to="/ministries/childrens-ministry">
+            Children's Ministry page
+          </Link>{" "}
+          for more information.
         </p>
         <h4>How do I become a part of VBVF?</h4>
         <p>

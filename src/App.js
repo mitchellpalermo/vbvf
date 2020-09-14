@@ -29,6 +29,7 @@ import Giving from "./containers/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./containers/childrens-content-aggregator";
 //import WhatsHappening from "./containers/whats-happening";
+import Bulletin from "./containers/bulletin";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <GlobalNav />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/bulletin" component={Bulletin} />
           <Route exact path="/connect" component={ConnectPage} />
           {/* <Route exact path="/news" component={WhatsHappening} /> */}
           <Route exact path="/about/faq" component={FAQ} />
