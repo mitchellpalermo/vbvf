@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Document, pdfjs } from "react-pdf";
+import { Document, Page } from "react-pdf";
 import { Spinner } from "reactstrap";
 import { sanity } from "../util/index";
 
@@ -14,16 +14,18 @@ export default function Bulletin() {
   useEffect(() => {
     sanity.fetch(bulletinQuery).then((bulletin) => {
       setBulletinUrl(bulletin.bulletinUrl);
-      setIsLoading(!isLoading);
     });
-  }, [bulletinQuery]);
+    setIsLoading(!isLoading);
+  }, []);
   console.log(bulletinUrl);
   return (
     <div>
       {isLoading ? (
         <Spinner color="dark" />
       ) : (
-        <Document file={bulletinUrl}></Document>
+        <Document file={bulletinUrl} options={{ workerSrc: "/pdf.worker.js" }}>
+          <Page pageNumber={1} />
+        </Document>
       )}
     </div>
   );

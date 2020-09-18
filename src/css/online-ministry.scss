@@ -1,0 +1,58 @@
+$gold: #e8b021;
+$lightNavy: #66788d;
+$sand: #dbcca5;
+$darkNavy: #2e3c49;
+$green: #4f5957;
+
+.online-ministry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  &-header {
+    display: flex;
+    background-image: url("../images/online_ministry.jpg");
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+    align-items: center;
+    margin: 3vh;
+    .mission-container {
+      width: 40%;
+
+      h2 {
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+  }
+  h1 {
+    text-align: center;
+    font-weight: 800;
+  }
+
+  .question {
+    margin: 10vh;
+  }
+
+  .link-block-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10vh;
+    .link-block {
+      font-weight: 600;
+      text-align: center;
+      width: 30%;
+    }
+  }
+  #join {
+    background: green;
+  }
+  #more-questions {
+    background: red;
+  }
+}
