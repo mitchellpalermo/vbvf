@@ -20,7 +20,7 @@ import Contact from "./containers/contact";
 import ScrollToTop from "./components/scroll-to-top";
 import StudyPage from "./components/study-page";
 import Livestream from "./containers/livestream";
-import CoronaVirus from "./containers/corona-virus";
+import AttendService from "./containers/attend-service";
 import FAQ from "./components/faq";
 import OurStory from "./components/our-story";
 import Beliefs from "./components/beliefs";
@@ -86,7 +86,7 @@ function App() {
             component={SmallGroups}
           />
           <Route exact path="/ministries/serve" component={Serve} />
-          <Route exact path="/corona-virus" component={CoronaVirus} />
+          <Route exact path="/attend" component={AttendService} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
