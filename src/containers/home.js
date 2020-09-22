@@ -24,20 +24,12 @@ const Home = () => {
     <div>
       <div className="main-header">
         <div className="main-header-titles">
-          <h1>
-            Welcome Back
-            <h2 style={{ fontWeight: "500" }}>
-              Weekend services starting September 20th
-            </h2>
-          </h1>
+          <h1>Trust the Word</h1>
+          <h2 style={{ color: "white" }}>John 1:1</h2>
 
           <div className="main-header-buttons">
-            <Button link="/livestream" size="medium" title="View Livestream" />
-            <Button
-              link="/corona-virus"
-              size="medium"
-              title="Regathering Details"
-            />
+            <Button link="/livestream" size="medium" title="View livestream" />
+            <Button link="/attend" size="medium" title="Attend a service" />
           </div>
         </div>
         <span className="see-more-arrow" />
