@@ -55,15 +55,18 @@ const GlobalNav = (props) => {
                 <ModalBody>
                   <div className="service-time-modal">
                     <div>
-                      <h2>Weekend Service</h2>
+                      <h2>Weekend Services</h2>
 
-                      <p>Sunday - 10:30am</p>
+                      <p>Sunday 9:00am & 11:00am</p>
                     </div>
                     <div>
-                      <h2>Mid-Week Studies</h2>
-                      <p>Wednesday - 7:00pm</p>
+                      <h2>Mid-Week Bible Studies</h2>
                       <p>
-                        Women's Bible Study <br></br> Tuesday - 10:00am
+                        Adult Study <br />
+                        Wednesday - 7:00pm
+                      </p>
+                      <p>
+                        Women's Study <br></br> Tuesday - 10:00am
                       </p>
                     </div>
                     <div>
