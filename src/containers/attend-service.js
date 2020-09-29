@@ -13,8 +13,8 @@ export default function AttendService() {
       <div className="attend-desc">
         <p>
           Verse By Verse Fellowship is now conducting in-person worship services
-          at our building at 551 E. Nakoma on Sundays at 10:30 AM. Our worship
-          service consists of live, contemporary worship music and
+          at our building at 551 E. Nakoma on Sundays at 9:00am and 11:00am. Our
+          worship service consists of live, contemporary worship music and
           verse-by-verse Bible preaching through the Gospel of Matthew.
         </p>
         <p>
@@ -55,10 +55,10 @@ export default function AttendService() {
           registration required.
         </p>
         <p>
-          We will continue to <Link to="/livestream">livestream</Link> our
-          weekend worship service on Sundays at 10:30 AM and our midweek Bible
-          study on Wednesday nights at 7:00 PM. You can also check out all of
-          our previous and current bible studies{" "}
+          We will <Link to="/livestream">livestream</Link> our weekend worship
+          service on Sundays at 11:00 AM and our midweek Bible study on
+          Wednesday nights at 7:00 PM. You can also check out all of our
+          previous and current bible studies{" "}
           <Link to="/bible-studies">here</Link>.
         </p>
         <p>
