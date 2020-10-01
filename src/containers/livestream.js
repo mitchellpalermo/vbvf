@@ -49,7 +49,7 @@ export default function Livestream() {
     } else if (
       today.getDay() === 0 && //sunday
       today.getHours() >= 10 && //between 10am
-      today.getHours() <= 12 // and 12pm
+      today.getHours() <= 13 // and 1pm
     ) {
       if (process.env.REACT_APP_STREAM !== "none") {
         //check env var for value
