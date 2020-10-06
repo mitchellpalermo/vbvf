@@ -6,6 +6,7 @@ import ConnectPage from "./containers/connect-page";
 
 import StudyAggregator from "./containers/study-aggregator";
 import SermonRedirect from "./containers/sermon-redirect";
+import RegistrationRedirect from "./containers/registration-redirect";
 import GivingRedirect from "./containers/giving-redirect";
 import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
@@ -28,8 +29,8 @@ import Leadership from "./components/leadership";
 import Giving from "./containers/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./containers/childrens-content-aggregator";
+
 // import OnlineMinistry from "./containers/online-ministry";
-// import Bulletin from "./containers/bulletin";
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
         <GlobalNav />
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route exact path="/bulletin" component={Bulletin} /> */}
+
           <Route exact path="/connect" component={ConnectPage} />
           {/* <Route exact path="/online-ministry" component={OnlineMinistry} /> */}
 
@@ -54,6 +55,11 @@ function App() {
           <Route path="/bible-studies/:studyName" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/giving-redirect" component={GivingRedirect} />
+          <Route
+            exact
+            path="/registration-redirect"
+            component={RegistrationRedirect}
+          />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route
             exact

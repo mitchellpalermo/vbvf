@@ -39,7 +39,7 @@ const GlobalNav = (props) => {
     <div>
       <Navbar className="menu-bar" color="light" light expand="md">
         <NavbarBrand href="/">
-          <img id="menu-bar-icon" src={VBVFLogo} alt="VBVF Logo" />
+          <img src={VBVFLogo} alt="VBVF Logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -142,6 +142,9 @@ const GlobalNav = (props) => {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+            <NavItem>
+              <NavLink href="/registration-redirect">Events</NavLink>
+            </NavItem>
             <NavItem>
               <NavLink href="/bible-studies">Bible Teaching</NavLink>
             </NavItem>
