@@ -26,9 +26,9 @@ const GivingRedirect = (props) => {
         <h1>You are now leaving Verse by Verse Fellowship</h1>
         <p>
           You're being transferred to our giving portal in {counter} seconds.
-          When you're finished, you may close the tab and come back to Verse by
-          Verse Fellowship's site. Please click the cancel button below if you
-          would like to stay here.
+          When you're finished, you may hit the back button and come back to
+          Verse by Verse Fellowship's site. Please click the cancel button below
+          if you would like to stay here.
         </p>
       </div>
       <div className="redirect-buttons">
