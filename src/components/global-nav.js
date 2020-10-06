@@ -143,9 +143,7 @@ const GlobalNav = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
-              <NavLink href="https://vbvf.churchcenter.com/registrations/events">
-                Events
-              </NavLink>
+              <NavLink href="/registration-redirect">Events</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="/bible-studies">Bible Teaching</NavLink>
