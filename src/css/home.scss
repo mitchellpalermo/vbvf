@@ -78,20 +78,7 @@ body {
 }
 
 #samuel-series {
-  background: linear-gradient(to left, transparent, 95%, #000000),
-    url(../images/home_page/2_Samuel_resized.jpg);
   background-color: black;
-  background-size: contain;
-  background-position: top left 60px;
-  justify-content: flex-end;
-  background-repeat: no-repeat;
-  img {
-    padding: 5vh 0 5vh 0;
-    height: 50vh;
-  }
-  p {
-    margin: 5vh 10vh 5vh 5vh;
-  }
 }
 
 #matthew-series {
@@ -159,6 +146,9 @@ body {
   }
   #connection-meeting {
     flex-direction: column-reverse;
+  }
+  #samuel-series {
+    flex-direction: column;
   }
   .series-promo {
     display: flex;
