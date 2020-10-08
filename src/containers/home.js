@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../css/home.scss";
 
 import Button from "../components/button";
@@ -7,19 +7,7 @@ import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
 import MissionBanner from "../components/mission-banner";
 
-import { sanity } from "../util/index";
-
 const Home = () => {
-  const [series, setSeries] = useState({});
-  const ephesiansQuery = `*[_type == "series" && title == "Ephesians"]{
-  title,
-  description
-}`;
-
-  useEffect(() => {
-    sanity.fetch(ephesiansQuery).then((series) => setSeries(series[0]));
-  }, [ephesiansQuery]);
-
   return (
     <div>
       <div className="main-header">
@@ -54,15 +42,21 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <div className="series-promo" id="ephesians-series">
+        <div className="series-promo" id="samuel-series">
           <span className="series-promo-desc">
-            <h2>{series.title} Study</h2>
-            {/* <img alt="" src={ChurchIcon} /> */}
-            <p>{series.description}</p>
+            <p>
+              The book of second Samuel continues the historical account of
+              David's rise as king of Israel. The story picks up where first
+              Samuel ends, as David contends with the deaths of Saul and his
+              best friend, Jonathan, and the fight for the throne of Israel
+              begins. The book traces the rise of David to power, his fall into
+              temptation and the discipline of the Lord, and his renewal as a
+              man after God's own heart.{" "}
+            </p>
             <Button
-              title={`Listen to ${series.title}`}
+              title={`Listen to 2 Samuel`}
               size="small"
-              link={`/bible-studies/${series.title}`}
+              link={`/bible-studies/2-Samuel`}
             />
           </span>
         </div>

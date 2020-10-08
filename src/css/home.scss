@@ -77,13 +77,20 @@ body {
   }
 }
 
-#ephesians-series {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-    url(../images/ephesians_background.jpg);
-  background-size: cover;
+#samuel-series {
+  background: linear-gradient(to left, transparent, 95%, #000000),
+    url(../images/home_page/2_Samuel_resized.jpg);
+  background-color: black;
+  background-size: contain;
+  background-position: top left 60px;
+  justify-content: flex-end;
+  background-repeat: no-repeat;
   img {
     padding: 5vh 0 5vh 0;
     height: 50vh;
+  }
+  p {
+    margin: 5vh 10vh 5vh 5vh;
   }
 }
 
@@ -98,18 +105,16 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  flex-flow: row wrap;
+
   justify-content: center;
   align-items: center;
   &-desc {
     display: flex;
     color: white;
-
     flex-direction: column;
-
     align-items: center;
-    width: 50%;
-    padding: 20px;
+    width: 60%;
+    margin: 5vh;
   }
   img {
     justify-self: flex-end;
