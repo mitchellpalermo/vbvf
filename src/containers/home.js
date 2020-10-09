@@ -32,12 +32,14 @@ const Home = () => {
           title="Women's Bible Study"
           body="Join us for a study through the book of Ecclesiastes. Meeting on Tuesdays at 10am in the Flex Room."
           buttonTitle="Listen now"
+          link="/bible-studies/Ecclesiastes"
           image={WomensStudy}
         />
         <Preview
           title="Serve at VBVF"
           body="God has called us to love one another, and part of that is serving each other. Join a serving team at VBVF to develop relationships and serve the body."
           buttonTitle="Explore Teams"
+          link="/ministries/serve"
           image={Serving}
         />
         <Preview
@@ -46,6 +48,7 @@ const Home = () => {
               journey. Visit our Connect Page to learn how you can make VBVF
               your church."
           buttonTitle="Learn more"
+          link="/connect"
           image={MeetandGreet}
         />
       </div>
