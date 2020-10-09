@@ -1,11 +1,16 @@
 import React from "react";
 import "../css/home.scss";
-
 import Button from "../components/button";
 import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
-import MissionBanner from "../components/mission-banner";
+
+import SecondSamuel from "../images/home_page/2_Samuel.jpg";
+import WomensStudy from "../images/home_page/womensStudy.jpg";
+import Serving from "../images/home_page/serving.jpg";
+import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
+
+import Preview from "../components/preview";
 
 const Home = () => {
   return (
@@ -22,27 +27,36 @@ const Home = () => {
         </div>
         <span className="see-more-arrow" />
       </div>
-      <MissionBanner />
-      <div className="secondary-content">
-        <div id="connection-meeting" className="secondary-content-block">
-          <div className="secondary-content-block-words">
-            <h2>Connect with us!</h2>
-            <p>
-              Hear about our vision, beliefs and how you can join in our
+      <div className="preview-container">
+        <Preview
+          title="Women's Bible Study"
+          body="Join us for a study through the book of Ecclesiastes. Meeting on Tuesdays at 10am in the Flex Room."
+          buttonTitle="Listen now"
+          link="/bible-studies/Ecclesiastes"
+          image={WomensStudy}
+        />
+        <Preview
+          title="Serve at VBVF"
+          body="God has called us to love one another, and part of that is serving each other. Join a serving team at VBVF to develop relationships and serve the body."
+          buttonTitle="Explore Teams"
+          link="/ministries/serve"
+          image={Serving}
+        />
+        <Preview
+          title="Connect with us"
+          body="Hear about our vision, beliefs and how you can join in our
               journey. Visit our Connect Page to learn how you can make VBVF
-              your church.
-            </p>
-            <Button link="/connect" size="medium" title="Connect Page" />
-          </div>
-          <img
-            loading="lazy"
-            src={ConnectionImage}
-            alt="connection meeting logo"
-          />
-        </div>
+              your church."
+          buttonTitle="Learn more"
+          link="/connect"
+          image={MeetandGreet}
+        />
       </div>
+
       <div>
-        <div className="series-promo" id="samuel-series">
+        <div className={`series-promo `} id="samuel-series">
+          <img src={SecondSamuel} alt="" />
+
           <span className="series-promo-desc">
             <p>
               The book of second Samuel continues the historical account of

@@ -8,7 +8,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url(../images/hand_raised_compressed.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -47,51 +47,17 @@ body {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
-.secondary-content {
+
+.preview-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1rem;
-  margin: 3vh;
-  &-block {
-    display: flex;
-    flex-direction: row;
-
-    justify-content: center;
-    align-items: center;
-    &-words {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 40%;
-      margin: 2vh;
-
-      h2 {
-        text-align: center;
-      }
-    }
-    img {
-      width: 35%;
-      margin: 2rem;
-    }
-  }
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0 20px 0;
 }
 
 #samuel-series {
-  background: linear-gradient(to left, transparent, 95%, #000000),
-    url(../images/home_page/2_Samuel_resized.jpg);
   background-color: black;
-  background-size: contain;
-  background-position: top left 60px;
-  justify-content: flex-end;
-  background-repeat: no-repeat;
-  img {
-    padding: 5vh 0 5vh 0;
-    height: 50vh;
-  }
-  p {
-    margin: 5vh 10vh 5vh 5vh;
-  }
 }
 
 #matthew-series {
@@ -116,7 +82,7 @@ body {
     width: 60%;
     margin: 5vh;
   }
-  img {
+  img span {
     justify-self: flex-end;
     width: 40%;
     height: auto;
@@ -140,25 +106,22 @@ body {
     }
   }
 
-  .secondary-content {
-    &-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      &-words {
-        width: 90%;
-      }
-      img {
-        width: 105%;
-        margin: 0;
-      }
-    }
+  .preview-container {
+    flex-direction: column;
+    align-items: center;
   }
   #preaching-word-image {
     width: 95%;
   }
   #connection-meeting {
     flex-direction: column-reverse;
+  }
+  #samuel-series {
+    flex-direction: column;
+    img {
+      -webkit-mask-image: linear-gradient(to top, transparent 0, black 75%);
+      mask-image: linear-gradient(to top, transparent 0, black 75%);
+    }
   }
   .series-promo {
     display: flex;
