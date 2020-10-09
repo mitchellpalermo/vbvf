@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
-import ConnectionImage from "../images/Connection_Meeting_Square.jpg";
+
 import CrownOfThorns from "../images/matthew_crown.png";
 import { Link } from "react-router-dom";
 
