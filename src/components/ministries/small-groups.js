@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../../css/small-groups.scss";
 import Matthew from "../../images/leadership_photos/Matthew_McWaters.jpeg";
@@ -12,16 +12,20 @@ import { getMobileOperatingSystem } from "../../util/index";
 import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
+  const [groups, setGroups] = useState();
   const options = {
     method: "GET",
     url: `https://api.planningcenteronline.com/groups/v2/group_types/122121/groups`,
-    headers: {
-      Authorization: `Bearer ${process.env.PLANNING_CENTER_SECRET} `,
+    auth: {
+      username: process.env.PLANNING_CENTER_APPID,
+      password: process.env.PLANNING_CENTER_SECRET,
     },
   };
 
   useEffect(() => {
-    console.log(axios(options));
+    axios(options).then((response) => {
+      console.log(response.data);
+    });
   }, [options]);
 
   return (
