@@ -15,7 +15,7 @@ import content from "../../content/small-groups-ministry-content";
 export default function SmallGroups() {
   const [groups, setGroups] = useState();
   const options = {
-    method: "GET",
+    method: "get",
     url: `https://api.planningcenteronline.com/groups/v2/group_types/122121/groups`,
     auth: {
       username: process.env.PLANNING_CENTER_APPID,
@@ -26,14 +26,12 @@ export default function SmallGroups() {
   useEffect(() => {
     axios(options)
       .then((response) => {
-        console.log(response.data);
         setGroups(response);
-        console.log(groups);
       })
       .catch((err) =>
         console.log("Small Groups request failed with this error: " + err)
       );
-  }, [options, groups]);
+  }, []);
 
   return (
     <div className="small-group">
