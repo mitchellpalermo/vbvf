@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "reactstrap";
 
 import "../../css/small-groups.scss";
+import SmallGroup from "../smallgroup";
 import Mike from "../../images/leadership_photos/Mike_Morris.jpeg";
 import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
@@ -13,6 +14,18 @@ import { getMobileOperatingSystem } from "../../util/index";
 import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
+  const options = {
+    method: "GET",
+    url: `https://api.planningcenteronline.com/groups/v2/group_types/122121/groups`,
+    headers: {
+      Authorization: `Bearer ${process.env.PLANNING_CENTER_SECRET} `,
+    },
+  };
+
+  useEffect(() => {
+    console.log(axios(options));
+  }, []);
+
   return (
     <div className="small-group">
       <div className="small-group-header">
@@ -33,10 +46,19 @@ export default function SmallGroups() {
             Get Info
           </Button>
         </div>
-        <img alt="girls praying together" src={Praying} />
       </div>
       <div className="small-group-map-block">
         {getMobileOperatingSystem() === "iOS" ? <MobileMap /> : <DesktopMap />}
+      </div>
+
+      <div>
+        <SmallGroup />
+        <SmallGroup />
+        <SmallGroup />
+        <SmallGroup />
+        <SmallGroup />
+        <SmallGroup />
+        <SmallGroup />
       </div>
 
       <StaffInfo
