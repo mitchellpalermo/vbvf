@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "reactstrap";
+import React, { useEffect } from "react";
 
 import "../../css/small-groups.scss";
 import Matthew from "../../images/leadership_photos/Matthew_McWaters.jpeg";
@@ -23,7 +22,7 @@ export default function SmallGroups() {
 
   useEffect(() => {
     console.log(axios(options));
-  }, []);
+  }, [options]);
 
   return (
     <div className="small-group">
