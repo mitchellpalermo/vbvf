@@ -45,6 +45,7 @@ export function getMobileOperatingSystem() {
 export async function getVideos(vimeoFolder) {
   const options = {
     url: `https://api.vimeo.com/me/projects/${vimeoFolder}/videos?direction=desc`,
+    app_id: process.env.PLANNING_CENTER_APPID,
     headers: {
       Authorization: process.env.REACT_APP_VIMEO_KEY,
     },
