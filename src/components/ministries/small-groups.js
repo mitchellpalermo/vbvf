@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Button } from "reactstrap";
+import React, { useEffect } from "react";
 
 import "../../css/small-groups.scss";
 import SmallGroup from "../smallgroup";
 import Mike from "../../images/leadership_photos/Mike_Morris.jpeg";
 import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
-import Praying from "../../images/small_groups/praying.jpg";
+
 import MobileMap from "./maps/mobile-map";
 import DesktopMap from "./maps/desktop-map";
 import { getMobileOperatingSystem } from "../../util/index";
@@ -24,7 +23,7 @@ export default function SmallGroups() {
 
   useEffect(() => {
     console.log(axios(options));
-  }, []);
+  }, [options]);
 
   return (
     <div className="small-group">
@@ -37,14 +36,6 @@ export default function SmallGroups() {
       <div className="small-group-info-sign-up">
         <div className="small-group-info-sign-up-button-container">
           <p>{content.ministrySummary}</p>
-          <Button
-            outline
-            size="lg"
-            color="primary"
-            href="https://vbvf.churchcenter.com/people/forms/29086?open-in-church-center-modal=true"
-          >
-            Get Info
-          </Button>
         </div>
       </div>
       <div className="small-group-map-block">
