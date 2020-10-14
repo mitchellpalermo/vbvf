@@ -24,10 +24,16 @@ export default function SmallGroups() {
   };
 
   useEffect(() => {
-    axios(options).then((response) => {
-      console.log(response.data);
-    });
-  }, [options]);
+    axios(options)
+      .then((response) => {
+        console.log(response.data);
+        setGroups(response);
+        console.log(groups);
+      })
+      .catch((err) =>
+        console.log("Small Groups request failed with this error: " + err)
+      );
+  }, [options, groups]);
 
   return (
     <div className="small-group">
