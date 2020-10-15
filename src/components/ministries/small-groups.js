@@ -25,8 +25,9 @@ export default function SmallGroups() {
         }
       )
       .then((response) => {
-        setGroups(response);
         console.log(response);
+        setGroups(response);
+        console.log(groups);
       });
 
     // var createCORSRequest = function (method, url) {
@@ -59,7 +60,7 @@ export default function SmallGroups() {
     //   "Basic YTNhMWM5NWE0ZWFiNjIwY2VkYjI5ZmQzMGJkNTAzM2EyZWU3ZDc4MjNlMTRhNmJkMGI1Mzk0MGRkNzQ3MzExZToyOGViNTc3NjU1M2Q3MzU5MWYzZThjNGNkZmNlOTIxNWViNDdlNTA2ZjQ0ZjM0NmMwMDg2OTMwMDE3NzlhYjZm"
     // );
     // xhr.send();
-  }, []);
+  }, [groups]);
 
   return (
     <div className="small-group">
