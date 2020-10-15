@@ -15,23 +15,50 @@ import content from "../../content/small-groups-ministry-content";
 
 export default function SmallGroups() {
   const [groups, setGroups] = useState();
-  const options = {
-    method: "get",
-    url: `https://api.planningcenteronline.com/groups/v2/group_types/122121/groups`,
-    auth: {
-      username: process.env.PLANNING_CENTER_APPID,
-      password: process.env.PLANNING_CENTER_SECRET,
-    },
-  };
 
   useEffect(() => {
-    axios(options)
+    axios
+      .get(
+        "https://api.planningcenteronline.com/groups/v2/group_types/122121/groups",
+        {
+          Authorization: `Basic ${process.env.PLANNING_CENTER_ENCODED}`,
+        }
+      )
       .then((response) => {
         setGroups(response);
-      })
-      .catch((err) =>
-        console.log("Small Groups request failed with this error: " + err)
-      );
+        console.log(response);
+      });
+
+    // var createCORSRequest = function (method, url) {
+    //   var xhr = new XMLHttpRequest();
+    //   if ("withCredentials" in xhr) {
+    //     // Most browsers.
+    //     xhr.open(method, url, true);
+    //   } else {
+    //     // CORS not supported.
+    //     xhr = null;
+    //   }
+    //   return xhr;
+    // };
+
+    // var url =
+    //   "https://api.planningcenteronline.com/groups/v2/group_types/122121/groups";
+    // var method = "GET";
+    // var xhr = createCORSRequest(method, url);
+
+    // xhr.onload = function () {
+    //   // Success code goes here.
+    // };
+
+    // xhr.onerror = function () {
+    //   // Error code goes here.
+    // };
+
+    // xhr.setRequestHeader(
+    //   "Authorization",
+    //   "Basic YTNhMWM5NWE0ZWFiNjIwY2VkYjI5ZmQzMGJkNTAzM2EyZWU3ZDc4MjNlMTRhNmJkMGI1Mzk0MGRkNzQ3MzExZToyOGViNTc3NjU1M2Q3MzU5MWYzZThjNGNkZmNlOTIxNWViNDdlNTA2ZjQ0ZjM0NmMwMDg2OTMwMDE3NzlhYjZm"
+    // );
+    // xhr.send();
   }, []);
 
   return (
@@ -60,7 +87,6 @@ export default function SmallGroups() {
         <SmallGroup />
         <SmallGroup />
       </div>
-
       <StaffInfo
         name={content.leader.name}
         role={content.leader.role}
