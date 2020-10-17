@@ -51,3 +51,5 @@ export async function getVideos(vimeoFolder) {
   };
   return axios(options);
 }
+
+export async function getSmallGroups() {}
