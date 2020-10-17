@@ -39,7 +39,7 @@ export default function ChildrensMinistry() {
         />
       </div>
       <div className="childrens-ministry-safety">
-        <img src={Exclamation} />
+        <img src={Exclamation} alt="" />
         <p>
           Due to COVID precautions, space in our children's area is{" "}
           <strong>limited</strong>. For now we're asking that all children are

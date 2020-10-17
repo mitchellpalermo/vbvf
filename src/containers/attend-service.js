@@ -34,7 +34,7 @@ export default function AttendService() {
           children 2 and under.{" "}
         </p>
         <div className="attend-desc-childrens">
-          <img src={Exclamation} />
+          <img src={Exclamation} alt="" />
           <p>
             Due to COVID precautions, space in our children's area is limited.
             For now we're asking that all children are checked in before
