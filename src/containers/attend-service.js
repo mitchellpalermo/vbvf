@@ -1,8 +1,18 @@
 import React from "react";
 import "../css/attend-service.scss";
 import { Link } from "react-router-dom";
-
+import { getMobileOperatingSystem } from "../util/index";
+import Exclamation from "../images/exclamation-solid.svg";
 export default function AttendService() {
+  const churchCenterLink = () => {
+    if (getMobileOperatingSystem() === "iOS") {
+      return `itms-apps://apps.apple.com/us/app/church-center-app/id1357742931`;
+    } else if (getMobileOperatingSystem() === "Android") {
+      return `https://play.google.com/store/apps/details?id=com.ministrycentered.churchcenter`;
+    } else {
+      return "https://vbvf.churchcenter.com/check-ins";
+    }
+  };
   return (
     <div className="attend">
       <h1>
@@ -11,18 +21,37 @@ export default function AttendService() {
       </h1>
 
       <div className="attend-desc">
+        <h4>Service times and Location</h4>
         <p>
-          Verse By Verse Fellowship is now conducting in-person worship services
-          at our building at 551 E. Nakoma on Sundays at 9:00am and 11:00am. Our
-          worship service consists of live, contemporary worship music and
-          verse-by-verse Bible preaching through the Gospel of Matthew.
+          VBVF holds worship services at our building at 551 E. Nakoma on
+          Sundays at 9:00am and 11:00am. Our worship service consists of live,
+          contemporary worship music and verse-by-verse Bible preaching.
         </p>
+        <h4>Childcare</h4>
         <p>
-          {" "}
-          We currently provide childcare for 2yrs and under, and we hope to
-          offer our full children’s program for children 3yrs and older in the
-          near future.
-        </p>{" "}
+          Our 9:00am service will have childcare available for all ages. For the
+          time being, our 11:00am service will only provide childcare for
+          children 2 and under.{" "}
+        </p>
+        <div className="attend-desc-childrens">
+          <img src={Exclamation} alt="" />
+          <p>
+            Due to COVID precautions, space in our children's area is limited.
+            For now we're asking that all children are checked in before
+            service.
+          </p>{" "}
+        </div>
+        <p>
+          Please check your child in using the{" "}
+          <a href={churchCenterLink()}>Church Center App</a>. Registration opens
+          1 hour before service begins. If your child has never been to Journey
+          Kids before, please{" "}
+          <a href="https://vbvf.churchcenter.com/registrations/events/588010">
+            pre-register them here
+          </a>
+          .
+        </p>
+        <h4>Safety Protocols</h4>
         <p>
           Attendees at our in-person services are asked to follow appropriate
           safety measures, including wearing masks when not seated (for 5yrs and
@@ -31,29 +60,7 @@ export default function AttendService() {
           high-risk individuals who desire further distancing and a private
           entry to our building.
         </p>
-        <h5>
-          In addition to our weekend service, we also offer the following
-          in-person events at our building:
-        </h5>
-        <ul>
-          <li>
-            <h5>Women’s Bible Study</h5> <h6>Teaching in Ecclesiastes</h6>
-            <p>Tuesdays at 10:00 AM</p>
-          </li>
-          <li>
-            <h5>Adult Midweek Bible Study</h5>
-            <h6> Teaching in 2 Samuel</h6>
-            <p>Wednesdays at 7:00 PM</p>
-          </li>
-          <li>
-            <h5>Youth Night (Grades 6-12)</h5>
-            <p>Wednesdays at 6:30pm</p>
-          </li>
-        </ul>
-        <p>
-          All these events are free and open to the public with no advance
-          registration required.
-        </p>
+        <h4>Livestream</h4>
         <p>
           We will <Link to="/livestream">livestream</Link> our weekend worship
           service on Sundays at 11:00 AM and our midweek Bible study on

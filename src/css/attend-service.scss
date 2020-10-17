@@ -34,6 +34,21 @@
     p {
       margin: 5vh 0 5vh 0;
     }
+    &-childrens {
+      background: lightblue;
+      display: flex;
+      padding: 20px;
+      border-radius: 10px;
+      img {
+        width: 10%;
+        margin: 5px;
+      }
+
+      p {
+        width: 80%;
+        margin: 20px;
+      }
+    }
   }
 }
 @media screen and (max-width: 800px) {
@@ -43,6 +58,16 @@
       flex-direction: column;
       li {
         width: 100%;
+      }
+    }
+    &-childrens {
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 20%;
+      }
+      p {
+        width: 95%;
       }
     }
   }

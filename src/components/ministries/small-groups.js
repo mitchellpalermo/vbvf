@@ -8,7 +8,7 @@ import Logo from "../../images/logos/small_group_logo.svg";
 import Praying from "../../images/small_groups/praying.jpg";
 import MobileMap from "./maps/mobile-map";
 import DesktopMap from "./maps/desktop-map";
-import { onIphone } from "../../util/index";
+import { getMobileOperatingSystem } from "../../util/index";
 
 import content from "../../content/small-groups-ministry-content";
 
@@ -36,7 +36,7 @@ export default function SmallGroups() {
         <img alt="girls praying together" src={Praying} />
       </div>
       <div className="small-group-map-block">
-        {onIphone() ? <MobileMap /> : <DesktopMap />}
+        {getMobileOperatingSystem() === "iOS" ? <MobileMap /> : <DesktopMap />}
       </div>
 
       <StaffInfo

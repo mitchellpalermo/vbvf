@@ -20,7 +20,7 @@ import {
 import { Link } from "react-router-dom";
 import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
-import { onIphone } from "../util/index";
+import { getMobileOperatingSystem } from "../util/index";
 
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,7 +76,7 @@ const GlobalNav = (props) => {
                         outline
                         color="dark"
                         onClick={() => {
-                          onIphone
+                          getMobileOperatingSystem() === "iOS"
                             ? window.open(
                                 "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
                               )

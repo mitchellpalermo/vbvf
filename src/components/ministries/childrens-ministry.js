@@ -8,31 +8,19 @@ import ScriptureVerse from "../scripture-verse";
 import Button from "../button";
 import Content from "../../content/childrens-ministry-content";
 import StaffInfo from "../staff-info";
+import Exclamation from "../../images/exclamation-solid.svg";
+import { getMobileOperatingSystem } from "../../util/index";
 
 export default function ChildrensMinistry() {
-  // const weeklyActivities = [
-  //   {
-  //     title: "Prayer Night",
-  //     desc:
-  //       "We all have needs and the church is called to carry the burdens and praises of life together. Join us every 2nd and 4th Sunday of every month at 6:30pm",
-  //   },
-  //   {
-  //     title: "Devo Day",
-  //     desc:
-  //       "Weekly we join together via zoom for a short lesson, game and fellowship with children currently in  3rd, 4th and 5th grade. Join us every Thursday at 630PM via zoom, as we have fun while coming together in God’s Word.",
-  //   },
-  //   {
-  //     title: "Story Time",
-  //     desc:
-  //       "We would love for your young children, grades PreK through 2nd, to join us for a vibrant and alive story time. The reading will take place via Zoom, Every 1st, 3rd & 5th Monday. We will enjoy a time or short worship, reading and other fun stuff!",
-  //   },
-  //   {
-  //     title: "Packet Pickup",
-  //     desc:
-  //       "Come pick up a packet filled with crafts, activity pages and much more on the last Friday of each month. We will distribute packets at 1PM, in the VBVF Church parking lot.",
-  //   },
-  // ];
-
+  const churchCenterLink = () => {
+    if (getMobileOperatingSystem() === "iOS") {
+      return `itms-apps://apps.apple.com/us/app/church-center-app/id1357742931`;
+    } else if (getMobileOperatingSystem() === "Android") {
+      return `https://play.google.com/store/apps/details?id=com.ministrycentered.churchcenter`;
+    } else {
+      return "https://vbvf.churchcenter.com/check-ins";
+    }
+  };
   return (
     <div className="childrens-ministry">
       <div className="childrens-ministry-header">
@@ -50,6 +38,24 @@ export default function ChildrensMinistry() {
           reference={Content.scriptureVerse.reference}
         />
       </div>
+      <div className="childrens-ministry-safety">
+        <img src={Exclamation} alt="" />
+        <p>
+          Due to COVID precautions, space in our children's area is{" "}
+          <strong>limited</strong>. For now we're asking that all children are
+          checked in before service.
+        </p>{" "}
+      </div>
+      <p className="childrens-ministry-check-in">
+        Please check your child in using the{" "}
+        <a href={churchCenterLink()}>Church Center App</a>. Registration opens 1
+        hour before service begins. If your child has never been to Journey Kids
+        before, please{" "}
+        <a href="https://vbvf.churchcenter.com/registrations/events/588010">
+          pre-register them here
+        </a>
+        .
+      </p>
 
       <div className="childrens-ministry-materials">
         <div className="button-container">
