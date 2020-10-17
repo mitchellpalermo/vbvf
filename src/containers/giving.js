@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/giving.scss";
 import { Modal, ModalHeader, ModalBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import { onIphone } from "../util/index";
+import { getMobileOperatingSystem } from "../util/index";
 const Giving = (props) => {
   const [onlineModal, setOnlineModal] = useState(false);
   const [mailModal, setMailModal] = useState(false);
@@ -12,7 +12,7 @@ const Giving = (props) => {
   const [givingLink, setGivingLink] = useState("/giving-redirect");
 
   useEffect(() => {
-    onIphone()
+    getMobileOperatingSystem() === "iOS"
       ? setGivingLink("/giving-redirect")
       : setGivingLink(
           "https://vbvf.churchcenter.com/giving?open-in-church-center-modal=true"

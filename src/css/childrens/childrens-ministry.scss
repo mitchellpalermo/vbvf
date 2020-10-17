@@ -46,6 +46,27 @@ $green: #4f5957;
     }
   }
 
+  &-safety {
+    width: 70%;
+    background: $sand;
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    img {
+      width: 10%;
+      margin: 5px;
+    }
+
+    p {
+      width: 80%;
+      margin: 20px;
+    }
+  }
+  &-check-in {
+    width: 70%;
+    margin: 20px;
+  }
+
   &-materials {
     width: 100%;
     display: flex;
@@ -98,6 +119,20 @@ $green: #4f5957;
         margin: 0 0 5vh 0;
       }
     }
+    &-safety {
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 20%;
+      }
+      p {
+        width: 95%;
+      }
+    }
+    &-check-in {
+      width: 90%;
+      margin: 5vh 5vh 10vh 5vh;
+    }
     &-materials {
       width: 100%;
       flex-direction: column;
@@ -118,10 +153,11 @@ $green: #4f5957;
       }
     }
     &-sign-up {
+      width: 100%;
       flex-direction: column;
       margin: 0 0 10vh 0;
-      p {
-        width: 100%;
+      h4 {
+        width: 98%;
       }
     }
   }
