@@ -1,18 +1,19 @@
 .small-group {
   display: flex;
   flex-direction: column;
-  align-content: center;
-  &-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    text-align: center;
+  align-items: center;
 
-    img {
-      width: 100%;
-    }
-    h3 {
+  &-header {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    h1 {
       text-align: left;
+    }
+    img {
+      width: 60%;
     }
   }
   &-info-sign-up {
@@ -25,16 +26,21 @@
       width: 50%;
     }
   }
-  &-small-groups-list-container {
-    width: 80%;
+
+  &-faq {
+    width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
-  }
-  &-map-block {
-    margin: 0 0 2vh 0;
+    justify-content: center;
+    margin: 5vh;
+    div {
+      width: 45%;
+      margin: 3vh;
+      h4 {
+        text-align: center;
+      }
+    }
   }
 }
 
@@ -47,15 +53,15 @@
       font-size: 1.2em;
       align-items: center;
       margin: 0 0 5vh 0;
-      img {
-        width: 100%;
-        border-radius: 0;
+      p {
+        width: 90%;
       }
-      &-button-container {
-        width: 100%;
+    }
+    &-faq {
+      width: 100%;
+      div {
         p {
           width: 90%;
-          margin: 5vh 0 3vh 0;
         }
       }
     }
