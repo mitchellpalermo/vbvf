@@ -16,6 +16,7 @@ import Kathy from "../images/leadership_photos/Kathy_Smith.jpeg";
 import Mitch from "../images/leadership_photos/Mitch_Palermo.jpeg";
 import Wesley from "../images/leadership_photos/Wesley_Livingston.jpeg";
 import Kyle from "../images/leadership_photos/Kyle_Mounts.jpeg";
+import Matthew from "../images/leadership_photos/Matthew_McWaters.jpeg";
 
 import PhotoTitle from "../components/photo-title";
 
@@ -54,7 +55,7 @@ export default function Leadership() {
           isLazy="eager"
           photo={Jim}
           name={"Jim Rowland"}
-          title={"Chief Operations Officer"}
+          title={"Executive Pastor"}
         />
         <PhotoTitle
           isLazy="eager"
@@ -94,6 +95,14 @@ export default function Leadership() {
           name={"Mike Morris"}
           email="pastormike@vbvf.org"
           title={"Associate Pastor"}
+        />
+        <PhotoTitle
+          isLazy="lazy"
+          photo={Matthew}
+          name={"Matthew McWaters"}
+          email="pastormatthew@vbvf.org"
+          title={"Associate Pastor"}
+          role={"Small Groups"}
         />
       </div>
 
