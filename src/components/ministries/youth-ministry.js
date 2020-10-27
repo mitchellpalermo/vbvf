@@ -13,6 +13,7 @@ import StaffInfo from "../staff-info";
 export default function YouthMinistry() {
   const faqList = Content.faq.map((question) => (
     <li key={question.question}>
+      d
       <p>
         <strong>{question.question}</strong>
       </p>
