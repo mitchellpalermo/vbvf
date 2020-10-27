@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "reactstrap";
 
 import "../../css/small-groups.scss";
-import Mike from "../../images/leadership_photos/Mike_Morris.jpeg";
+import Matthew from "../../images/leadership_photos/Matthew_McWaters.jpeg";
 import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
 import Praying from "../../images/small_groups/praying.jpg";
@@ -43,7 +43,7 @@ export default function SmallGroups() {
         name={content.leader.name}
         role={content.leader.role}
         email={content.leader.email}
-        image={Mike}
+        image={Matthew}
         bio={content.leader.bio}
       />
     </div>
