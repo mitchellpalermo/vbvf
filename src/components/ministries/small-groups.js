@@ -1,5 +1,4 @@
-import React from "react";
-import { Button } from "reactstrap";
+import React, { useEffect, useState } from "react";
 
 import "../../css/small-groups.scss";
 
@@ -12,15 +11,39 @@ import DesktopMap from "./maps/desktop-map";
 import { getMobileOperatingSystem } from "../../util/index";
 
 import content from "../../content/small-groups-ministry-content";
+import axios from "axios";
+
+require("dotenv").config();
 
 export default function SmallGroups() {
+  const [groups, setGroups] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const options = {
+      url:
+        "https://api.planningcenteronline.com/groups/v2/group_types/122121/groups",
+      headers: {
+        Authorization: `Basic ${process.env.REACT_APP_PLANNING_CENTER_ENCODED}`,
+      },
+    };
+    axios(options).then((response) => {
+      setGroups(response.data.data);
+      setIsLoading(false);
+    });
+  }, []);
+
   return (
     <div className="small-group">
       <div className="small-group-header">
         <div className="small-group-header-logo">
           <img alt="small groups logo" src={Logo} />
-          <h1>{content.title}</h1>
+          <h1>Small Groups</h1>
         </div>
+        <h3>
+          Live.
+          <br /> Together.
+        </h3>
       </div>
       <div className="small-group-info-sign-up">
         <div className="small-group-info-sign-up-button-container">
@@ -41,6 +64,24 @@ export default function SmallGroups() {
   )}
       </div>
 
+      <div className="small-groups-list-container">
+        {isLoading ? (
+          <>
+            <p>Loading Services</p>
+            <Spinner color="dark" />
+          </>
+        ) : (
+          <>
+            {groups.map((group) => (
+              <SmallGroupRow
+                image={group.attributes.header_image.thumbnail}
+                name={group.attributes.name}
+                meetingTime={group.attributes.schedule}
+              />
+            ))}
+          </>
+        )}
+      </div>
       <StaffInfo
         name={content.leader.name}
         role={content.leader.role}
