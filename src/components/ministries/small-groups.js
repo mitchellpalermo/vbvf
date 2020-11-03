@@ -6,30 +6,46 @@ import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
 
 import content from "../../content/small-groups-ministry-content";
+import Button from "../button";
 
 export default function SmallGroups() {
   return (
     <div className="small-group">
       <div className="small-group-header">
-        <img alt="small groups logo" src={Logo} />
+        <img alt="" src={Logo} />
         <h1>
-          Small
+          VBVF
+          <br /> Small
           <br /> Groups
         </h1>
       </div>
-      <div className="small-group-info-sign-up">
+      <div className="small-group-info">
         <p>{content.ministrySummary}</p>
+      </div>
+      <div className="small-group-button-container">
+        <Button
+          title="Find a Small Group"
+          size="large"
+          link="https://vbvf.churchcenter.com/groups/small-groups"
+        />
+        <Button
+          title="Become a leader"
+          size="large"
+          link="https://vbvf.churchcenter.com/people/forms/185037"
+        />
       </div>
 
       <div className="small-group-faq">
-        {content.faq.map((object) => {
-          return (
-            <div>
-              <h4>{object.question}</h4>
-              <p>{object.answer}</p>
-            </div>
-          );
-        })}
+        <>
+          {content.faq.map((object) => {
+            return (
+              <div>
+                <h4>{object.question}</h4>
+                <p>{object.answer}</p>
+              </div>
+            );
+          })}
+        </>
       </div>
 
       <StaffInfo
