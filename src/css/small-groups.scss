@@ -17,12 +17,18 @@
   }
   &-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 5vh 0 10vh 0;
+    flex-wrap: wrap-reverse;
+    margin: 5vh;
     p {
       width: 50%;
+      margin: 20px;
+    }
+    img {
+      width: 40%;
+      border-radius: 10px;
     }
   }
   &-button-container {
@@ -63,6 +69,10 @@
       margin: 0 0 5vh 0;
       p {
         width: 90%;
+      }
+      img {
+        width: 100%;
+        border-radius: 0px;
       }
     }
     &-faq {

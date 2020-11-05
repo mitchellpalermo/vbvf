@@ -7,6 +7,7 @@ import Logo from "../../images/logos/small_group_logo.svg";
 
 import content from "../../content/small-groups-ministry-content";
 import Button from "../button";
+import Praying from "../../images/small_groups/praying.jpg";
 
 export default function SmallGroups() {
   return (
@@ -21,6 +22,7 @@ export default function SmallGroups() {
       </div>
       <div className="small-group-info">
         <p>{content.ministrySummary}</p>
+        <img alt="" src={Praying} />
       </div>
       <div className="small-group-button-container">
         <Button
