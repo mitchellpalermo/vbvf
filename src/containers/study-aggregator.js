@@ -42,7 +42,7 @@ export default function StudyAggregator() {
           Verse by Verse Fellowship prioritizes the teaching of the word. We
           believe that God uses His word to equip followers of Christ to walk in
           confidence and love. Please enjoy these teaching series from teachers
-          here at VBVF. If you would like to listen to more bible teaching,
+          here at VBVF. If you would like to listen to more Bible teaching,
           please visit our sister ministry,{" "}
           <Link to={{ pathname: "/sermon-redirect", deepDive: "" }}>
             Verse by Verse Ministry

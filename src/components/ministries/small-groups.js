@@ -1,42 +1,59 @@
 import React from "react";
-import { Button } from "reactstrap";
 
 import "../../css/small-groups.scss";
 import Matthew from "../../images/leadership_photos/Matthew_McWaters.jpeg";
 import StaffInfo from "../staff-info";
 import Logo from "../../images/logos/small_group_logo.svg";
-import Praying from "../../images/small_groups/praying.jpg";
-import MobileMap from "./maps/mobile-map";
-import DesktopMap from "./maps/desktop-map";
-import { getMobileOperatingSystem } from "../../util/index";
 
 import content from "../../content/small-groups-ministry-content";
+import Button from "../button";
+import Praying from "../../images/small_groups/praying.jpg";
 
 export default function SmallGroups() {
   return (
     <div className="small-group">
       <div className="small-group-header">
-        <div className="small-group-header-logo">
-          <img alt="small groups logo" src={Logo} />
-          <h1>{content.title}</h1>
-        </div>
+        <img alt="" src={Logo} />
+        <h1>
+          VBVF
+          <br /> Small
+          <br /> Groups
+        </h1>
       </div>
-      <div className="small-group-info-sign-up">
-        <div className="small-group-info-sign-up-button-container">
-          <p>{content.ministrySummary}</p>
-          <Button
-            outline
-            size="lg"
-            color="primary"
-            href="https://vbvf.churchcenter.com/people/forms/29086?open-in-church-center-modal=true"
-          >
-            Get Info
-          </Button>
-        </div>
-        <img alt="girls praying together" src={Praying} />
+      <div className="small-group-info">
+        <p>{content.ministrySummary}</p>
+        <img alt="" src={Praying} />
       </div>
-      <div className="small-group-map-block">
-        {getMobileOperatingSystem() === "iOS" ? <MobileMap /> : <DesktopMap />}
+      <div className="small-group-button-container">
+        <Button
+          title="Find a Small Group"
+          size="large"
+          link="https://vbvf.churchcenter.com/groups/small-groups"
+        />
+        <Button
+          title="Become a leader"
+          size="large"
+          link="https://vbvf.churchcenter.com/people/forms/185037"
+        />
+      </div>
+
+      <div className="small-group-faq">
+        <>
+          {content.faq.map((object) => {
+            return (
+              <div>
+                <span>
+                  <img //in order to pass images in as props, path needs to be predefined
+                    src={require(`../../images/small_groups/${object?.image}.svg`)}
+                    alt=""
+                  />
+                  <h4>{object.question}</h4>
+                </span>
+                <p>{object.answer}</p>
+              </div>
+            );
+          })}
+        </>
       </div>
 
       <StaffInfo

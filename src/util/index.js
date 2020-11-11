@@ -44,7 +44,6 @@ export function getMobileOperatingSystem() {
 
 export async function getVideos(vimeoFolder) {
   const options = {
-    method: "GET",
     url: `https://api.vimeo.com/me/projects/${vimeoFolder}/videos?direction=desc`,
     headers: {
       Authorization: process.env.REACT_APP_VIMEO_KEY,
@@ -52,3 +51,5 @@ export async function getVideos(vimeoFolder) {
   };
   return axios(options);
 }
+
+export async function getSmallGroups() {}

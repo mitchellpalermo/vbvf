@@ -1,0 +1,20 @@
+$darkNavy: #2e3c49;
+
+.row {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin: 34px;
+
+  img {
+    clip-path: circle(40% at center);
+    width: 90%;
+  }
+  div {
+    text-align: center;
+    width: 80%;
+  }
+}
