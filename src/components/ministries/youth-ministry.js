@@ -39,7 +39,7 @@ export default function YouthMinistry() {
 
       <h2>Youth Leaders</h2>
       <div className="youth-leaders">
-        <d name={Content.leaders[2]} photo={Juvie} />
+        <Leader name={Content.leaders[2]} photo={Juvie} />
         <Leader name={Content.leaders[3]} photo={Maria} />
       </div>
       <StaffInfo
