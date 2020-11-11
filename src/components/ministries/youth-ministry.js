@@ -13,7 +13,6 @@ import StaffInfo from "../staff-info";
 export default function YouthMinistry() {
   const faqList = Content.faq.map((question) => (
     <li key={question.question}>
-      d
       <p>
         <strong>{question.question}</strong>
       </p>
@@ -40,7 +39,7 @@ export default function YouthMinistry() {
 
       <h2>Youth Leaders</h2>
       <div className="youth-leaders">
-        <Leader name={Content.leaders[2]} photo={Juvie} />
+        <d name={Content.leaders[2]} photo={Juvie} />
         <Leader name={Content.leaders[3]} photo={Maria} />
       </div>
       <StaffInfo
