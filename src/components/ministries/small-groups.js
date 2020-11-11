@@ -42,7 +42,13 @@ export default function SmallGroups() {
           {content.faq.map((object) => {
             return (
               <div>
-                <h4>{object.question}</h4>
+                <span>
+                  <img //in order to pass images in as props, path needs to be predefined
+                    src={require(`../../images/small_groups/${object?.image}.svg`)}
+                    alt=""
+                  />
+                  <h4>{object.question}</h4>
+                </span>
                 <p>{object.answer}</p>
               </div>
             );
