@@ -113,7 +113,6 @@ export default function Leadership() {
           isLazy="lazy"
           photo={Sofi}
           name={"Sofi Smith"}
-          email="sofi.smith@vbvf.org"
           title={"Childrens' Ministry Director"}
         />
 
@@ -121,35 +120,30 @@ export default function Leadership() {
           isLazy="lazy"
           photo={Jan}
           name={"Jan Worrell"}
-          email="jan.worrell@vbvf.org"
           title={"Women's Ministry Director"}
         />
         <PhotoTitle
           isLazy="lazy"
           photo={Linda}
           name={"Linda Briley"}
-          email="linda.briley@vbvf.org"
           title={"Finances"}
         />
         <PhotoTitle
           isLazy="lazy"
           photo={Kathy}
           name={"Kathy Smith"}
-          email="kathy.smith@vbvf.org"
           title={"Administration Director"}
         />
         <PhotoTitle
           isLazy="lazy"
           photo={Kyle}
           name={"Kyle Mounts"}
-          email="kyle.mounts@vbvf.org"
           title={"Production Director"}
         />
         <PhotoTitle
           isLazy="lazy"
           photo={Mitch}
           name={"Mitchell Palermo"}
-          email="mitchell.palermo@vbvf.org"
           title={"Web Developer"}
         />
       </div>
