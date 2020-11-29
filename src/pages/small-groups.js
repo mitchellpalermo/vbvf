@@ -1,13 +1,13 @@
 import React from "react";
 
-import "../../css/small-groups.scss";
-import Matthew from "../../images/leadership_photos/Matthew_McWaters.jpeg";
-import StaffInfo from "../staff-info";
-import Logo from "../../images/logos/small_group_logo.svg";
+import "../css/small-groups.scss";
+import Matthew from "../images/leadership_photos/Matthew_McWaters.jpeg";
+import StaffInfo from "../components/staff-info";
+import Logo from "../images/logos/small_group_logo.svg";
 
-import content from "../../content/small-groups-ministry-content";
-import Button from "../button";
-import Praying from "../../images/small_groups/praying.jpg";
+import content from "../content/small-groups-ministry-content";
+import Button from "../components/button";
+import Praying from "../images/small_groups/praying.jpg";
 
 export default function SmallGroups() {
   return (
@@ -44,7 +44,7 @@ export default function SmallGroups() {
               <div>
                 <span>
                   <img //in order to pass images in as props, path needs to be predefined
-                    src={require(`../../images/small_groups/${object?.image}.svg`)}
+                    src={require(`../images/small_groups/${object?.image}.svg`)}
                     alt=""
                   />
                   <h4>{object.question}</h4>

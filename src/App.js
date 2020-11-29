@@ -2,35 +2,35 @@ import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/footer";
-import ConnectPage from "./containers/connect-page";
+import ConnectPage from "./pages/connect-page";
 
-import StudyAggregator from "./containers/study-aggregator";
-import SermonRedirect from "./containers/sermon-redirect";
-import RegistrationRedirect from "./containers/registration-redirect";
-import GivingRedirect from "./containers/giving-redirect";
+import StudyAggregator from "./pages/study-aggregator";
+import SermonRedirect from "./pages/sermon-redirect";
+import RegistrationRedirect from "./pages/registration-redirect";
+import GivingRedirect from "./pages/giving-redirect";
 import PrivacyPolicy from "./components/privacy-policy";
 import TermsConditions from "./components/terms-conditions";
-import NotFound from "./containers/notfound";
-import Home from "./containers/home";
+import NotFound from "./pages/notfound";
+import Home from "./pages/home";
 import GlobalNav from "./components/global-nav";
-import ChildrensMinistry from "./components/ministries/childrens-ministry";
-import YouthMinistry from "./components/ministries/youth-ministry";
-import SmallGroups from "./components/ministries/small-groups";
-import Serve from "./components/ministries/serve";
-import Contact from "./containers/contact";
+import ChildrensMinistry from "./pages/childrens-ministry";
+import YouthMinistry from "./pages/youth-ministry";
+import SmallGroups from "./pages/small-groups";
+import Serve from "./pages/serve";
+import Contact from "./pages/contact";
 import ScrollToTop from "./components/scroll-to-top";
 import StudyPage from "./components/study-page";
-import Livestream from "./containers/livestream";
-import AttendService from "./containers/attend-service";
+import Livestream from "./pages/livestream";
+import AttendService from "./pages/attend-service";
 import FAQ from "./components/faq";
 import OurStory from "./components/our-story";
 import Beliefs from "./components/beliefs";
 import Leadership from "./components/leadership";
-import Giving from "./containers/giving";
+import Giving from "./pages/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
-import ChildrensContentAggregator from "./containers/childrens-content-aggregator";
+import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
 
-// import OnlineMinistry from "./containers/online-ministry";
+// import OnlineMinistry from "./pages/online-ministry";
 
 function App() {
   return (

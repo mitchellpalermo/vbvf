@@ -1,15 +1,15 @@
 import React from "react";
 
-import Sofi from "../../images/leadership_photos/Sofi_Smith.jpeg";
-import JourneyLogo from "../../images/logos/journey-logo.png";
-import SofiJonBTS from "../..//images/childrens-ministry/sofi_jon_bts.jpg";
-import "../../css/childrens/childrens-ministry.scss";
-import ScriptureVerse from "../scripture-verse";
-import Button from "../button";
-import Content from "../../content/childrens-ministry-content";
-import StaffInfo from "../staff-info";
-import Exclamation from "../../images/exclamation-solid.svg";
-import { getMobileOperatingSystem } from "../../util/index";
+import Sofi from "../images/leadership_photos/Sofi_Smith.jpeg";
+import JourneyLogo from "../images/logos/journey-logo.png";
+import SofiJonBTS from "../images/childrens-ministry/sofi_jon_bts.jpg";
+import "../css/childrens/childrens-ministry.scss";
+import ScriptureVerse from "../components/scripture-verse";
+import Button from "../components/button";
+import Content from "../content/childrens-ministry-content";
+import StaffInfo from "../components/staff-info";
+import Exclamation from "../images/exclamation-solid.svg";
+import { getMobileOperatingSystem } from "../util/index";
 
 export default function ChildrensMinistry() {
   const churchCenterLink = () => {

@@ -1,12 +1,12 @@
 import React from "react";
-import "../../css/serve.scss";
-import Ben from "../../images/serve/ben_coffee.jpg";
-import Cathy from "../../images/serve/cathy_greeting.jpg";
-import KidsMinistry from "../../images/serve/kids_ministry.jpg";
-import Levi from "../../images/serve/levi_setup.jpg";
-import John from "../../images/serve/john_praying.jpg";
+import "../css/serve.scss";
+import Ben from "../images/serve/ben_coffee.jpg";
+import Cathy from "../images/serve/cathy_greeting.jpg";
+import KidsMinistry from "../images/serve/kids_ministry.jpg";
+import Levi from "../images/serve/levi_setup.jpg";
+import John from "../images/serve/john_praying.jpg";
 
-import ScriptureVerse from "../scripture-verse";
+import ScriptureVerse from "../components/scripture-verse";
 import { Button } from "reactstrap";
 
 export default function Serve() {
