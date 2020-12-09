@@ -13,7 +13,10 @@ export default function LessonBlock(props) {
 
   return (
     <div className="lesson-block">
-      <h4 className="lesson-block-title">{props.title}</h4>
+      <span className="lesson-block-title">
+        <h4 className="lesson-block-title-lesson">{props.title}</h4>
+        <h5 className="lesson-block-title-verses">{props.versesCovered}</h5>
+      </span>
       {/* render video */}
       {props.videoId && (
         <span className="lesson-block-icon" onClick={modalToggle}>

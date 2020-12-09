@@ -21,8 +21,9 @@ export default function StudyPage() {
     ministrySeriesLink
   }`;
 
-  const lessonQuery = `*[_type == 'lesson' && series->title == $studyName] | order(title) {
+  const lessonQuery = `*[_type == 'lesson' && series->title == $studyName] | order(title asc) {
     title,
+    versesCovered,
     videoId,
     audioLink,
     "notesUrl": notes.asset->url,
