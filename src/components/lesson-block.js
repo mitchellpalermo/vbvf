@@ -14,7 +14,7 @@ export default function LessonBlock(props) {
   return (
     <div className="lesson-block">
       <span className="lesson-block-title">
-        <h4 className="lesson-block-title-lesson">{props.title}</h4>
+        <h4 className="lesson-block-title-lesson">{`Lesson ${props.lessonNumber}`}</h4>
         <h5 className="lesson-block-title-verses">{props.versesCovered}</h5>
       </span>
       {/* render video */}
@@ -25,13 +25,13 @@ export default function LessonBlock(props) {
         </span>
       )}
       <Modal isOpen={modal} toggle={modalToggle} size="lg">
-        <ModalHeader toggle={modalToggle}>{props.title}</ModalHeader>
+        <ModalHeader toggle={modalToggle}>{}</ModalHeader>
         <ModalBody>
           <div className="lesson-modal">
             <div className="lesson-modal-video">
               <iframe
                 allowFullScreen
-                title={props.title}
+                title={props.versesCovered}
                 src={`https://player.vimeo.com/video/${props.videoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=175387`}
               ></iframe>
             </div>
