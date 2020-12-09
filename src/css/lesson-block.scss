@@ -2,16 +2,26 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 1vh;
   background: rgba(219, 204, 165, 0.4);
 
   &-title {
-    font-size: 1.2em;
-    margin-right: 2vh;
+    text-align: left;
+    margin-left: 2vh;
+    &-lesson {
+      font-size: 1.4em;
+    }
+
+    &-verses {
+      font-size: 1em;
+      opacity: 70%;
+    }
   }
   &-icon {
+    margin-left: auto;
+    margin-right: 2vh;
     cursor: pointer;
     img {
       padding: 1px;
