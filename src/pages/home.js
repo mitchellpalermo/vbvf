@@ -9,6 +9,7 @@ import SecondSamuel from "../images/home_page/2_Samuel.jpg";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
 import Serving from "../images/home_page/serving.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
+import Nativity from "../images/home_page/manger_star.svg";
 
 import Preview from "../components/preview";
 
@@ -26,6 +27,17 @@ const Home = () => {
           </div>
         </div>
         <span className="see-more-arrow" />
+      </div>
+      <div className="christmas-eve-service">
+        <span>
+          <h3 id="christmas-title">Christmas Eve Services</h3>
+          <p>3:30pm & 5:00pm</p>
+          <p>No childcare provided.</p>
+
+          <p>Join us after service for fellowship and hot chocolate.</p>
+          <p>Livestream begins at 5:00pm</p>
+        </span>
+        <img src={Nativity} alt="" />
       </div>
       <div className="preview-container">
         <Preview

@@ -15,7 +15,10 @@ export default function LessonBlock(props) {
     <div className="lesson-block">
       <span className="lesson-block-title">
         <h4 className="lesson-block-title-lesson">{`Lesson ${props.lessonNumber}`}</h4>
-        <h5 className="lesson-block-title-verses">{props.versesCovered}</h5>
+        {/* only render verses covered if props contains it */}
+        {props.versesCovered && (
+          <h5 className="lesson-block-title-verses">{props.versesCovered}</h5>
+        )}
       </span>
       {/* render video */}
       {props.videoId && (
@@ -28,6 +31,7 @@ export default function LessonBlock(props) {
         <ModalHeader toggle={modalToggle}>{}</ModalHeader>
         <ModalBody>
           <div className="lesson-modal">
+            <h3>{props?.versesCovered}</h3>
             <div className="lesson-modal-video">
               <iframe
                 allowFullScreen

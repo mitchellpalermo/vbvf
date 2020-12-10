@@ -46,6 +46,40 @@ body {
   margin-bottom: 10px;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-name: float;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+@keyframes float {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 10px;
+  }
+}
+
+.christmas-eve-service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5vh;
+  span {
+    width: 50%;
+    color: #c2c372;
+    h3 {
+      font-family: "Josefin Sans";
+      font-weight: 400;
+      font-size: 3em;
+    }
+  }
+  img {
+    width: 30%;
+    padding: 3vh;
+  }
 }
 
 .preview-container {
