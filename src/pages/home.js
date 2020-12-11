@@ -70,6 +70,7 @@ const Home = () => {
           <img src={SecondSamuel} alt="" />
 
           <span className="series-promo-desc">
+            <h2>Mid-week study</h2>
             <p>
               The book of second Samuel continues the historical account of
               David's rise as king of Israel. The story picks up where first
@@ -88,7 +89,7 @@ const Home = () => {
         </div>
         <div className="series-promo" id="matthew-series">
           <span className="series-promo-desc">
-            <h2>Current Series</h2>
+            <h2>Current series</h2>
             <p>
               As we present this important book, we’ll give careful attention to
               the details without losing sight of Matthew’s major ideas and
