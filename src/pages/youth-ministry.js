@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LogosLogo from "../images/logos/logos-logo.png";
+import Volunteer from "../images/youth_assets/volunteer_youth.jpg";
 import "../css/youth-ministry.scss";
-import Leader from "../components/leader";
-import Content from "../content/youth-ministry-content";
+import { sanity, sanityUrlFor } from "../util/index";
 import ScriptureVerse from "../components/scripture-verse";
-import Juvie from "../images/youth-assets/juvie_cropped.jpg";
-import Maria from "../images/youth-assets/maria_cropped.jpg";
-
-import Wesley from "../images/leadership_photos/Wesley_Livingston.jpeg";
 import StaffInfo from "../components/staff-info";
+import Button from "../components/button";
+import Spinner from "reactstrap/lib/Spinner";
 
 export default function YouthMinistry() {
-  const faqList = Content.faq.map((question) => (
+  const faqQuery = `*[_type == "faq" && title == "Youth Ministry"] {
+    faqs
+  }`;
+  const personQuery = `*[_type == "person" && role == "Associate Pastor" && department == "Youth Ministry"] `;
+
+  const [faq, setFaq] = useState([]);
+  const [faqIsLoading, setFaqIsLoading] = useState(true);
+  const [person, setPerson] = useState();
+  const [personIsLoading, setPersonIsLoading] = useState(true);
+
+  useEffect(() => {
+    sanity.fetch(faqQuery).then((results) => {
+      setFaq(results[0].faqs);
+      setFaqIsLoading(!faqIsLoading);
+    });
+    sanity.fetch(personQuery).then((results) => {
+      setPerson(results[0]);
+      setPersonIsLoading(!personIsLoading);
+    });
+    //eslint-disable-next-line
+  }, [faqQuery, personQuery]);
+
+  const faqList = faq.map((question) => (
     <li key={question.question}>
       <p>
         <strong>{question.question}</strong>
@@ -31,27 +51,51 @@ export default function YouthMinistry() {
 
       <div className="youth-description">
         <ScriptureVerse
-          verse={Content.scriptureVerse.verse}
-          reference={Content.scriptureVerse.reference}
+          verse="Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching."
+          reference="1 Timothy 4:12-16"
         />
-        <p>{Content.body}</p>
+        <p>
+          Logos Student Ministries desires to see students grow in the word of
+          God while being intentional about living out the truth of the word of
+          God. We want to be a community of people that provide the freedom to
+          wrestle with the text while cultivating and facilitating the spiritual
+          growth and development of our students. We want to see every student
+          in Logos Student Ministries grow in their reliance of scripture, while
+          operating in an attitude of service, as they grow in grace in a
+          lifestyle of true Gospel witness.
+        </p>
       </div>
-
-      <h2>Youth Leaders</h2>
-      <div className="youth-leaders">
-        <Leader name={Content.leaders[2]} photo={Juvie} />
-        <Leader name={Content.leaders[3]} photo={Maria} />
+      <>
+        {personIsLoading ? (
+          <Spinner />
+        ) : (
+          <StaffInfo
+            name={person.name}
+            role={person.role}
+            email={person.email}
+            bio={person.bio}
+            image={sanityUrlFor(person.image).width(500).url()}
+            alt=""
+          />
+        )}
+      </>
+      <div className="youth-sign-up">
+        <img src={Volunteer} alt="" />
+        <div>
+          <h3>
+            Want to volunteer
+            <br /> with student ministry?
+          </h3>
+          <Button
+            title="Sign up here"
+            size="medium"
+            link="https://vbvf.churchcenter.com/people/forms/72047"
+          />
+        </div>
       </div>
-      <StaffInfo
-        name={Content.leader.name}
-        role={Content.leader.role}
-        email={Content.leader.email}
-        bio={Content.leader.bio}
-        image={Wesley}
-      />
       <div className="youth-faq">
         <h2>Logos FAQ</h2>
-        <ul>{faqList}</ul>
+        {faqIsLoading ? <Spinner /> : <ul>{faqList}</ul>}
       </div>
     </div>
   );

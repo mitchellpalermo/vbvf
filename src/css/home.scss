@@ -6,7 +6,7 @@ body {
   position: relative;
 
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../images/hand_raised_compressed.jpg);
+    url(../images/home_page/don_overlay.jpg);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -95,7 +95,7 @@ body {
 }
 
 #matthew-series {
-  background-image: url(../images/matthew_background.jpg);
+  background-image: url(../images/home_page/matthew_background.jpg);
   background-size: cover;
 }
 
@@ -127,6 +127,9 @@ body {
   .main-header {
     display: flex;
     max-height: 50vh;
+    background-image: url(../images/home_page/overlay.jpg);
+    background-position: 35% 0%;
+
     &-titles {
       max-width: 90%;
       text-align: center;

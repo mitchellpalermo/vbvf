@@ -59,6 +59,7 @@ export default function Livestream() {
       }
     } else {
       if (process.env.REACT_APP_STREAM !== "none") {
+        //if the environment variable has been set to anything else
         //check env var for value
         return process.env.REACT_APP_STREAM;
       }
