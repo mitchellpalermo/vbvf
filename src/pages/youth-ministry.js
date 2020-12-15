@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import LogosLogo from "../images/logos/logos-logo.png";
+import Volunteer from "../images/youth_assets/volunteer_youth.jpg";
 import "../css/youth-ministry.scss";
-import Content from "../content/youth-ministry-content";
 import { sanity, sanityUrlFor } from "../util/index";
 import ScriptureVerse from "../components/scripture-verse";
 import StaffInfo from "../components/staff-info";
@@ -51,10 +51,19 @@ export default function YouthMinistry() {
 
       <div className="youth-description">
         <ScriptureVerse
-          verse={Content.scriptureVerse.verse}
-          reference={Content.scriptureVerse.reference}
+          verse="Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching."
+          reference="1 Timothy 4:12-16"
         />
-        <p>{Content.body}</p>
+        <p>
+          Logos Student Ministries desires to see students grow in the word of
+          God while being intentional about living out the truth of the word of
+          God. We want to be a community of people that provide the freedom to
+          wrestle with the text while cultivating and facilitating the spiritual
+          growth and development of our students. We want to see every student
+          in Logos Student Ministries grow in their reliance of scripture, while
+          operating in an attitude of service, as they grow in grace in a
+          lifestyle of true Gospel witness.
+        </p>
       </div>
       <>
         {personIsLoading ? (
@@ -71,12 +80,18 @@ export default function YouthMinistry() {
         )}
       </>
       <div className="youth-sign-up">
-        <h3>Interested in volunteering with student ministry?</h3>
-        <Button
-          title="Sign up here"
-          size="medium"
-          link="https://vbvf.churchcenter.com/people/forms/72047"
-        />
+        <img src={Volunteer} alt="" />
+        <div>
+          <h3>
+            Want to volunteer
+            <br /> with student ministry?
+          </h3>
+          <Button
+            title="Sign up here"
+            size="medium"
+            link="https://vbvf.churchcenter.com/people/forms/72047"
+          />
+        </div>
       </div>
       <div className="youth-faq">
         <h2>Logos FAQ</h2>

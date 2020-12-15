@@ -39,12 +39,23 @@
   }
 
   &-sign-up {
-    width: 95%;
+    background-image: url(../images/youth_assets/orange_shape.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-evenly;
     text-align: center;
-    margin: 80px 0 30px 0;
+    margin: 10vh 0 10vh 0;
+    padding: 3vh 0 3vh 0;
+
+    img {
+      width: 35%;
+      border-radius: 25px;
+    }
   }
 
   &-faq {
@@ -79,13 +90,7 @@
           width: 50%;
         }
       }
-      &-virtual-meeting {
-        flex-direction: column;
-        margin: 7vh 0 3vh 0;
-        p {
-          width: 90%;
-        }
-      }
+
       &-description {
         width: 100%;
         display: flex;
@@ -93,6 +98,20 @@
         align-items: center;
         p {
           width: 90%;
+        }
+      }
+      &-sign-up {
+        background: none;
+
+        flex-direction: column;
+
+        div {
+          width: 80%;
+        }
+        img {
+          width: 100%;
+          border-radius: 0px;
+          margin: 0 0 2vh 0;
         }
       }
       &-faq {
