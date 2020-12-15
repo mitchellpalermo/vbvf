@@ -2,7 +2,7 @@ import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
 
-import CrownOfThorns from "../images/matthew_crown.png";
+import CrownOfThorns from "../images/home_page/matthew_crown.png";
 import { Link } from "react-router-dom";
 
 import SecondSamuel from "../images/home_page/2_Samuel.jpg";
@@ -18,7 +18,7 @@ const Home = () => {
     <div>
       <div className="main-header">
         <div className="main-header-titles">
-          <h1>Trust the Word</h1>
+          <h1>Rejoice in the Word</h1>
           <h2 style={{ color: "white" }}>John 1:1</h2>
 
           <div className="main-header-buttons">

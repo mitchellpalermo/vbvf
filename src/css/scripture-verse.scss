@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 2vh;
   h3 {
     font-size: 1em;
   }
@@ -19,7 +20,7 @@
     color: rgb(202, 187, 187);
   }
 }
-@media screen {
+@media screen and (max-width: 800px) {
   .scripture-container {
     width: 90%;
   }

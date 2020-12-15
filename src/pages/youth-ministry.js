@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LogosLogo from "../images/logos/logos-logo.png";
 import "../css/youth-ministry.scss";
-import Leader from "../components/leader";
 import Content from "../content/youth-ministry-content";
+import { sanity, sanityUrlFor } from "../util/index";
 import ScriptureVerse from "../components/scripture-verse";
-import Juvie from "../images/youth-assets/juvie_cropped.jpg";
-import Maria from "../images/youth-assets/maria_cropped.jpg";
-
-import Wesley from "../images/leadership_photos/Wesley_Livingston.jpeg";
 import StaffInfo from "../components/staff-info";
+import Button from "../components/button";
+import Spinner from "reactstrap/lib/Spinner";
 
 export default function YouthMinistry() {
-  const faqList = Content.faq.map((question) => (
+  const faqQuery = `*[_type == "faq" && title == "Youth Ministry"] {
+    faqs
+  }`;
+  const personQuery = `*[_type == "person" && role == "Associate Pastor" && department == "Youth Ministry"] `;
+
+  const [faq, setFaq] = useState([]);
+  const [faqIsLoading, setFaqIsLoading] = useState(true);
+  const [person, setPerson] = useState();
+  const [personIsLoading, setPersonIsLoading] = useState(true);
+
+  useEffect(() => {
+    sanity.fetch(faqQuery).then((results) => {
+      setFaq(results[0].faqs);
+      setFaqIsLoading(!faqIsLoading);
+    });
+    sanity.fetch(personQuery).then((results) => {
+      setPerson(results[0]);
+      setPersonIsLoading(!personIsLoading);
+    });
+    //eslint-disable-next-line
+  }, [faqQuery, personQuery]);
+
+  const faqList = faq.map((question) => (
     <li key={question.question}>
       <p>
         <strong>{question.question}</strong>
@@ -36,22 +56,31 @@ export default function YouthMinistry() {
         />
         <p>{Content.body}</p>
       </div>
-
-      <h2>Youth Leaders</h2>
-      <div className="youth-leaders">
-        <Leader name={Content.leaders[2]} photo={Juvie} />
-        <Leader name={Content.leaders[3]} photo={Maria} />
+      <>
+        {personIsLoading ? (
+          <Spinner />
+        ) : (
+          <StaffInfo
+            name={person.name}
+            role={person.role}
+            email={person.email}
+            bio={person.bio}
+            image={sanityUrlFor(person.image).width(500).url()}
+            alt=""
+          />
+        )}
+      </>
+      <div className="youth-sign-up">
+        <h3>Interested in volunteering with student ministry?</h3>
+        <Button
+          title="Sign up here"
+          size="medium"
+          link="https://vbvf.churchcenter.com/people/forms/72047"
+        />
       </div>
-      <StaffInfo
-        name={Content.leader.name}
-        role={Content.leader.role}
-        email={Content.leader.email}
-        bio={Content.leader.bio}
-        image={Wesley}
-      />
       <div className="youth-faq">
         <h2>Logos FAQ</h2>
-        <ul>{faqList}</ul>
+        {faqIsLoading ? <Spinner /> : <ul>{faqList}</ul>}
       </div>
     </div>
   );
