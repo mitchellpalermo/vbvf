@@ -65,20 +65,10 @@ export default function YouthMinistry() {
           lifestyle of true Gospel witness.
         </p>
       </div>
-      <>
-        {personIsLoading ? (
-          <Spinner />
-        ) : (
-          <StaffInfo
-            name={person.name}
-            role={person.role}
-            email={person.email}
-            bio={person.bio}
-            image={sanityUrlFor(person.image).width(500).url()}
-            alt=""
-          />
-        )}
-      </>
+      <div className="youth-faq">
+        <h2>Logos FAQ</h2>
+        {faqIsLoading ? <Spinner /> : <ul>{faqList}</ul>}
+      </div>
       <div className="youth-sign-up">
         <img src={Volunteer} alt="" />
         <div>
@@ -93,10 +83,20 @@ export default function YouthMinistry() {
           />
         </div>
       </div>
-      <div className="youth-faq">
-        <h2>Logos FAQ</h2>
-        {faqIsLoading ? <Spinner /> : <ul>{faqList}</ul>}
-      </div>
+      <>
+        {personIsLoading ? (
+          <Spinner />
+        ) : (
+          <StaffInfo
+            name={person.name}
+            role={person.role}
+            email={person.email}
+            bio={person.bio}
+            image={sanityUrlFor(person.image).width(500).url()}
+            alt=""
+          />
+        )}
+      </>
     </div>
   );
 }
