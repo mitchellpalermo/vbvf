@@ -16,6 +16,7 @@ import Preview from "../components/preview";
 const Home = () => {
   return (
     <div>
+      <div className="midweek">Midweek services will resume on January 6th</div>
       <div className="main-header">
         <div className="main-header-titles">
           <h1>Rejoice in the Word</h1>

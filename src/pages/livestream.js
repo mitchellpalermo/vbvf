@@ -129,6 +129,13 @@ export default function Livestream() {
                 }}
               />
             </>
+          ) : day() === "christmas" ? ( // return Christmas service
+            <>
+              <Stream
+                streamUrl="https://vimeo.com/event/51649/embed"
+                title="Christmas Eve Service"
+              />
+            </>
           ) : (
             //return livestream archive
             <div className="livestream-archive">

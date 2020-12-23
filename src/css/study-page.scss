@@ -10,7 +10,7 @@ $green: #4f5957;
   justify-content: center;
   align-items: flex-start;
   margin: 3vh 0 0 0;
-  .description {
+  .study-info {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -18,6 +18,17 @@ $green: #4f5957;
     &-title {
       text-align: left;
       font-weight: 700;
+    }
+    &-details {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      div {
+        margin: 2vh;
+      }
+      p {
+        font-size: 1em;
+      }
     }
     &-body-ministry-link {
       text-align: center;
@@ -34,7 +45,7 @@ $green: #4f5957;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    .description {
+    .study-info {
       width: 90%;
       align-items: center;
       margin: 0;

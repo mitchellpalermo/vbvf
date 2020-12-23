@@ -67,7 +67,9 @@ export default function Stream(props) {
         <div className="stream-supporting-materials-from-cms">
           <h2>{props.title}</h2>
           <p>{props.description}</p>
-          <Link to={props.seriesLink}>Watch the rest of this series</Link>
+          {props.seriesLink && (
+            <Link to={props.seriesLink}>Watch the rest of this series</Link>
+          )}
         </div>
       </div>
     </div>

@@ -1,24 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
-import { sanity } from "../util/index";
+import { sanity, isOver } from "../util/index";
 import { useParams } from "react-router-dom";
 
-import LessonBlock from "./lesson-block";
+import LessonBlock from "../components/lesson-block";
 
 import "../css/study-page.scss";
-import Button from "./button";
+import Button from "../components/button";
 
 export default function StudyPage() {
   let { studyName } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [series, setSeries] = useState({});
+  const [seriesOver, setSeriesOver] = useState(true);
+
   const [lessons, setLessons] = useState({});
 
   const seriesQuery = `*[_type == 'series' && title == $studyName]{
     title, 
+    location,
+    meetingTime,
+    endDate,
+    isVbvmiStudy,
+    ministrySeriesLink,
+    childcareProvided,
     seriesImage,
     description,
-    ministrySeriesLink
   }`;
 
   const lessonQuery = `*[_type == 'lesson' && series->title == $studyName] | order(lessonNumber asc) {
@@ -33,6 +40,7 @@ export default function StudyPage() {
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
       setSeries(series[0]);
+      setSeriesOver(isOver(series[0].endDate)); //determining if series is over
     });
     sanity.fetch(lessonQuery, params).then((lessons) => {
       setLessons(lessons);
@@ -51,11 +59,31 @@ export default function StudyPage() {
 
   return (
     <div className="study-container">
-      <div className="description">
-        <h3 className="description-title">{series.title}</h3>
-        <p className="description-body">{series.description}</p>
+      <div className="study-info">
+        <h3 className="study-info-title">{series.title}</h3>
+        {!seriesOver && (
+          <div className="study-info-details">
+            <div>
+              <h5>Meeting Time</h5>
+              <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
+            </div>
+            <div>
+              <h5>Childcare</h5>
+              <p>
+                {series.childCareProvided ? "Childcare is provided" : "None"}
+              </p>
+            </div>
+            <div>
+              <h5>Location</h5>
+              <p>{series?.location}</p>
+            </div>
+          </div>
+        )}
+        <div className="description">
+          <p className="description-body">{series.description}</p>
+        </div>
         {/* render link to series on the ministry site if there is one */}
-        {series.ministrySeriesLink && (
+        {series.isVbvmiStudy && (
           <div className="description-body-ministry-link">
             <p>
               Listen to the rest of this series on Verse by Verse Ministry's
@@ -69,7 +97,7 @@ export default function StudyPage() {
         )}
       </div>
       <div className="lesson-list">
-        <h3 className="lesson-list-title">Available Lessons</h3>
+        <h3 className="lesson-list-title">Lessons</h3>
         {isLoading ? (
           <>
             <p>Loading Lessons</p>
