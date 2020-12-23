@@ -37,7 +37,7 @@ export default function StudyAggregator() {
   return (
     <div className="studies">
       <div className="studies-desc">
-        <h1>Bible Studies</h1>
+        <h1>Bible Teaching</h1>
         <p>
           Verse by Verse Fellowship prioritizes the teaching of the word. We
           believe that God uses His word to equip followers of Christ to walk in

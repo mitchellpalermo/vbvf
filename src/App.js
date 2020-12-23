@@ -19,7 +19,7 @@ import SmallGroups from "./pages/small-groups";
 import Serve from "./pages/serve";
 import Contact from "./pages/contact";
 import ScrollToTop from "./components/scroll-to-top";
-import StudyPage from "./components/study-page";
+import StudyPage from "./pages/study-page";
 import Livestream from "./pages/livestream";
 import AttendService from "./pages/attend-service";
 import FAQ from "./components/faq";
