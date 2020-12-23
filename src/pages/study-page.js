@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
-import { sanity } from "../util/index";
+import { sanity, isOver } from "../util/index";
 import { useParams } from "react-router-dom";
 
 import LessonBlock from "../components/lesson-block";
@@ -40,8 +40,7 @@ export default function StudyPage() {
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
       setSeries(series[0]);
-      console.log(series[0]);
-      isOver(series[0].endDate); //determining if series is over
+      setSeriesOver(isOver(series[0].endDate)); //determining if series is over
     });
     sanity.fetch(lessonQuery, params).then((lessons) => {
       setLessons(lessons);
@@ -49,21 +48,6 @@ export default function StudyPage() {
     });
     //eslint-disable-next-line
   }, [lessonQuery, seriesQuery]);
-
-  const isOver = (date) => {
-    const end = new Date();
-    const dateArr = date.split("-");
-    end.setFullYear(dateArr[0]);
-    end.setMonth(dateArr[1] - 1); //months start at 0 hence decrementing by 1
-    end.setDate(dateArr[2]);
-    const now = Date();
-    if (end > now) {
-      //if end date is in the future
-      setSeriesOver(false);
-    } else {
-      setSeriesOver(true);
-    }
-  };
 
   const hasContent = (lesson) => {
     if (lesson.videoId || lesson.audioLink) {
@@ -99,7 +83,7 @@ export default function StudyPage() {
           <p className="description-body">{series.description}</p>
         </div>
         {/* render link to series on the ministry site if there is one */}
-        {series.ministrySeriesLink && (
+        {series.isVbvmiStudy && (
           <div className="description-body-ministry-link">
             <p>
               Listen to the rest of this series on Verse by Verse Ministry's

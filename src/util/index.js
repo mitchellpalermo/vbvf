@@ -53,3 +53,13 @@ export async function getVideos(vimeoFolder) {
 }
 
 export async function getSmallGroups() {}
+
+export function isOver(date) {
+  const end = new Date();
+  const dateArr = date.split("-");
+  end.setFullYear(dateArr[0]);
+  end.setMonth(dateArr[1] - 1); //months start at 0 hence decrementing by 1
+  end.setDate(dateArr[2]);
+
+  return end.getTime() < Date.now(); // will return false if end is in the future (aka study is not over)
+}
