@@ -65,7 +65,11 @@ export default function StudyPage() {
           <div className="study-info-details">
             <div>
               <h5>Meeting Time</h5>
-              <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
+              {series?.meetingTime?.secondMeetingTime ? (
+                <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
+              ) : (
+                <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time} and ${series?.meetingTime.secondServiceTime}`}</p>
+              )}
             </div>
             <div>
               <h5>Childcare</h5>
