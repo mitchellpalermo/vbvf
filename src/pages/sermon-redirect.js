@@ -25,9 +25,8 @@ const SermonRedirect = (props) => {
       <div className="redirect-desc">
         <h1>You are now leaving Verse by Verse Fellowship</h1>
         <p>
-          You're being transferred to Verse by Verse Ministry's website in{" "}
-          {counter} seconds. Please click the cancel button below if you would
-          like to stay here.
+          You're being transferred to Verse by Verse Ministry's website. Please
+          click the cancel button below if you would like to stay here.
         </p>
       </div>
       {/* <div className="redirect-countdown">

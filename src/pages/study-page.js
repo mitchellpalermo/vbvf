@@ -65,7 +65,7 @@ export default function StudyPage() {
           <div className="study-info-details">
             <div>
               <h5>Meeting Time</h5>
-              {series?.meetingTime?.secondMeetingTime ? (
+              {!series?.meetingTime?.secondServiceTime ? ( //if there's no second service show only first service
                 <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
               ) : (
                 <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time} and ${series?.meetingTime.secondServiceTime}`}</p>
