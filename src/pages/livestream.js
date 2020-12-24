@@ -129,11 +129,13 @@ export default function Livestream() {
                 }}
               />
             </>
-          ) : day() === "christmas" ? ( // return Christmas service
+          ) : day() === "christmas" ? ( // environment variable is christmas
+            // return Christmas service
             <>
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
                 title="Christmas Eve Service"
+                description="Right before the birth of Jesus, Joseph and his family traveled 90 miles from their home in Nazareth to Bethlehem. Their Son was born in a manger in a field full of shepherds and sheep. Jesus’ birth in Bethlehem fulfilled Old Testament prophecies, but why did God want His Son to be born in such an out-of-the-way place? We'll find the answer in passages from Luke and Micah."
               />
             </>
           ) : (
