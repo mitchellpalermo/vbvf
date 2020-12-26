@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "../css/study-aggregator.scss";
 import { Link } from "react-router-dom";
-import { Card, CardTitle, CardImg } from "reactstrap";
-import { sanity, sanityUrlFor } from "../util/index";
+import { sanity, sanityUrlFor, isOver } from "../util/index";
 
 export default function StudyAggregator() {
-  const query = `*[_type == "series"] {
+  const query = `*[_type == "series"] | order(endDate desc) {
     title,
-    seriesImage
+    seriesImage,
+    endDate
   }`;
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    sanity.fetch(query).then((results) => setSeries(results));
+    sanity.fetch(query).then((results) => {
+      setSeries(results);
+    });
   }, [query]);
   const studies = series.map((study) => (
     <Link
@@ -20,16 +22,16 @@ export default function StudyAggregator() {
       className="study-link"
       to={`bible-studies/${study.title.replace(" ", "-")}`}
     >
-      <div className="study-icon">
-        <CardImg
-          top
-          width="100%"
-          src={sanityUrlFor(study.seriesImage).width(400).url()}
-          alt={`${study.title} Image`}
-        />
-        <Card body>
-          <CardTitle>{study.title}</CardTitle>
-        </Card>
+      <div className={`study-icon `}>
+        <span
+          className={`indicator-${
+            !isOver(study?.endDate) ? "active" : "hidden"
+          }`}
+        >
+          Active Series
+        </span>
+        <img src={sanityUrlFor(study.seriesImage).width(400).url()} alt="" />
+        <h3>{study.title}</h3>
       </div>
     </Link>
   ));
@@ -50,7 +52,7 @@ export default function StudyAggregator() {
           .
         </p>
       </div>
-      {studies}
+      <div className="studies-array">{studies}</div>
     </div>
   );
 }

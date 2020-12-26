@@ -61,6 +61,7 @@ const Home = () => {
 
           <span className="series-promo-desc">
             <h2>Mid-week study</h2>
+            <h3>Wednesdays at 7:00pm</h3>
             <p>
               The book of second Samuel continues the historical account of
               David's rise as king of Israel. The story picks up where first
@@ -80,6 +81,7 @@ const Home = () => {
         <div className="series-promo" id="matthew-series">
           <span className="series-promo-desc">
             <h2>Current series</h2>
+            <h3>Sundays at 9:00am and 11:00am</h3>
             <p>
               As we present this important book, we’ll give careful attention to
               the details without losing sight of Matthew’s major ideas and
