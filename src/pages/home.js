@@ -29,17 +29,7 @@ const Home = () => {
         </div>
         <span className="see-more-arrow" />
       </div>
-      <div className="christmas-eve-service">
-        <span>
-          <h3 id="christmas-title">Christmas Eve Services</h3>
-          <p>3:30pm & 5:00pm</p>
-          <p>No childcare provided.</p>
 
-          <p>Join us after service for fellowship and hot chocolate.</p>
-          <p>Livestream begins at 5:00pm</p>
-        </span>
-        <img src={Nativity} alt="" />
-      </div>
       <div className="preview-container">
         <Preview
           title="Women's Bible Study"
