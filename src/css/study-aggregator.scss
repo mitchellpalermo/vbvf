@@ -1,34 +1,102 @@
+$gold: #e8b021;
+
 .studies {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 
   &-desc {
-    margin: 5vh;
-    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3vh;
     h1 {
       text-align: center;
     }
-  }
-
-  .study-link {
-    width: 30%;
-    height: auto;
-    color: black;
-    :hover {
-      text-decoration: none;
+    p {
+      width: 75%;
     }
   }
-  .study-icon {
-    text-align: center;
-    margin: 2vh;
-    border-radius: 10px;
-  }
-  @media screen and (max-width: 800px) {
+
+  &-array {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
     .study-link {
-      width: 50%;
+      transition: 0.1s ease-in-out;
+      text-decoration: none;
+    }
+    .study-link:hover {
+      transform: scale(1.01);
+      h3 {
+        font-weight: 900;
+        color: $gold;
+      }
+    }
+
+    .study-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1vh;
+      text-align: center;
+      padding: 1vh;
+
+      color: black;
+      h3 {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .indicator-hidden {
+    visibility: hidden;
+    margin: 5px;
+  }
+  .indicator-active {
+    content: "Active Series";
+    color: $gold;
+    border-bottom: 2px $gold solid;
+    text-align: center;
+    width: 75%;
+    margin: 5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .studies {
+      &-desc {
+        margin: 0;
+        p {
+          width: 90%;
+        }
+      }
+    }
+    .study-link {
+      width: 90%;
+    }
+
+    .study-link:hover {
+      transform: scale(1.01);
+      h3 {
+        font-weight: 900;
+        color: $gold;
+      }
+    }
+
+    .indicator-hidden {
+      visibility: hidden;
+      margin: 5px;
+    }
+    .indicator-active {
+      content: "Active Series";
+      color: $gold;
+      border-bottom: 2px $gold solid;
+      text-align: center;
+      width: 75%;
+      margin: 5px;
     }
   }
 }
