@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
 import { sanity, isOver, sanityUrlFor } from "../util/index";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import LessonBlock from "../components/lesson-block";
 
@@ -60,17 +60,50 @@ export default function StudyPage() {
   return (
     <div className="study-container">
       {series.isVbvmiStudy ? (
-        <VbvmiStudy {...series} />
+        <div className="vbvmi-study">
+          <Link className="back-link" to="/bible-studies">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back to bible studies
+          </Link>
+          <VbvmiStudy {...series} />
+        </div>
       ) : (
         <>
           <div className="study-info">
-            <>
-              <img
-                alt=""
-                src={sanityUrlFor(series.seriesImage).size(500, 300).url()}
-              />
-              <h3 className="study-info-title">{series.title}</h3>
-            </>
+            <Link className="back-link" to="/bible-studies">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              Back to bible studies
+            </Link>
+            <img
+              alt=""
+              src={sanityUrlFor(series.seriesImage).size(500, 300).url()}
+            />
+            <h1 className="study-info-title">{series.title}</h1>
+
             {!seriesOver && (
               <div className="study-info-details">
                 <div>
