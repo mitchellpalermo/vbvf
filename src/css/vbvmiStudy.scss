@@ -1,0 +1,30 @@
+.study {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    img {
+      border-radius: 5px;
+      width: 50%;
+    }
+    h1 {
+      margin: 3vh;
+      text-align: center;
+    }
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      margin: 5px;
+      width: 65%;
+    }
+  }
+}
