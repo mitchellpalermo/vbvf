@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Spinner } from "reactstrap";
-import { sanity, isOver } from "../util/index";
-import { useParams } from "react-router-dom";
+import { sanity, isOver, sanityUrlFor } from "../util/index";
+import { Link, useParams } from "react-router-dom";
 
 import LessonBlock from "../components/lesson-block";
 
 import "../css/study-page.scss";
-import Button from "../components/button";
+import VbvmiStudy from "../components/vbvmiStudy";
 
 export default function StudyPage() {
   let { studyName } = useParams();
@@ -59,63 +59,98 @@ export default function StudyPage() {
 
   return (
     <div className="study-container">
-      <div className="study-info">
-        <h3 className="study-info-title">{series.title}</h3>
-        {!seriesOver && (
-          <div className="study-info-details">
-            <div>
-              <h5>Meeting Time</h5>
-              {!series?.meetingTime?.secondServiceTime ? ( //if there's no second service show only first service
-                <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
-              ) : (
-                <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time} and ${series?.meetingTime.secondServiceTime}`}</p>
-              )}
-            </div>
-            <div>
-              <h5>Childcare</h5>
-              <p>
-                {series.childCareProvided ? "Childcare is provided" : "None"}
-              </p>
-            </div>
-            <div>
-              <h5>Location</h5>
-              <p>{series?.location}</p>
-            </div>
-          </div>
-        )}
-        <div className="description">
-          <p className="description-body">{series.description}</p>
+      {series.isVbvmiStudy ? (
+        <div className="vbvmi-study">
+          <Link className="back-link" to="/bible-studies">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back to bible studies
+          </Link>
+          <VbvmiStudy {...series} />
         </div>
-        {/* render link to series on the ministry site if there is one */}
-        {series.isVbvmiStudy && (
-          <div className="description-body-ministry-link">
-            <p>
-              Listen to the rest of this series on Verse by Verse Ministry's
-              website
-            </p>
-            <Button
-              title="Listen Here"
-              buttonFunc={() => window.open(series.ministrySeriesLink)}
+      ) : (
+        <>
+          <div className="study-info">
+            <Link className="back-link" to="/bible-studies">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                />
+              </svg>
+              Back to bible studies
+            </Link>
+            <img
+              alt=""
+              src={sanityUrlFor(series.seriesImage).size(500, 300).url()}
             />
+            <h1 className="study-info-title">{series.title}</h1>
+
+            {!seriesOver && (
+              <div className="study-info-details">
+                <div>
+                  <h5>Meeting Time</h5>
+                  {!series?.meetingTime?.secondServiceTime ? ( //if there's no second service show only first service
+                    <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
+                  ) : (
+                    <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time} and ${series?.meetingTime.secondServiceTime}`}</p>
+                  )}
+                </div>
+                <div>
+                  <h5>Childcare</h5>
+                  <p>
+                    {series.childCareProvided
+                      ? "Childcare is provided"
+                      : "None"}
+                  </p>
+                </div>
+                <div>
+                  <h5>Location</h5>
+                  <p>{series?.location}</p>
+                </div>
+              </div>
+            )}
+            <div className="description">
+              <p className="description-body">{series.description}</p>
+            </div>
           </div>
-        )}
-      </div>
-      <div className="lesson-list">
-        <h3 className="lesson-list-title">Lessons</h3>
-        {isLoading ? (
-          <>
-            <p>Loading Lessons</p>
-            <Spinner color="dark" />
-          </>
-        ) : (
-          lessons.map((lesson, index) => {
-            //render lesson block only if there's a meaningful content
-            return hasContent(lesson) ? (
-              <LessonBlock key={index} {...lesson} />
-            ) : null;
-          })
-        )}
-      </div>
+
+          <div className="lesson-list">
+            <h3 className="lesson-list-title">Lessons</h3>
+            {isLoading ? (
+              <>
+                <p>Loading Lessons</p>
+                <Spinner color="dark" />
+              </>
+            ) : (
+              lessons.map((lesson, index) => {
+                //render lesson block only if there's a meaningful content
+                return hasContent(lesson) ? (
+                  <LessonBlock key={index} {...lesson} />
+                ) : null;
+              })
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

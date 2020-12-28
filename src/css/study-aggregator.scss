@@ -9,7 +9,7 @@ $gold: #e8b021;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3vh;
+    margin: 3vh;
     h1 {
       text-align: center;
     }
@@ -41,7 +41,7 @@ $gold: #e8b021;
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      margin: 10px;
       text-align: center;
 
       color: black;
@@ -74,28 +74,9 @@ $gold: #e8b021;
       }
     }
   }
-  .study-link {
-    width: 90%;
-  }
-
-  .study-link:hover {
-    transform: scale(1.01);
-    h3 {
-      font-weight: 900;
-      color: $gold;
+  .study-icon {
+    img {
+      width: 95%;
     }
-  }
-
-  .indicator-hidden {
-    visibility: hidden;
-    margin: 5px;
-  }
-  .indicator-active {
-    content: "Active Series";
-    color: $gold;
-    border-bottom: 2px $gold solid;
-    text-align: center;
-    width: 75%;
-    margin: 5px;
   }
 }
