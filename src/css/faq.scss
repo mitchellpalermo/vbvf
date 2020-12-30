@@ -2,24 +2,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  &-questions {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h1,
-    h4 {
-      text-align: center;
-    }
-  }
-  @media screen and (max-width: 900px) {
-    .faq {
-      &-questions {
-        width: 100%;
-        p {
-          width: 90%;
-        }
-      }
-    }
-  }
 }

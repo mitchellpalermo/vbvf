@@ -4,6 +4,7 @@ import "../css/frequently-asked-questions.scss";
 
 export default function FrequentlyAskedQuestions(props) {
   const serializers = {
+    //this helps react understand how to present links
     marks: {
       link: ({ mark, children }) => {
         const { href } = mark;
@@ -17,6 +18,7 @@ export default function FrequentlyAskedQuestions(props) {
     <li>
       <h3>{question.question}</h3>
       <p>
+        {/* making use of sanity's component for reading in portable text */}
         <PortableText blocks={question.answer2} serializers={serializers} />
       </p>
     </li>
@@ -24,6 +26,7 @@ export default function FrequentlyAskedQuestions(props) {
 
   return (
     <div className="faq-list">
+      <h1>FAQ</h1>
       <ul>{faqList}</ul>
     </div>
   );
