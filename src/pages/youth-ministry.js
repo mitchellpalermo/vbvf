@@ -58,10 +58,10 @@ export default function YouthMinistry() {
           lifestyle of true Gospel witness.
         </p>
       </div>
-      <div className="youth-faq">
-        <h2>Logos FAQ</h2>
-        {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
-      </div>
+
+      <h2>Logos FAQ</h2>
+      {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
+
       <div className="youth-sign-up">
         <img src={Volunteer} alt="" />
         <div>

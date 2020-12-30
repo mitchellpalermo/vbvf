@@ -25,7 +25,6 @@ export default function FAQ() {
   return (
     <div className="faq">
       <AboutMenu />
-
       {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
     </div>
   );
