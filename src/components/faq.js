@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "reactstrap";
-
+import FrequentlyAskedQuestions from "./frequently-asked-questions";
 import { sanity } from "../util/index";
 import "../css/faq.scss";
 import AboutMenu from "./about-menu";
@@ -16,29 +16,17 @@ export default function FAQ() {
   useEffect(() => {
     sanity.fetch(faqQuery).then((results) => {
       setFaq(results[0].faqs);
-      console.log(results[0]);
+
       setFaqIsLoading(!faqIsLoading);
     });
     //eslint-disable-next-line
   }, [faqQuery]);
-  const faqList = faq.map((question) => (
-    <li key={question.question}>
-      <p>
-        <strong>{question.question}</strong>
-      </p>
-      <p>
-        {question.answer2[0].children.map((child) => (
-          <span>{child.text}</span>
-        ))}
-      </p>
-    </li>
-  ));
 
   return (
     <div className="faq">
       <AboutMenu />
 
-      {faqIsLoading ? <Spinner /> : <ul>{faqList}</ul>}
+      {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
     </div>
   );
 }
