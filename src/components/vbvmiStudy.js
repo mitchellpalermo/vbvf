@@ -10,7 +10,7 @@ export default function VbvmiStudy(props) {
       <span>
         <img
           alt=""
-          src={sanityUrlFor(props.seriesImage).size(300, 300).url()}
+          src={sanityUrlFor(props.seriesImage).size(500, 300).url()}
         />
         <h1>
           The Book of <br />

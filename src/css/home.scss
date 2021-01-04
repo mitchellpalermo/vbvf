@@ -82,8 +82,8 @@ body {
   background-color: black;
 }
 
-#matthew-series {
-  background-image: url(../images/home_page/matthew_background.jpg);
+#phillippians-series {
+  background-image: url(../images/home_page/phillippians_background.jpg);
   background-size: cover;
 }
 
@@ -93,7 +93,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-
   justify-content: center;
   align-items: center;
   &-desc {
@@ -108,10 +107,9 @@ body {
       text-align: center;
     }
   }
-  img span {
+  img {
     justify-self: flex-end;
-    width: 40%;
-    height: auto;
+    width: 70%;
   }
 }
 
@@ -162,6 +160,7 @@ body {
       mask-image: linear-gradient(to top, transparent 0, black 75%);
     }
   }
+
   .series-promo {
     display: flex;
     flex-flow: column-reverse;

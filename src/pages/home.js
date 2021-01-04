@@ -2,7 +2,7 @@ import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
 
-import CrownOfThorns from "../images/home_page/matthew_crown.png";
+import PhillippiansText from "../images/home_page/phillippians_text.png";
 import { Link } from "react-router-dom";
 
 import SecondSamuel from "../images/home_page/2_Samuel.jpg";
@@ -73,32 +73,31 @@ const Home = () => {
             </p>
             <Button
               title={`Listen to 2 Samuel`}
-              size="small"
+              size="medium"
               link={`/bible-studies/2-Samuel`}
             />
           </span>
         </div>
-        <div className="series-promo" id="matthew-series">
+        <div className="series-promo" id="phillippians-series">
           <span className="series-promo-desc">
-            <h2>Current series</h2>
+            <img loading="lazy" src={PhillippiansText} alt="" />
             <h3>Sundays at 9:00am and 11:00am</h3>
             <p>
-              As we present this important book, we’ll give careful attention to
-              the details without losing sight of Matthew’s major ideas and
-              themes. Together with our previous studies in Luke and John, we’re
-              rounding out the full story of Jesus’ arrival and work on earth.
-              Every Christian can profit from such a grounding.
+              Joy in the midst of suffering is the paradoxical experience of
+              every Christian. Our sinful world induces suffering at every turn,
+              it seems, yet Christians remain resolute in their hope for good
+              things to come. This is the central message of Paul's letter to
+              Philippi.
             </p>
             <Link
               to={{
                 pathname: "/sermon-redirect",
-                deepDive: "bible-studies/gospel-of-matthew",
+                deepDive: "bible-studies/phillipians",
               }}
             >
-              <Button size="small" title="Listen to Matthew" />
+              <Button size="medium" title="Listen to Phillippians" />
             </Link>
           </span>
-          <img loading="lazy" src={CrownOfThorns} alt="crown of thorns" />
         </div>
       </div>
     </div>
