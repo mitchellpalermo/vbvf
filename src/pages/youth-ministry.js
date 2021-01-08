@@ -7,6 +7,7 @@ import ScriptureVerse from "../components/scripture-verse";
 import StaffInfo from "../components/staff-info";
 import Button from "../components/button";
 import Spinner from "reactstrap/lib/Spinner";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 
 export default function YouthMinistry() {
   const faqQuery = `*[_type == "faq" && title == "Youth Ministry"] {
@@ -31,14 +32,6 @@ export default function YouthMinistry() {
     //eslint-disable-next-line
   }, [faqQuery, personQuery]);
 
-  const faqList = faq.map((question) => (
-    <li key={question.question}>
-      <p>
-        <strong>{question.question}</strong>
-      </p>
-      <p>{question.answer}</p>
-    </li>
-  ));
   return (
     <div className="youth">
       <div className="youth-header">
@@ -65,10 +58,10 @@ export default function YouthMinistry() {
           lifestyle of true Gospel witness.
         </p>
       </div>
-      <div className="youth-faq">
-        <h2>Logos FAQ</h2>
-        {faqIsLoading ? <Spinner /> : <ul>{faqList}</ul>}
-      </div>
+
+      <h2>Logos FAQ</h2>
+      {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
+
       <div className="youth-sign-up">
         <img src={Volunteer} alt="" />
         <div>
