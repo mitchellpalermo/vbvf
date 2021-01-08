@@ -19,7 +19,7 @@ export default function FrequentlyAskedQuestions(props) {
       <h3>{question.question}</h3>
       <p>
         {/* making use of sanity's component for reading in portable text */}
-        <PortableText blocks={question.answer2} serializers={serializers} />
+        <PortableText blocks={question.answer} serializers={serializers} />
       </p>
     </li>
   ));
