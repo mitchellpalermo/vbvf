@@ -117,15 +117,11 @@ export default function Livestream() {
             <>
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
-                title="Gospel of Matthew"
-                description="As we present this important book, we’ll give careful attention to
-              the details without losing sight of Matthew’s major ideas and
-              themes. Together with our previous studies in Luke and John, we’re
-              rounding out the full story of Jesus’ arrival and work on earth.
-              Every Christian can profit from such a grounding."
+                title="The Book of Philippians"
+                description="Joy in the midst of suffering is the paradoxical experience of every Christian. Our sinful world induces suffering at every turn, it seems, yet Christians remain resolute in their hope for good things to come. This is the central message of Paul's letter to Philippi. "
                 seriesLink={{
                   pathname: "/sermon-redirect",
-                  deepDive: "bible-studies/gospel-of-matthew",
+                  deepDive: "bible-studies/philippians",
                 }}
               />
             </>
