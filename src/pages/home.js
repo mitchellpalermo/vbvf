@@ -91,10 +91,10 @@ const Home = () => {
             <Link
               to={{
                 pathname: "/sermon-redirect",
-                deepDive: "bible-studies/phillipians",
+                deepDive: "bible-studies/philippians",
               }}
             >
-              <Button size="medium" title="Listen to Phillippians" />
+              <Button size="medium" title="Listen to Philippians" />
             </Link>
           </span>
         </div>
