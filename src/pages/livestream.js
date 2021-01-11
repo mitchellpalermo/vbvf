@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getVideos } from "../util/index";
+import { getVideos, isOver } from "../util/index";
 import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import Stream from "../components/stream";
@@ -11,15 +11,32 @@ require("dotenv").config();
 var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
-  const [series, setSeries] = useState({});
-  const midWeekQuery = `*[_type == "series" && title == "2 Samuel"]{
+  const [wednesdaySeries, setWednesdaySeries] = useState({});
+  const [sundaySeries, setSundaySeries] = useState({});
+
+  const wednesdayQuery = `*[_type == "series" && meetingTime.day == "Wednesday"]{
   title,
-  description
+  description,
+  endDate
+}`;
+  const sundayQuery = `*[_type == "series" && meetingTime.day == "Sunday"]{
+  title,
+  description,
+  endDate
 }`;
 
   useEffect(() => {
-    sanity.fetch(midWeekQuery).then((series) => setSeries(series[0]));
-  }, [midWeekQuery]);
+    sanity.fetch(wednesdayQuery).then((wednesdaySeries) => {
+      setWednesdaySeries(
+        wednesdaySeries.find((series) => !isOver(series.endDate))
+      );
+    });
+  }, [wednesdayQuery]);
+  useEffect(() => {
+    sanity.fetch(sundayQuery).then((sundaySeries) => {
+      setSundaySeries(sundaySeries.find((series) => !isOver(series.endDate)));
+    });
+  }, [sundayQuery]);
 
   const [sundayArchiveVideos, setSundayArchiveVideos] = useState({});
 
@@ -106,22 +123,22 @@ export default function Livestream() {
         </>
       ) : (
         <>
-          {day() === "wednesday" ? ( //if it's wednesday return wednesday stream
+          {day() === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
-              title={series.title}
-              description={series.description}
-              seriesLink={`/bible-studies/${series.title}`}
+              title={wednesdaySeries.title}
+              description={wednesdaySeries.description}
+              seriesLink={`/bible-studies/${wednesdaySeries.title}`}
             />
           ) : day() === "sunday" ? ( //return sunday stream
             <>
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
-                title="The Book of Philippians"
-                description="Joy in the midst of suffering is the paradoxical experience of every Christian. Our sinful world induces suffering at every turn, it seems, yet Christians remain resolute in their hope for good things to come. This is the central message of Paul's letter to Philippi. "
+                title={sundaySeries.title}
+                description={sundaySeries.description}
                 seriesLink={{
                   pathname: "/sermon-redirect",
-                  deepDive: "bible-studies/philippians",
+                  deepDive: `bible-studies/${sundaySeries.title}`,
                 }}
               />
             </>
