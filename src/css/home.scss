@@ -1,7 +1,39 @@
+$darkNavy: #2e3c49;
+$green: #4f5957;
+$gold: #e8b021;
+
 body {
   overflow-x: hidden;
 }
+#notice {
+  background-color: $gold;
+  text-align: center;
+  color: $darkNavy;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.2em;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-name: jiggle;
+  animation-direction: alternate;
+  position: relative;
+  border-radius: 50px;
+  top: 4px;
+  width: 80%;
+  strong {
+    color: black;
+  }
+}
 
+@keyframes jiggle {
+  from {
+    top: 4px;
+  }
+  to {
+    top: 12px;
+  }
+}
 .main-header {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
