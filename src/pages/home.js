@@ -16,6 +16,11 @@ const Home = () => {
   return (
     <div>
       <div className="main-header">
+        <div id="notice">
+          Midweek Bible study and Logos youth group{" "}
+          <strong>canceled on January 13th</strong>. The Bible Study and youth
+          will resume next Wednesday at 7pm.
+        </div>
         <div className="main-header-titles">
           <h1>Rejoice in the Word</h1>
           <h2 style={{ color: "white" }}>John 1:1</h2>
