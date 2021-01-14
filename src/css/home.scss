@@ -6,6 +6,7 @@ body {
   overflow-x: hidden;
 }
 #notice {
+  display: none;
   background-color: $gold;
   text-align: center;
   color: $darkNavy;
