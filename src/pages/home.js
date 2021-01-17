@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
-
 import PhillippiansText from "../images/home_page/phillippians_text.png";
 import { Link } from "react-router-dom";
 
