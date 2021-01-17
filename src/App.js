@@ -29,6 +29,7 @@ import Leadership from "./components/leadership";
 import Giving from "./pages/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
+import Announcement from "./pages/announcement";
 
 // import OnlineMinistry from "./pages/online-ministry";
 
@@ -93,6 +94,7 @@ function App() {
           />
           <Route exact path="/ministries/serve" component={Serve} />
           <Route exact path="/attend" component={AttendService} />
+          <Route exact path="/announcement" component={Announcement} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

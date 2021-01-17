@@ -16,9 +16,10 @@ const Home = () => {
   return (
     <div>
       <div className="main-header">
-        {/* <div id="notice">
-         If an urgent notice is needed, type it here.
-        </div> */}
+        <div id="notice">
+          All childcare is being suspended for the next two weeks.{" "}
+          <Link to="/announcement">Learn More</Link>
+        </div>
         <div className="main-header-titles">
           <h1>Rejoice in the Word</h1>
           <h2 style={{ color: "white" }}>John 1:1</h2>
