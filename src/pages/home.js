@@ -16,8 +16,8 @@ const Home = () => {
     <div>
       <div className="main-header">
         <div id="notice">
-          All childcare is being suspended for the next two weeks.{" "}
-          <Link to="/announcement">Learn More</Link>
+          Childcare and midweek services will be suspended for the next two
+          weeks. <Link to="/announcement">Learn More</Link>
         </div>
         <div className="main-header-titles">
           <h1>Rejoice in the Word</h1>
