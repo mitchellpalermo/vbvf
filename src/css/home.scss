@@ -6,35 +6,34 @@ body {
   overflow-x: hidden;
 }
 #notice {
-  display: none;
-  background-color: $gold;
+  background-color: #de4343;
   text-align: center;
-  color: $darkNavy;
-  width: 100%;
+  color: white;
   padding: 16px;
   font-size: 1.2em;
   animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-name: jiggle;
+  animation-name: pulse;
   animation-direction: alternate;
   position: relative;
   border-radius: 50px;
-  top: 4px;
-  width: 80%;
-  strong {
-    color: black;
+  top: 25px;
+
+  a {
+    color: white;
+    text-decoration: underline;
   }
 }
 
-@keyframes jiggle {
-  from {
-    top: 4px;
-  }
-  to {
-    top: 12px;
-  }
-}
+// @keyframes pulse {
+//   from {
+//     box-shadow: 0 0 0 0 #de4343;
+//   }
+//   to {
+//     box-shadow: 0px 0px 0px 2px #de4343;
+//   }
+// }
 .main-header {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
