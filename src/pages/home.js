@@ -16,8 +16,8 @@ const Home = () => {
     <div>
       <div className="main-header">
         <div id="notice">
-          Childcare and midweek services will be suspended for the next two
-          weeks. <Link to="/announcement">Learn More</Link>
+          Childcare, midweek services, and women's Bible study will be suspended
+          until January 25th. <Link to="/announcement">Learn Why</Link>
         </div>
         <div className="main-header-titles">
           <h1>Rejoice in the Word</h1>
