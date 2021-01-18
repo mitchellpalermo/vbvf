@@ -14,13 +14,16 @@ export default function Stream(props) {
   }`;
   const params = { seriesName: props.title };
   useEffect(() => {
-    sanity
-      .fetch(docQuery, params)
-      .then((document) => {
-        setStudyMaterials(document);
-      })
-      .catch((error) => console.log(error));
-    setStudyMaterialsIsLoading(false);
+    if (!props.isVbvmiStudy) {
+      //if it's a vbvmi study don't fetch the docs
+      sanity
+        .fetch(docQuery, params)
+        .then((document) => {
+          setStudyMaterials(document);
+        })
+        .catch((error) => console.log(error));
+      setStudyMaterialsIsLoading(false);
+    }
     //eslint-disable-next-line
   }, [docQuery]);
 
@@ -36,7 +39,7 @@ export default function Stream(props) {
         ></iframe>
       </div>
       <div className="stream-info">
-        {studyMaterialsIsLoading ? (
+        {studyMaterialsIsLoading && !props.isVbvmiStudy ? ( //don't show loading spinner if vbvmistudy = true
           <>
             <p>Loading Study Notes</p> <Spinner color="dark" />
           </>

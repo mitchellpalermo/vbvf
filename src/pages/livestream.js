@@ -17,12 +17,14 @@ export default function Livestream() {
   const wednesdayQuery = `*[_type == "series" && meetingTime.day == "Wednesday"]{
   title,
   description,
-  endDate
+  endDate,
+  isVbvmiStudy
 }`;
   const sundayQuery = `*[_type == "series" && meetingTime.day == "Sunday"]{
   title,
   description,
-  endDate
+  endDate,
+  isVbvmiStudy
 }`;
 
   useEffect(() => {
@@ -129,6 +131,7 @@ export default function Livestream() {
               title={wednesdaySeries.title}
               description={wednesdaySeries.description}
               seriesLink={`/bible-studies/${wednesdaySeries.title}`}
+              isVbvmiStudy={wednesdaySeries.isVbvmiStudy}
             />
           ) : day() === "sunday" ? ( //return sunday stream
             <>
@@ -140,6 +143,7 @@ export default function Livestream() {
                   pathname: "/sermon-redirect",
                   deepDive: `bible-studies/${sundaySeries.title}`,
                 }}
+                isVbvmiStudy={sundaySeries.isVbvmiStudy}
               />
             </>
           ) : day() === "christmas" ? ( // environment variable is christmas
