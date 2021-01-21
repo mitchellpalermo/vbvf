@@ -8,6 +8,7 @@ import Logo from "../images/logos/small_group_logo.svg";
 import content from "../content/small-groups-ministry-content";
 import Button from "../components/button";
 import Praying from "../images/small_groups/praying.jpg";
+import AlertBubble from "../components/alert-bubble";
 
 export default function SmallGroups() {
   return (
@@ -20,6 +21,7 @@ export default function SmallGroups() {
           <br /> Groups
         </h1>
       </div>
+      <AlertBubble />
       <div className="small-group-info">
         <p>{content.ministrySummary}</p>
         <img alt="" src={Praying} />

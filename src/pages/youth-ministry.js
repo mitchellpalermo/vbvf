@@ -8,6 +8,7 @@ import StaffInfo from "../components/staff-info";
 import Button from "../components/button";
 import Spinner from "reactstrap/lib/Spinner";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
+import AlertBubble from "../components/alert-bubble";
 
 export default function YouthMinistry() {
   const faqQuery = `*[_type == "faq" && title == "Youth Ministry"] {
@@ -40,6 +41,7 @@ export default function YouthMinistry() {
           src={LogosLogo}
           alt="Logos Student Ministry Logo"
         />
+        <AlertBubble />
       </div>
 
       <div className="youth-description">

@@ -4,6 +4,7 @@ import FrequentlyAskedQuestions from "./frequently-asked-questions";
 import { sanity } from "../util/index";
 import "../css/faq.scss";
 import AboutMenu from "./about-menu";
+import AlertBubble from "./alert-bubble";
 
 export default function FAQ() {
   const faqQuery = `*[_type == "faq" && title == "About Page"] {
@@ -24,6 +25,7 @@ export default function FAQ() {
 
   return (
     <div className="faq">
+      <AlertBubble />
       <AboutMenu />
       {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
     </div>

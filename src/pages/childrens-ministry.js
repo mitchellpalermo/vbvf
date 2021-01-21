@@ -10,6 +10,7 @@ import Content from "../content/childrens-ministry-content";
 import StaffInfo from "../components/staff-info";
 import Exclamation from "../images/exclamation-solid.svg";
 import { getMobileOperatingSystem } from "../util/index";
+import AlertBubble from "../components/alert-bubble";
 
 export default function ChildrensMinistry() {
   const churchCenterLink = () => {
@@ -29,6 +30,7 @@ export default function ChildrensMinistry() {
           alt="Journey Kids Logo"
           src={JourneyLogo}
         />
+        <AlertBubble />
       </div>
 
       <div className="childrens-ministry-mission">
