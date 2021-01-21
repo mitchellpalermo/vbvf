@@ -10,15 +10,13 @@ import Serving from "../images/home_page/serving.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 
 import Preview from "../components/preview";
+import AlertBubble from "../components/alert-bubble";
 
 const Home = () => {
   return (
     <div>
       <div className="main-header">
-        <div id="notice">
-          Childcare, midweek services, and women's Bible study will be suspended
-          until January 25th. <Link to="/announcement">Learn Why</Link>
-        </div>
+        <AlertBubble />
         <div className="main-header-titles">
           <h1>Rejoice in the Word</h1>
           <h2 style={{ color: "white" }}>John 1:1</h2>

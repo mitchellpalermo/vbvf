@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/study-aggregator.scss";
 import { Link } from "react-router-dom";
 import { sanity, sanityUrlFor, isOver } from "../util/index";
+import AlertBubble from "../components/alert-bubble";
 
 export default function StudyAggregator() {
   const query = `*[_type == "series"] | order(endDate desc) {
@@ -40,6 +41,7 @@ export default function StudyAggregator() {
     <div className="studies">
       <div className="studies-desc">
         <h1>Bible Teaching</h1>
+        <AlertBubble />
         <p>
           Verse by Verse Fellowship prioritizes the teaching of the word. We
           believe that God uses His word to equip followers of Christ to walk in

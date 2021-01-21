@@ -20,6 +20,7 @@ export default function Announcement() {
         title,
         body,
         expirationDate,
+        whereToDisplay,
         _createdAt
     }`;
   const [specialAnnouncement, setSpecialAnnouncement] = useState();

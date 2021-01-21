@@ -52,8 +52,6 @@ export async function getVideos(vimeoFolder) {
   return axios(options);
 }
 
-export async function getSmallGroups() {}
-
 export function isOver(date) {
   const end = new Date();
   const dateArr = date.split("-");
@@ -62,4 +60,9 @@ export function isOver(date) {
   end.setDate(dateArr[2]);
 
   return end.getTime() < Date.now(); // will return false if end is in the future (aka study is not over)
+}
+
+export function sanityFormatTodaysDate() {
+  const date = new Date();
+  return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }

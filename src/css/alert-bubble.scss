@@ -1,0 +1,31 @@
+.alert-bubble {
+  padding: 16px;
+  position: static;
+  top: 25px;
+  background-color: #de4343;
+  text-align: center;
+  color: white;
+  border-radius: 50px;
+  margin: 10px;
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.active {
+  visibility: visible;
+  animation: ease-in 0.3s fadein;
+
+  @keyframes fadein {
+    0% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+.hidden {
+  visibility: hidden;
+}
