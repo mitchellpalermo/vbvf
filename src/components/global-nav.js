@@ -59,7 +59,7 @@ const GlobalNav = (props) => {
 
                       <p>Sunday 9:00am & 11:00am</p>
                     </div>
-                    <div>
+                    {/* <div>
                       <h2>Mid-Week Bible Studies</h2>
                       <p>
                         Adult Study <br />
@@ -68,7 +68,7 @@ const GlobalNav = (props) => {
                       <p>
                         Women's Study <br></br> Tuesday - 10:00am
                       </p>
-                    </div>
+                    </div> */}
                     <div>
                       <h2>Location</h2>
                       <p>551 E Nakoma St. San Antonio, TX 78216</p>
