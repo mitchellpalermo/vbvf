@@ -33,7 +33,7 @@ export default function AlertBubble() {
     <div
       className={`alert-bubble ${announcement != null ? "active" : "hidden"}`} //conditionally showing announcement
     >
-      {announcement?.alertBubbleText} <Link to="/announcement">Read</Link>
+      {announcement?.alertBubbleText} <Link to="/announcement">Read more</Link>
     </div>
   );
 }
