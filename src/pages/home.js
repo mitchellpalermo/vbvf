@@ -2,7 +2,7 @@ import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
 //import PhillippiansText from "../images/home_page/phillippians_text.png";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 //import SecondSamuel from "../images/home_page/2_Samuel.jpg";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
