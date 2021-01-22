@@ -1,10 +1,10 @@
 import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
-import PhillippiansText from "../images/home_page/phillippians_text.png";
+//import PhillippiansText from "../images/home_page/phillippians_text.png";
 import { Link } from "react-router-dom";
 
-import SecondSamuel from "../images/home_page/2_Samuel.jpg";
+//import SecondSamuel from "../images/home_page/2_Samuel.jpg";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
 import Serving from "../images/home_page/serving.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
@@ -55,7 +55,7 @@ const Home = () => {
         />
       </div>
 
-      <div>
+      {/* <div>
         <div className={`series-promo `} id="samuel-series">
           <img src={SecondSamuel} alt="" />
 
@@ -99,7 +99,7 @@ const Home = () => {
             </Link>
           </span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
