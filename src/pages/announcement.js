@@ -16,7 +16,7 @@ export default function Announcement() {
     },
   };
 
-  const query = `*[_type == "specialAnnouncement"]| order(_createdAt) [0] {
+  const query = `*[_type == "specialAnnouncement"]| order(_createdAt desc) [0] {
         title,
         body,
         expirationDate,
