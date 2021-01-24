@@ -1,15 +1,15 @@
 import React from "react";
 import "../css/home.scss";
-import Button from "../components/button";
-//import PhillippiansText from "../images/home_page/phillippians_text.png";
-//import { Link } from "react-router-dom";
+// import Button from "../components/button";
+// import PhillippiansText from "../images/home_page/phillippians_text.png";
+import { Link } from "react-router-dom";
 
-//import SecondSamuel from "../images/home_page/2_Samuel.jpg";
-import WomensStudy from "../images/home_page/womensStudy.jpg";
-import Serving from "../images/home_page/serving.jpg";
-import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
+// import SecondSamuel from "../images/home_page/2_Samuel.jpg";
+// import WomensStudy from "../images/home_page/womensStudy.jpg";
+// import Serving from "../images/home_page/serving.jpg";
+// import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 
-import Preview from "../components/preview";
+// import Preview from "../components/preview";
 import AlertBubble from "../components/alert-bubble";
 
 const Home = () => {
@@ -18,18 +18,21 @@ const Home = () => {
       <div className="main-header">
         <AlertBubble />
         <div className="main-header-titles">
-          <h1>Rejoice in the Word</h1>
-          <h2 style={{ color: "white" }}>John 1:1</h2>
-
+          <h1>
+            Pastor
+            <br />
+            Stephen Armstrong
+          </h1>
+          <h2>1966-2021</h2>
           <div className="main-header-buttons">
-            <Button link="/livestream" size="medium" title="View livestream" />
-            <Button link="/attend" size="medium" title="Attend a service" />
+            <Link to="/livestream">View livestream</Link>
+            <Link to="/announcement">Read a message from the Elders</Link>
           </div>
         </div>
-        <span className="see-more-arrow" />
+        {/* <span className="see-more-arrow" /> */}
       </div>
 
-      <div className="preview-container">
+      {/* <div className="preview-container">
         <Preview
           title="Women's Bible Study"
           body="Join us for a study through the book of Esther. Meeting on Tuesdays at 10am in the Flex Room."
@@ -53,7 +56,7 @@ const Home = () => {
           link="/connect"
           image={MeetandGreet}
         />
-      </div>
+      </div> */}
 
       {/* <div>
         <div className={`series-promo `} id="samuel-series">
