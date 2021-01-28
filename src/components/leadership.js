@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/leadership.scss";
 
-import Stephen from "../images/leadership_photos/Stephen_Armstrong.jpeg";
 import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
 import Jerry from "../images/leadership_photos/Jerry_Smith.jpeg";
 import Bob from "../images/leadership_photos/Bob_Butler.jpeg";
@@ -32,13 +31,6 @@ export default function Leadership() {
       <h2>Elders</h2>
 
       <div className="leadership-photo-array">
-        <PhotoTitle
-          isLazy="eager"
-          photo={Stephen}
-          name={"Stephen Armstrong"}
-          title={"Senior Pastor"}
-        />
-
         <PhotoTitle
           isLazy="eager"
           photo={Tom}
