@@ -14,6 +14,7 @@ export default function AlertBubble() {
         expirationDate,
         alertBubbleText,
         whereToDisplay,
+        _id
     }`;
 
   const params = { currentPage: page.pathname };
@@ -29,11 +30,14 @@ export default function AlertBubble() {
       });
     //eslint-disable-next-line
   }, []);
+
+  console.log(announcement);
   return (
     <div
       className={`alert-bubble ${announcement != null ? "active" : "hidden"}`} //conditionally showing announcement
     >
-      {announcement?.alertBubbleText} <Link to="/announcement">Read more</Link>
+      {announcement?.alertBubbleText}{" "}
+      <Link to={`/announcement/${announcement?._id}`}>Read more</Link>
     </div>
   );
 }
