@@ -7,8 +7,9 @@ body {
 }
 
 .main-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(../images/home_page/steve_announcement.jpg);
+  // background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  //   url(../images/home_page/steve_announcement.jpg);
+  background: url(../images/home_page/SteveMemorial.jpg);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -22,12 +23,12 @@ body {
     max-width: 50%;
     text-align: center;
     align-self: flex-end;
-    margin: 20vh 12vw 0 0;
+    margin: 20vh 15vw 0 0;
 
-    color: #eae9e8;
+    color: $darkNavy;
 
     h1 {
-      color: #eae9e8;
+      color: $darkNavy;
       font-size: 3rem;
       font-weight: bold;
     }
@@ -40,7 +41,7 @@ body {
     margin-top: 3vh;
     text-decoration: underline;
     a {
-      color: #eae9e8;
+      color: $darkNavy;
     }
   }
 }
@@ -118,23 +119,30 @@ body {
 
 @media (max-width: 800px) {
   .main-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url(../images/home_page/SteveMemorial.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
     max-height: 50vh;
-    background-position: 15% 0;
+    background-position: 15% 30%;
 
     &-titles {
       width: 100%;
-      margin: 23vh 0 0 0;
+      margin: 23vh 0 20vh 0;
       max-width: 100%;
+      color: #eae9e8;
     }
     h1 {
       font-size: 3rem;
+      color: #eae9e8;
     }
     &-buttons {
       display: flex;
       flex-direction: column;
+      a {
+        color: #eae9e8;
+      }
     }
   }
 
