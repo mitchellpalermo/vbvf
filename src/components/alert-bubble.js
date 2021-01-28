@@ -31,7 +31,6 @@ export default function AlertBubble() {
     //eslint-disable-next-line
   }, []);
 
-  console.log(announcement);
   return (
     <div
       className={`alert-bubble ${announcement != null ? "active" : "hidden"}`} //conditionally showing announcement
