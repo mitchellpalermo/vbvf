@@ -94,7 +94,11 @@ function App() {
           />
           <Route exact path="/ministries/serve" component={Serve} />
           <Route exact path="/attend" component={AttendService} />
-          <Route exact path="/announcement" component={Announcement} />
+          <Route
+            exact
+            path="/announcement/:announcementId"
+            component={Announcement}
+          />
           <Route component={NotFound} />
         </Switch>
         <Footer />

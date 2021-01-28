@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { sanity, isOver } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import "../css/announcement.scss";
 
@@ -16,19 +16,22 @@ export default function Announcement() {
     },
   };
 
-  const query = `*[_type == "specialAnnouncement"]| order(_createdAt desc) [0] {
+  let { announcementId } = useParams();
+  const params = { announcementId: announcementId };
+  const query = `*[_type == "specialAnnouncement" && _id == $announcementId] {
         title,
         body,
         expirationDate,
         whereToDisplay,
-        _createdAt
+        _createdAt,
+        _id
     }`;
   const [specialAnnouncement, setSpecialAnnouncement] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    sanity.fetch(query).then((results) => {
-      setSpecialAnnouncement(results);
+    sanity.fetch(query, params).then((results) => {
+      setSpecialAnnouncement(results[0]);
       setIsLoading(!isLoading);
     });
     // eslint-disable-next-line
