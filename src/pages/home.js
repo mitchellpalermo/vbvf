@@ -26,7 +26,9 @@ const Home = () => {
           <h2>1966-2021</h2>
           <div className="main-header-buttons">
             <Link to="/livestream">View livestream</Link>
-            <Link to="/announcement">Read a message from the Elders</Link>
+            <Link to="/announcement/e7f09d65-ea5a-4c03-b85b-bb7561559cd3">
+              Read a message from the Elders
+            </Link>
           </div>
         </div>
         {/* <span className="see-more-arrow" /> */}
