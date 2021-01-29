@@ -11,6 +11,15 @@ import { Link } from "react-router-dom";
 
 // import Preview from "../components/preview";
 import AlertBubble from "../components/alert-bubble";
+import { livestreamHappeningNow } from "../util";
+
+const liveStreamButtonText = () => {
+  if (livestreamHappeningNow()) {
+    return "View livestream";
+  } else {
+    return "View past services";
+  }
+};
 
 const Home = () => {
   return (
@@ -25,7 +34,7 @@ const Home = () => {
           </h1>
           <h2>1966-2021</h2>
           <div className="main-header-buttons">
-            <Link to="/livestream">View livestream</Link>
+            <Link to="/livestream">{liveStreamButtonText()}</Link>
             <Link to="/announcement/e7f09d65-ea5a-4c03-b85b-bb7561559cd3">
               Read a message from the Elders
             </Link>

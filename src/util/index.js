@@ -66,3 +66,25 @@ export function sanityFormatTodaysDate() {
   const date = new Date();
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
+
+export function livestreamHappeningNow() {
+  let today = new Date();
+  if (process.env.REACT_APP_STREAM !== "none") {
+    return true;
+  } else {
+    if (
+      today.getDay() === 3 && //wednesday
+      today.getHours() >= 18 && //between 6pm
+      today.getHours() <= 23 // and 9pm
+    ) {
+      return true;
+    } else if (
+      today.getDay() === 0 && //sunday
+      today.getHours() >= 10 && //between 10am
+      today.getHours() <= 13 // and 1pm
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
