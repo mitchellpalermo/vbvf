@@ -42,6 +42,9 @@ export default function MemorialService(props) {
               Eulogy - <i>Stephen's Children</i>
             </li>
             <li>
+              Eulogy - <i>Jerry Dyke</i>
+            </li>
+            <li>
               Gospel Message | Psalm 116:15 - <i>Josh De Koning</i>
             </li>
             <li>
