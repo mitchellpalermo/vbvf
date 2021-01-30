@@ -39,7 +39,10 @@ export default function MemorialService(props) {
               Scripture Readings - <i>Bob Butler</i>
             </li>
             <li>
-              Eulogy - <i>Stephen's Children</i>
+              Eulogy from the family - <i>Stephen's Children</i>
+            </li>
+            <li>
+              Eulogy from a friend - <i>Jerry Dyke</i>
             </li>
             <li>
               Gospel Message | Psalm 116:15 - <i>Josh De Koning</i>
