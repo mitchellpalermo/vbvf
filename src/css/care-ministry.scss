@@ -1,0 +1,23 @@
+.care-ministries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 3vh;
+    span {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+    }
+    .test-box {
+      width: 40%;
+      height: 100px;
+      border: 2px solid red;
+    }
+  }
+}
