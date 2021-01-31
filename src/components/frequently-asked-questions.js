@@ -13,7 +13,7 @@ export default function FrequentlyAskedQuestions(props) {
     },
   };
 
-  const faqList = props.faq.map((question) => (
+  const faqList = props.faq?.map((question) => (
     <li>
       <h3>{question.question}</h3>
       <p>

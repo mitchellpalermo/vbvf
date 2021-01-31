@@ -30,6 +30,7 @@ import Giving from "./pages/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
 import Announcement from "./pages/announcement";
+import CareMinistry from "./pages/care-ministry";
 
 // import OnlineMinistry from "./pages/online-ministry";
 
@@ -93,6 +94,11 @@ function App() {
             component={SmallGroups}
           />
           <Route exact path="/ministries/serve" component={Serve} />
+          <Route
+            exact
+            path="/ministries/care-ministry"
+            component={CareMinistry}
+          />
           <Route exact path="/attend" component={AttendService} />
           <Route
             exact
