@@ -27,7 +27,14 @@ export default function FAQ() {
     <div className="faq">
       <AlertBubble />
       <AboutMenu />
-      {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
+      {faqIsLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h1>FAQ</h1>
+          <FrequentlyAskedQuestions faq={faq} />
+        </>
+      )}
     </div>
   );
 }
