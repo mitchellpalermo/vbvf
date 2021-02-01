@@ -1,21 +1,18 @@
 $darkNavy: #2e3c49;
-$lightNavy: #66788d;
+$green: #4f5957;
+$gold: #e8b021;
+$bone: #eae9e8;
+$red: #cc2e23;
 
 .button {
   text-decoration: none;
-  background: $lightNavy;
-  color: white;
   border-radius: 5px;
   border: 0;
   transition: background 0.2s;
   margin: 10px;
   font-size: 1.1rem;
   font-weight: 500;
-  &:hover {
-    background: $darkNavy;
-    text-decoration: none;
-    color: white;
-  }
+
   &.sm {
     padding: 5px 10px 5px 10px;
   }
@@ -24,5 +21,32 @@ $lightNavy: #66788d;
   }
   &.lg {
     padding: 15px 30px 15px 30px;
+  }
+}
+.bone {
+  background: $bone;
+  border: solid 2px $bone;
+  color: $darkNavy;
+  &:hover {
+    background: transparent;
+    color: $bone;
+  }
+}
+.green {
+  background: $green;
+  border: solid 2px $green;
+  color: $bone;
+  &:hover {
+    background: transparent;
+    color: $green;
+  }
+}
+.red {
+  background: $red;
+  border: solid 2px $red;
+  color: $bone;
+  &:hover {
+    background: transparent;
+    color: $red;
   }
 }

@@ -11,7 +11,6 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-  Button,
   Modal,
   ModalHeader,
   ModalBody,
@@ -21,6 +20,7 @@ import { Link } from "react-router-dom";
 import "../css/global-nav.scss";
 import VBVFLogo from "../images/logos/vbvf_logo.png";
 import { getMobileOperatingSystem } from "../util/index";
+import Button from "../components/button";
 
 const GlobalNav = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,9 +73,10 @@ const GlobalNav = (props) => {
                       <h2>Location</h2>
                       <p>551 E Nakoma St. San Antonio, TX 78216</p>
                       <Button
-                        outline
-                        color="dark"
-                        onClick={() => {
+                        size="medium"
+                        title="Open in Maps"
+                        color="green"
+                        buttonFunc={() => {
                           getMobileOperatingSystem() === "iOS"
                             ? window.open(
                                 "http://maps.apple.com/?q=Verse+By+Verse+Fellowship"
@@ -84,9 +85,8 @@ const GlobalNav = (props) => {
                                 "https://www.google.com/maps/dir/?api=1&destination=Verse+by+verse+fellowship"
                               );
                         }}
-                      >
-                        Open Map
-                      </Button>
+                      />
+
                       <p className="contact-page-link">
                         Looking for our <strong>mailing address?</strong> Check
                         out our{" "}
@@ -98,9 +98,12 @@ const GlobalNav = (props) => {
                   </div>
                 </ModalBody>
                 <ModalFooter>
-                  <Button outline color="dark" onClick={modalToggle}>
-                    Close
-                  </Button>{" "}
+                  <Button
+                    size="medium"
+                    color="green"
+                    buttonFunc={modalToggle}
+                    title="Close"
+                  />
                 </ModalFooter>
               </Modal>
             </NavItem>

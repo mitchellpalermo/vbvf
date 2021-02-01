@@ -28,11 +28,13 @@ export default function SmallGroups() {
       </div>
       <div className="small-group-button-container">
         <Button
+          color="green"
           title="Find a Small Group"
           size="large"
           link="https://vbvf.churchcenter.com/groups/small-groups"
         />
         <Button
+          color="green"
           title="Become a leader"
           size="large"
           link="https://vbvf.churchcenter.com/people/forms/185037"
