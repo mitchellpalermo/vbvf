@@ -72,6 +72,7 @@ export default function YouthMinistry() {
             <br /> with student ministry?
           </h3>
           <Button
+            color="green"
             title="Sign up here"
             size="medium"
             link="https://vbvf.churchcenter.com/people/forms/72047"

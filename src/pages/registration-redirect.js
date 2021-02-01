@@ -3,7 +3,7 @@ import "../css/sermon-redirect.scss";
 import VbvfLogo from "../images/logos/vbvf_logo_full.png";
 import RegistrationsLogo from "../images/logos/registrations_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
-import { Button } from "reactstrap";
+import Button from "../components/button";
 
 const RegistrationRedirect = (props) => {
   const [counter, setCounter] = useState("10");
@@ -35,19 +35,17 @@ const RegistrationRedirect = (props) => {
       </div>
       <div className="redirect-buttons">
         <Button
-          size="lg"
-          color="secondary"
-          onClick={() => window.history.back()}
-        >
-          Stay Here
-        </Button>{" "}
+          size="large"
+          color="red"
+          buttonFunc={() => window.history.back()}
+          title="Stay Here"
+        />{" "}
         <Button
-          size="lg"
-          color="success"
-          onClick={() => redirect(props.location.deepDive)}
-        >
-          Proceed
-        </Button>
+          size="large"
+          color="green"
+          buttonFunc={() => redirect(props.location.deepDive)}
+          title="Proceed"
+        />
       </div>
       <div className="redirect-images">
         <img alt="Verse by Verse Fellowship Logo" src={VbvfLogo} />

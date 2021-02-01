@@ -1,15 +1,15 @@
 import React from "react";
 import "../css/home.scss";
-// import Button from "../components/button";
-// import PhillippiansText from "../images/home_page/phillippians_text.png";
+import Button from "../components/button";
+import PhillippiansText from "../images/home_page/phillippians_text.png";
 import { Link } from "react-router-dom";
 
 // import SecondSamuel from "../images/home_page/2_Samuel.jpg";
 // import WomensStudy from "../images/home_page/womensStudy.jpg";
-// import Serving from "../images/home_page/serving.jpg";
-// import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
+import Serving from "../images/home_page/serving.jpg";
+import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 
-// import Preview from "../components/preview";
+import Preview from "../components/preview";
 import AlertBubble from "../components/alert-bubble";
 import { livestreamHappeningNow } from "../util";
 
@@ -27,30 +27,34 @@ const Home = () => {
       <div className="main-header">
         <AlertBubble />
         <div className="main-header-titles">
-          <h1>
-            Pastor
-            <br />
-            Stephen Armstrong
-          </h1>
-          <h2>1966-2021</h2>
+          <h1>Find hope in the Word</h1>
+          <h2>John 1:1</h2>
           <div className="main-header-buttons">
-            <Link to="/livestream">{liveStreamButtonText()}</Link>
-            <Link to="/announcement/e7f09d65-ea5a-4c03-b85b-bb7561559cd3">
-              Read a message from the Elders
-            </Link>
+            <Button
+              link="/livestream"
+              title={liveStreamButtonText()}
+              size="large"
+              color="bone"
+            />
+            <Button
+              title="Attend a service"
+              link="/attend"
+              size="large"
+              color="bone"
+            />
           </div>
         </div>
         {/* <span className="see-more-arrow" /> */}
       </div>
 
-      {/* <div className="preview-container">
-        <Preview
+      <div className="preview-container">
+        {/* <Preview
           title="Women's Bible Study"
           body="Join us for a study through the book of Esther. Meeting on Tuesdays at 10am in the Flex Room."
           buttonTitle="Listen to Bible teaching"
           link="/bible-studies/"
           image={WomensStudy}
-        />
+        /> */}
         <Preview
           title="Serve at VBVF"
           body="God has called us to love one another, and part of that is serving each other. Join a serving team at VBVF to develop relationships and serve the body."
@@ -67,10 +71,10 @@ const Home = () => {
           link="/connect"
           image={MeetandGreet}
         />
-      </div> */}
+      </div>
 
-      {/* <div>
-        <div className={`series-promo `} id="samuel-series">
+      <div>
+        {/* <div className={`series-promo `} id="samuel-series">
           <img src={SecondSamuel} alt="" />
 
           <span className="series-promo-desc">
@@ -91,7 +95,7 @@ const Home = () => {
               link={`/bible-studies/2-Samuel`}
             />
           </span>
-        </div>
+        </div> */}
         <div className="series-promo" id="phillippians-series">
           <span className="series-promo-desc">
             <img loading="lazy" src={PhillippiansText} alt="" />
@@ -113,7 +117,7 @@ const Home = () => {
             </Link>
           </span>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "../css/sermon-redirect.scss";
 import VbvfLogo from "../images/logos/vbvf_logo_full.png";
 import GivingLogo from "../images/logos/giving_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
-import { Button } from "reactstrap";
+import Button from "../components/button";
 
 const GivingRedirect = (props) => {
   const [counter, setCounter] = useState("10");
@@ -33,19 +33,17 @@ const GivingRedirect = (props) => {
       </div>
       <div className="redirect-buttons">
         <Button
-          size="lg"
-          color="secondary"
-          onClick={() => window.history.back()}
-        >
-          Stay Here
-        </Button>{" "}
+          size="large"
+          color="green"
+          buttonFunc={() => window.history.back()}
+          title="Stay Here"
+        />{" "}
         <Button
-          size="lg"
-          color="success"
-          onClick={() => givingRedirect(props.location.deepDive)}
-        >
-          Proceed
-        </Button>
+          color="green"
+          size="large"
+          title="Proceed"
+          buttonFunc={() => givingRedirect(props.location.deepDive)}
+        />
       </div>
       <div className="redirect-images">
         <img alt="" src={VbvfLogo} />

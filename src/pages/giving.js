@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/giving.scss";
-import { Modal, ModalHeader, ModalBody, Button } from "reactstrap";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
+import Button from "../components/button";
 import { Link } from "react-router-dom";
 import { getMobileOperatingSystem } from "../util/index";
 const Giving = (props) => {
@@ -28,9 +29,8 @@ const Giving = (props) => {
           Fellowship.
         </p>
       </div>
-      <Button size="lg" color="success" href={givingLink}>
-        Give Now
-      </Button>
+      <Button size="large" color="green" link={givingLink} title="Give Now" />
+
       <div className="giving-option-question">
         <p>I have questions about giving:</p>
         <div className="giving-option-question-icons">

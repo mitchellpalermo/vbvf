@@ -7,7 +7,7 @@ import Levi from "../images/serve/levi_setup.jpg";
 import John from "../images/serve/john_praying.jpg";
 
 import ScriptureVerse from "../components/scripture-verse";
-import { Button } from "reactstrap";
+import Button from "../components/button";
 
 export default function Serve() {
   return (
@@ -53,13 +53,11 @@ export default function Serve() {
           </p>
           <div className="button-wrapper">
             <Button
-              large
-              outline
-              white
-              href="https://vbvf.churchcenter.com/people/forms/33404?open-in-church-center-modal=true"
-            >
-              Get Involved
-            </Button>
+              size="large"
+              color="green"
+              title="Get Involved"
+              link="https://vbvf.churchcenter.com/people/forms/33404?open-in-church-center-modal=true"
+            />
           </div>
         </div>
         <img src={John} alt="volunteer praying with children" />

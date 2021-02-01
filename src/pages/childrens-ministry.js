@@ -69,6 +69,7 @@ export default function ChildrensMinistry() {
           <Button
             size="medium"
             title="View resources"
+            color="green"
             buttonFunc={() => {
               window.open("/childrens-content");
             }}
@@ -84,6 +85,7 @@ export default function ChildrensMinistry() {
         <Button
           size="large"
           title="Sign me up"
+          color="green"
           buttonFunc={() => {
             window.location.href =
               "https://vbvf.churchcenter.com/people/forms/118844?open-in-church-center-modal=true";

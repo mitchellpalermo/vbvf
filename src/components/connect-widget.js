@@ -44,11 +44,13 @@ export default function ConnectWidget() {
       <div className="connect-widget-button-container">
         <Button
           size="small"
+          color="green"
           link="https://vbvf.churchcenter.com/people/forms/26636?open-in-church-center-modal=true"
           title="Connect with us"
         />
         <Button
           size="small"
+          color="green"
           link="https://vbvf.churchcenter.com/people/forms/34407?open-in-church-center-modal=true"
           title="Prayer Request"
         />
@@ -57,6 +59,7 @@ export default function ConnectWidget() {
       <Button
         size="medium"
         title="Give now"
+        color="green"
         buttonFunc={() => {
           window.fathom.trackGoal("7KDLHSBK", 0);
         }}
