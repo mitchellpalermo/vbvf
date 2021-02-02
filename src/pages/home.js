@@ -2,7 +2,6 @@ import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
 import PhillippiansText from "../images/home_page/phillippians_text.png";
-import { Link } from "react-router-dom";
 
 // import SecondSamuel from "../images/home_page/2_Samuel.jpg";
 // import WomensStudy from "../images/home_page/womensStudy.jpg";
@@ -107,14 +106,13 @@ const Home = () => {
               things to come. This is the central message of Paul's letter to
               Philippi.
             </p>
-            <Link
-              to={{
-                pathname: "/sermon-redirect",
-                deepDive: "bible-studies/philippians",
-              }}
-            >
-              <Button size="medium" title="Listen to Philippians" />
-            </Link>
+
+            <Button
+              size="medium"
+              color="bone"
+              link="bible-studies/Philippians"
+              title="Listen to Philippians"
+            />
           </span>
         </div>
       </div>

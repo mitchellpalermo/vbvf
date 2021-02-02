@@ -8,7 +8,12 @@ export default function Preview(props) {
       <img src={props.image} alt="" />
       <h4>{props.title}</h4>
       <p>{props.body}</p>
-      <Button size="medium" link={props.link} title={props.buttonTitle} />
+      <Button
+        size="medium"
+        color="green"
+        link={props.link}
+        title={props.buttonTitle}
+      />
     </div>
   );
 }
