@@ -14,14 +14,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   min-height: 85vh;
   &-titles {
     display: flex;
     flex-direction: column;
     text-align: center;
     color: $bone;
-
+    margin-top: 30vh;
     h1 {
       color: $bone;
       font-size: 5rem;
