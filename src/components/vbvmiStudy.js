@@ -24,6 +24,7 @@ export default function VbvmiStudy(props) {
       </p>
       <Button
         size="large"
+        color="green"
         title={`Listen to ${props.title}`}
         buttonFunc={() => window.open(props.ministrySeriesLink)}
       />
