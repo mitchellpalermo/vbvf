@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { sanity } from "../util/index";
-import "../css/care-ministry.scss";
+import "../css/counseling-ministry.scss";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
+import ScriptureVerse from "../components/scripture-verse";
 
-export default function CareMinistry() {
+export default function CounselingMinistry() {
   const [faq, setFaq] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const query = `*[_type == "faq" && title == "Counseling Ministry"]{
@@ -20,15 +21,20 @@ export default function CareMinistry() {
   return (
     <div className="care-ministries">
       <h1>Care Ministry</h1>
-      <p>
-        Care Ministries offer supportive care to those in need, resting firmly
-        on Galatians 6:2 - “Bear one another’s burdens, and thereby fulfill the
-        law of Christ.” If you are struggling with life or with a particular
-        issue and want to work through it along side a Scripturally-grounded,
-        caring Christian, please contact us at{" "}
-        <a href="mailto:supportcare@vbvf.org">supportcare@vbvf.org</a> or call
-        the church and leave a message on the Care Ministries extension.{" "}
-      </p>
+      <div className="care-ministries-row vision">
+        <p>
+          Care Ministries offer supportive care to those in need, resting firmly
+          on Galatians 6:2. If you are struggling with life or with a particular
+          issue and want to work through it along side a Scripturally-grounded,
+          caring Christian, please contact us at{" "}
+          <a href="mailto:supportcare@vbvf.org">supportcare@vbvf.org</a> or call
+          the church and leave a message on the Care Ministries extension.{" "}
+        </p>
+        <ScriptureVerse
+          verse="Bear one another's burdens, and thereby fulfill the law of Christ"
+          reference="Galatians 6:2"
+        />
+      </div>
       <div className="care-ministries-row">
         <span>
           <h3>Help for the Hurting</h3>
