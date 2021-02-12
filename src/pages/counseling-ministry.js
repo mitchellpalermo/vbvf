@@ -3,7 +3,6 @@ import { sanity } from "../util/index";
 import "../css/counseling-ministry.scss";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import ScriptureVerse from "../components/scripture-verse";
-import VimeoEmbed from "../components/vimeo-embed";
 
 export default function CounselingMinistry() {
   const [faq, setFaq] = useState();
@@ -23,6 +22,7 @@ export default function CounselingMinistry() {
     <div className="care-ministries">
       <h1>Care Ministry</h1>
       <iframe
+        title="Care Ministries"
         src="https://player.vimeo.com/video/508963469?color=ffffff&title=0&byline=0&portrait=0"
         width="640"
         height="360"
