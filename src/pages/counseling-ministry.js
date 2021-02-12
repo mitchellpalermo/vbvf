@@ -3,6 +3,7 @@ import { sanity } from "../util/index";
 import "../css/counseling-ministry.scss";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import ScriptureVerse from "../components/scripture-verse";
+import VimeoEmbed from "../components/vimeo-embed";
 
 export default function CounselingMinistry() {
   const [faq, setFaq] = useState();
@@ -21,6 +22,15 @@ export default function CounselingMinistry() {
   return (
     <div className="care-ministries">
       <h1>Care Ministry</h1>
+      <iframe
+        src="https://player.vimeo.com/video/508963469?color=ffffff&title=0&byline=0&portrait=0"
+        width="640"
+        height="360"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
       <div className="care-ministries-row vision">
         <p>
           Care Ministries offer supportive care to those in need, resting firmly
@@ -36,6 +46,7 @@ export default function CounselingMinistry() {
         />
       </div>
       <div className="care-ministries-row">
+        <div className="number">1</div>
         <span>
           <h3>Help for the Hurting</h3>
           <p>
@@ -46,9 +57,9 @@ export default function CounselingMinistry() {
             of the Holy Spirit.{" "}
           </p>
         </span>
-        <div className="test-box"></div>
       </div>
       <div className="care-ministries-row">
+        <div className="number">2</div>
         <span>
           <h3>Biblical Counseling</h3>
           <p>
@@ -63,7 +74,6 @@ export default function CounselingMinistry() {
             for instruction in righteousness.” (2 Timothy 3:16
           </p>
         </span>
-        <div className="test-box"></div>
       </div>
       <h3>FAQ</h3>
       <FrequentlyAskedQuestions faq={faq} />
