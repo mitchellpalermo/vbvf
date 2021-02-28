@@ -38,7 +38,9 @@ export default function Stream(props) {
           allowFullScreen
         ></iframe>
       </div>
-      <div className="stream-info">
+      {/* NOTICE: the code below only works when the notes have been added to our
+      site ahead of time. */}
+      {/* <div className="stream-info">
         {studyMaterialsIsLoading && !props.isVbvmiStudy ? ( //don't show loading spinner if vbvmistudy = true
           <>
             <p>Loading Study Notes</p> <Spinner color="dark" />
@@ -64,7 +66,7 @@ export default function Stream(props) {
             </div>
           </>
         )}
-      </div>
+      </div> */}
       <div className="stream-supporting-materials">
         <ConnectWidget />
         <div className="stream-supporting-materials-from-cms">

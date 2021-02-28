@@ -55,6 +55,7 @@ export default function Livestream() {
 
   const day = () => {
     let today = new Date();
+    // REMOVING WEDNESDAY STREAM FOR NOW
     // if (
     //   today.getDay() === 3 && //wednesday
     //   today.getHours() >= 18 && //between 6pm
@@ -133,7 +134,6 @@ export default function Livestream() {
               title={wednesdaySeries.title}
               description={wednesdaySeries.description}
               seriesLink={`/bible-studies/${wednesdaySeries.title}`}
-              isVbvmiStudy={wednesdaySeries.isVbvmiStudy}
             />
           ) : day() === "sunday" ? ( //return sunday stream
             <>
@@ -141,11 +141,7 @@ export default function Livestream() {
                 streamUrl="https://vimeo.com/event/51649/embed"
                 title={sundaySeries.title}
                 description={sundaySeries.description}
-                seriesLink={{
-                  pathname: "/sermon-redirect",
-                  deepDive: `bible-studies/${sundaySeries.title}`,
-                }}
-                isVbvmiStudy={sundaySeries.isVbvmiStudy}
+                seriesLink={`/bible-studies/${sundaySeries.title}`}
               />
             </>
           ) : day() === "memorial" ? ( // environment variable is memorial
