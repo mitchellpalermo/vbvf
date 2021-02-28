@@ -94,11 +94,11 @@ function App() {
             component={SmallGroups}
           />
           <Route exact path="/ministries/serve" component={Serve} />
-          <Route
+          {/* <Route
             exact
             path="/ministries/counseling-ministry"
             component={CounselingMinistry}
-          />
+          /> */}
           <Route exact path="/attend" component={AttendService} />
           <Route
             exact

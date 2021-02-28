@@ -143,14 +143,14 @@ const GlobalNav = (props) => {
                     Serving at VBVF
                   </NavLink>
                 </DropdownItem>
-                <DropdownItem>
+                {/* <DropdownItem>
                   <NavLink
                     className="sub-menu"
                     href="/ministries/counseling-ministry"
                   >
                     Counseling Ministry
                   </NavLink>
-                </DropdownItem>
+                </DropdownItem> */}
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
