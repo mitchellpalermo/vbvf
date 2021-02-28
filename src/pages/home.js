@@ -4,7 +4,7 @@ import Button from "../components/button";
 import PhillippiansText from "../images/home_page/phillippians_text.png";
 
 // import SecondSamuel from "../images/home_page/2_Samuel.jpg";
-// import WomensStudy from "../images/home_page/womensStudy.jpg";
+import WomensStudy from "../images/home_page/womensStudy.jpg";
 import Serving from "../images/home_page/serving.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 
@@ -47,13 +47,13 @@ const Home = () => {
       </div>
 
       <div className="preview-container">
-        {/* <Preview
+        <Preview
           title="Women's Bible Study"
           body="Join us for a study through the book of Esther. Meeting on Tuesdays at 10am in the Flex Room."
           buttonTitle="Listen to Bible teaching"
           link="/bible-studies/"
           image={WomensStudy}
-        /> */}
+        />
         <Preview
           title="Serve at VBVF"
           body="God has called us to love one another, and part of that is serving each other. Join a serving team at VBVF to develop relationships and serve the body."
