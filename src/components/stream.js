@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Spinner } from "reactstrap";
+//SPINNER ONLY NEEDED IF LOADING NOTES
+//import { Spinner } from "reactstrap";
 import "../css/stream.scss";
 import { sanity } from "../util/index";
 import ConnectWidget from "../components/connect-widget";
 
 export default function Stream(props) {
+  //eslint-disable-next-line
   const [studyMaterials, setStudyMaterials] = useState(null);
+  //eslint-disable-next-line
   const [studyMaterialsIsLoading, setStudyMaterialsIsLoading] = useState(true);
 
   const docQuery = `*[_type == "lesson" && series->title == $seriesName] | order(_createdAt desc) [0] {
