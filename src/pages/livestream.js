@@ -55,6 +55,7 @@ export default function Livestream() {
 
   const day = () => {
     let today = new Date();
+    // REMOVING WEDNESDAY STREAM FOR NOW
     // if (
     //   today.getDay() === 3 && //wednesday
     //   today.getHours() >= 18 && //between 6pm
@@ -66,7 +67,7 @@ export default function Livestream() {
     //   } else {
     //     return "wednesday";
     //   }
-    // }
+    //}
     if (
       today.getDay() === 0 && //sunday
       today.getHours() >= 10 && //between 10am
@@ -90,7 +91,7 @@ export default function Livestream() {
 
   const noStreamMessage = (
     <p>
-      Verse by Verse Fellowship livestreams the Sunday services. While there's
+      Verse by Verse Fellowship livestreams its Sunday services. While there's
       not a service streaming right now, please feel free to check out some of
       our recent services below. Recordings of our services are available on our{" "}
       <Link to="/bible-studies">Bible Studies</Link> page.
@@ -133,7 +134,6 @@ export default function Livestream() {
               title={wednesdaySeries.title}
               description={wednesdaySeries.description}
               seriesLink={`/bible-studies/${wednesdaySeries.title}`}
-              isVbvmiStudy={wednesdaySeries.isVbvmiStudy}
             />
           ) : day() === "sunday" ? ( //return sunday stream
             <>
@@ -141,11 +141,7 @@ export default function Livestream() {
                 streamUrl="https://vimeo.com/event/51649/embed"
                 title={sundaySeries.title}
                 description={sundaySeries.description}
-                seriesLink={{
-                  pathname: "/sermon-redirect",
-                  deepDive: `bible-studies/${sundaySeries.title}`,
-                }}
-                isVbvmiStudy={sundaySeries.isVbvmiStudy}
+                seriesLink={`/bible-studies/${sundaySeries.title}`}
               />
             </>
           ) : day() === "memorial" ? ( // environment variable is memorial

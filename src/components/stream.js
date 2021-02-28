@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Spinner } from "reactstrap";
+//SPINNER ONLY NEEDED IF LOADING NOTES
+//import { Spinner } from "reactstrap";
 import "../css/stream.scss";
 import { sanity } from "../util/index";
 import ConnectWidget from "../components/connect-widget";
 
 export default function Stream(props) {
+  //eslint-disable-next-line
   const [studyMaterials, setStudyMaterials] = useState(null);
+  //eslint-disable-next-line
   const [studyMaterialsIsLoading, setStudyMaterialsIsLoading] = useState(true);
 
   const docQuery = `*[_type == "lesson" && series->title == $seriesName] | order(_createdAt desc) [0] {
@@ -38,7 +41,9 @@ export default function Stream(props) {
           allowFullScreen
         ></iframe>
       </div>
-      <div className="stream-info">
+      {/* NOTICE: the code below only works when the notes have been added to our
+      site ahead of time. */}
+      {/* <div className="stream-info">
         {studyMaterialsIsLoading && !props.isVbvmiStudy ? ( //don't show loading spinner if vbvmistudy = true
           <>
             <p>Loading Study Notes</p> <Spinner color="dark" />
@@ -64,7 +69,7 @@ export default function Stream(props) {
             </div>
           </>
         )}
-      </div>
+      </div> */}
       <div className="stream-supporting-materials">
         <ConnectWidget />
         <div className="stream-supporting-materials-from-cms">

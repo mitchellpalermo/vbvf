@@ -117,9 +117,19 @@ export default function StudyPage() {
                 <div>
                   <h5>Childcare</h5>
                   <p>
-                    {series.childCareProvided
-                      ? "Childcare is provided"
-                      : "None"}
+                    {series.childcareProvided ? (
+                      <>
+                        Childcare is provided
+                        <Link
+                          style={{ display: "block" }}
+                          to="/ministries/childrens-ministry"
+                        >
+                          Learn More
+                        </Link>
+                      </>
+                    ) : (
+                      "None"
+                    )}
                   </p>
                 </div>
                 <div>
