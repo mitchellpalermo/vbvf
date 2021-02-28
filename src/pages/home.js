@@ -51,7 +51,7 @@ const Home = () => {
           title="Women's Bible Study"
           body="Join us for a study through the book of Esther. Meeting on Tuesdays at 10am in the Flex Room."
           buttonTitle="Listen to Bible teaching"
-          link="/bible-studies/"
+          link="/bible-studies/Esther"
           image={WomensStudy}
         />
         <Preview
