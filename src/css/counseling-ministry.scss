@@ -8,8 +8,12 @@ $red: #cc2e23;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h1 {
     margin: 5vh 0 2vh 0;
+  }
+  iframe {
+    margin: 3vh;
   }
   &-row {
     display: flex;
@@ -22,20 +26,10 @@ $red: #cc2e23;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 50%;
+      text-align: center;
+      min-width: 40%;
     }
-    .number {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: $bone;
-      background-color: rgba(79, 89, 87, 0.5);
-      font-size: 6em;
-      width: 2em;
-      height: 2em;
-      border-radius: 100%;
-      margin: 3vh;
-    }
+
     &.vision {
       p {
         width: 40%;

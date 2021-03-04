@@ -30,7 +30,7 @@ import Giving from "./pages/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
 import Announcement from "./pages/announcement";
-//import CounselingMinistry from "./pages/counseling-ministry";
+import CounselingMinistry from "./pages/counseling-ministry";
 
 // import OnlineMinistry from "./pages/online-ministry";
 
@@ -94,11 +94,11 @@ function App() {
             component={SmallGroups}
           />
           <Route exact path="/ministries/serve" component={Serve} />
-          {/* <Route
+          <Route
             exact
             path="/ministries/counseling-ministry"
             component={CounselingMinistry}
-          /> */}
+          />
           <Route exact path="/attend" component={AttendService} />
           <Route
             exact

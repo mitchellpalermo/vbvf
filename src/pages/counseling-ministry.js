@@ -46,34 +46,34 @@ export default function CounselingMinistry() {
         />
       </div>
       <div className="care-ministries-row">
-        <div className="number">1</div>
         <span>
           <h3>Help for the Hurting</h3>
-          <p>
-            Those in need of supportive care begin with Help for the Hurting
-            where they are paired with spiritually mature, compassionate
-            Christians typically for up to 3-4 sessions either virtually or in
-            person to resolve issues consistent with Scripture and the leading
-            of the Holy Spirit.{" "}
-          </p>
+          <p>1-3 sessions</p>
         </span>
+        <p>
+          Those in need of supportive care begin with Help for the Hurting where
+          they are paired with spiritually mature, compassionate Christians
+          typically for up to 3-4 sessions either virtually or in person to
+          resolve issues consistent with Scripture and the leading of the Holy
+          Spirit.{" "}
+        </p>
       </div>
       <div className="care-ministries-row">
-        <div className="number">2</div>
         <span>
           <h3>Biblical Counseling</h3>
-          <p>
-            {" "}
-            Those in need of a longer-term, more in-depth experience may
-            transition to Biblical Counseling Services where they will meet with
-            a certified Biblical counselor for up to 10 sessions. Our counselors
-            build relationship, observe, ask questions, speak truth in love and
-            encourage going deeper in relationship with God and knowledge of
-            Scripture, knowing that “all Scripture is given by inspiration of
-            God, and is profitable for doctrine, for reproof, for correction,
-            for instruction in righteousness.” (2 Timothy 3:16
-          </p>
+          <p>Up to 10 sessions</p>
         </span>
+        <p>
+          {" "}
+          Those in need of a longer-term, more in-depth experience may
+          transition to Biblical Counseling Services where they will meet with a
+          certified Biblical counselor for up to 10 sessions. Our counselors
+          build relationship, observe, ask questions, speak truth in love and
+          encourage going deeper in relationship with God and knowledge of
+          Scripture, knowing that “all Scripture is given by inspiration of God,
+          and is profitable for doctrine, for reproof, for correction, for
+          instruction in righteousness.” (2 Timothy 3:16
+        </p>
       </div>
       <h3>FAQ</h3>
       <FrequentlyAskedQuestions faq={faq} />
