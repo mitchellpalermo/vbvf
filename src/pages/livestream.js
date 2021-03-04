@@ -55,19 +55,19 @@ export default function Livestream() {
 
   const day = () => {
     let today = new Date();
-    // REMOVING WEDNESDAY STREAM FOR NOW
-    // if (
-    //   today.getDay() === 3 && //wednesday
-    //   today.getHours() >= 18 && //between 6pm
-    //   today.getHours() <= 23 // and 9pm
-    // ) {
-    //   if (process.env.REACT_APP_STREAM !== "none") {
-    //     //check env var for value
-    //     return process.env.REACT_APP_STREAM;
-    //   } else {
-    //     return "wednesday";
-    //   }
-    //}
+
+    if (
+      today.getDay() === 3 && //wednesday
+      today.getHours() >= 18 && //between 6pm
+      today.getHours() <= 23 // and 9pm
+    ) {
+      if (process.env.REACT_APP_STREAM !== "none") {
+        //check env var for value
+        return process.env.REACT_APP_STREAM;
+      } else {
+        return "wednesday";
+      }
+    }
     if (
       today.getDay() === 0 && //sunday
       today.getHours() >= 10 && //between 10am

@@ -61,10 +61,10 @@ const GlobalNav = (props) => {
                     </div>
                     <div>
                       <h2>Mid-Week Bible Studies</h2>
-                      {/* <p>
+                      <p>
                         Adult Study <br />
                         Wednesday - 7:00pm
-                    </p> */}
+                      </p>
                       <p>
                         Women's Study <br></br> Tuesday - 10:00am
                       </p>
@@ -143,14 +143,14 @@ const GlobalNav = (props) => {
                     Serving at VBVF
                   </NavLink>
                 </DropdownItem>
-                {/* <DropdownItem>
+                <DropdownItem>
                   <NavLink
                     className="sub-menu"
                     href="/ministries/counseling-ministry"
                   >
                     Counseling Ministry
                   </NavLink>
-                </DropdownItem> */}
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem>
