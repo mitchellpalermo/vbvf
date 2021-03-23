@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/leadership.scss";
 
 import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
@@ -17,11 +17,24 @@ import Wesley from "../images/leadership_photos/Wesley_Livingston.jpeg";
 import Kyle from "../images/leadership_photos/Kyle_Mounts.jpeg";
 import Matthew from "../images/leadership_photos/Matthew_McWaters.jpeg";
 
+import { sanity, sanityUrlFor } from "../util/index";
 import PhotoTitle from "../components/photo-title";
 
 import AboutMenu from "./about-menu";
+import { Spinner } from "reactstrap";
 
 export default function Leadership() {
+  const elderQuery = `*[_type == "person" && role == "Elder"]`;
+  const [isEldersLoading, setIsEldersLoading] = useState(true);
+  const [elders, setElders] = useState();
+  useEffect(() => {
+    sanity.fetch(elderQuery).then((response) => {
+      console.log(response);
+      setElders(response);
+      setIsEldersLoading(false);
+    });
+  }, []);
+
   return (
     <div className="leadership">
       <AboutMenu />
@@ -29,9 +42,21 @@ export default function Leadership() {
       <br />
 
       <h2>Elders</h2>
-
       <div className="leadership-photo-array">
-        <PhotoTitle
+        {isEldersLoading ? (
+          <Spinner />
+        ) : (
+          elders?.map((elder) => (
+            <PhotoTitle
+              isLazy="eager"
+              photo={sanityUrlFor(elder?.image)}
+              title={elder?.department}
+              name={elder?.name}
+            />
+          ))
+        )}
+
+        {/* <PhotoTitle
           isLazy="eager"
           photo={Tom}
           name={"Tom Didier"}
@@ -60,7 +85,7 @@ export default function Leadership() {
           photo={Jerry}
           name={"Jerry Smith"}
           title={"Facilities"}
-        />
+        /> */}
       </div>
 
       <h2>Pastors</h2>
