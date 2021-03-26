@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../css/leadership.scss";
 
-import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
-import Jerry from "../images/leadership_photos/Jerry_Smith.jpeg";
-import Bob from "../images/leadership_photos/Bob_Butler.jpeg";
-import Jim from "../images/leadership_photos/Jim_Rowland.jpeg";
-import John from "../images/leadership_photos/John_Oneill.jpeg";
+// import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
+// import Jerry from "../images/leadership_photos/Jerry_Smith.jpeg";
+// import Bob from "../images/leadership_photos/Bob_Butler.jpeg";
+// import Jim from "../images/leadership_photos/Jim_Rowland.jpeg";
+// import John from "../images/leadership_photos/John_Oneill.jpeg";
 import Jan from "../images/leadership_photos/Jan_Worrell.jpeg";
 import Linda from "../images/leadership_photos/Linda_Briley.jpeg";
 import Mike from "../images/leadership_photos/Mike_Morris.jpeg";
@@ -21,18 +21,16 @@ import { sanity, sanityUrlFor } from "../util/index";
 import PhotoTitle from "../components/photo-title";
 
 import AboutMenu from "./about-menu";
-import { Spinner } from "reactstrap";
 
 export default function Leadership() {
   const elderQuery = `*[_type == "person" && role == "Elder"]`;
-  const [isEldersLoading, setIsEldersLoading] = useState(true);
+
   const [elders, setElders] = useState();
   useEffect(() => {
     sanity.fetch(elderQuery).then((response) => {
-      console.log(response);
       setElders(response);
-      setIsEldersLoading(false);
     });
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -43,49 +41,14 @@ export default function Leadership() {
 
       <h2>Elders</h2>
       <div className="leadership-photo-array">
-        {isEldersLoading ? (
-          <Spinner />
-        ) : (
-          elders?.map((elder) => (
-            <PhotoTitle
-              isLazy="eager"
-              photo={sanityUrlFor(elder?.image)}
-              title={elder?.department}
-              name={elder?.name}
-            />
-          ))
-        )}
-
-        {/* <PhotoTitle
-          isLazy="eager"
-          photo={Tom}
-          name={"Tom Didier"}
-          title={"Discipleship"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={Bob}
-          name={"Bob Butler"}
-          title={"Missions"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={Jim}
-          name={"Jim Rowland"}
-          title={"Executive Pastor"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={John}
-          name={"John O'Neill"}
-          title={"Finance"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={Jerry}
-          name={"Jerry Smith"}
-          title={"Facilities"}
-        /> */}
+        {elders?.map((elder) => (
+          <PhotoTitle
+            isLazy="eager"
+            photo={sanityUrlFor(elder?.image)}
+            title={elder?.department}
+            name={elder?.name}
+          />
+        ))}
       </div>
 
       <h2>Pastors</h2>

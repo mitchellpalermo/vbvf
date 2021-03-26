@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { sanity } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
-import { Link, useParams } from "react-router-dom";
+
 import { Spinner } from "reactstrap";
 
 export default function WhatsHappening() {
@@ -15,6 +15,7 @@ export default function WhatsHappening() {
       setAnnouncement(response);
       setIsLoading(false);
     });
+    //eslint-disable-next-line
   }, []);
 
   return (

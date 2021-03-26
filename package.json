@@ -20,6 +20,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "react-loading-skeleton": "^2.2.0",
     "react-pdf": "^5.0.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
