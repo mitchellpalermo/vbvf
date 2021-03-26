@@ -1,24 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import "../css/photo-title.scss";
 import Skeleton from "react-loading-skeleton";
 
 export default function PhotoTitle(props) {
   const [loaded, setLoaded] = useState(false);
 
-  const image = useRef();
+  const image = useRef(this);
 
-  useEffect(() => {
+  const isComplete = () => {
+    setLoaded(true);
+    return image.current.complete ? true : false;
+  };
+
+  function onLoad() {
     if (image.current.complete) {
       setLoaded(true);
     }
-  }, []);
+  }
+  console.log(props);
   return (
     <div className="person">
-      {loaded ? null : <Skeleton width={300} height={400} />}
       <img
-        ref={image}
-        onLoad={() => setLoaded(!loaded)}
-        style={loaded ? { display: "inline-block" } : { display: "none" }}
         loading={props.role === "Elder" ? "eager" : "lazy"}
         src={props.photo}
         alt={props.name}

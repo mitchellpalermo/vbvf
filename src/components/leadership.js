@@ -43,9 +43,9 @@ export default function Leadership() {
       <div className="leadership-photo-array">
         {elders?.map((elder) => (
           <PhotoTitle
-            isLazy="eager"
-            photo={sanityUrlFor(elder?.image)}
+            photo={sanityUrlFor(elder?.image).width(300)}
             title={elder?.department}
+            role={elder?.role}
             name={elder?.name}
           />
         ))}
