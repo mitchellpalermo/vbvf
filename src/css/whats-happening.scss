@@ -11,7 +11,7 @@
     text-align: center;
   }
   &-video {
-    width: 75%;
+    width: 95%;
     margin: auto;
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -31,5 +31,15 @@
     flex-direction: row;
     margin: auto;
     width: 65%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .announcements {
+    h2 {
+      font-size: 1em;
+    }
+    &-text {
+      width: 95%;
+    }
   }
 }
