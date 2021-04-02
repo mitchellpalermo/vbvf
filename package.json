@@ -10,6 +10,7 @@
     "axios": "0.20.0",
     "bootstrap": "^4.3.1",
     "cloc": "^2.7.0",
+    "date-fns": "^2.19.0",
     "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "framer-motion": "^1.11.1",

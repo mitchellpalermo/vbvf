@@ -29,8 +29,9 @@ import Leadership from "./components/leadership";
 import Giving from "./pages/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
-import Announcement from "./pages/announcement";
+import SpecialAnnouncement from "./pages/specialAnnouncement";
 import CounselingMinistry from "./pages/counseling-ministry";
+import WhatsHappening from "./pages/whats-happening";
 
 // import OnlineMinistry from "./pages/online-ministry";
 
@@ -103,8 +104,10 @@ function App() {
           <Route
             exact
             path="/announcement/:announcementId"
-            component={Announcement}
+            component={SpecialAnnouncement}
           />
+          <Route exact path="/announcements" component={WhatsHappening} />
+
           <Route component={NotFound} />
         </Switch>
         <Footer />

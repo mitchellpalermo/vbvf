@@ -20,7 +20,7 @@ export default function CounselingMinistry() {
   }, [query]);
   return (
     <div className="care-ministries">
-      <h1>Care Ministry</h1>
+      <h1>Care Ministries</h1>
       <iframe
         title="Care Ministries"
         src="https://player.vimeo.com/video/508963469?color=ffffff&title=0&byline=0&portrait=0"
@@ -48,7 +48,7 @@ export default function CounselingMinistry() {
       <div className="care-ministries-row">
         <span>
           <h3>Help for the Hurting</h3>
-          <p>1-3 sessions</p>
+          <p>1-5 sessions</p>
         </span>
         <p>
           Those in need of supportive care begin with Help for the Hurting where
@@ -72,7 +72,7 @@ export default function CounselingMinistry() {
           encourage going deeper in relationship with God and knowledge of
           Scripture, knowing that “all Scripture is given by inspiration of God,
           and is profitable for doctrine, for reproof, for correction, for
-          instruction in righteousness.” (2 Timothy 3:16
+          instruction in righteousness.” (2 Timothy 3:16)
         </p>
       </div>
       <h3>FAQ</h3>

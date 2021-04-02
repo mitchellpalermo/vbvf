@@ -1,0 +1,45 @@
+.announcements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+  h5 {
+    color: gray;
+  }
+  h1,
+  h5 {
+    text-align: center;
+  }
+  &-video {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    iframe {
+      position: absolute;
+      border: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 65%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .announcements {
+    h2 {
+      font-size: 1em;
+    }
+    &-text {
+      width: 95%;
+    }
+  }
+}

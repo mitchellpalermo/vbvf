@@ -1,11 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/leadership.scss";
 
-import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
-import Jerry from "../images/leadership_photos/Jerry_Smith.jpeg";
-import Bob from "../images/leadership_photos/Bob_Butler.jpeg";
-import Jim from "../images/leadership_photos/Jim_Rowland.jpeg";
-import John from "../images/leadership_photos/John_Oneill.jpeg";
 import Jan from "../images/leadership_photos/Jan_Worrell.jpeg";
 import Linda from "../images/leadership_photos/Linda_Briley.jpeg";
 import Mike from "../images/leadership_photos/Mike_Morris.jpeg";
@@ -17,11 +12,22 @@ import Wesley from "../images/leadership_photos/Wesley_Livingston.jpeg";
 import Kyle from "../images/leadership_photos/Kyle_Mounts.jpeg";
 import Matthew from "../images/leadership_photos/Matthew_McWaters.jpeg";
 
+import { sanity, sanityUrlFor } from "../util/index";
 import PhotoTitle from "../components/photo-title";
 
 import AboutMenu from "./about-menu";
 
 export default function Leadership() {
+  const elderQuery = `*[_type == "person" && role == "Elder"]`;
+
+  const [elders, setElders] = useState();
+  useEffect(() => {
+    sanity.fetch(elderQuery).then((response) => {
+      setElders(response);
+    });
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="leadership">
       <AboutMenu />
@@ -29,38 +35,15 @@ export default function Leadership() {
       <br />
 
       <h2>Elders</h2>
-
       <div className="leadership-photo-array">
-        <PhotoTitle
-          isLazy="eager"
-          photo={Tom}
-          name={"Tom Didier"}
-          title={"Discipleship"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={Bob}
-          name={"Bob Butler"}
-          title={"Missions"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={Jim}
-          name={"Jim Rowland"}
-          title={"Executive Pastor"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={John}
-          name={"John O'Neill"}
-          title={"Finance"}
-        />
-        <PhotoTitle
-          isLazy="eager"
-          photo={Jerry}
-          name={"Jerry Smith"}
-          title={"Facilities"}
-        />
+        {elders?.map((elder) => (
+          <PhotoTitle
+            photo={sanityUrlFor(elder?.image).width(300)}
+            title={elder?.department}
+            role={elder?.role}
+            name={elder?.name}
+          />
+        ))}
       </div>
 
       <h2>Pastors</h2>
