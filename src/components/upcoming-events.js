@@ -19,7 +19,7 @@ export default function UpcomingEvents(props) {
     <div>
       {events?.map((event) => (
         <div onClick={() => window.open(`${event.public_url}`)}>
-          <img src={event.logo_url} />
+          <img src={event.logo_url} alt="" />
           <h3>{event.name}</h3>
         </div>
       ))}
