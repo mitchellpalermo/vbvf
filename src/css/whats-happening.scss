@@ -11,7 +11,7 @@
     text-align: center;
   }
   &-video {
-    width: 95%;
+    width: 75%;
     margin: auto;
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -37,6 +37,9 @@
   .announcements {
     h2 {
       font-size: 1em;
+    }
+    &-video {
+      width: 95%;
     }
     &-text {
       width: 95%;
