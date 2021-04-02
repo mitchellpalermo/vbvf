@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/leadership.scss";
 
-// import Tom from "../images/leadership_photos/Tom_Didier.jpeg";
-// import Jerry from "../images/leadership_photos/Jerry_Smith.jpeg";
-// import Bob from "../images/leadership_photos/Bob_Butler.jpeg";
-// import Jim from "../images/leadership_photos/Jim_Rowland.jpeg";
-// import John from "../images/leadership_photos/John_Oneill.jpeg";
 import Jan from "../images/leadership_photos/Jan_Worrell.jpeg";
 import Linda from "../images/leadership_photos/Linda_Briley.jpeg";
 import Mike from "../images/leadership_photos/Mike_Morris.jpeg";

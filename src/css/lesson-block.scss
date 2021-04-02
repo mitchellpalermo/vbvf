@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1vh;
-  background: rgba(219, 204, 165, 0.4);
+  background: rgba(236, 236, 236, 1);
 
   &-title {
     text-align: left;
@@ -36,7 +36,7 @@
 }
 
 .lesson-block:nth-child(even) {
-  background: rgba(219, 204, 165, 0.6);
+  background: rgba(240, 240, 241, 1);
 }
 
 .lesson-modal {
