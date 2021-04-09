@@ -16,11 +16,11 @@ PRs welcome!
 
 In the project directory, you need to run:
 
-1.  #### `npm install`
+1.  #### `yarn install`
 
 This will install the dependencies that the project requires to run correctly.
 
-2. #### `npm run dev`
+2. #### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
