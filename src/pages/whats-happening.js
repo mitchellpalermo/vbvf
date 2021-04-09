@@ -5,24 +5,55 @@ import { format } from "date-fns";
 import { Spinner } from "reactstrap";
 import "../css/whats-happening.scss";
 import UpcomingEvents from "../components/upcoming-events";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 
 export default function WhatsHappening() {
   const [announcement, setAnnouncement] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  const [noAnnouncement, setNoAnnouncement] = useState(false);
+  const [isAnnouncementLoading, setIsAnnouncementLoading] = useState(true);
+  const [faq, setFaq] = useState();
+  const [isFaqLoading, setIsFaqLoading] = useState(true);
 
-  const query = `*[_type == "biWeeklyAnnouncements" ] | order(_createdAt desc) [0] `;
+  const announcementQuery = `*[_type == "biWeeklyAnnouncements" ] | order(_createdAt desc) [0] `;
+  const faqQuery = `*[_type == "faq" && title == "About Page"] [0..3] {
+    faqs
+  }`;
   useEffect(() => {
-    sanity.fetch(query).then((response) => {
-      console.log(response);
-      setAnnouncement(response);
-      setIsLoading(false);
+    sanity
+      .fetch(announcementQuery)
+      .then((response) => {
+        console.log(response);
+        if (response === null) {
+          setNoAnnouncement(true);
+          setIsAnnouncementLoading(false);
+        } else {
+          setAnnouncement(response);
+          setIsAnnouncementLoading(false);
+        }
+      })
+      .catch(() => {
+        setNoAnnouncement(true);
+      });
+    //eslint-disable-next-line
+  }, []);
+  useEffect(() => {
+    sanity.fetch(faqQuery).then((response) => {
+      setFaq(response[0].faqs);
+      setIsFaqLoading(false);
     });
     //eslint-disable-next-line
   }, []);
 
   return (
     <div className="announcements">
-      {isLoading ? (
+      {noAnnouncement ? (
+        <>
+          <p>Looks like there's no announcements.</p>
+          <p>
+            Please try again later. In the meantime, check out our FAQs below.
+          </p>
+        </>
+      ) : isAnnouncementLoading ? (
         <Spinner />
       ) : (
         <>
@@ -39,6 +70,14 @@ export default function WhatsHappening() {
           <div className="announcements-text">
             <PortableText blocks={announcement?.text} />
           </div>
+        </>
+      )}
+
+      {isFaqLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <FrequentlyAskedQuestions faq={faq} />
         </>
       )}
     </div>
