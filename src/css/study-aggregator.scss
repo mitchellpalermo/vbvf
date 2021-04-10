@@ -26,7 +26,8 @@ $gold: #e8b021;
     align-items: center;
 
     .study-link {
-      transition: 0.1s ease-in-out;
+      will-change: transform;
+      transition: 0.1s ease;
       text-decoration: none;
     }
     .study-link:hover {

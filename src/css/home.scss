@@ -40,24 +40,6 @@ body {
   }
 }
 
-.see-more-arrow {
-  border: solid white;
-  position: absolute;
-  bottom: 0;
-  width: 5px;
-  height: 5px;
-  border-width: 0 5px 5px 0;
-  display: inline-block;
-  padding: 3px;
-  margin-bottom: 10px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-name: float;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate;
-}
 @keyframes float {
   from {
     bottom: 0;

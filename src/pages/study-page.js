@@ -10,6 +10,7 @@ import VbvmiStudy from "../components/vbvmiStudy";
 
 export default function StudyPage() {
   let { studyName } = useParams();
+
   const [isLoading, setIsLoading] = useState(true);
   const [series, setSeries] = useState({});
   const [seriesOver, setSeriesOver] = useState(true);
@@ -36,6 +37,7 @@ export default function StudyPage() {
     "notesUrl": notes.asset->url,
   }`;
   const params = { studyName: studyName.replace("-", " ") };
+  console.log(params);
 
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
@@ -59,7 +61,7 @@ export default function StudyPage() {
 
   return (
     <div className="study-container">
-      {series.isVbvmiStudy ? (
+      {series?.isVbvmiStudy ? (
         <div className="vbvmi-study">
           <Link className="back-link" to="/bible-studies">
             <svg
@@ -100,9 +102,9 @@ export default function StudyPage() {
             </Link>
             <img
               alt=""
-              src={sanityUrlFor(series.seriesImage).size(500, 300).url()}
+              src={sanityUrlFor(series?.seriesImage).size(500, 300).url()}
             />
-            <h1 className="study-info-title">{series.title}</h1>
+            <h1 className="study-info-title">{series?.title}</h1>
 
             {!seriesOver && (
               <div className="study-info-details">
@@ -139,7 +141,7 @@ export default function StudyPage() {
               </div>
             )}
             <div className="description">
-              <p className="description-body">{series.description}</p>
+              <p className="description-body">{series?.description}</p>
             </div>
           </div>
 
