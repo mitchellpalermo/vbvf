@@ -32,7 +32,7 @@ export default function FAQ() {
       ) : (
         <>
           <h1>FAQ</h1>
-          <FrequentlyAskedQuestions faq={faq} />
+          <FrequentlyAskedQuestions faq={faq} layout="vertical" />
         </>
       )}
     </div>

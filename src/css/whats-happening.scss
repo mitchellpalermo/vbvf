@@ -32,6 +32,35 @@
     margin: auto;
     width: 65%;
   }
+  &-service-times {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      text-align: center;
+      margin: 10vh 0 -2vh 0;
+    }
+    &-info {
+      display: grid;
+      grid-template-columns: repeat(3, 500px);
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 5vh;
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &-faq {
+    h2 {
+      margin: 5vh 0 -2vh 0;
+    }
+  }
 }
 @media screen and (max-width: 600px) {
   .announcements {
@@ -42,6 +71,16 @@
       width: 95%;
     }
     &-text {
+      width: 95%;
+    }
+    &-service-times {
+      &-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    &-faq {
       width: 95%;
     }
   }

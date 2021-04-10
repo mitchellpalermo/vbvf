@@ -3,9 +3,8 @@ import "../css/home.scss";
 import Button from "../components/button";
 import PhillippiansText from "../images/home_page/phillippians_text.png";
 
-// import SecondSamuel from "../images/home_page/2_Samuel.jpg";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
-import Serving from "../images/home_page/serving.jpg";
+import DailyBread from "../images/home_page/daily_bread.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 
 import Preview from "../components/preview";
@@ -55,11 +54,11 @@ const Home = () => {
           image={WomensStudy}
         />
         <Preview
-          title="Serve at VBVF"
-          body="God has called us to love one another, and part of that is serving each other. Join a serving team at VBVF to develop relationships and serve the body."
-          buttonTitle="Explore Teams"
-          link="/ministries/serve"
-          image={Serving}
+          title="Announcements"
+          body="Check out what's happening at Verse by Verse Fellowship."
+          buttonTitle="View Announcements"
+          link="/announcements"
+          image={DailyBread}
         />
         <Preview
           title="Connect with us"

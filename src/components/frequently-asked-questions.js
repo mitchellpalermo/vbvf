@@ -14,18 +14,15 @@ export default function FrequentlyAskedQuestions(props) {
   };
 
   const faqList = props.faq?.map((question) => (
-    <li>
+    <div className="faq-list-item">
       <h3>{question.question}</h3>
+
+      {/* making use of sanity's component for reading in portable text */}
       <p>
-        {/* making use of sanity's component for reading in portable text */}
         <PortableText blocks={question.answer2} serializers={serializers} />
       </p>
-    </li>
+    </div>
   ));
 
-  return (
-    <div className="faq-list">
-      <ul>{faqList}</ul>
-    </div>
-  );
+  return <div className={`faq-list ${props.layout}`}>{faqList}</div>;
 }

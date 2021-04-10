@@ -4,7 +4,7 @@ import PortableText from "@sanity/block-content-to-react";
 import { format } from "date-fns";
 import { Spinner } from "reactstrap";
 import "../css/whats-happening.scss";
-import UpcomingEvents from "../components/upcoming-events";
+
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 
 export default function WhatsHappening() {
@@ -13,16 +13,16 @@ export default function WhatsHappening() {
   const [isAnnouncementLoading, setIsAnnouncementLoading] = useState(true);
   const [faq, setFaq] = useState();
   const [isFaqLoading, setIsFaqLoading] = useState(true);
+  // const [series, setSeries] = useState();
+  // const [isSeriesLoading, setIsSeriesLoading] = useState(true);
 
   const announcementQuery = `*[_type == "biWeeklyAnnouncements" ] | order(_createdAt desc) [0] `;
-  const faqQuery = `*[_type == "faq" && title == "About Page"] [0..3] {
-    faqs
-  }`;
+  const faqQuery = `*[_type == "faq" && title == "About Page"]{faqs}`;
+  // const seriesQuery = `*[_type == "series" && endDate > $now] {title, meetingTime, seriesImage}`;
   useEffect(() => {
     sanity
       .fetch(announcementQuery)
       .then((response) => {
-        console.log(response);
         if (response === null) {
           setNoAnnouncement(true);
           setIsAnnouncementLoading(false);
@@ -38,11 +38,26 @@ export default function WhatsHappening() {
   }, []);
   useEffect(() => {
     sanity.fetch(faqQuery).then((response) => {
-      setFaq(response[0].faqs);
+      setFaq(response[0].faqs.slice(0, 4));
       setIsFaqLoading(false);
     });
     //eslint-disable-next-line
   }, []);
+  // useEffect(() => {
+  //   sanity.fetch(seriesQuery).then((response) => {
+  //     setSeries(response);
+  //     setIsSeriesLoading(false);
+  //   });
+  //   //eslint-disable-next-line
+  // }, []);
+
+  // const matchingTitle = (dayOfWeek) => {
+  //   const matchingSeries = series.filter(
+  //     (series) => series.meetingTime.day === dayOfWeek
+  //   );
+  //   console.log(matchingSeries[0]?.title);
+  //   return matchingSeries.length > 0 ? matchingSeries[0].title : "";
+  // };
 
   return (
     <div className="announcements">
@@ -66,19 +81,59 @@ export default function WhatsHappening() {
               src={`https://player.vimeo.com/video/${announcement.videoId}?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=175387`}
             ></iframe>
           </div>
-          <UpcomingEvents />
           <div className="announcements-text">
             <PortableText blocks={announcement?.text} />
           </div>
         </>
       )}
-
+      <div className="announcements-service-times">
+        <h2>Service times</h2>
+        <div className="announcements-service-times-info">
+          <div>
+            <h3>Tuesday</h3>
+            <p>
+              Women's Bible Study <br /> 10:00am - Sanctuary <br />
+              {/* <Link
+                    to={`bible-studies/${matchingTitle("Tuesday")}
+                    `}
+                  >
+                    The book of Esther
+                  </Link> */}
+            </p>
+          </div>
+          <div>
+            <h3>Wednesday</h3>
+            <p>
+              Mid-week Bible Study <br /> 7:00pm - Sanctuary <br />
+              {/* <Link
+                    to={`bible-studies/${matchingTitle("Wednesday")}
+                    `}
+                  >
+                    How to study your bible
+                  </Link> */}
+            </p>
+          </div>
+          <div>
+            <h3>Sunday</h3>
+            <p>
+              Worship Service <br /> 10:00am - Sanctuary <br />
+              {/* <Link
+                    to={`bible-studies/${matchingTitle("Sunday")}
+                    `}
+                  >
+                    The book of Philippians
+                  </Link> */}
+            </p>
+          </div>
+        </div>
+      </div>
       {isFaqLoading ? (
         <Spinner />
       ) : (
-        <>
-          <FrequentlyAskedQuestions faq={faq} />
-        </>
+        <div className="announcements-faq">
+          <h2>General FAQs</h2>
+          <FrequentlyAskedQuestions faq={faq} layout="compact" />
+        </div>
       )}
     </div>
   );

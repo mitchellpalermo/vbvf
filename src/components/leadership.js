@@ -6,12 +6,11 @@ import PhotoTitle from "../components/photo-title";
 import AboutMenu from "./about-menu";
 
 export default function Leadership() {
-
   const elderQuery = `*[_type == "person" && role == "Elder"]`;
   const pastorQuery = `*[_type == "person" && role == "Associate Pastor"]`;
   const directorQuery = `*[_type == "person" && role == "Ministry Director"]`;
 
-  const [elders, setElders] = useState(); 
+  const [elders, setElders] = useState();
   const [pastors, setPastors] = useState();
   const [directors, setDirectors] = useState();
 
@@ -20,12 +19,12 @@ export default function Leadership() {
       setElders(response);
     });
     sanity.fetch(pastorQuery).then((response) => {
-      setPastors(response); 
+      setPastors(response);
     });
     sanity.fetch(directorQuery).then((response) => {
       setDirectors(response);
     });
-    
+
     // eslint-disable-next-line
   }, []);
 
@@ -47,7 +46,7 @@ export default function Leadership() {
         ))}
       </div>
 
-      <h2>Pastors</h2> 
+      <h2>Pastors</h2>
       <div className="leadership-photo-array">
         {pastors?.map((pastor) => (
           <PhotoTitle
