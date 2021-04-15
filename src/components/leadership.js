@@ -8,7 +8,7 @@ import AboutMenu from "./about-menu";
 export default function Leadership() {
   const elderQuery = `*[_type == "person" && role == "Elder"]`;
   const pastorQuery = `*[_type == "person" && role == "Associate Pastor"]`;
-  const directorQuery = `*[_type == "person" && role == "Ministry Director"]`;
+  const directorQuery = `*[_type == "person" && role == "Ministry Director" || role == "Staff" || role == "Volunteer Staff"] | order(name asc)`;
 
   const [elders, setElders] = useState();
   const [pastors, setPastors] = useState();
@@ -60,13 +60,14 @@ export default function Leadership() {
         ))}
       </div>
 
-      <h2>Ministry Directors</h2>
+      <h2>Ministry Directors & Staff</h2>
 
       <div className="leadership-photo-array">
         {directors?.map((director) => (
           <PhotoTitle
             isLazy="lazy"
             photo={sanityUrlFor(director?.image).width(300)}
+            role={director?.role}
             title={director?.department}
             name={director?.name}
           />
