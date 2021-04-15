@@ -5,3 +5,8 @@
   align-items: center;
   text-align: center;
 }
+@media screen and (max-width: 800px) {
+  .step-container {
+    width: 100%;
+  }
+}

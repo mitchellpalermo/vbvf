@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { sanity } from "../util/index";
-import "../css/counseling-ministry.scss";
+import "../css/care-ministry.scss";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import ScriptureVerse from "../components/scripture-verse";
 
-export default function CounselingMinistry() {
+export default function CareMinistry() {
   const [faq, setFaq] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const query = `*[_type == "faq" && title == "Counseling Ministry"]{
@@ -12,7 +12,6 @@ export default function CounselingMinistry() {
   }`;
   useEffect(() => {
     sanity.fetch(query).then((results) => {
-      console.log(results);
       setFaq(results[0].faqs);
       setIsLoading(!isLoading);
     });
@@ -20,7 +19,7 @@ export default function CounselingMinistry() {
   }, [query]);
   return (
     <div className="care-ministries">
-      <h1>Care Ministries</h1>
+      <h1>Care Ministry</h1>
       <iframe
         title="Care Ministries"
         src="https://player.vimeo.com/video/508963469?color=ffffff&title=0&byline=0&portrait=0"
@@ -33,12 +32,13 @@ export default function CounselingMinistry() {
 
       <div className="care-ministries-row vision">
         <p>
-          Care Ministries offer supportive care to those in need, resting firmly
-          on Galatians 6:2. If you are struggling with life or with a particular
-          issue and want to work through it along side a Scripturally-grounded,
-          caring Christian, please contact us at{" "}
+          Care Ministries offers supportive care to those in need, resting
+          firmly on Galatians 6:2. There are three different programs and all
+          provide the opportunity for spiritual growth and a deeper walk with
+          God. If you are interested in participating in any of these, please
+          contact us at{" "}
           <a href="mailto:supportcare@vbvf.org">supportcare@vbvf.org</a> or call
-          the church and leave a message on the Care Ministries extension.{" "}
+          the church at (210)460-7556 and leave a message for the Care Ministry.
         </p>
         <ScriptureVerse
           verse="Bear one another's burdens, and thereby fulfill the law of Christ"
@@ -51,11 +51,12 @@ export default function CounselingMinistry() {
           <p>1-5 sessions</p>
         </span>
         <p>
-          Those in need of supportive care begin with Help for the Hurting where
-          they are paired with spiritually mature, compassionate Christians
-          typically for up to 3-4 sessions either virtually or in person to
-          resolve issues consistent with Scripture and the leading of the Holy
-          Spirit.{" "}
+          If you are struggling with life or a particular issue and want to work
+          through it along side a Scripturally-grounded, caring Christian, Help
+          for the Hurting is for you. You will be paired with a spiritually
+          mature, compassionate Christian typically for up to 5 sessions, either
+          virtually or in person, to resolve the issue consistent with Scripture
+          and the leading of the Holy Spirit.{" "}
         </p>
       </div>
       <div className="care-ministries-row">
@@ -75,8 +76,24 @@ export default function CounselingMinistry() {
           instruction in righteousness.” (2 Timothy 3:16)
         </p>
       </div>
+      <div className="care-ministries-row">
+        <span>
+          <h3>Care and Recovery Groups</h3>
+          <p>Typically 13 Weeks</p>
+        </span>
+        <p>
+          {" "}
+          Much personal and spiritual growth may be accomplished through
+          participation in structured Care and Recovery groups such as
+          GriefShare, Celebrate Recovery, Boundaries, and Changes that Heal.
+          Groups are offered for a specific timeframe, typically meeting once a
+          week for up to two hours, and include a video seminar, small group
+          discussion, and individual study using a workbook. There is a nominal
+          charge for materials.
+        </p>
+      </div>
       <h3>FAQ</h3>
-      <FrequentlyAskedQuestions faq={faq} />
+      <FrequentlyAskedQuestions layout="vertical" faq={faq} />
     </div>
   );
 }

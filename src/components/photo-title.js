@@ -11,8 +11,8 @@ export default function PhotoTitle(props) {
       />
       <p>
         {props.name}
-        {props.title ? <span>{props.title}</span> : <span></span>}
         {props.role ? <span>{props.role}</span> : <span></span>}
+        {props.title ? <span>{props.title}</span> : <span></span>}
         {props.email ? <span>{props.email}</span> : <span></span>}
       </p>
     </div>

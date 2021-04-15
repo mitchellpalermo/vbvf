@@ -30,7 +30,7 @@ import Giving from "./pages/giving";
 import ChildrensUnitPage from "./components/childrens-unit-page";
 import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
 import SpecialAnnouncement from "./pages/specialAnnouncement";
-import CounselingMinistry from "./pages/counseling-ministry";
+import CareMinistry from "./pages/care-ministry";
 import WhatsHappening from "./pages/whats-happening";
 
 // import OnlineMinistry from "./pages/online-ministry";
@@ -97,8 +97,8 @@ function App() {
           <Route exact path="/ministries/serve" component={Serve} />
           <Route
             exact
-            path="/ministries/counseling-ministry"
-            component={CounselingMinistry}
+            path="/ministries/care-ministry"
+            component={CareMinistry}
           />
           <Route exact path="/attend" component={AttendService} />
           <Route
