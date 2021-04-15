@@ -14,6 +14,7 @@ export default function StudyAggregator() {
 
   useEffect(() => {
     sanity.fetch(query).then((results) => {
+      console.log(results);
       setSeries(results);
     });
   }, [query]);
