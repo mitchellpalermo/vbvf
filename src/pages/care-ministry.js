@@ -32,13 +32,13 @@ export default function CareMinistry() {
 
       <div className="care-ministries-row vision">
         <p>
-          Care Ministries offers supportive care to those in need, resting
-          firmly on Galatians 6:2. There are three different programs and all
-          provide the opportunity for spiritual growth and a deeper walk with
-          God. If you are interested in participating in any of these, please
-          contact us at{" "}
-          <a href="mailto:supportcare@vbvf.org">supportcare@vbvf.org</a> or call
-          the church at (210)460-7556 and leave a message for the Care Ministry.
+          Care Ministry offers supportive care to those in need, resting firmly
+          on Galatians 6:2. There are three different programs and all provide
+          the opportunity for spiritual growth and a deeper walk with God. If
+          you are interested in participating in any of these, please contact us
+          at <a href="mailto:supportcare@vbvf.org">supportcare@vbvf.org</a> or
+          call the church at (210)460-7556 and leave a message for the Care
+          Ministry.
         </p>
         <ScriptureVerse
           verse="Bear one another's burdens, and thereby fulfill the law of Christ"
