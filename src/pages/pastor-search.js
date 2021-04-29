@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { sanity } from "../util/index";
+import { isMobileDevice, sanity } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
 import "../css/pastor-search.scss";
-// import Banner from "../images/pastor-search/banner.jpg";
+
 import Banner from "../images/pastor-search/cropped_banner.jpg";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "reactstrap";
 
 export default function PastorSearch() {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggle = () => setDropdownOpen((prevState) => !prevState);
   const pageQuery = `*[_type == "page" && title == "Pastor Search"]`;
   useEffect(() => {
     sanity.fetch(pageQuery).then((result) => {
@@ -68,9 +77,9 @@ export default function PastorSearch() {
   const currentComponent = () => {
     let textToRender = "";
     switch (componentToShow) {
-      case "Opportunity":
+      case "The Opportunity":
         return <Opportunity />;
-      case "About":
+      case "About VBVF":
         textToRender = pageContent?.paragraphs?.filter((paragraph) =>
           paragraph.paragraphTitle.includes("About")
         );
@@ -83,7 +92,7 @@ export default function PastorSearch() {
             />
           </>
         );
-      case "Believe":
+      case "What We Believe":
         textToRender = pageContent?.paragraphs?.filter((paragraph) =>
           paragraph.paragraphTitle.includes("Believe")
         );
@@ -96,7 +105,7 @@ export default function PastorSearch() {
             />
           </>
         );
-      case "Candidate":
+      case "The Successful Candidate":
         textToRender = pageContent?.paragraphs?.filter((paragraph) =>
           paragraph.paragraphTitle.includes("Candidate")
         );
@@ -109,7 +118,7 @@ export default function PastorSearch() {
             />
           </>
         );
-      case "Hiring":
+      case "Hiring Process":
         textToRender = pageContent?.paragraphs?.filter((paragraph) =>
           paragraph.paragraphTitle.includes("Hiring")
         );
@@ -122,7 +131,7 @@ export default function PastorSearch() {
             />
           </>
         );
-      case "Apply":
+      case "How to Apply":
         textToRender = pageContent?.paragraphs?.filter((paragraph) =>
           paragraph.paragraphTitle.includes("Apply")
         );
@@ -143,11 +152,60 @@ export default function PastorSearch() {
   return (
     <div className="pastor-search">
       <img src={Banner} alt="" />
+      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+        <DropdownToggle caret> {componentToShow}</DropdownToggle>
+
+        <DropdownMenu>
+          <DropdownItem
+            onClick={() => {
+              setComponentToShow("The Opportunity");
+            }}
+          >
+            The Opportunity
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              setComponentToShow("About VBVF");
+            }}
+          >
+            About VBVF
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              setComponentToShow("What We Believe");
+            }}
+          >
+            What We Believe
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              setComponentToShow("The Successful Candidate");
+            }}
+          >
+            The Successful Candidate
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              setComponentToShow("Hiring Process");
+            }}
+          >
+            Hiring Process
+          </DropdownItem>
+          <DropdownItem
+            onClick={() => {
+              setComponentToShow("How to Apply");
+            }}
+          >
+            How to Apply
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+
       <div className="pastor-search-container">
-        <div className="pastor-search-menu">
+        <div className={`pastor-search-menu ${isMobileDevice ? "hidden" : ""}`}>
           <ul>
             <li
-              onClick={() => setComponentToShow("Opportunity")}
+              onClick={() => setComponentToShow("The Opportunity")}
               className={
                 componentToShow.includes("Opportunity") ? "selected" : null
               }
@@ -155,13 +213,13 @@ export default function PastorSearch() {
               The Opportunity
             </li>
             <li
-              onClick={() => setComponentToShow("About")}
+              onClick={() => setComponentToShow("About VBVF")}
               className={componentToShow.includes("About") ? "selected" : null}
             >
               About VBVF
             </li>
             <li
-              onClick={() => setComponentToShow("Believe")}
+              onClick={() => setComponentToShow("What We Believe")}
               className={
                 componentToShow.includes("Believe") ? "selected" : null
               }
@@ -169,7 +227,7 @@ export default function PastorSearch() {
               What We Believe
             </li>
             <li
-              onClick={() => setComponentToShow("Candidate")}
+              onClick={() => setComponentToShow("The Successful Candidate")}
               className={
                 componentToShow.includes("Candidate") ? "selected" : null
               }
@@ -177,13 +235,13 @@ export default function PastorSearch() {
               The Successful Candidate Will...
             </li>
             <li
-              onClick={() => setComponentToShow("Hiring")}
+              onClick={() => setComponentToShow("Hiring Process")}
               className={componentToShow.includes("Hiring") ? "selected" : null}
             >
               The Hiring Process
             </li>
             <li
-              onClick={() => setComponentToShow("Apply")}
+              onClick={() => setComponentToShow("How to Apply")}
               className={componentToShow.includes("Apply") ? "selected" : null}
             >
               How to Apply

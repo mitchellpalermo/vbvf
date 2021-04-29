@@ -6,6 +6,9 @@ $gold: #e8b021;
   img {
     width: 100%;
   }
+  .hidden {
+    display: none;
+  }
   &-container {
     display: flex;
     flex-direction: row;
@@ -56,6 +59,19 @@ $gold: #e8b021;
       li {
         margin: 3vh;
       }
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .pastor-search {
+    &-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    &-content {
+      width: 98%;
+      margin: 0;
+      align-items: center;
     }
   }
 }
