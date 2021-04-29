@@ -1,12 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { sanity } from "../util/index";
+import PortableText from "@sanity/block-content-to-react";
+import "../css/pastor-search.scss";
+// import Banner from "../images/pastor-search/banner.jpg";
+import Banner from "../images/pastor-search/cropped_banner.jpg";
 
 export default function PastorSearch() {
+  const pageQuery = `*[_type == "page" && title == "Pastor Search"]`;
   useEffect(() => {
-    //make the sanity call for content
-  });
+    sanity.fetch(pageQuery).then((result) => {
+      setPageContent(result[0]);
+    });
+    //eslint-disable-next-line
+  }, []);
+
+  const serializers = {
+    //this helps react understand how to present links
+    marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+        return <a href={href}>{children}</a>;
+      },
+      list: (props) => {
+        const { type } = props;
+        const bullet = type === "bullet";
+        if (bullet) {
+          return <ul>{props.children}</ul>;
+        }
+        return <ol>{props.children}</ol>;
+      },
+      listItem: (props) => <li>{props.children}</li>,
+    },
+  };
+
+  const [pageContent, setPageContent] = useState();
   const [componentToShow, setComponentToShow] = useState("The Opportunity");
 
-  function TheOpportunity() {
+  const Opportunity = () => (
     <div>
       <h1>The Opportunity</h1>
       <p>
@@ -32,42 +62,136 @@ export default function PastorSearch() {
         The Senior Pastor will model a faithful life of service to Christ in his
         teaching, discipling and personal life.
       </p>
-    </div>;
-  }
-
-  
+    </div>
+  );
 
   const currentComponent = () => {
+    let textToRender = "";
     switch (componentToShow) {
-      case 'Opportunity'
-        case "About":
-        return <AboutVbvf />;
+      case "Opportunity":
+        return <Opportunity />;
+      case "About":
+        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
+          paragraph.paragraphTitle.includes("About")
+        );
+        return (
+          <>
+            <h1>{textToRender[0].paragraphTitle}</h1>
+            <PortableText
+              blocks={textToRender[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        );
       case "Believe":
-        return <Believe />;
+        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
+          paragraph.paragraphTitle.includes("Believe")
+        );
+        return (
+          <>
+            <h1>{textToRender[0].paragraphTitle}</h1>
+            <PortableText
+              blocks={textToRender[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        );
       case "Candidate":
-        return <Successful Candidate />;
+        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
+          paragraph.paragraphTitle.includes("Candidate")
+        );
+        return (
+          <>
+            <h1>{textToRender[0].paragraphTitle}</h1>
+            <PortableText
+              blocks={textToRender[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        );
       case "Hiring":
-        return <HiringProcess />;
+        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
+          paragraph.paragraphTitle.includes("Hiring")
+        );
+        return (
+          <>
+            <h1>{textToRender[0].paragraphTitle}</h1>
+            <PortableText
+              blocks={textToRender[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        );
       case "Apply":
-        return <HowToApply />;
+        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
+          paragraph.paragraphTitle.includes("Apply")
+        );
+        return (
+          <>
+            <h1>{textToRender[0].paragraphTitle}</h1>
+            <PortableText
+              blocks={textToRender[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        );
 
       default:
-        return <TheOpportunity />;
+        return <Opportunity />;
     }
   };
   return (
-    <div>
-      <div>
-        <ul>
-          <li onClick={() => setComponentToShow("Opportunity")}>The Opportunity</li>
-          <li onClick={() => setComponentToShow("About")}>About VBVF</li>
-          <li onClick={() => setComponentToShow("Believe")}>What We Believe</li>
-          <li onClick={() => setComponentToShow("Candidate")}>The Successful Candidate Will...</li>
-          <li onClick={() => setComponentToShow("Hiring")}>The Hiring Process</li>
-          <li onClick={() => setComponentToShow("Apply")}>How to Apply</li>
-        </ul>
+    <div className="pastor-search">
+      <img src={Banner} alt="" />
+      <div className="pastor-search-container">
+        <div className="pastor-search-menu">
+          <ul>
+            <li
+              onClick={() => setComponentToShow("Opportunity")}
+              className={
+                componentToShow.includes("Opportunity") ? "selected" : null
+              }
+            >
+              The Opportunity
+            </li>
+            <li
+              onClick={() => setComponentToShow("About")}
+              className={componentToShow.includes("About") ? "selected" : null}
+            >
+              About VBVF
+            </li>
+            <li
+              onClick={() => setComponentToShow("Believe")}
+              className={
+                componentToShow.includes("Believe") ? "selected" : null
+              }
+            >
+              What We Believe
+            </li>
+            <li
+              onClick={() => setComponentToShow("Candidate")}
+              className={
+                componentToShow.includes("Candidate") ? "selected" : null
+              }
+            >
+              The Successful Candidate Will...
+            </li>
+            <li
+              onClick={() => setComponentToShow("Hiring")}
+              className={componentToShow.includes("Hiring") ? "selected" : null}
+            >
+              The Hiring Process
+            </li>
+            <li
+              onClick={() => setComponentToShow("Apply")}
+              className={componentToShow.includes("Apply") ? "selected" : null}
+            >
+              How to Apply
+            </li>
+          </ul>
+        </div>
+        <div className="pastor-search-content">{currentComponent()}</div>
       </div>
-      {currentComponent()}
     </div>
   );
 }

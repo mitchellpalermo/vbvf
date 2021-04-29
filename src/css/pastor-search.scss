@@ -1,0 +1,61 @@
+$darkNavy: #2e3c49;
+$green: #4f5957;
+$gold: #e8b021;
+
+.pastor-search {
+  img {
+    width: 100%;
+  }
+  &-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5vh;
+  }
+  &-menu {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: flex-start;
+    border-right: $green 2px solid;
+    padding-right: 8px;
+    box-sizing: border-box;
+    ul {
+      list-style: none;
+      margin: 5vh;
+      li {
+        margin: 15px 0 15px 0;
+        font-size: 1.5em;
+        font-weight: 600;
+        font-family: "Open Sans";
+        cursor: pointer;
+      }
+      .selected {
+        color: $gold;
+        border: 2px solid $gold;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  &-content {
+    width: 80%;
+    margin: 5vh 10vh 5vh 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h1 {
+      align-self: center;
+      text-align: center;
+      margin: 3vh;
+    }
+
+    ul {
+      li {
+        margin: 3vh;
+      }
+    }
+  }
+}
