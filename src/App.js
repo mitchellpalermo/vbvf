@@ -32,6 +32,7 @@ import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
 import SpecialAnnouncement from "./pages/specialAnnouncement";
 import CareMinistry from "./pages/care-ministry";
 import WhatsHappening from "./pages/whats-happening";
+import PastorSearch from "./pages/pastor-search";
 
 // import OnlineMinistry from "./pages/online-ministry";
 
@@ -58,6 +59,7 @@ function App() {
           <Route path="/bible-studies/:studyName" component={StudyPage} />
           <Route exact path="/sermon-redirect" component={SermonRedirect} />
           <Route exact path="/giving-redirect" component={GivingRedirect} />
+          <Route exact path="/pastor-search" component={PastorSearch} />
           <Route
             exact
             path="/registration-redirect"
