@@ -9,6 +9,9 @@ $gold: #e8b021;
   .hidden {
     display: none;
   }
+  .bootstrap-menu {
+    align-self: center;
+  }
   &-container {
     display: flex;
     flex-direction: row;
@@ -56,6 +59,7 @@ $gold: #e8b021;
     }
 
     ul {
+      padding: 0;
       li {
         margin: 3vh;
       }
@@ -72,6 +76,11 @@ $gold: #e8b021;
       width: 98%;
       margin: 0;
       align-items: center;
+      ul {
+        li {
+          margin: 0;
+        }
+      }
     }
   }
 }

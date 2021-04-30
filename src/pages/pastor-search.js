@@ -155,7 +155,7 @@ export default function PastorSearch() {
       <Dropdown isOpen={dropdownOpen} toggle={toggle}>
         <DropdownToggle caret> {componentToShow}</DropdownToggle>
 
-        <DropdownMenu>
+        <DropdownMenu className="bootstrap-menu">
           <DropdownItem
             onClick={() => {
               setComponentToShow("The Opportunity");
@@ -199,8 +199,7 @@ export default function PastorSearch() {
             How to Apply
           </DropdownItem>
         </DropdownMenu>
-      </Dropdown>
-
+      </Dropdown>{" "}
       <div className="pastor-search-container">
         <div className={`pastor-search-menu ${isMobileDevice ? "hidden" : ""}`}>
           <ul>
