@@ -42,6 +42,18 @@ export function getMobileOperatingSystem() {
   return "unknown";
 }
 
+export function isMobileDevice() {
+  if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export async function getVideos(vimeoFolder) {
   const options = {
     url: `https://api.vimeo.com/me/projects/${vimeoFolder}/videos?direction=desc`,
