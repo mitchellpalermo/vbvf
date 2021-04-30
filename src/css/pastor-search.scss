@@ -9,9 +9,7 @@ $gold: #e8b021;
   .hidden {
     display: none;
   }
-  .menu-container {
-    left: 50%;
-  }
+
   &-container {
     display: flex;
     flex-direction: row;
@@ -76,6 +74,9 @@ $gold: #e8b021;
       width: 98%;
       margin: 0;
       align-items: center;
+      h1 {
+        margin: 0;
+      }
       ul {
         li {
           margin: 0;
