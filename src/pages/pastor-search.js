@@ -5,16 +5,15 @@ import "../css/pastor-search.scss";
 
 import Banner from "../images/pastor-search/cropped_banner.jpg";
 import {
-  Dropdown,
+  Navbar,
+  Nav,
+  UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
 
 export default function PastorSearch() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
   const pageQuery = `*[_type == "page" && title == "Pastor Search"]`;
   useEffect(() => {
     sanity.fetch(pageQuery).then((result) => {
@@ -152,54 +151,64 @@ export default function PastorSearch() {
   return (
     <div className="pastor-search">
       <img src={Banner} alt="" />
-      <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-        <DropdownToggle caret> {componentToShow}</DropdownToggle>
+      <Navbar color="light">
+        <Nav>
+          <div className="menu-container">
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                {" "}
+                {componentToShow}
+              </DropdownToggle>
 
-        <DropdownMenu className="bootstrap-menu">
-          <DropdownItem
-            onClick={() => {
-              setComponentToShow("The Opportunity");
-            }}
-          >
-            The Opportunity
-          </DropdownItem>
-          <DropdownItem
-            onClick={() => {
-              setComponentToShow("About VBVF");
-            }}
-          >
-            About VBVF
-          </DropdownItem>
-          <DropdownItem
-            onClick={() => {
-              setComponentToShow("What We Believe");
-            }}
-          >
-            What We Believe
-          </DropdownItem>
-          <DropdownItem
-            onClick={() => {
-              setComponentToShow("The Successful Candidate");
-            }}
-          >
-            The Successful Candidate
-          </DropdownItem>
-          <DropdownItem
-            onClick={() => {
-              setComponentToShow("Hiring Process");
-            }}
-          >
-            Hiring Process
-          </DropdownItem>
-          <DropdownItem
-            onClick={() => {
-              setComponentToShow("How to Apply");
-            }}
-          >
-            How to Apply
-          </DropdownItem>
-        </DropdownMenu>
-      </Dropdown>{" "}
+              <DropdownMenu>
+                <DropdownItem
+                  onClick={() => {
+                    setComponentToShow("The Opportunity");
+                  }}
+                >
+                  The Opportunity
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => {
+                    setComponentToShow("About VBVF");
+                  }}
+                >
+                  About VBVF
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => {
+                    setComponentToShow("What We Believe");
+                  }}
+                >
+                  What We Believe
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => {
+                    setComponentToShow("The Successful Candidate");
+                  }}
+                >
+                  The Successful Candidate
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => {
+                    setComponentToShow("Hiring Process");
+                  }}
+                >
+                  Hiring Process
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => {
+                    setComponentToShow("How to Apply");
+                  }}
+                >
+                  How to Apply
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          </div>
+        </Nav>
+      </Navbar>
+
       <div className="pastor-search-container">
         <div className={`pastor-search-menu ${isMobileDevice ? "hidden" : ""}`}>
           <ul>
