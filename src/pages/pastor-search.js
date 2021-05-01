@@ -151,7 +151,7 @@ export default function PastorSearch() {
   return (
     <div className="pastor-search">
       <img src={Banner} alt="" />
-      <Navbar color="light">
+      <Navbar color="light" className={isMobileDevice() ? "" : "hidden"}>
         <Nav>
           <div className="menu-container">
             <UncontrolledDropdown nav inNavbar>
@@ -210,7 +210,9 @@ export default function PastorSearch() {
       </Navbar>
 
       <div className="pastor-search-container">
-        <div className={`pastor-search-menu ${isMobileDevice ? "hidden" : ""}`}>
+        <div
+          className={`pastor-search-menu ${isMobileDevice() ? "hidden" : ""}`}
+        >
           <ul>
             <li
               onClick={() => setComponentToShow("The Opportunity")}
