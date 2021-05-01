@@ -35,6 +35,12 @@ const Home = () => {
               color="bone"
             />
             <Button
+              link="/pastor-search"
+              title="Pastor Search"
+              size="large"
+              color="bone"
+            />
+            <Button
               title="Attend a service"
               link="/attend"
               size="large"
