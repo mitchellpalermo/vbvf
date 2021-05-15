@@ -89,13 +89,15 @@ export default function PastorSearch() {
             blocks={textToRender.bodyText}
             serializers={serializers}
           />
-          <a
-            target="blank "
-            rel="noopener noreferrer"
-            href={documentForDownload.documentUrl}
-          >
-            Download {documentForDownload.documentTitle} document
-          </a>
+          {documentForDownload != undefined && (
+            <a
+              target="blank "
+              rel="noopener noreferrer"
+              href={documentForDownload.documentUrl}
+            >
+              Download {documentForDownload.documentTitle} document
+            </a>
+          )}
         </>
       );
     }
