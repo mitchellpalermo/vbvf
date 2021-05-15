@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { isMobileDevice, sanity } from "../util/index";
+import { sanity } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
 import "../css/pastor-search.scss";
 
 import Banner from "../images/pastor-search/cropped_banner.jpg";
-import {
-  Navbar,
-  Nav,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
 
 export default function PastorSearch() {
-  const pageQuery = `*[_type == "page" && title == "Pastor Search"]`;
+  const pageQuery = `*[_type == "page" && title == "Pastor Search"] {
+    paragraphs,
+  documents[]{
+    documentTitle,
+      "documentUrl": document.asset->url
+  }
+}`;
   useEffect(() => {
     sanity.fetch(pageQuery).then((result) => {
       setPageContent(result[0]);
@@ -73,144 +71,42 @@ export default function PastorSearch() {
     </div>
   );
 
-  const currentComponent = () => {
-    let textToRender = "";
-    switch (componentToShow) {
-      case "The Opportunity":
-        return <Opportunity />;
-      case "About VBVF":
-        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
-          paragraph.paragraphTitle.includes("About")
-        );
-        return (
-          <>
-            <h1>{textToRender[0].paragraphTitle}</h1>
-            <PortableText
-              blocks={textToRender[0].bodyText}
-              serializers={serializers}
-            />
-          </>
-        );
-      case "What We Believe":
-        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
-          paragraph.paragraphTitle.includes("Believe")
-        );
-        return (
-          <>
-            <h1>{textToRender[0].paragraphTitle}</h1>
-            <PortableText
-              blocks={textToRender[0].bodyText}
-              serializers={serializers}
-            />
-          </>
-        );
-      case "The Successful Candidate":
-        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
-          paragraph.paragraphTitle.includes("Candidate")
-        );
-        return (
-          <>
-            <h1>{textToRender[0].paragraphTitle}</h1>
-            <PortableText
-              blocks={textToRender[0].bodyText}
-              serializers={serializers}
-            />
-          </>
-        );
-      case "Hiring Process":
-        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
-          paragraph.paragraphTitle.includes("Hiring")
-        );
-        return (
-          <>
-            <h1>{textToRender[0].paragraphTitle}</h1>
-            <PortableText
-              blocks={textToRender[0].bodyText}
-              serializers={serializers}
-            />
-          </>
-        );
-      case "How to Apply":
-        textToRender = pageContent?.paragraphs?.filter((paragraph) =>
-          paragraph.paragraphTitle.includes("Apply")
-        );
-        return (
-          <>
-            <h1>{textToRender[0].paragraphTitle}</h1>
-            <PortableText
-              blocks={textToRender[0].bodyText}
-              serializers={serializers}
-            />
-          </>
-        );
-
-      default:
-        return <Opportunity />;
+  const showMe = () => {
+    if (componentToShow === "The Opportunity") {
+      return <Opportunity />;
+    } else {
+      let textToRender = pageContent?.paragraphs?.find((paragraph) =>
+        paragraph.paragraphTitle.includes(componentToShow)
+      );
+      let documentForDownload = pageContent?.documents?.find((document) =>
+        document.documentTitle.includes(componentToShow)
+      );
+      console.log(documentForDownload);
+      return (
+        <>
+          <h1>{textToRender.paragraphTitle}</h1>
+          <PortableText
+            blocks={textToRender.bodyText}
+            serializers={serializers}
+          />
+          <a
+            target="blank "
+            rel="noopener noreferrer"
+            href={documentForDownload.documentUrl}
+          >
+            Download {documentForDownload.documentTitle} document
+          </a>
+        </>
+      );
     }
   };
+
   return (
     <div className="pastor-search">
       <img src={Banner} alt="" />
-      <Navbar color="light">
-        <Nav>
-          <div className="menu-container">
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                {" "}
-                {componentToShow}
-              </DropdownToggle>
-
-              <DropdownMenu>
-                <DropdownItem
-                  onClick={() => {
-                    setComponentToShow("The Opportunity");
-                  }}
-                >
-                  The Opportunity
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => {
-                    setComponentToShow("About VBVF");
-                  }}
-                >
-                  About VBVF
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => {
-                    setComponentToShow("What We Believe");
-                  }}
-                >
-                  What We Believe
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => {
-                    setComponentToShow("The Successful Candidate");
-                  }}
-                >
-                  The Successful Candidate
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => {
-                    setComponentToShow("Hiring Process");
-                  }}
-                >
-                  Hiring Process
-                </DropdownItem>
-                <DropdownItem
-                  onClick={() => {
-                    setComponentToShow("How to Apply");
-                  }}
-                >
-                  How to Apply
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </div>
-        </Nav>
-      </Navbar>
 
       <div className="pastor-search-container">
-        <div className={`pastor-search-menu ${isMobileDevice ? "hidden" : ""}`}>
+        <div className={`pastor-search-menu `}>
           <ul>
             <li
               onClick={() => setComponentToShow("The Opportunity")}
@@ -220,43 +116,21 @@ export default function PastorSearch() {
             >
               The Opportunity
             </li>
-            <li
-              onClick={() => setComponentToShow("About VBVF")}
-              className={componentToShow.includes("About") ? "selected" : null}
-            >
-              About VBVF
-            </li>
-            <li
-              onClick={() => setComponentToShow("What We Believe")}
-              className={
-                componentToShow.includes("Believe") ? "selected" : null
-              }
-            >
-              What We Believe
-            </li>
-            <li
-              onClick={() => setComponentToShow("The Successful Candidate")}
-              className={
-                componentToShow.includes("Candidate") ? "selected" : null
-              }
-            >
-              The Successful Candidate Will...
-            </li>
-            <li
-              onClick={() => setComponentToShow("Hiring Process")}
-              className={componentToShow.includes("Hiring") ? "selected" : null}
-            >
-              The Hiring Process
-            </li>
-            <li
-              onClick={() => setComponentToShow("How to Apply")}
-              className={componentToShow.includes("Apply") ? "selected" : null}
-            >
-              How to Apply
-            </li>
+            {pageContent?.paragraphs.map((paragraph) => (
+              <li
+                onClick={() => setComponentToShow(paragraph.paragraphTitle)}
+                className={
+                  componentToShow.includes(paragraph.paragraphTitle)
+                    ? "selected"
+                    : null
+                }
+              >
+                {paragraph.paragraphTitle}
+              </li>
+            ))}
           </ul>
         </div>
-        <div className="pastor-search-content">{currentComponent()}</div>
+        <div className="pastor-search-content">{showMe()}</div>
       </div>
     </div>
   );

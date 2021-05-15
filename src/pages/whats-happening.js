@@ -116,7 +116,8 @@ export default function WhatsHappening() {
           <div>
             <h3>Sunday</h3>
             <p>
-              Worship Service <br /> 10:00am - Sanctuary <br />
+              Worship Service <br />
+              9:00am & 11:00am - Sanctuary <br />
               {/* <Link
                     to={`bible-studies/${matchingTitle("Sunday")}
                     `}

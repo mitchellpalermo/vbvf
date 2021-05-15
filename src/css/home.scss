@@ -6,149 +6,149 @@ body {
   overflow-x: hidden;
 }
 
-.main-header {
-  background: url(../images/home_page/hand_raised.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.home {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 85vh;
-  &-titles {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: $bone;
-    margin-top: 30vh;
-    h1 {
-      color: $bone;
-      font-size: 5rem;
-      font-weight: bold;
-    }
-  }
-  &-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 3vh;
-    text-decoration: underline;
-    a {
-      color: $bone;
-    }
-  }
-}
 
-@keyframes float {
-  from {
-    bottom: 0;
-  }
-  to {
-    bottom: 20px;
-  }
-}
-
-.preview-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-
-  margin: 20px 0 20px 0;
-}
-
-#samuel-series {
-  background-color: black;
-}
-
-#phillippians-series {
-  background-image: url(../images/home_page/phillippians_background.jpg);
-  background-size: cover;
-}
-
-.series-promo {
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &-desc {
-    display: flex;
-    color: white;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
-    margin: 5vh;
-    h2,
-    h3 {
-      text-align: center;
-    }
-  }
-  img {
-    justify-self: flex-end;
-    width: 70%;
-  }
-}
-
-@media screen and (max-width: 800px) {
   .main-header {
+    width: 100%;
+    background: url(../images/home_page/hand_raised.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    background-position: 30% 15%;
-    background-size: cover;
     align-items: center;
-    max-height: 50vh;
-
+    min-height: 85vh;
     &-titles {
-      width: 100%;
-      margin: 23vh 0 20vh 0;
-      max-width: 100%;
-      color: #eae9e8;
-    }
-    h1 {
-      font-size: 3rem;
-      color: #eae9e8;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      color: $bone;
+      margin-top: 30vh;
+      h1 {
+        color: $bone;
+        font-size: 5rem;
+        font-weight: bold;
+      }
     }
     &-buttons {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-top: 3vh;
+      text-decoration: underline;
       a {
-        color: #eae9e8;
+        color: $bone;
       }
     }
   }
 
   .preview-container {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 20px 0 20px 0;
   }
-  #preaching-word-image {
-    width: 95%;
-  }
-  #connection-meeting {
-    flex-direction: column-reverse;
-  }
+
   #samuel-series {
-    flex-direction: column;
-    img {
-      -webkit-mask-image: linear-gradient(to top, transparent 0, black 75%);
-      mask-image: linear-gradient(to top, transparent 0, black 75%);
-    }
+    background-color: black;
+  }
+
+  #phillippians-series {
+    background-image: url(../images/home_page/phillippians_background.jpg);
+    background-size: cover;
   }
 
   .series-promo {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
-    flex-flow: column-reverse;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 2vh;
     &-desc {
-      width: 90%;
+      display: flex;
+      color: white;
+      flex-direction: column;
+      align-items: center;
+      width: 60%;
+      margin: 5vh;
+      h2,
+      h3 {
+        text-align: center;
+      }
     }
     img {
-      width: 90%;
+      justify-self: flex-end;
+      width: 70%;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .home {
+    .main-header {
+      display: flex;
+      flex-direction: column;
+      background-position: 30% 15%;
+      background-size: cover;
+      align-items: center;
+      max-height: 50vh;
+
+      &-titles {
+        width: 100%;
+        margin: 23vh 0 20vh 0;
+        max-width: 100%;
+        color: #eae9e8;
+      }
+      h1 {
+        font-size: 3rem;
+        color: #eae9e8;
+      }
+      &-buttons {
+        display: flex;
+        flex-direction: column;
+        a {
+          color: #eae9e8;
+        }
+      }
+    }
+
+    .preview-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    #preaching-word-image {
+      width: 95%;
+    }
+    #connection-meeting {
+      flex-direction: column-reverse;
+    }
+    #samuel-series {
+      flex-direction: column;
+      img {
+        -webkit-mask-image: linear-gradient(to top, transparent 0, black 75%);
+        mask-image: linear-gradient(to top, transparent 0, black 75%);
+      }
+    }
+
+    .series-promo {
+      display: flex;
+      flex-flow: column-reverse;
+      align-items: center;
+      padding-bottom: 2vh;
+      &-desc {
+        width: 90%;
+      }
+      img {
+        width: 90%;
+      }
     }
   }
 }

@@ -15,22 +15,23 @@ $gold: #e8b021;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    padding: 5vh;
+    padding-top: 5vh;
   }
   &-menu {
     display: flex;
-    width: 50%;
+    min-width: 30%;
     flex-direction: column;
-    align-items: flex-start;
-    align-self: flex-start;
+    align-items: center;
+    text-align: center;
     border-right: $green 2px solid;
     padding-right: 8px;
     box-sizing: border-box;
     ul {
       list-style: none;
-      margin: 5vh;
+      margin: 3vh;
       li {
         margin: 15px 0 15px 0;
+        padding: 3px;
         font-size: 1.5em;
         font-weight: 600;
         font-family: "Open Sans";
@@ -45,8 +46,9 @@ $gold: #e8b021;
   }
 
   &-content {
-    width: 80%;
-    margin: 5vh 10vh 5vh 10vh;
+    width: 90%;
+
+    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -62,6 +64,9 @@ $gold: #e8b021;
         margin: 3vh;
       }
     }
+    a {
+      text-align: center;
+    }
   }
 }
 @media screen and (max-width: 800px) {
@@ -70,8 +75,13 @@ $gold: #e8b021;
       flex-direction: column;
       align-items: center;
     }
+    &-menu {
+      width: 100%;
+      border: none;
+      font-size: 0.7em;
+    }
     &-content {
-      width: 98%;
+      width: 90%;
       margin: 0;
       align-items: center;
       h1 {

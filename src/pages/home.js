@@ -21,7 +21,7 @@ const liveStreamButtonText = () => {
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <div className="main-header">
         <AlertBubble />
         <div className="main-header-titles">
@@ -42,7 +42,6 @@ const Home = () => {
             />
           </div>
         </div>
-        {/* <span className="see-more-arrow" /> */}
       </div>
 
       <div className="preview-container">
@@ -72,28 +71,6 @@ const Home = () => {
       </div>
 
       <div>
-        {/* <div className={`series-promo `} id="samuel-series">
-          <img src={SecondSamuel} alt="" />
-
-          <span className="series-promo-desc">
-            <h2>Mid-week study</h2>
-            <h3>Wednesdays at 7:00pm</h3>
-            <p>
-              The book of second Samuel continues the historical account of
-              David's rise as king of Israel. The story picks up where first
-              Samuel ends, as David contends with the deaths of Saul and his
-              best friend, Jonathan, and the fight for the throne of Israel
-              begins. The book traces the rise of David to power, his fall into
-              temptation and the discipline of the Lord, and his renewal as a
-              man after God's own heart.{" "}
-            </p>
-            <Button
-              title={`Listen to 2 Samuel`}
-              size="medium"
-              link={`/bible-studies/2-Samuel`}
-            />
-          </span>
-        </div> */}
         <div className="series-promo" id="phillippians-series">
           <span className="series-promo-desc">
             <img loading="lazy" src={PhillippiansText} alt="" />
