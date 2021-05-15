@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { isMobileDevice, sanity } from "../util/index";
+import { sanity } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
 import "../css/pastor-search.scss";
 
 import Banner from "../images/pastor-search/cropped_banner.jpg";
-
-import PastorSearchMenu from "../components/pastor-search-menu";
 
 export default function PastorSearch() {
   const pageQuery = `*[_type == "page" && title == "Pastor Search"] {
@@ -96,7 +94,7 @@ export default function PastorSearch() {
             rel="noopener noreferrer"
             href={documentForDownload.documentUrl}
           >
-            Download {documentForDownload.documentTitle}
+            Download {documentForDownload.documentTitle} document
           </a>
         </>
       );
