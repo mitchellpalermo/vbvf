@@ -89,7 +89,7 @@ export default function PastorSearch() {
             blocks={textToRender.bodyText}
             serializers={serializers}
           />
-          {documentForDownload != undefined && (
+          {documentForDownload !== undefined && (
             <a
               target="blank "
               rel="noopener noreferrer"
