@@ -1,0 +1,38 @@
+$darkNavy: #2e3c49;
+$green: #4f5957;
+$gold: #e8b021;
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px $green solid;
+  border-radius: 10px;
+  margin-bottom: 5vh;
+  transition-property: height;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+
+  &.collapsed {
+    ul {
+      height: 5vh;
+      visibility: hidden;
+    }
+  }
+  &.visible {
+    height: auto;
+    ul {
+      visibility: visible;
+      li {
+        text-align: center;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  span {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: $gold;
+  }
+}

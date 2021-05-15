@@ -3,7 +3,7 @@ import FacebookLogo from "../images/logos/facebook_logo.png";
 import InstagramLogo from "../images/logos/instagram_logo.png";
 import "../css/footer.scss";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,8 +25,14 @@ const Footer = () => {
           <Link to="/terms-and-conditions">Terms and Conditions</Link>
         </li>
       </ul>
-
-      <p className="footer-copyright">&#169; 2019 Verse By Verse Fellowship</p>
+      <p className="footer-copyright">
+        &#169; {new Date().getFullYear()} Verse By Verse Fellowship
+      </p>
+      {useLocation().pathname === "/" && (
+        <a id="sanity-link" href="https://www.sanity.io">
+          Structured content powered by Sanity.io
+        </a>
+      )}
     </div>
   );
 };
