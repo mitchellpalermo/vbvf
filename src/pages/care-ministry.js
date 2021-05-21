@@ -5,14 +5,12 @@ import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import ScriptureVerse from "../components/scripture-verse";
 
 export default function CareMinistry() {
-  const [faq, setFaq] = useState();
+  const [pageData, setPageData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const query = `*[_type == "faq" && title == "Counseling Ministry"]{
-      faqs
-  }`;
+  const query = `*[_type == "page" && title == "Care Ministries"]{...}`;
   useEffect(() => {
     sanity.fetch(query).then((results) => {
-      setFaq(results[0].faqs);
+      setPageData(results[0]);
       setIsLoading(!isLoading);
     });
     //eslint-disable-next-line
@@ -25,9 +23,9 @@ export default function CareMinistry() {
         src="https://player.vimeo.com/video/508963469?color=ffffff&title=0&byline=0&portrait=0"
         width="640"
         height="360"
-        frameborder="0"
+        frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
 
       <div className="care-ministries-row vision">
@@ -93,7 +91,7 @@ export default function CareMinistry() {
         </p>
       </div>
       <h3>FAQ</h3>
-      <FrequentlyAskedQuestions layout="vertical" faq={faq} />
+      <FrequentlyAskedQuestions layout="vertical" faq={pageData?.faq.faqs} />
     </div>
   );
 }

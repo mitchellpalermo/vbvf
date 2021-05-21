@@ -11,27 +11,28 @@ import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import AlertBubble from "../components/alert-bubble";
 
 export default function YouthMinistry() {
-  const faqQuery = `*[_type == "faq" && title == "Youth Ministry"] {
-    faqs
+  const query = `*[_type == "page" && title == "Youth Ministry"]{
+    paragraphs,
+    scripture,
+    videoId,
+    faq,
+    ministryLeader->,
+    documents
   }`;
-  const personQuery = `*[_type == "person" && role == "Associate Pastor" && department == "Youth Ministry"] `;
 
-  const [faq, setFaq] = useState([]);
+  const [pageData, setPageData] = useState([]);
   const [faqIsLoading, setFaqIsLoading] = useState(true);
-  const [person, setPerson] = useState();
   const [personIsLoading, setPersonIsLoading] = useState(true);
 
   useEffect(() => {
-    sanity.fetch(faqQuery).then((results) => {
-      setFaq(results[0].faqs);
+    sanity.fetch(query).then((results) => {
+      console.log(results[0]);
+      setPageData(results[0]);
       setFaqIsLoading(!faqIsLoading);
-    });
-    sanity.fetch(personQuery).then((results) => {
-      setPerson(results[0]);
       setPersonIsLoading(!personIsLoading);
     });
     //eslint-disable-next-line
-  }, [faqQuery, personQuery]);
+  }, [query]);
 
   return (
     <div className="youth">
@@ -62,7 +63,11 @@ export default function YouthMinistry() {
       </div>
 
       <h2>Logos FAQ</h2>
-      {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
+      {faqIsLoading ? (
+        <Spinner />
+      ) : (
+        <FrequentlyAskedQuestions faq={pageData.faq.faqs} layout="vertical" />
+      )}
 
       <div className="youth-sign-up">
         <img src={Volunteer} alt="" />
@@ -84,11 +89,13 @@ export default function YouthMinistry() {
           <Spinner />
         ) : (
           <StaffInfo
-            name={person.name}
-            role={person.role}
-            email={person.email}
-            bio={person.bio}
-            image={sanityUrlFor(person.image).width(500).url()}
+            name={pageData?.ministryLeader.name}
+            role={pageData?.ministryLeader.role}
+            email={pageData?.ministryLeader.email}
+            bio={pageData?.ministryLeader.bio}
+            image={sanityUrlFor(pageData?.ministryLeader.image)
+              .width(500)
+              .url()}
             alt=""
           />
         )}
