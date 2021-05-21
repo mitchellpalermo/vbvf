@@ -3,6 +3,7 @@ import LogosLogo from "../images/logos/logos-logo.png";
 import Volunteer from "../images/youth_assets/volunteer_youth.jpg";
 import "../css/youth-ministry.scss";
 import { sanity, sanityUrlFor } from "../util/index";
+import PortableText from "@sanity/block-content-to-react";
 import ScriptureVerse from "../components/scripture-verse";
 import StaffInfo from "../components/staff-info";
 import Button from "../components/button";
@@ -20,15 +21,34 @@ export default function YouthMinistry() {
     documents
   }`;
 
+  const serializers = {
+    //this helps react understand how to present links
+    marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+        return <a href={href}>{children}</a>;
+      },
+      list: (props) => {
+        const { type } = props;
+        const bullet = type === "bullet";
+        if (bullet) {
+          return <ul>{props.children}</ul>;
+        }
+        return <ol>{props.children}</ol>;
+      },
+      listItem: (props) => <li>{props.children}</li>,
+    },
+  };
+
   const [pageData, setPageData] = useState([]);
-  const [faqIsLoading, setFaqIsLoading] = useState(true);
+  const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
   const [personIsLoading, setPersonIsLoading] = useState(true);
 
   useEffect(() => {
     sanity.fetch(query).then((results) => {
       console.log(results[0]);
       setPageData(results[0]);
-      setFaqIsLoading(!faqIsLoading);
+      setPageDataIsLoading(!pageDataIsLoading);
       setPersonIsLoading(!personIsLoading);
     });
     //eslint-disable-next-line
@@ -46,24 +66,27 @@ export default function YouthMinistry() {
       </div>
 
       <div className="youth-description">
-        <ScriptureVerse
-          verse="Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching."
-          reference="1 Timothy 4:12-16"
-        />
-        <p>
-          Logos Student Ministries desires to see students grow in the word of
-          God while being intentional about living out the truth of the word of
-          God. We want to be a community of people that provide the freedom to
-          wrestle with the text while cultivating and facilitating the spiritual
-          growth and development of our students. We want to see every student
-          in Logos Student Ministries grow in their reliance of scripture, while
-          operating in an attitude of service, as they grow in grace in a
-          lifestyle of true Gospel witness.
-        </p>
+        {pageDataIsLoading ? (
+          <Spinner />
+        ) : (
+          <>
+            <ScriptureVerse
+              verse={
+                "Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching."
+              }
+              reference="1 Timothy 4:12-16"
+            />
+
+            <PortableText
+              blocks={pageData?.paragraphs[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        )}
       </div>
 
       <h2>Logos FAQ</h2>
-      {faqIsLoading ? (
+      {pageDataIsLoading ? (
         <Spinner />
       ) : (
         <FrequentlyAskedQuestions faq={pageData.faq.faqs} layout="vertical" />

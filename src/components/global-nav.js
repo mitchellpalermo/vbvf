@@ -153,9 +153,9 @@ const GlobalNav = (props) => {
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem>
+            {/* <NavItem>
               <NavLink href="/pastor-search">Pastor Search</NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink href="/registration-redirect">Events</NavLink>
             </NavItem>
