@@ -71,13 +71,13 @@ export default function YouthMinistry() {
         ) : (
           <>
             <ScriptureVerse
-              verse={
-                "Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching."
-              }
-              reference="1 Timothy 4:12-16"
+              verse={pageData.scripture.verseText[0]}
+              reference={pageData.scripture.reference}
             />
 
             <PortableText
+              renderContainerOnSingleChild={true}
+              className="youth-description-mission"
               blocks={pageData?.paragraphs[0].bodyText}
               serializers={serializers}
             />

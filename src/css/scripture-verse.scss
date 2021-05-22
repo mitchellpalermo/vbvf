@@ -1,4 +1,4 @@
-.scripture-container {
+.scripture {
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,6 @@
     font-size: 1em;
   }
   .scripture-verse {
-    font-size: 1.2em;
     font-weight: 200;
     color: rgb(202, 187, 187);
     mix-blend-mode: difference;
