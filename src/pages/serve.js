@@ -45,6 +45,7 @@ export default function Serve() {
       setPageData(result[0]);
       setPageDataIsLoading(!pageDataIsLoading);
     });
+    //eslint-disable-next-line
   }, [query]);
 
   return (

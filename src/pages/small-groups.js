@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "../css/small-groups.scss";
-import Matthew from "../images/leadership_photos/Matthew_McWaters.jpeg";
+
 import StaffInfo from "../components/staff-info";
 import Logo from "../images/logos/small_group_logo.svg";
-
-import content from "../content/small-groups-ministry-content";
+import PortableText from "@sanity/block-content-to-react";
 import Button from "../components/button";
 import Praying from "../images/small_groups/praying.jpg";
 import AlertBubble from "../components/alert-bubble";
 
+import { sanity } from "../util/index";
+import { Spinner } from "reactstrap";
+import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
+
 export default function SmallGroups() {
+  const query = `*[_type == "page" && title == "Small Groups"]{
+    paragraphs,
+    faq,
+    ministryLeader->
+  }`;
+
+  const serializers = {
+    //this helps react understand how to present links
+    marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+        return <a href={href}>{children}</a>;
+      },
+      list: (props) => {
+        const { type } = props;
+        const bullet = type === "bullet";
+        if (bullet) {
+          return <ul>{props.children}</ul>;
+        }
+        return <ol>{props.children}</ol>;
+      },
+      listItem: (props) => <li>{props.children}</li>,
+    },
+  };
+
+  const [pageData, setPageData] = useState([]);
+  const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
+
+  useEffect(() => {
+    sanity.fetch(query).then((result) => {
+      setPageData(result[0]);
+      setPageDataIsLoading(!pageDataIsLoading);
+    });
+    //eslint-disable-next-line
+  }, [query]);
+
   return (
     <div className="small-group">
       <div className="small-group-header">
@@ -23,7 +62,15 @@ export default function SmallGroups() {
       </div>
       <AlertBubble />
       <div className="small-group-info">
-        <p>{content.ministrySummary}</p>
+        {pageDataIsLoading ? (
+          <Spinner />
+        ) : (
+          <PortableText
+            renderContainerOnSingleChild={true}
+            blocks={pageData.paragraphs[0].bodyText}
+            serializers={serializers}
+          />
+        )}
         <img alt="" src={Praying} />
       </div>
       <div className="small-group-button-container">
@@ -42,30 +89,19 @@ export default function SmallGroups() {
       </div>
 
       <div className="small-group-faq">
-        <>
-          {content.faq.map((object) => {
-            return (
-              <div>
-                <span>
-                  <img //in order to pass images in as props, path needs to be predefined
-                    src={require(`../images/small_groups/${object?.image}.svg`)}
-                    alt=""
-                  />
-                  <h4>{object.question}</h4>
-                </span>
-                <p>{object.answer}</p>
-              </div>
-            );
-          })}
-        </>
+        {pageDataIsLoading ? (
+          <Spinner />
+        ) : (
+          <FrequentlyAskedQuestions faq={pageData?.faq.faqs} />
+        )}
       </div>
 
       <StaffInfo
-        name={content.leader.name}
-        role={content.leader.role}
-        email={content.leader.email}
-        image={Matthew}
-        bio={content.leader.bio}
+        name={pageData.ministryLeader.name}
+        role={pageData.ministryLeader.role}
+        email={pageData.ministryLeader.email}
+        image={pageData.ministryLeader.image}
+        bio={pageData.ministryLeader.bio}
       />
     </div>
   );
