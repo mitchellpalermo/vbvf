@@ -9,7 +9,7 @@ import Button from "../components/button";
 import Praying from "../images/small_groups/praying.jpg";
 import AlertBubble from "../components/alert-bubble";
 
-import { sanity } from "../util/index";
+import { sanity, sanityUrlFor } from "../util/index";
 import { Spinner } from "reactstrap";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 
@@ -66,6 +66,7 @@ export default function SmallGroups() {
           <Spinner />
         ) : (
           <PortableText
+            className="small-group-info-paragraph"
             renderContainerOnSingleChild={true}
             blocks={pageData.paragraphs[0].bodyText}
             serializers={serializers}
@@ -88,21 +89,29 @@ export default function SmallGroups() {
         />
       </div>
 
-      <div className="small-group-faq">
-        {pageDataIsLoading ? (
-          <Spinner />
-        ) : (
-          <FrequentlyAskedQuestions faq={pageData?.faq.faqs} />
-        )}
-      </div>
+      {pageDataIsLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <div className="small-group-faq">
+            <FrequentlyAskedQuestions
+              faq={pageData?.faq.faqs}
+              layout="compact"
+            />
+          </div>
 
-      <StaffInfo
-        name={pageData.ministryLeader.name}
-        role={pageData.ministryLeader.role}
-        email={pageData.ministryLeader.email}
-        image={pageData.ministryLeader.image}
-        bio={pageData.ministryLeader.bio}
-      />
+          <StaffInfo
+            name={pageData?.ministryLeader.name}
+            role={pageData?.ministryLeader.role}
+            email={pageData?.ministryLeader.email}
+            image={sanityUrlFor(pageData?.ministryLeader.image)
+              .width(500)
+              .url()}
+            alt=""
+            bio={pageData?.ministryLeader.bio}
+          />
+        </>
+      )}
     </div>
   );
 }
