@@ -11,13 +11,13 @@ export default function WhatsHappening() {
   const [announcement, setAnnouncement] = useState();
   const [noAnnouncement, setNoAnnouncement] = useState(false);
   const [isAnnouncementLoading, setIsAnnouncementLoading] = useState(true);
-  const [faq, setFaq] = useState();
+  const [pageData, setPageData] = useState();
   const [isFaqLoading, setIsFaqLoading] = useState(true);
   // const [series, setSeries] = useState();
   // const [isSeriesLoading, setIsSeriesLoading] = useState(true);
 
   const announcementQuery = `*[_type == "biWeeklyAnnouncements" ] | order(_createdAt desc) [0] `;
-  const faqQuery = `*[_type == "faq" && title == "About Page"]{faqs}`;
+  const query = `*[_type == "page" && title == "About Page"]{...}`;
   // const seriesQuery = `*[_type == "series" && endDate > $now] {title, meetingTime, seriesImage}`;
   useEffect(() => {
     sanity
@@ -34,15 +34,14 @@ export default function WhatsHappening() {
       .catch(() => {
         setNoAnnouncement(true);
       });
-    //eslint-disable-next-line
-  }, []);
-  useEffect(() => {
-    sanity.fetch(faqQuery).then((response) => {
-      setFaq(response[0].faqs.slice(0, 4));
+
+    sanity.fetch(query).then((response) => {
+      setPageData(response[0]);
       setIsFaqLoading(false);
     });
     //eslint-disable-next-line
   }, []);
+
   // useEffect(() => {
   //   sanity.fetch(seriesQuery).then((response) => {
   //     setSeries(response);
@@ -133,7 +132,10 @@ export default function WhatsHappening() {
       ) : (
         <div className="announcements-faq">
           <h2>General FAQs</h2>
-          <FrequentlyAskedQuestions faq={faq} layout="compact" />
+          <FrequentlyAskedQuestions
+            faq={pageData.faq.faqs.slice(0, 4)}
+            layout="compact"
+          />
         </div>
       )}
     </div>

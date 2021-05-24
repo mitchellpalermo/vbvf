@@ -3,6 +3,7 @@ import LogosLogo from "../images/logos/logos-logo.png";
 import Volunteer from "../images/youth_assets/volunteer_youth.jpg";
 import "../css/youth-ministry.scss";
 import { sanity, sanityUrlFor } from "../util/index";
+import PortableText from "@sanity/block-content-to-react";
 import ScriptureVerse from "../components/scripture-verse";
 import StaffInfo from "../components/staff-info";
 import Button from "../components/button";
@@ -11,27 +12,45 @@ import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import AlertBubble from "../components/alert-bubble";
 
 export default function YouthMinistry() {
-  const faqQuery = `*[_type == "faq" && title == "Youth Ministry"] {
-    faqs
+  const query = `*[_type == "page" && title == "Youth Ministry"]{
+    paragraphs,
+    scripture,
+    faq,
+    ministryLeader->,
   }`;
-  const personQuery = `*[_type == "person" && role == "Associate Pastor" && department == "Youth Ministry"] `;
 
-  const [faq, setFaq] = useState([]);
-  const [faqIsLoading, setFaqIsLoading] = useState(true);
-  const [person, setPerson] = useState();
+  const serializers = {
+    //this helps react understand how to present links
+    marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+        return <a href={href}>{children}</a>;
+      },
+      list: (props) => {
+        const { type } = props;
+        const bullet = type === "bullet";
+        if (bullet) {
+          return <ul>{props.children}</ul>;
+        }
+        return <ol>{props.children}</ol>;
+      },
+      listItem: (props) => <li>{props.children}</li>,
+    },
+  };
+
+  const [pageData, setPageData] = useState([]);
+  const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
   const [personIsLoading, setPersonIsLoading] = useState(true);
 
   useEffect(() => {
-    sanity.fetch(faqQuery).then((results) => {
-      setFaq(results[0].faqs);
-      setFaqIsLoading(!faqIsLoading);
-    });
-    sanity.fetch(personQuery).then((results) => {
-      setPerson(results[0]);
+    sanity.fetch(query).then((results) => {
+      console.log(results[0]);
+      setPageData(results[0]);
+      setPageDataIsLoading(!pageDataIsLoading);
       setPersonIsLoading(!personIsLoading);
     });
     //eslint-disable-next-line
-  }, [faqQuery, personQuery]);
+  }, [query]);
 
   return (
     <div className="youth">
@@ -45,24 +64,31 @@ export default function YouthMinistry() {
       </div>
 
       <div className="youth-description">
-        <ScriptureVerse
-          verse="Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity. Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching."
-          reference="1 Timothy 4:12-16"
-        />
-        <p>
-          Logos Student Ministries desires to see students grow in the word of
-          God while being intentional about living out the truth of the word of
-          God. We want to be a community of people that provide the freedom to
-          wrestle with the text while cultivating and facilitating the spiritual
-          growth and development of our students. We want to see every student
-          in Logos Student Ministries grow in their reliance of scripture, while
-          operating in an attitude of service, as they grow in grace in a
-          lifestyle of true Gospel witness.
-        </p>
+        {pageDataIsLoading ? (
+          <Spinner />
+        ) : (
+          <>
+            <ScriptureVerse
+              verse={pageData.scripture.verseText[0]}
+              reference={pageData.scripture.reference}
+            />
+
+            <PortableText
+              renderContainerOnSingleChild={true}
+              className="youth-description-mission"
+              blocks={pageData?.paragraphs[0].bodyText}
+              serializers={serializers}
+            />
+          </>
+        )}
       </div>
 
       <h2>Logos FAQ</h2>
-      {faqIsLoading ? <Spinner /> : <FrequentlyAskedQuestions faq={faq} />}
+      {pageDataIsLoading ? (
+        <Spinner />
+      ) : (
+        <FrequentlyAskedQuestions faq={pageData.faq.faqs} layout="vertical" />
+      )}
 
       <div className="youth-sign-up">
         <img src={Volunteer} alt="" />
@@ -84,11 +110,13 @@ export default function YouthMinistry() {
           <Spinner />
         ) : (
           <StaffInfo
-            name={person.name}
-            role={person.role}
-            email={person.email}
-            bio={person.bio}
-            image={sanityUrlFor(person.image).width(500).url()}
+            name={pageData?.ministryLeader.name}
+            role={pageData?.ministryLeader.role}
+            email={pageData?.ministryLeader.email}
+            bio={pageData?.ministryLeader.bio}
+            image={sanityUrlFor(pageData?.ministryLeader.image)
+              .width(500)
+              .url()}
             alt=""
           />
         )}

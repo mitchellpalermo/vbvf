@@ -7,21 +7,19 @@ import AboutMenu from "./about-menu";
 import AlertBubble from "./alert-bubble";
 
 export default function FAQ() {
-  const faqQuery = `*[_type == "faq" && title == "About Page"] {
-    faqs
-  }`;
+  const query = `*[_type == "page" && title == "About Page"]{...}`;
 
-  const [faq, setFaq] = useState([]);
+  const [pageData, setPageData] = useState([]);
   const [faqIsLoading, setFaqIsLoading] = useState(true);
 
   useEffect(() => {
-    sanity.fetch(faqQuery).then((results) => {
-      setFaq(results[0].faqs);
+    sanity.fetch(query).then((results) => {
+      setPageData(results[0]);
 
       setFaqIsLoading(!faqIsLoading);
     });
     //eslint-disable-next-line
-  }, [faqQuery]);
+  }, [query]);
 
   return (
     <div className="faq">
@@ -32,7 +30,10 @@ export default function FAQ() {
       ) : (
         <>
           <h1>FAQ</h1>
-          <FrequentlyAskedQuestions faq={faq} layout="vertical" />
+          <FrequentlyAskedQuestions
+            faq={pageData?.faq.faqs}
+            layout="vertical"
+          />
         </>
       )}
     </div>

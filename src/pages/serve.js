@@ -1,15 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/serve.scss";
 import Ben from "../images/serve/ben_coffee.jpg";
 import Cathy from "../images/serve/cathy_greeting.jpg";
 import KidsMinistry from "../images/serve/kids_ministry.jpg";
 import Levi from "../images/serve/levi_setup.jpg";
 import John from "../images/serve/john_praying.jpg";
-
+import { sanity } from "../util/index";
+import PortableText from "@sanity/block-content-to-react";
 import ScriptureVerse from "../components/scripture-verse";
 import Button from "../components/button";
+import { Spinner } from "reactstrap";
 
 export default function Serve() {
+  const query = `*[_type == "page" && title == "Serve"]{
+    paragraphs,
+    scripture,
+  }`;
+
+  const serializers = {
+    //this helps react understand how to present links
+    marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+        return <a href={href}>{children}</a>;
+      },
+      list: (props) => {
+        const { type } = props;
+        const bullet = type === "bullet";
+        if (bullet) {
+          return <ul>{props.children}</ul>;
+        }
+        return <ol>{props.children}</ol>;
+      },
+      listItem: (props) => <li>{props.children}</li>,
+    },
+  };
+
+  const [pageData, setPageData] = useState([]);
+  const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
+
+  useEffect(() => {
+    sanity.fetch(query).then((result) => {
+      setPageData(result[0]);
+      setPageDataIsLoading(!pageDataIsLoading);
+    });
+    //eslint-disable-next-line
+  }, [query]);
+
   return (
     <div className="serve-container">
       <div className="serve-photo-collage">
@@ -29,39 +66,45 @@ export default function Serve() {
         <h1>Serve Together</h1>
       </div>
 
-      <div className="first-row">
-        <p>
-          We believe that our church exists to glorify God through teaching the
-          word and equipping believers with truth that can be relied upon. Part
-          of glorifying God is serving the body of Christ.{" "}
-        </p>
-        <ScriptureVerse
-          verse='"Whatever you do, work heartily, as for the Lord and not for men,
-            knowing that from the Lord you will receive the inheritance as your
-            reward. You are serving the Lord Christ"'
-          reference="Colossians 3:23-24"
-        />
-      </div>
+      {pageDataIsLoading ? (
+        <Spinner />
+      ) : (
+        <>
+          <div className="first-row">
+            <PortableText
+              renderContainerOnSingleChild={true}
+              className="first-row-paragraph"
+              blocks={pageData.paragraphs[0].bodyText}
+              serializers={serializers}
+            />
 
-      <div className="second-row">
-        <div className="button-section">
-          <p>
-            Our church has many different areas to get involved with, all
-            equally important. Serving with one another also provides an
-            opportunity to form relationships with others. Click the button
-            below to get started.
-          </p>
-          <div className="button-wrapper">
-            <Button
-              size="large"
-              color="green"
-              title="Get Involved"
-              link="https://vbvf.churchcenter.com/people/forms/33404?open-in-church-center-modal=true"
+            <ScriptureVerse
+              verse={pageData.scripture.verseText[0]}
+              reference={pageData.scripture.reference}
             />
           </div>
-        </div>
-        <img src={John} alt="volunteer praying with children" />
-      </div>
+
+          <div className="second-row">
+            <div className="button-section">
+              <PortableText
+                renderContainerOnSingleChild={true}
+                className="second-row-paragraph"
+                blocks={pageData?.paragraphs[1].bodyText}
+                serializers={serializers}
+              />
+              <div className="button-wrapper">
+                <Button
+                  size="large"
+                  color="green"
+                  title="Get Involved"
+                  link="https://vbvf.churchcenter.com/people/forms/33404?open-in-church-center-modal=true"
+                />
+              </div>
+            </div>
+            <img src={John} alt="volunteer praying with children" />
+          </div>
+        </>
+      )}
     </div>
   );
 }
