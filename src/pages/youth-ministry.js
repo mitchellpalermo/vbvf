@@ -15,10 +15,8 @@ export default function YouthMinistry() {
   const query = `*[_type == "page" && title == "Youth Ministry"]{
     paragraphs,
     scripture,
-    videoId,
     faq,
     ministryLeader->,
-    documents
   }`;
 
   const serializers = {

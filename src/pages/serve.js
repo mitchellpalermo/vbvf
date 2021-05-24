@@ -15,7 +15,6 @@ export default function Serve() {
   const query = `*[_type == "page" && title == "Serve"]{
     paragraphs,
     scripture,
-    faq,
   }`;
 
   const serializers = {
