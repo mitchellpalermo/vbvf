@@ -25,7 +25,7 @@ const Home = () => {
     paragraphs,
     scripture,
     ministryLeader->
-  }, 'childrensUnits': *[_type == "childrensUnit"][0...3]{
+  }, 'childrensUnits': *[_type == "childrensUnit"] |order(_createdAt desc)[0...3]{
     title,
     unitNumber,
     seriesImage,
@@ -145,9 +145,9 @@ const Home = () => {
                 {childrensUnits?.map((unit) => (
                   <Preview
                     title={unit.title}
-                    buttonTitle="View lesson"
+                    buttonTitle="Watch now"
                     link={`/childrens-content/unit-${unit.unitNumber}`}
-                    image={sanityUrlFor(unit.seriesImage).width(400)}
+                    image={sanityUrlFor(unit.seriesImage).width(450)}
                   />
                 ))}
               </div>

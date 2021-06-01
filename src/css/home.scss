@@ -56,10 +56,18 @@ body {
   }
 
   .childrens-content {
+    background-image: url(../images/childrens_ministry/Intersect.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 3vh;
+    h3 {
+      text-align: center;
+      font-family: "Work Sans", sans-serif;
+    }
     &-preview {
       display: flex;
       justify-content: space-evenly;
@@ -130,6 +138,12 @@ body {
     .preview-container {
       flex-direction: column;
       align-items: center;
+    }
+    .childrens-content {
+      &-preview {
+        flex-direction: column;
+        align-items: center;
+      }
     }
     #preaching-word-image {
       width: 95%;
