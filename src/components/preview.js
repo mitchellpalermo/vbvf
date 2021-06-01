@@ -10,7 +10,7 @@ export default function Preview(props) {
       <p>{props.body}</p>
       <Button
         size="medium"
-        color="green"
+        color={props.color ? props.color : "green"}
         link={props.link}
         title={props.buttonTitle}
       />

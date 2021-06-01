@@ -27,12 +27,8 @@ export default function AttendService() {
           Sundays at 9:00am and 11:00am. Our worship service consists of live,
           contemporary worship music and verse-by-verse Bible preaching.
         </p>
-        <h4>Childcare</h4>
-        <p>
-          Our 9:00am service will have childcare available for all ages. For the
-          time being, our 11:00am service will only provide childcare for
-          children 2 and under.{" "}
-        </p>
+        <h4>Children's Ministry</h4>
+        <p>Both our services will have childcare available for all ages. </p>
         <div className="attend-desc-childrens">
           <img src={Exclamation} alt="" />
           <p>
@@ -53,12 +49,8 @@ export default function AttendService() {
         </p>
         <h4>Safety Protocols</h4>
         <p>
-          Attendees at our in-person services are asked to follow appropriate
-          safety measures, including wearing masks when not seated (for 5yrs and
-          older), social distancing in the building and proper sanitizing
-          practices. We also feature safety seating in our Worship Center for
-          high-risk individuals who desire further distancing and a private
-          entry to our building.
+          Masks are now optional in all areas except the childrens' wing where
+          they are still required.
         </p>
         <h4>Livestream</h4>
         <p>

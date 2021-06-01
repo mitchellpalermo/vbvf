@@ -3,19 +3,21 @@ import "../css/study-aggregator.scss";
 import { Link } from "react-router-dom";
 import { sanity, sanityUrlFor, isOver } from "../util/index";
 import AlertBubble from "../components/alert-bubble";
-
+import { Spinner } from "reactstrap";
 export default function StudyAggregator() {
   const query = `*[_type == "series"] | order(endDate desc) {
     title,
     seriesImage,
-    endDate
+    endDate,
+    teacher->
   }`;
   const [series, setSeries] = useState([]);
+  const [isSeriesLoading, setIsSeriesLoading] = useState(true);
 
   useEffect(() => {
     sanity.fetch(query).then((results) => {
-      console.log(results);
       setSeries(results);
+      setIsSeriesLoading(false);
     });
   }, [query]);
   const studies = series.map((study) => (
@@ -34,6 +36,18 @@ export default function StudyAggregator() {
         </span>
         <img src={sanityUrlFor(study.seriesImage).width(400).url()} alt="" />
         <h3>{study.title}</h3>
+        {/* <span>
+          {study?.teacher?.image && (
+            <img
+              src={sanityUrlFor(study?.teacher?.image)
+                .auto("format")
+                .height(150)
+                .width(100)
+                .fit("clip")}
+            />
+          )}
+          {study?.teacher?.name}{" "}
+        </span> */}
       </div>
     </Link>
   ));
@@ -55,7 +69,9 @@ export default function StudyAggregator() {
           .
         </p>
       </div>
-      <div className="studies-array">{studies}</div>
+      <div className="studies-array">
+        {isSeriesLoading ? <Spinner /> : studies}
+      </div>
     </div>
   );
 }

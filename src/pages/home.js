@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/home.scss";
 import Button from "../components/button";
+import { Spinner } from "reactstrap";
 import PhillippiansText from "../images/home_page/phillippians_text.png";
-
+import { sanity, sanityUrlFor } from "../util/index";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
 import DailyBread from "../images/home_page/daily_bread.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
@@ -20,6 +21,51 @@ const liveStreamButtonText = () => {
 };
 
 const Home = () => {
+  const query = `{'pageData': *[_type == "page" && title == "Home"]{
+    paragraphs,
+    scripture,
+    ministryLeader->
+  }, 'childrensUnits': *[_type == "childrensUnit"] |order(_createdAt desc)[0...3]{
+    title,
+    unitNumber,
+    seriesImage,
+  }}`;
+
+  //eslint-disable-next-line
+  const serializers = {
+    //this helps react understand how to present links
+    marks: {
+      link: ({ mark, children }) => {
+        const { href } = mark;
+        return <a href={href}>{children}</a>;
+      },
+      list: (props) => {
+        const { type } = props;
+        const bullet = type === "bullet";
+        if (bullet) {
+          return <ul>{props.children}</ul>;
+        }
+        return <ol>{props.children}</ol>;
+      },
+      listItem: (props) => <li>{props.children}</li>,
+    },
+  };
+
+  //eslint-disable-next-line
+  const [pageData, setPageData] = useState([]);
+  const [childrensUnits, setChildrensUnits] = useState();
+  const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
+
+  useEffect(() => {
+    sanity.fetch(query).then((result) => {
+      setChildrensUnits(result.childrensUnits);
+      setPageData(result.pageData);
+
+      setPageDataIsLoading(!pageDataIsLoading);
+    });
+    //eslint-disable-next-line
+  }, [query]);
+
   return (
     <div className="home">
       <div className="main-header">
@@ -47,9 +93,9 @@ const Home = () => {
       <div className="preview-container">
         <Preview
           title="Women's Bible Study"
-          body="Join us for a study through the book of Esther. Meeting on Tuesdays at 10am in the Flex Room."
+          body="Join us for a study through the book of 1 John. Meeting on Tuesdays at 10am in the Flex Room."
           buttonTitle="Listen to Bible teaching"
-          link="/bible-studies/Esther"
+          link="/bible-studies/1-John"
           image={WomensStudy}
         />
         <Preview
@@ -90,6 +136,26 @@ const Home = () => {
               title="Listen to Philippians"
             />
           </span>
+        </div>
+        <div className="childrens-content">
+          {pageDataIsLoading ? (
+            <Spinner />
+          ) : (
+            <>
+              <h3>Check out our latest kids content!</h3>
+              <div className="childrens-content-preview">
+                {childrensUnits?.map((unit) => (
+                  <Preview
+                    title={unit.title}
+                    buttonTitle="Watch now"
+                    color="gold"
+                    link={`/childrens-content/unit-${unit.unitNumber}`}
+                    image={sanityUrlFor(unit.seriesImage).width(450)}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
