@@ -49,6 +49,15 @@ $gold: #e8b021;
       h3 {
         white-space: nowrap;
       }
+      span {
+        display: flex;
+        place-content: center;
+
+        font-size: 1em;
+        img {
+          clip-path: circle(30%);
+        }
+      }
     }
   }
 

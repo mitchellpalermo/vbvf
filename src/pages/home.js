@@ -31,6 +31,7 @@ const Home = () => {
     seriesImage,
   }}`;
 
+  //eslint-disable-next-line
   const serializers = {
     //this helps react understand how to present links
     marks: {
@@ -50,6 +51,7 @@ const Home = () => {
     },
   };
 
+  //eslint-disable-next-line
   const [pageData, setPageData] = useState([]);
   const [childrensUnits, setChildrensUnits] = useState();
   const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
@@ -91,9 +93,9 @@ const Home = () => {
       <div className="preview-container">
         <Preview
           title="Women's Bible Study"
-          body="Join us for a study through the book of Esther. Meeting on Tuesdays at 10am in the Flex Room."
+          body="Join us for a study through the book of 1 John. Meeting on Tuesdays at 10am in the Flex Room."
           buttonTitle="Listen to Bible teaching"
-          link="/bible-studies/Esther"
+          link="/bible-studies/1-John"
           image={WomensStudy}
         />
         <Preview
