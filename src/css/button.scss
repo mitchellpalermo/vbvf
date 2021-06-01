@@ -50,3 +50,12 @@ $red: #cc2e23;
     color: $red;
   }
 }
+.gold {
+  background: $gold;
+  border: solid 2px $gold;
+  color: $darkNavy;
+  &:hover {
+    background: transparent;
+    color: $darkNavy;
+  }
+}

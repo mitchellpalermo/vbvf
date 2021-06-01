@@ -146,6 +146,7 @@ const Home = () => {
                   <Preview
                     title={unit.title}
                     buttonTitle="Watch now"
+                    color="gold"
                     link={`/childrens-content/unit-${unit.unitNumber}`}
                     image={sanityUrlFor(unit.seriesImage).width(450)}
                   />
