@@ -42,6 +42,7 @@ export default function StudyPage() {
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
       setSeries(series[0]);
+      console.log(series);
       setSeriesOver(isOver(series[0].endDate)); //determining if series is over
     });
     sanity.fetch(lessonQuery, params).then((lessons) => {
