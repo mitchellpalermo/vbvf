@@ -58,9 +58,9 @@ export default function PastorSearch() {
         hearts and lives for Christ.
       </p>
       <p>
-        We aim to model Jesus; inviting one another to grow toward maturity in
+        We aim to model Jesus, inviting one another to grow toward maturity in
         Him with an anticipation of our eternal reward. The Senior Pastor will
-        join this elder-led congregation as shepherds, moving the congregation
+        join this elder-led congregation as a shepherd, moving the congregation
         toward spiritual maturity and equipping them for the work of the
         ministry.
       </p>
