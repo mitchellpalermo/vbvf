@@ -117,7 +117,8 @@ const Home = () => {
       </div>
 
       <div>
-        <div className="series-promo" id="phillippians-series">
+        {/* INSERT NEXT SERMON SERIES HERE */}
+        {/* <div className="series-promo" id="phillippians-series">
           <span className="series-promo-desc">
             <img loading="lazy" src={PhillippiansText} alt="" />
             <h3>Sundays at 9:00am and 11:00am</h3>
@@ -136,7 +137,7 @@ const Home = () => {
               title="Listen to Philippians"
             />
           </span>
-        </div>
+        </div> */}
         <div className="childrens-content">
           {pageDataIsLoading ? (
             <Spinner />
