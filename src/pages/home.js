@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../css/home.scss";
 import Button from "../components/button";
 import { Spinner } from "reactstrap";
-import PhillippiansText from "../images/home_page/phillippians_text.png";
 import { sanity, sanityUrlFor } from "../util/index";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
 import DailyBread from "../images/home_page/daily_bread.jpg";
