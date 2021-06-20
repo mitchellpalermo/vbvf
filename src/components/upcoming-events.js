@@ -10,7 +10,6 @@ export default function UpcomingEvents(props) {
         `https://api.churchcenter.com/registrations/v2/events?order=starts_at&filter=active,published&per_page=100`
       )
       .then((response) => {
-        console.log(response);
         setEvents(response.data);
       });
   });

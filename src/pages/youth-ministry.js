@@ -44,7 +44,6 @@ export default function YouthMinistry() {
 
   useEffect(() => {
     sanity.fetch(query).then((results) => {
-      console.log(results[0]);
       setPageData(results[0]);
       setPageDataIsLoading(!pageDataIsLoading);
       setPersonIsLoading(!personIsLoading);

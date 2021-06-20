@@ -81,7 +81,6 @@ export default function PastorSearch() {
       let documentForDownload = pageContent?.documents?.find((document) =>
         document.documentTitle.includes(componentToShow)
       );
-      console.log(documentForDownload);
       return (
         <>
           <h1>{textToRender.paragraphTitle}</h1>

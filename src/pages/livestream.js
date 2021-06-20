@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getVideos, isOver } from "../util/index";
+import { getVideos, isOver, livestreamHappeningNow } from "../util/index";
 import { Link } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import Stream from "../components/stream";
 import { sanity } from "../util/index";
 import "../css/livestream.scss";
-import MemorialService from "../components/memorial-service";
 
 require("dotenv").config();
 
@@ -53,41 +52,41 @@ export default function Livestream() {
     });
   }, []);
 
-  const day = () => {
-    let today = new Date();
+  // const day = () => {
+  //   let today = new Date();
 
-    if (
-      today.getDay() === 3 && //wednesday
-      today.getHours() >= 18 && //between 6pm
-      today.getHours() <= 23 // and 9pm
-    ) {
-      if (process.env.REACT_APP_STREAM !== "none") {
-        //check env var for value
-        return process.env.REACT_APP_STREAM;
-      } else {
-        return "wednesday";
-      }
-    }
-    if (
-      today.getDay() === 0 && //sunday
-      today.getHours() >= 10 && //between 10am
-      today.getHours() <= 13 // and 1pm
-    ) {
-      if (process.env.REACT_APP_STREAM !== "none") {
-        //check env var for value
-        return process.env.REACT_APP_STREAM;
-      } else {
-        return "sunday";
-      }
-    } else {
-      if (process.env.REACT_APP_STREAM !== "none") {
-        //if the environment variable has been set to anything else
-        //check env var for value
-        return process.env.REACT_APP_STREAM;
-      }
-      return null;
-    }
-  };
+  //   if (
+  //     today.getDay() === 3 && //wednesday
+  //     today.getHours() >= 18 && //between 6pm
+  //     today.getHours() <= 23 // and 9pm
+  //   ) {
+  //     if (process.env.REACT_APP_STREAM !== "none") {
+  //       //check env var for value
+  //       return process.env.REACT_APP_STREAM;
+  //     } else {
+  //       return "wednesday";
+  //     }
+  //   }
+  //   if (
+  //     today.getDay() === 0 && //sunday
+  //     today.getHours() >= 10 && //between 10am
+  //     today.getHours() <= 13 // and 1pm
+  //   ) {
+  //     if (process.env.REACT_APP_STREAM !== "none") {
+  //       //check env var for value
+  //       return process.env.REACT_APP_STREAM;
+  //     } else {
+  //       return "sunday";
+  //     }
+  //   } else {
+  //     if (process.env.REACT_APP_STREAM !== "none") {
+  //       //if the environment variable has been set to anything else
+  //       //check env var for value
+  //       return process.env.REACT_APP_STREAM;
+  //     }
+  //     return null;
+  //   }
+  // };
 
   const noStreamMessage = (
     <p>
@@ -128,14 +127,14 @@ export default function Livestream() {
         </>
       ) : (
         <>
-          {day() === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
+          {livestreamHappeningNow() === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
             <Stream
               streamUrl="https://vimeo.com/event/49116/embed"
               title={wednesdaySeries.title}
               description={wednesdaySeries.description}
               seriesLink={`/bible-studies/${wednesdaySeries.title}`}
             />
-          ) : day() === "sunday" ? ( //return sunday stream
+          ) : livestreamHappeningNow() === "sunday" ? ( //return sunday stream
             <>
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
@@ -144,12 +143,7 @@ export default function Livestream() {
                 seriesLink={`/bible-studies/${sundaySeries.title}`}
               />
             </>
-          ) : day() === "memorial" ? ( // environment variable is memorial
-            // return memorial service
-            <>
-              <MemorialService />
-            </>
-          ) : day() === "guestTeacher" ? ( //returning component with no description for guest teacher
+          ) : livestreamHappeningNow() === "guestTeacher" ? ( //returning component with no description for guest teacher
             <>
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
