@@ -115,9 +115,8 @@ const Home = () => {
         />
       </div>
 
-      <div>
-        {/* INSERT NEXT SERMON SERIES HERE */}
-        {/* <div className="series-promo" id="phillippians-series">
+      {/* INSERT NEXT SERMON SERIES HERE */}
+      {/* <div className="series-promo" id="phillippians-series">
           <span className="series-promo-desc">
             <img loading="lazy" src={PhillippiansText} alt="" />
             <h3>Sundays at 9:00am and 11:00am</h3>
@@ -137,26 +136,25 @@ const Home = () => {
             />
           </span>
         </div> */}
-        <div className="childrens-content">
-          {pageDataIsLoading ? (
-            <Spinner />
-          ) : (
-            <>
-              <h3>Check out our latest kids content!</h3>
-              <div className="childrens-content-preview">
-                {childrensUnits?.map((unit) => (
-                  <Preview
-                    title={unit.title}
-                    buttonTitle="Watch now"
-                    color="gold"
-                    link={`/childrens-content/unit-${unit.unitNumber}`}
-                    image={sanityUrlFor(unit.seriesImage).width(450)}
-                  />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+      <div className="childrens-content">
+        {pageDataIsLoading ? (
+          <Spinner />
+        ) : (
+          <>
+            <h3>Check out our latest kids content!</h3>
+            <div className="childrens-content-preview">
+              {childrensUnits?.map((unit) => (
+                <Preview
+                  title={unit.title}
+                  buttonTitle="Watch now"
+                  color="gold"
+                  link={`/childrens-content/unit-${unit.unitNumber}`}
+                  image={sanityUrlFor(unit.seriesImage).width(450)}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

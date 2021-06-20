@@ -37,12 +37,10 @@ export default function StudyPage() {
     "notesUrl": notes.asset->url,
   }`;
   const params = { studyName: studyName.replace("-", " ") };
-  console.log(params);
 
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
       setSeries(series[0]);
-      console.log(series);
       setSeriesOver(isOver(series[0].endDate)); //determining if series is over
     });
     sanity.fetch(lessonQuery, params).then((lessons) => {
