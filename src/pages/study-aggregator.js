@@ -9,7 +9,7 @@ export default function StudyAggregator() {
     title,
     seriesImage,
     endDate,
-    teacher->
+    
   }`;
   const [series, setSeries] = useState([]);
   const [isSeriesLoading, setIsSeriesLoading] = useState(true);
@@ -36,18 +36,6 @@ export default function StudyAggregator() {
         </span>
         <img src={sanityUrlFor(study.seriesImage).width(400).url()} alt="" />
         <h3>{study.title}</h3>
-        {/* <span>
-          {study?.teacher?.image && (
-            <img
-              src={sanityUrlFor(study?.teacher?.image)
-                .auto("format")
-                .height(150)
-                .width(100)
-                .fit("clip")}
-            />
-          )}
-          {study?.teacher?.name}{" "}
-        </span> */}
       </div>
     </Link>
   ));
