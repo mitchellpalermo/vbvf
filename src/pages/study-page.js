@@ -27,6 +27,7 @@ export default function StudyPage() {
     childcareProvided,
     seriesImage,
     description,
+    teacher->
   }`;
 
   const lessonQuery = `*[_type == 'lesson' && series->title == $studyName] | order(lessonNumber asc) {
@@ -105,40 +106,69 @@ export default function StudyPage() {
             />
             <h1 className="study-info-title">{series?.title}</h1>
 
-            {!seriesOver && (
-              <div className="study-info-details">
-                <div>
-                  <h5>Meeting Time</h5>
-                  {!series?.meetingTime?.secondServiceTime ? ( //if there's no second service show only first service
-                    <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
-                  ) : (
-                    <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time} and ${series?.meetingTime.secondServiceTime}`}</p>
-                  )}
+            <div
+              style={{
+                gridTemplateRows: `${seriesOver ? "1fr" : "1fr 1fr"}`,
+              }}
+              className="study-info-details"
+            >
+              <span className="teacher-container">
+                {series?.teacher?.image && (
+                  <div className="teacher-container-photo">
+                    <img
+                      alt=""
+                      src={sanityUrlFor(series?.teacher?.image)
+                        .auto("format")
+                        .height(150)
+                        .width(100)
+                        .fit("clip")}
+                    />
+                  </div>
+                )}
+                <span className="supporting-text">Taught by</span>
+                {series?.teacher?.name}{" "}
+              </span>
+              {seriesOver && (
+                <div className="study-info-details-lessons">
+                  <h3>{lessons.length}</h3>
+                  <span className="supporting-text">lessons</span>
                 </div>
-                <div>
-                  <h5>Childcare</h5>
-                  <p>
-                    {series.childcareProvided ? (
-                      <>
-                        Childcare is provided
-                        <Link
-                          style={{ display: "block" }}
-                          to="/ministries/childrens-ministry"
-                        >
-                          Learn More
-                        </Link>
-                      </>
+              )}
+              {!seriesOver && (
+                <>
+                  <div>
+                    <h5>Meeting Time</h5>
+                    {!series?.meetingTime?.secondServiceTime ? ( //if there's no second service show only first service
+                      <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time}`}</p>
                     ) : (
-                      "None"
+                      <p>{` ${series?.meetingTime?.day}s at ${series?.meetingTime?.time} and ${series?.meetingTime.secondServiceTime}`}</p>
                     )}
-                  </p>
-                </div>
-                <div>
-                  <h5>Location</h5>
-                  <p>{series?.location}</p>
-                </div>
-              </div>
-            )}
+                  </div>
+                  <div>
+                    <h5>Location</h5>
+                    <p>{series?.location}</p>
+                  </div>
+                  <div>
+                    <h5>Childcare</h5>
+                    <p>
+                      {series.childcareProvided ? (
+                        <>
+                          Childcare is provided
+                          <Link
+                            style={{ display: "block" }}
+                            to="/ministries/childrens-ministry"
+                          >
+                            Learn More
+                          </Link>
+                        </>
+                      ) : (
+                        "None"
+                      )}
+                    </p>
+                  </div>
+                </>
+              )}
+            </div>
             <div className="description">
               <p className="description-body">{series?.description}</p>
             </div>

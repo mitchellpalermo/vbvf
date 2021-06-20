@@ -35,17 +35,59 @@ $green: #4f5957;
       text-align: center;
       font-weight: 700;
     }
+
     &-details {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 20px;
+      column-gap: 10px;
+      text-align: center;
+      margin: 2vh;
       div {
-        margin: 2vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
+      &-lessons {
+        h3 {
+          font-size: 2.5em;
+        }
+        margin: 0;
+      }
+
       p {
         font-size: 1em;
       }
     }
+    .supporting-text {
+      font-size: 0.9em;
+      color: grey;
+      margin: 0;
+      padding: 0;
+    }
+    .teacher-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1em;
+      text-align: center;
+      &-photo {
+        position: relative;
+        overflow: hidden;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        min-width: auto !important;
+        min-height: auto !important;
+        max-width: none !important;
+      }
+    }
+
     &-body-ministry-link {
       text-align: center;
       p {
