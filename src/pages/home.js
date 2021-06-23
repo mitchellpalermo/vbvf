@@ -88,6 +88,19 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div id="celebration-of-life">
+        <div>
+          <h3>Celebration of Life for Stephen Armstrong</h3>
+          <span>June 26th at 10:00am</span>
+        </div>
+
+        <Button
+          title="See event details"
+          link="https://vbvf.churchcenter.com/registrations/events/914793"
+          color="green"
+          size="small"
+        />
+      </div>
 
       <div className="preview-container">
         <Preview
