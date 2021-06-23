@@ -52,42 +52,6 @@ export default function Livestream() {
     });
   }, []);
 
-  // const day = () => {
-  //   let today = new Date();
-
-  //   if (
-  //     today.getDay() === 3 && //wednesday
-  //     today.getHours() >= 18 && //between 6pm
-  //     today.getHours() <= 23 // and 9pm
-  //   ) {
-  //     if (process.env.REACT_APP_STREAM !== "none") {
-  //       //check env var for value
-  //       return process.env.REACT_APP_STREAM;
-  //     } else {
-  //       return "wednesday";
-  //     }
-  //   }
-  //   if (
-  //     today.getDay() === 0 && //sunday
-  //     today.getHours() >= 10 && //between 10am
-  //     today.getHours() <= 13 // and 1pm
-  //   ) {
-  //     if (process.env.REACT_APP_STREAM !== "none") {
-  //       //check env var for value
-  //       return process.env.REACT_APP_STREAM;
-  //     } else {
-  //       return "sunday";
-  //     }
-  //   } else {
-  //     if (process.env.REACT_APP_STREAM !== "none") {
-  //       //if the environment variable has been set to anything else
-  //       //check env var for value
-  //       return process.env.REACT_APP_STREAM;
-  //     }
-  //     return null;
-  //   }
-  // };
-
   const noStreamMessage = (
     <p>
       Verse by Verse Fellowship livestreams its Sunday services. While there's
