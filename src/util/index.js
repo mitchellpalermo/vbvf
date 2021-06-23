@@ -118,13 +118,14 @@ export function livestreamHappeningNow() {
   if (process.env.REACT_APP_STREAM !== "none") {
     return process.env.REACT_APP_STREAM;
   } else {
+    // if (
+    //   nd.getDay() === 3 && //wednesday
+    //   nd.getHours() >= 18 && //between 6pm
+    //   nd.getHours() <= 21 // and 9pm
+    // ) {
+    //   return "wednesday";
+    // } else
     if (
-      nd.getDay() === 3 && //wednesday
-      nd.getHours() >= 18 && //between 6pm
-      nd.getHours() <= 21 // and 9pm
-    ) {
-      return "wednesday";
-    } else if (
       nd.getDay() === 0 && //sunday
       nd.getHours() >= 10 && //between 10am
       nd.getHours() <= 13 // and 1pm
