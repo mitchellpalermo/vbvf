@@ -104,10 +104,10 @@ const Home = () => {
 
       <div className="preview-container">
         <Preview
-          title="Women's Bible Study"
-          body="Join us for a study through the book of 1 John. Meeting on Tuesdays at 10am in the Flex Room."
+          title="Bible Teaching"
+          body="Listen to all sermons and bible studies online."
           buttonTitle="Listen to Bible teaching"
-          link="/bible-studies/1-John"
+          link="/bible-studies/"
           image={WomensStudy}
         />
         <Preview
