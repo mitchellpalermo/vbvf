@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/stream.scss";
 import "../css/memorial-service.scss";
 import ConnectWidget from "./connect-widget";
@@ -9,7 +10,7 @@ export default function MemorialService(props) {
       <div className="stream-video-player">
         <iframe
           title="Memorial Service for Stephen Armstrong"
-          src="https://player.vimeo.com/video/1105908"
+          src="https://vimeo.com/event/1105908/embed"
           frameBorder="0"
           allow="autoplay; fullscreen"
           allowFullScreen
