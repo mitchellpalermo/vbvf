@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import "../css/stream.scss";
 import "../css/memorial-service.scss";
 import ConnectWidget from "./connect-widget";
