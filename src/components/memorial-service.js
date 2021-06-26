@@ -9,7 +9,7 @@ export default function MemorialService(props) {
       <div className="stream-video-player">
         <iframe
           title="Memorial Service for Stephen Armstrong"
-          src="https://player.vimeo.com/video/567253710"
+          src="https://player.vimeo.com/video/1105908"
           frameBorder="0"
           allow="autoplay; fullscreen"
           allowFullScreen
