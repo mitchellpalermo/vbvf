@@ -5,6 +5,7 @@ import { Spinner } from "reactstrap";
 import Stream from "../components/stream";
 import { sanity } from "../util/index";
 import "../css/livestream.scss";
+import MemorialService from "../components/memorial-service";
 
 require("dotenv").config();
 
@@ -106,6 +107,11 @@ export default function Livestream() {
                 description={sundaySeries.description}
                 seriesLink={`/bible-studies/${sundaySeries.title}`}
               />
+            </>
+          ) : livestreamHappeningNow() === "memorial" ? ( // environment variable is memorial
+            // return memorial service
+            <>
+              <MemorialService />
             </>
           ) : livestreamHappeningNow() === "guestTeacher" ? ( //returning component with no description for guest teacher
             <>
