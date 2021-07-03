@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { sanity } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
 import "../css/pastor-search.scss";
-
+import Video from "../components/video";
 import Banner from "../images/pastor-search/cropped_banner.jpg";
 
 export default function PastorSearch() {
   const pageQuery = `*[_type == "page" && title == "Pastor Search"] {
     paragraphs,
+    videoId,
   documents[]{
     documentTitle,
       "documentUrl": document.asset->url
@@ -88,6 +89,9 @@ export default function PastorSearch() {
             blocks={textToRender.bodyText}
             serializers={serializers}
           />
+          {componentToShow === "Congregational Update" && (
+            <Video videoId={pageContent.videoId} />
+          )}
           {documentForDownload !== undefined && (
             <a
               target="blank "
