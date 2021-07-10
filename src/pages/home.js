@@ -2,14 +2,21 @@ import React, { useState, useEffect } from "react";
 import "../css/home.scss";
 import Button from "../components/button";
 import { Spinner } from "reactstrap";
-import { sanity, sanityUrlFor } from "../util/index";
+import { getOrdinalNum, nthSundayHasCome, nthWeekdayOfMonth, sanity, sanityUrlFor } from "../util/index";
 import WomensStudy from "../images/home_page/womensStudy.jpg";
 import DailyBread from "../images/home_page/daily_bread.jpg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
+import BaptismPhoto from "../images/home_page/anthony_baptism_horizontal_c.jpg"
 
 import Preview from "../components/preview";
 import AlertBubble from "../components/alert-bubble";
 import { livestreamHappeningNow } from "../util";
+
+const monthNames = ["January", "February", "March", "April", "May", "June",
+"July", "August", "September", "October", "November", "December"
+];
+// TODO: Create separate constants file
+const BAPTISM_WEEK_NUM = 3;
 
 const liveStreamButtonText = () => {
   if (livestreamHappeningNow()) {
@@ -88,15 +95,27 @@ const Home = () => {
           </div>
         </div>
       </div>
-
+      
       <div className="preview-container">
-        <Preview
-          title="Bible Teaching"
-          body="Listen to all sermons and bible studies online."
-          buttonTitle="Listen to Bible teaching"
-          link="/bible-studies/"
-          image={WomensStudy}
-        />
+        { 
+        // If the third Sunday has already come this month then display the Bible Teaching preview
+        // rather than the Get Baptized preview
+        nthSundayHasCome(BAPTISM_WEEK_NUM) 
+          ? <Preview
+              title="Bible Teaching"
+              body="Listen to all sermons and bible studies online."
+              buttonTitle="Listen to Bible teaching"
+              link="/bible-studies/"
+              image={WomensStudy}
+            /> 
+          : <Preview
+              title="Get Baptized"
+              body={`Verse by Verse Fellowship celebrates baptisms every month. If you've never been baptized, consider doing so with us this month on ${monthNames[new Date().getMonth()]} the ${getOrdinalNum(nthWeekdayOfMonth(0,BAPTISM_WEEK_NUM).getDate())}.`}
+              buttonTitle="Register for Baptism"
+              link="https://vbvf.churchcenter.com/registrations/events/782680"
+              image={BaptismPhoto}
+            />
+        }
         <Preview
           title="Announcements"
           body="Check out what's happening at Verse by Verse Fellowship."
