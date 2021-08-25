@@ -43,14 +43,15 @@ $red: #cc2e23;
     }
     &-row {
       flex-direction: column;
+      width: 90%;
+      align-items: center;
+      margin: 0;
       span {
         width: 98%;
       }
-      &.vision {
+      &-vision {
         flex-direction: column-reverse;
-        p {
-          width: 98%;
-        }
+        width: 100%;
       }
     }
   }

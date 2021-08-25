@@ -5,11 +5,21 @@ export default function UpcomingEvents(props) {
   const [events, setEvents] = useState();
 
   useEffect(() => {
+    const options = {
+      method: "GET",
+      auth: {
+        username: process.env.REACT_APP_PLANNING_CENTER_APPID,
+        password: process.env.REACT_APP_PLANNING_CENTER_SECRET,
+      },
+    };
+
     axios
       .get(
-        `https://api.churchcenter.com/registrations/v2/events?order=starts_at&filter=active,published&per_page=100`
+        `https://api.planningcenteronline.com/registrations/v2/events?filter=published`,
+        options
       )
       .then((response) => {
+        console.log(response);
         setEvents(response.data);
       });
   });
