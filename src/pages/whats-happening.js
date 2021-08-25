@@ -6,6 +6,7 @@ import { Spinner } from "reactstrap";
 import "../css/whats-happening.scss";
 
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
+import UpcomingEvents from "../components/upcoming-events";
 
 export default function WhatsHappening() {
   const [announcement, setAnnouncement] = useState();
@@ -85,6 +86,7 @@ export default function WhatsHappening() {
           </div>
         </>
       )}
+      <UpcomingEvents />
       <div className="announcements-service-times">
         <h2>Service times</h2>
         <div className="announcements-service-times-info">
