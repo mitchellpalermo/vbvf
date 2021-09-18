@@ -27,29 +27,22 @@ export default function StudyPage() {
     childcareProvided,
     seriesImage,
     description,
+    lessons,
     teacher->
   }`;
 
-  const lessonQuery = `*[_type == 'lesson' && series->title == $studyName] | order(lessonNumber asc) {
-    lessonNumber,
-    versesCovered,
-    videoId,
-    audioLink,
-    "notesUrl": notes.asset->url,
-  }`;
   const params = { studyName: studyName.replace("-", " ") };
 
   useEffect(() => {
     sanity.fetch(seriesQuery, params).then((series) => {
       setSeries(series[0]);
+      setLessons(series[0].lessons);
+      setIsLoading(false);
       setSeriesOver(isOver(series[0].endDate)); //determining if series is over
     });
-    sanity.fetch(lessonQuery, params).then((lessons) => {
-      setLessons(lessons);
-      setIsLoading(false);
-    });
+
     //eslint-disable-next-line
-  }, [lessonQuery, seriesQuery]);
+  }, [seriesQuery]);
 
   const hasContent = (lesson) => {
     if (lesson.videoId || lesson.audioLink) {
