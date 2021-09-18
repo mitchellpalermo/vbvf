@@ -10,7 +10,6 @@ export default function LessonBlock(props) {
   const [modal, setModal] = useState(false);
 
   const modalToggle = () => setModal(!modal);
-
   return (
     <div className="lesson-block">
       <span className="lesson-block-title">
