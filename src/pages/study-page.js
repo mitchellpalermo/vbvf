@@ -27,7 +27,10 @@ export default function StudyPage() {
     childcareProvided,
     seriesImage,
     description,
-    lessons,
+    lessons[]{
+      ...,
+      'notesUrl' : notes.asset->url
+    },
     teacher->
   }`;
 
