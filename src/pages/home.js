@@ -70,7 +70,7 @@ const Home = () => {
       <div className="main-header">
         <AlertBubble />
         <div className="main-header-titles">
-          <h1>Find hope in the Word</h1>
+          <h1>Celebrate the Word</h1>
           <h2>John 1:1</h2>
           <div className="main-header-buttons">
             <Button
@@ -80,8 +80,8 @@ const Home = () => {
               color="bone"
             />
             <Button
-              title="Attend a service"
-              link="/attend"
+              title="Christmas Eve Service"
+              link="https://vbvf.churchcenter.com/registrations/events/1118120"
               size="large"
               color="bone"
             />

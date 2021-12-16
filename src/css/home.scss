@@ -17,7 +17,9 @@ body {
 
   .main-header {
     width: 100%;
-    background: url(../images/home_page/hand_raised.jpg);
+    background: linear-gradient(to bottom, transparent, #000000),
+      url(../images/home_page/christmas_eve.webp);
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -30,6 +32,7 @@ body {
       flex-direction: column;
       text-align: center;
       color: $bone;
+
       margin-top: 30vh;
       h1 {
         color: $bone;
@@ -92,7 +95,7 @@ body {
     align-items: center;
 
     width: 100%;
-    background: url(../images/home_page/Celebration_of_Life_comp.jpg);
+    // background: url(../images/home_page/Celebration_of_Life_comp.jpg);
 
     background-size: cover;
     div {
