@@ -121,6 +121,14 @@ export default function Livestream() {
                 description=""
               />
             </>
+          ) : livestreamHappeningNow() === "christmas" ? ( //returning component with no description for guest teacher
+            <>
+              <Stream
+                streamUrl="https://vimeo.com/event/51649/embed"
+                title="Christmas Eve Service"
+                description="Luke 2:22-35"
+              />
+            </>
           ) : (
             //return livestream archive
             <div className="livestream-archive">
