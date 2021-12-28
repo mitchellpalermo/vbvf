@@ -87,8 +87,8 @@ const Home = () => {
               color="bone"
             />
             <Button
-              title="Christmas Eve Service"
-              link="https://vbvf.churchcenter.com/registrations/events/1118120"
+              title="Attend a service"
+              link="/attend"
               size="large"
               color="bone"
             />
