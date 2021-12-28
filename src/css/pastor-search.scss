@@ -46,7 +46,8 @@ $gold: #e8b021;
   }
 
   &-content {
-    width: 70%;
+    max-width: 50%;
+    min-width: 400px;
     margin: 20px;
     display: flex;
     flex-direction: column;
