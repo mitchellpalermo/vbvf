@@ -107,7 +107,7 @@ export default function YouthMinistry() {
       <>
         {personIsLoading ? (
           <Spinner />
-        ) : (
+        ) : pageData.ministryLeader !== undefined ? (
           <StaffInfo
             name={pageData?.ministryLeader.name}
             role={pageData?.ministryLeader.role}
@@ -118,7 +118,7 @@ export default function YouthMinistry() {
               .url()}
             alt=""
           />
-        )}
+        ) : null}
       </>
     </div>
   );
