@@ -8,8 +8,8 @@ import ScriptureVerse from "../components/scripture-verse";
 import Button from "../components/button";
 
 import StaffInfo from "../components/staff-info";
-import Exclamation from "../images/exclamation-solid.svg";
-import { getMobileOperatingSystem, sanity, sanityUrlFor } from "../util/index";
+
+import { sanity, sanityUrlFor } from "../util/index";
 import AlertBubble from "../components/alert-bubble";
 
 export default function ChildrensMinistry() {
@@ -49,15 +49,6 @@ export default function ChildrensMinistry() {
     //eslint-disable-next-line
   }, [query]);
 
-  const churchCenterLink = () => {
-    if (getMobileOperatingSystem() === "iOS") {
-      return `itms-apps://apps.apple.com/us/app/church-center-app/id1357742931`;
-    } else if (getMobileOperatingSystem() === "Android") {
-      return `https://play.google.com/store/apps/details?id=com.ministrycentered.churchcenter`;
-    } else {
-      return "https://vbvf.churchcenter.com/check-ins";
-    }
-  };
   return (
     <div className="childrens-ministry">
       <div className="childrens-ministry-header">
@@ -87,24 +78,6 @@ export default function ChildrensMinistry() {
           </>
         )}
       </div>
-      <div className="childrens-ministry-safety">
-        <img src={Exclamation} alt="" />
-        <p>
-          Due to COVID precautions, space in our children's area is{" "}
-          <strong>limited</strong>. For now we're asking that all children are
-          checked in before service.
-        </p>{" "}
-      </div>
-      <p className="childrens-ministry-check-in">
-        Please check your child in using the{" "}
-        <a href={churchCenterLink()}>Church Center App</a>. Registration opens 1
-        hour before service begins. If your child has never been to Journey Kids
-        before, please{" "}
-        <a href="https://vbvf.churchcenter.com/registrations/events/588010">
-          pre-register them here
-        </a>
-        .
-      </p>
 
       <div className="childrens-ministry-materials">
         <div className="button-container">

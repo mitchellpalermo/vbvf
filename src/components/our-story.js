@@ -19,11 +19,11 @@ export default function OurStory() {
           proclaimed (Acts 20:27)
         </p>
         <p>
-          For nearly 15 years Steve has taught the Bible verse-by-verse with
-          unique insight and clarity to congregations in and around San Antonio
-          and to churches around the world as part of his itinerant teaching
-          ministry. During this time Steve also pastored a church in Austin,
-          Texas, for over a decade while teaching for VBVMI.
+          For nearly 15 years Steve taught the Bible verse-by-verse with unique
+          insight and clarity to congregations in and around San Antonio and to
+          churches around the world as part of his itinerant teaching ministry.
+          During this time Steve also pastored a church in Austin, Texas, for
+          over a decade while teaching for VBVMI.
         </p>
         <p>
           In Fall 2017, the VBVMI Board of Directors saw an opportunity to
