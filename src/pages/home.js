@@ -80,8 +80,8 @@ const Home = () => {
               color="bone"
             />
             <Button
-              title="Attend a service"
-              link="/attend"
+              title="Got Questions?"
+              link="/about/faq"
               size="large"
               color="bone"
             />
