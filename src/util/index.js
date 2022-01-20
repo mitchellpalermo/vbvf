@@ -135,11 +135,12 @@ export function livestreamHappeningNow() {
   return null;
 }
 
-export function nthWeekdayOfMonth(weekday, n, testDate=new Date()) {
-    
+export function nthWeekdayOfMonth(weekday, n, testDate = new Date()) {
   // Usage check
-  if (typeof weekday !== 'number' || typeof n !== 'number') {
-      throw new Error("Function nthWeekdayOfMonth Usage Error: nthWeekdayOfMonth(<weeekday 0-6>, <n>, [testDate])");
+  if (typeof weekday !== "number" || typeof n !== "number") {
+    throw new Error(
+      "Function nthWeekdayOfMonth Usage Error: nthWeekdayOfMonth(<weeekday 0-6>, <n>, [testDate])"
+    );
   }
   weekday = Math.floor(weekday % 7);
   n = Math.floor(n);
@@ -152,22 +153,22 @@ export function nthWeekdayOfMonth(weekday, n, testDate=new Date()) {
   let daysUntilFirstWeekday = (weekday - monthBeginWeekday + 7) % 7;
 
   // Start with this date then add 7 days for each week
-  let nthWeekdayDate = 1 + daysUntilFirstWeekday + (7*(n-1));
-  
+  let nthWeekdayDate = 1 + daysUntilFirstWeekday + 7 * (n - 1);
+
   // Return final Date
   return new Date(testDate.getFullYear(), testDate.getMonth(), nthWeekdayDate);
+}
 
-};
-
-export function nthSundayHasCome(n, testDate = new Date()){
+export function nthSundayHasCome(n, testDate = new Date()) {
   // Usage check
-  if (typeof n !== 'number') {
-      throw new Error("Function nthSundayHasCome Usage Error: nthSundayHasCome(<n>, [testDate])");
+  if (typeof n !== "number") {
+    throw new Error(
+      "Function nthSundayHasCome Usage Error: nthSundayHasCome(<n>, [testDate])"
+    );
   }
 
-  return (testDate.getTime() >= nthWeekdayOfMonth(0,n,testDate).getTime());
-
-};
+  return testDate.getTime() >= nthWeekdayOfMonth(0, n, testDate).getTime();
+}
 
 export function getOrdinalNum(number) {
   let selector;
@@ -180,5 +181,5 @@ export function getOrdinalNum(number) {
     selector = number % 10;
   }
 
-  return number + ['th', 'st', 'nd', 'rd', ''][selector];
-};
+  return number + ["th", "st", "nd", "rd", ""][selector];
+}
