@@ -104,8 +104,8 @@ const Home = () => {
               color="bone"
             />
             <Button
-              title="Got Questions?"
-              link="/about/faq"
+              title="Attend a service"
+              link="/attend"
               size="large"
               color="bone"
             />
