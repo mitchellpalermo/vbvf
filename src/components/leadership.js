@@ -6,7 +6,7 @@ import PhotoTitle from "../components/photo-title";
 import AboutMenu from "./about-menu";
 
 export default function Leadership() {
-  const elderQuery = `*[_type == "person" && role == "Elder"] | order(name asc)`;
+  const elderQuery = `*[_type == "person" && (role == "Elder" || role == "Senior Pastor")] | order(name asc)`;
   const pastorQuery = `*[_type == "person" && role == "Associate Pastor"] | order(name asc)`;
   const directorQuery = `*[_type == "person" && role == "Ministry Director" || role == "Staff" || role == "Volunteer Staff"] | order(name asc)`;
 
