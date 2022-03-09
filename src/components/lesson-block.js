@@ -52,7 +52,7 @@ export default function LessonBlock(props) {
         <span
           className="lesson-block-icon"
           onClick={() => {
-            window.open(props.audioLink);
+            window.open(props.audioLink.split("?")[0]);
           }}
         >
           <img alt="audio icon" src={AudioIcon} />
