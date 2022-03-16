@@ -9,8 +9,8 @@ import {
   sanity,
   sanityUrlFor,
 } from "../util/index";
-import WomensStudy from "../images/home_page/womensStudy.jpg";
-import DailyBread from "../images/home_page/daily_bread.jpg";
+import BibleTeaching from "../images/home_page/bible-teaching.jpg";
+import DailyBread from "../images/home_page/daily_bread.jpeg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 import BaptismPhoto from "../images/home_page/anthony_baptism_horizontal_c.jpg";
 
@@ -94,7 +94,7 @@ const Home = () => {
       <div className="main-header">
         <AlertBubble />
         <div className="main-header-titles">
-          <h1>Celebrate the Word</h1>
+          <h1>Find Joy in the Word</h1>
           <h2>John 1:1</h2>
           <div className="main-header-buttons">
             <Button
@@ -114,31 +114,29 @@ const Home = () => {
       </div>
 
       <div className="preview-container">
-        {
-          // If the third Sunday has already come this month then display the Bible Teaching preview
-          // rather than the Get Baptized preview
-          nthSundayHasCome(BAPTISM_WEEK_NUM) ? (
-            <Preview
-              title="Bible Teaching"
-              body="Listen to all sermons and bible studies online."
-              buttonTitle="Listen to Bible teaching"
-              link="/bible-studies/"
-              image={WomensStudy}
-            />
-          ) : (
-            <Preview
-              title="Get Baptized"
-              body={`Verse by Verse Fellowship celebrates baptisms every month. If you've never been baptized, consider doing so with us this month on ${
-                monthNames[new Date().getMonth()]
-              } the ${getOrdinalNum(
-                nthWeekdayOfMonth(0, BAPTISM_WEEK_NUM).getDate()
-              )}.`}
-              buttonTitle="Register for Baptism"
-              link="https://vbvf.churchcenter.com/registrations/events/1154578"
-              image={BaptismPhoto}
-            />
-          )
-        }
+        {/* If the third Sunday has already come this month then display the Bible Teaching preview
+           rather than the Get Baptized preview */}
+        {nthSundayHasCome(BAPTISM_WEEK_NUM) ? (
+          <Preview
+            title="Bible Teaching"
+            body="Listen to all sermons and bible studies online."
+            buttonTitle="Listen to Bible teaching"
+            link="/bible-studies/"
+            image={BibleTeaching}
+          />
+        ) : (
+          <Preview
+            title="Get Baptized"
+            body={`Verse by Verse Fellowship celebrates baptisms every month. If you've never been baptized, consider doing so with us this month on ${
+              monthNames[new Date().getMonth()]
+            } the ${getOrdinalNum(
+              nthWeekdayOfMonth(0, BAPTISM_WEEK_NUM).getDate()
+            )}.`}
+            buttonTitle="Register for Baptism"
+            link="https://vbvf.churchcenter.com/registrations/events/1154578"
+            image={BaptismPhoto}
+          />
+        )}
         <Preview
           title="Announcements"
           body="Check out what's happening at Verse by Verse Fellowship."
