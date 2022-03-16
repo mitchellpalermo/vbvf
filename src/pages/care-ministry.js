@@ -5,6 +5,7 @@ import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import ScriptureVerse from "../components/scripture-verse";
 import { Spinner } from "reactstrap";
 import PortableText from "@sanity/block-content-to-react";
+import CareMinistryForm from "../components/care-ministry-form";
 
 export default function CareMinistry() {
   const [pageData, setPageData] = useState();
@@ -105,6 +106,7 @@ export default function CareMinistry() {
           </div>
         </>
       )}
+      <CareMinistryForm />
       <h3>FAQ</h3>
       <FrequentlyAskedQuestions layout="vertical" faq={pageData?.faq.faqs} />
     </div>
