@@ -35,6 +35,13 @@ $red: #cc2e23;
     }
   }
 }
+.close-button {
+  align-self: flex-end;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+}
 
 @media screen and (max-width: 700px) {
   .care-ministries {
