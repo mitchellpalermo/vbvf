@@ -90,8 +90,9 @@ export default function CareMinistryForm({ closeFunc }) {
               />
 
               <h2>Contact Care Ministries</h2>
+
               <label name="fullName">Full Name</label>
-              <Field className="text-field" name="fullName" />
+              <Field className="text-field" name="fullName" autoFocus />
               <label name="email">Email Address</label>
               <Field className="text-field" name="email" type="email" />
               <label name="phoneNumber">Phone Number</label>

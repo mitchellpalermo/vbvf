@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { sanity } from "../util/index";
 import "../css/care-ministry.scss";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
@@ -6,7 +6,7 @@ import ScriptureVerse from "../components/scripture-verse";
 import { Spinner } from "reactstrap";
 import PortableText from "@sanity/block-content-to-react";
 import CareMinistryForm from "../components/care-ministry-form";
-import { Dialog, DialogOverlay, DialogContent } from "@reach/dialog";
+import { DialogOverlay, DialogContent } from "@reach/dialog";
 import "@reach/dialog/styles.css";
 import Button from "../components/button";
 
@@ -17,7 +17,6 @@ export default function CareMinistry() {
   const [showDialog, setShowDialog] = React.useState(false);
   const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
-  const buttonRef = useRef();
 
   const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
   const query = `*[_type == "page" && title == "Care Ministries"]{
@@ -117,26 +116,26 @@ export default function CareMinistry() {
         </>
       )}
       <Button size="medium" buttonFunc={open} title="Contact" />
-      <Dialog isOpen={showDialog} initialFocusRef={buttonRef} onDismiss={close}>
-        <DialogOverlay>
-          <DialogContent
-            style={{
-              borderRadius: 12,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <button className="close-button" onClick={close}>
-              <span role="img" aria-label="Close Contact Form">
-                ❌
-              </span>
-            </button>
 
-            <CareMinistryForm closeFunc={close} />
-          </DialogContent>
-        </DialogOverlay>
-      </Dialog>
+      <DialogOverlay isOpen={showDialog} onDismiss={close}>
+        <DialogContent
+          style={{
+            borderRadius: 12,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <button className="close-button" onClick={close}>
+            <span role="img" aria-label="Close Contact Form">
+              ❌
+            </span>
+          </button>
+
+          <CareMinistryForm closeFunc={close} />
+        </DialogContent>
+      </DialogOverlay>
+
       <h3>FAQ</h3>
       <FrequentlyAskedQuestions layout="vertical" faq={pageData?.faq.faqs} />
     </div>
