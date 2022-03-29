@@ -35,6 +35,20 @@ $red: #cc2e23;
     }
   }
 }
+.contact-container {
+  width: 100%;
+  margin: 5vh;
+  padding: 2vh;
+  display: flex;
+  flex-direction: row;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    padding: 3vh;
+    width: 60%;
+  }
+}
 .close-button {
   align-self: flex-end;
   background-color: transparent;
@@ -60,6 +74,12 @@ $red: #cc2e23;
       &-vision {
         flex-direction: column-reverse;
         width: 100%;
+      }
+    }
+    .contact-container {
+      flex-direction: column;
+      h3 {
+        width: 98%;
       }
     }
   }

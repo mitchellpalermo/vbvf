@@ -115,8 +115,13 @@ export default function CareMinistry() {
           </div>
         </>
       )}
-      <Button size="medium" buttonFunc={open} title="Contact" />
-
+      <div className="contact-container">
+        <h3>
+          If you have a question or you're interested in talking with someone,
+          please contact us.{" "}
+        </h3>
+        <Button size="large" color="gold" buttonFunc={open} title="Contact" />
+      </div>
       <DialogOverlay isOpen={showDialog} onDismiss={close}>
         <DialogContent
           style={{
