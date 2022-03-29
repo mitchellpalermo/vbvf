@@ -18,6 +18,7 @@ const Button = (props) => {
       href={props.link ? props.link : "#0"}
     >
       <button
+        type={props.type ?? ""}
         className={`button ${size()} ${props.color} `}
         onClick={props.buttonFunc}
       >
