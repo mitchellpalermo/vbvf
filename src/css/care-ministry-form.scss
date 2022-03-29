@@ -1,0 +1,37 @@
+.care-ministry-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+
+  .text-field {
+    width: 100%;
+
+    border-radius: 7px;
+    border-width: 1px;
+    padding: 7px;
+    margin: 1px 2.5px 3px 2.5px;
+  }
+  label {
+    align-self: flex-start;
+    margin: 4px;
+    input {
+      margin: 3px;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 20px 0 0 0;
+  }
+  .checkbox-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 1px 2.5px 3px 2.5px;
+  }
+}

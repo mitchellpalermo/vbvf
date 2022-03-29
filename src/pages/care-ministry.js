@@ -5,9 +5,19 @@ import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import ScriptureVerse from "../components/scripture-verse";
 import { Spinner } from "reactstrap";
 import PortableText from "@sanity/block-content-to-react";
+import CareMinistryForm from "../components/care-ministry-form";
+import { DialogOverlay, DialogContent } from "@reach/dialog";
+import "@reach/dialog/styles.css";
+import Button from "../components/button";
 
 export default function CareMinistry() {
   const [pageData, setPageData] = useState();
+
+  //modal state
+  const [showDialog, setShowDialog] = React.useState(false);
+  const open = () => setShowDialog(true);
+  const close = () => setShowDialog(false);
+
   const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
   const query = `*[_type == "page" && title == "Care Ministries"]{
     paragraphs,
@@ -105,6 +115,32 @@ export default function CareMinistry() {
           </div>
         </>
       )}
+      <div className="contact-container">
+        <h3>
+          If you have a question or you're interested in talking with someone,
+          please contact us.{" "}
+        </h3>
+        <Button size="large" color="gold" buttonFunc={open} title="Contact" />
+      </div>
+      <DialogOverlay isOpen={showDialog} onDismiss={close}>
+        <DialogContent
+          style={{
+            borderRadius: 12,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <button className="close-button" onClick={close}>
+            <span role="img" aria-label="Close Contact Form">
+              ❌
+            </span>
+          </button>
+
+          <CareMinistryForm closeFunc={close} />
+        </DialogContent>
+      </DialogOverlay>
+
       <h3>FAQ</h3>
       <FrequentlyAskedQuestions layout="vertical" faq={pageData?.faq.faqs} />
     </div>
