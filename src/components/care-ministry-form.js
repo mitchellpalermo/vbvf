@@ -1,7 +1,7 @@
 import { Formik, Field, Form } from "formik";
 import React, { useState } from "react";
 import "../css/care-ministry-form.scss";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import { motion } from "framer-motion";
 import Button from "./button";
 
@@ -18,8 +18,8 @@ export default function CareMinistryForm({ closeFunc }) {
       fill: "rgba(255, 255, 255, 1)",
     },
   };
-  const phoneRegExp =
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+  // const phoneRegExp =
+  //   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const encode = (data) => {
     return Object.keys(data)
