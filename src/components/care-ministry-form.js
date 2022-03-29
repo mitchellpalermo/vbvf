@@ -80,37 +80,6 @@ export default function CareMinistryForm({ closeFunc }) {
               })
               .finally(() => actions.setSubmitting(false));
           }}
-          // validationSchema={Yup.object({
-          //   firstName: Yup.string()
-          //     .max(15, "Must be 15 characters or less.")
-          //     .required("First Name Required"),
-          //   lastName: Yup.string()
-          //     .max(20, "Must be 20 characters or less.")
-          //     .required("Last Name Required"),
-          //   //only required when contact options preference contains phone
-          //   phoneNumber: Yup.string().when("contactOptions", {
-          //     is: (val) => val.includes("Phone") === true,
-          //     then: Yup.string()
-          //       .required("Phone Number Required")
-          //       .matches(phoneRegExp, "Please enter a valid phone number"),
-          //     otherwise: Yup.string().matches(
-          //       phoneRegExp,
-          //       "Please enter a valid phone number"
-          //     ),
-          //   }),
-          //   //only required when contact options preference contains email
-          //   email: Yup.string().when("contactOptions", {
-          //     is: (val) => val.includes("Email") === true,
-          //     then: Yup.string()
-          //       .email("Invalid email address")
-          //       .required("Email Address Required"),
-          //     otherwise: Yup.string().email("Invalid email address"),
-          //   }),
-          //   contactOptions: Yup.array().min(
-          //     1,
-          //     "Please Select a Contact Preference"
-          //   ),
-          // })}
         >
           {({ values }) => (
             <Form className="care-ministry-form" method="POST">
