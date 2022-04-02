@@ -26,11 +26,10 @@ const ConnectPage = () => {
           <p>
             We love seeing so many new faces at VBVF and would love to meet you!
             Come to one of the Connection Meetings immediately after worship
-            service on the last Sunday of every month. We will meet you at the
-            front of the church, the opposite side of the baptistry for a quick
-            informational gathering to learn more about VBVF. One of our pastors
-            will give a quick overview of all the great things happening at VBVF
-            and answer any questions you might have.
+            service on the last Sunday of every month. We will meet you in the
+            flex room for a quick informational gathering to learn more about
+            VBVF. One of our pastors will give a quick overview of all the great
+            things happening at VBVF and answer any questions you might have.
           </p>
 
           <ConnectionStep
