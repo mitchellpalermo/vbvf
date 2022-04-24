@@ -20,23 +20,19 @@
     }
   }
   &-icon {
-    margin-left: auto;
-    margin-right: 2vh;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    font-size: 0.75em;
     img {
       padding: 1px;
       height: 3vh;
     }
   }
-  a {
-    color: black;
-    font-weight: 400;
-    text-decoration: none;
-  }
 }
 
 .lesson-block:nth-child(even) {
-  background: rgba(240, 240, 241, 1);
+  background: rgba(245, 245, 241, 1);
 }
 
 .lesson-modal {

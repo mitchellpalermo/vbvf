@@ -22,7 +22,7 @@ export default function LessonBlock(props) {
       {/* render video */}
       {props.videoId && (
         <span className="lesson-block-icon" onClick={modalToggle}>
-          <img alt="play icon" src={PlayIcon} />
+          <img alt="play lesson" src={PlayIcon} />
           Watch
         </span>
       )}
@@ -55,7 +55,7 @@ export default function LessonBlock(props) {
             window.open(props.audioLink.split("?")[0]);
           }}
         >
-          <img alt="audio icon" src={AudioIcon} />
+          <img alt="listen to lesson audio" src={AudioIcon} />
           Listen
         </span>
       )}
@@ -67,8 +67,19 @@ export default function LessonBlock(props) {
           onClick={() => window.open(props.notesUrl)}
           target="_blank"
         >
-          <img alt="play icon" src={DocumentIcon} />
-          Notes
+          <img alt="download notes" src={DocumentIcon} />
+          Sermon Manuscript
+        </span>
+      )}
+      {props.questionsUrl && (
+        <span
+          className="lesson-block-icon"
+          role="button"
+          onClick={() => window.open(props.questionsUrl)}
+          target="_blank"
+        >
+          <img alt="download application questions" src={DocumentIcon} />
+          Application Questions
         </span>
       )}
     </div>

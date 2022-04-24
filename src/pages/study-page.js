@@ -29,7 +29,8 @@ export default function StudyPage() {
     description,
     lessons[]{
       ...,
-      'notesUrl' : notes.asset->url
+      'notesUrl' : notes.asset->url,
+      'questionsUrl' : questions.asset->url
     },
     teacher->
   }`;
