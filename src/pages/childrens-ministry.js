@@ -114,7 +114,7 @@ export default function ChildrensMinistry() {
       </div>
       {pageDataIsLoading ? (
         <Spinner />
-      ) : (
+      ) : pageData.ministryLeader !== undefined ? (
         <StaffInfo
           name={pageData?.ministryLeader.name}
           role={pageData?.ministryLeader.role}
@@ -123,7 +123,7 @@ export default function ChildrensMinistry() {
           image={sanityUrlFor(pageData?.ministryLeader.image).width(500).url()}
           alt=""
         />
-      )}
+      ) : null}
     </div>
   );
 }
