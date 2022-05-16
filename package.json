@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.10.2",
+    "@heroicons/react": "^1.0.6",
     "@reach/dialog": "^0.16.2",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.1.4",
