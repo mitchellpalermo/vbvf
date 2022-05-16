@@ -30,9 +30,9 @@ export default function OurStory() {
         </p>{" "}
         <p>
           {" "}
-          share As Christ followers, we are commanded by sc ripture to be
-          lifelong students of God’s Word and walk in community with each other.
-          Come share in that mission at Verse By Verse Fellowship.
+          As Christ followers, we are commanded by scripture to be lifelong
+          students of God’s Word and walk in community with each other. Come
+          share in that mission at Verse By Verse Fellowship.
         </p>
       </div>
     </div>
