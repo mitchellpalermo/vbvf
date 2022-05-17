@@ -37,7 +37,7 @@ export default function LessonBlock(props) {
           </div>
         </ModalBody>
       </Modal>
-      <di v className="lesson-block-icons">
+      <div className="lesson-block-icons">
         {/* render video */}
         {props.videoId && (
           <span className="lesson-block-icons-image" onClick={modalToggle}>
@@ -123,7 +123,7 @@ export default function LessonBlock(props) {
             Questions
           </span>
         )}
-      </di>
+      </div>
     </div>
   );
 }
