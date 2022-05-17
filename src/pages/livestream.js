@@ -7,8 +7,6 @@ import { sanity } from "../util/index";
 import "../css/livestream.scss";
 import MemorialService from "../components/memorial-service";
 
-require("dotenv").config();
-
 var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
