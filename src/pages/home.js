@@ -112,7 +112,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="series-promo"></div>
 
       <div className="preview-container">
         {/* If the third Sunday has already come this month then display the Bible Teaching preview
