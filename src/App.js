@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { CompatRoute } from "react-router-dom-v5-compat";
 import Footer from "./components/footer";
 import ConnectPage from "./pages/connect-page";
 
@@ -39,85 +40,87 @@ import PastorSearch from "./pages/pastor-search";
 function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <div className="page-container">
-        <GlobalNav />
-        <Switch>
-          <Route exact path="/" component={Home} />
+      <CompatRouter>
+        <ScrollToTop />
+        <div className="page-container">
+          <GlobalNav />
+          <Switch>
+            <Route exact path="/" component={Home} />
 
-          <Route exact path="/connect" component={ConnectPage} />
-          {/* <Route exact path="/online-ministry" component={OnlineMinistry} /> */}
+            <Route exact path="/connect" component={ConnectPage} />
+            {/* <Route exact path="/online-ministry" component={OnlineMinistry} /> */}
 
-          <Route exact path="/about/faq" component={FAQ} />
-          <Route exact path="/about/leadership" component={Leadership} />
-          <Route exact path="/about/our-story" component={OurStory} />
-          <Route exact path="/giving" component={Giving} />
-          <Route exact path="/about/beliefs" component={Beliefs} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/livestream" component={Livestream} />
-          <Route exact path="/bible-studies" component={StudyAggregator} />
-          <Route path="/bible-studies/:studyName" component={StudyPage} />
-          <Route exact path="/sermon-redirect" component={SermonRedirect} />
-          <Route exact path="/giving-redirect" component={GivingRedirect} />
-          <Route exact path="/pastor-search" component={PastorSearch} />
-          <Route
-            exact
-            path="/registration-redirect"
-            component={RegistrationRedirect}
-          />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route
-            exact
-            path="/terms-and-conditions"
-            component={TermsConditions}
-          />
-          <Route
-            exact
-            path="/ministries/youth-ministry"
-            component={YouthMinistry}
-          />
-          <Route
-            exact
-            path="/ministries/childrens-ministry"
-            component={ChildrensMinistry}
-          />
-          <Route
-            exact
-            path="/childrens-content"
-            component={ChildrensContentAggregator}
-          />
-          <Route
-            exact
-            path="/childrens-content/:unitId"
-            component={ChildrensUnitPage}
-          />
-          <Route
-            exact
-            path="/ministries/small-groups"
-            component={SmallGroups}
-          />
-          <Route exact path="/ministries/serve" component={Serve} />
-          <Route
-            exact
-            path="/ministries/care-ministry"
-            component={CareMinistry}
-          />
-          <Route exact path="/attend" component={AttendService} />
-          <Route
-            exact
-            path="/announcement/:announcementId"
-            component={SpecialAnnouncement}
-          />
-          <Route exact path="/announcements" component={WhatsHappening} />
+            <Route exact path="/about/faq" component={FAQ} />
+            <Route exact path="/about/leadership" component={Leadership} />
+            <Route exact path="/about/our-story" component={OurStory} />
+            <Route exact path="/giving" component={Giving} />
+            <Route exact path="/about/beliefs" component={Beliefs} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/livestream" component={Livestream} />
+            <Route exact path="/bible-studies" component={StudyAggregator} />
+            <Route path="/bible-studies/:studyName" component={StudyPage} />
+            <Route exact path="/sermon-redirect" component={SermonRedirect} />
+            <Route exact path="/giving-redirect" component={GivingRedirect} />
+            <Route exact path="/pastor-search" component={PastorSearch} />
+            <Route
+              exact
+              path="/registration-redirect"
+              component={RegistrationRedirect}
+            />
+            <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+            <Route
+              exact
+              path="/terms-and-conditions"
+              component={TermsConditions}
+            />
+            <Route
+              exact
+              path="/ministries/youth-ministry"
+              component={YouthMinistry}
+            />
+            <Route
+              exact
+              path="/ministries/childrens-ministry"
+              component={ChildrensMinistry}
+            />
+            <Route
+              exact
+              path="/childrens-content"
+              component={ChildrensContentAggregator}
+            />
+            <Route
+              exact
+              path="/childrens-content/:unitId"
+              component={ChildrensUnitPage}
+            />
+            <Route
+              exact
+              path="/ministries/small-groups"
+              component={SmallGroups}
+            />
+            <Route exact path="/ministries/serve" component={Serve} />
+            <Route
+              exact
+              path="/ministries/care-ministry"
+              component={CareMinistry}
+            />
+            <Route exact path="/attend" component={AttendService} />
+            <Route
+              exact
+              path="/announcement/:announcementId"
+              component={SpecialAnnouncement}
+            />
+            <Route exact path="/announcements" component={WhatsHappening} />
 
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-        <link
-          href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
-          rel="stylesheet"
-        />
-      </div>
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+          <link
+            href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
+            rel="stylesheet"
+          />
+        </div>
+      </CompatRouter>
     </Router>
   );
 }
