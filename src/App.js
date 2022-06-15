@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { CompatRouter } from "react-router-dom-v5-compat";
 import { CompatRoute } from "react-router-dom-v5-compat";
 import Footer from "./components/footer";
 import ConnectPage from "./pages/connect-page";
@@ -39,7 +40,7 @@ import PastorSearch from "./pages/pastor-search";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <CompatRouter>
         <ScrollToTop />
         <div className="page-container">
@@ -110,9 +111,13 @@ function App() {
               path="/announcement/:announcementId"
               component={SpecialAnnouncement}
             />
-            <Route exact path="/announcements" component={WhatsHappening} />
+            <CompatRoute
+              exact
+              path="/announcements"
+              component={WhatsHappening}
+            />
 
-            <Route component={NotFound} />
+            <CompatRoute component={NotFound} />
           </Switch>
           <Footer />
           <link
@@ -121,7 +126,7 @@ function App() {
           />
         </div>
       </CompatRouter>
-    </Router>
+    </BrowserRouter>
   );
 }
 
