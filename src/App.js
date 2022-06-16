@@ -94,12 +94,12 @@ function App() {
               path="/childrens-content/:unitId"
               component={ChildrensUnitPage}
             />
-            <Route
+            <CompatRoute
               exact
               path="/ministries/small-groups"
               component={SmallGroups}
             />
-            <Route exact path="/ministries/serve" component={Serve} />
+            <CompatRoute exact path="/ministries/serve" component={Serve} />
             <CompatRoute
               exact
               path="/ministries/care-ministry"
