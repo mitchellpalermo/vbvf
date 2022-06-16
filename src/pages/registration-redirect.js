@@ -4,7 +4,7 @@ import VbvfLogo from "../images/logos/vbvf_logo_full.png";
 import RegistrationsLogo from "../images/logos/registrations_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
 import Button from "../components/button";
-import { useNavigate } from "react-router-dom-v5-compat";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationRedirect = (props) => {
   const [counter, setCounter] = useState("10");
