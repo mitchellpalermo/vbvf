@@ -100,12 +100,12 @@ function App() {
               component={SmallGroups}
             />
             <Route exact path="/ministries/serve" component={Serve} />
-            <Route
+            <CompatRoute
               exact
               path="/ministries/care-ministry"
               component={CareMinistry}
             />
-            <Route exact path="/attend" component={AttendService} />
+            <CompatRoute exact path="/attend" component={AttendService} />
             <Route
               exact
               path="/announcement/:announcementId"
