@@ -72,7 +72,10 @@ function App() {
           path="childrens-content"
           element={<ChildrensContentAggregator />}
         />
-        <Route path=":unitId" element={<ChildrensUnitPage />} />
+        <Route
+          path="childrens-content/:unitId"
+          element={<ChildrensUnitPage />}
+        />
         <Route path="/ministries/small-groups" element={<SmallGroups />} />
         <Route path="/ministries/serve" element={<Serve />} />
         <Route path="/ministries/care-ministry" element={<CareMinistry />} />
