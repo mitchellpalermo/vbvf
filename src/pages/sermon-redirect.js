@@ -4,10 +4,11 @@ import VbvfLogo from "../images/logos/vbvf_logo_full.png";
 import VbvmiLogo from "../images/logos/vbvmi_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
 import Button from "../components/button";
+import { useNavigate } from "react-router-dom";
 
 const SermonRedirect = (props) => {
   const [counter, setCounter] = useState("10");
-
+  const navigate = useNavigate(-1);
   useEffect(() => {
     counter >= 1
       ? setTimeout(() => {
@@ -34,7 +35,7 @@ const SermonRedirect = (props) => {
         <Button
           size="large"
           color="red"
-          buttonFunc={() => window.history.back()}
+          buttonFunc={() => navigate(-1)}
           title="Stay Here"
         />
         <Button
