@@ -15,8 +15,8 @@ const RegistrationRedirect = (props) => {
       ? setTimeout(() => {
           setCounter(counter - 1);
         }, 1000)
-      : redirect(props.location.deepDive);
-  }, [counter, props.location.deepDive]);
+      : redirect();
+  }, [counter]);
 
   function redirect(path) {
     window.location.replace(
@@ -45,7 +45,7 @@ const RegistrationRedirect = (props) => {
         <Button
           size="large"
           color="green"
-          buttonFunc={() => redirect(props.location.deepDive)}
+          buttonFunc={() => redirect()}
           title="Proceed"
         />
       </div>

@@ -14,11 +14,11 @@ const SermonRedirect = (props) => {
       ? setTimeout(() => {
           setCounter(counter - 1);
         }, 1000)
-      : verseByVerseRedirect(props.location.deepDive);
-  }, [counter, props.location.deepDive]);
+      : verseByVerseRedirect("https://www.versebyverseministry.org/");
+  }, [counter]);
 
-  function verseByVerseRedirect(path) {
-    window.location.replace(`https://www.versebyverseministry.org/${path}`);
+  function verseByVerseRedirect() {
+    window.location.replace(`https://www.versebyverseministry.org/`);
   }
 
   return (
@@ -41,7 +41,7 @@ const SermonRedirect = (props) => {
         <Button
           size="large"
           color="green"
-          buttonFunc={() => verseByVerseRedirect(props.location.deepDive)}
+          buttonFunc={() => verseByVerseRedirect()}
           title="Proceed"
         />
       </div>
