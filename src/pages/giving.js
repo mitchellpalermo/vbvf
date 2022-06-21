@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/giving.scss";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import Button from "../components/button";
-import { Link } from "react-router-dom";
+
 import { getMobileOperatingSystem } from "../util/index";
 const Giving = (props) => {
   const [onlineModal, setOnlineModal] = useState(false);
@@ -50,7 +50,7 @@ const Giving = (props) => {
                 <div className="giving-video">
                   <iframe
                     title="Giving Online"
-                    src="https://www.youtube.com/embed/NBxfSTsuc78"
+                    src="https://www.youtube.com/embed/N9KAD-cMYxo"
                     frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
@@ -59,7 +59,9 @@ const Giving = (props) => {
                 <p>
                   The video above explains the process of giving online. If you
                   have more questions, please send us an email at{" "}
-                  <Link href="mailto:info@vbvf.org">info@vbvf.org</Link>
+                  <a rel="noopener noreferrer" href="mailto:info@vbvf.org">
+                    info@vbvf.org
+                  </a>
                 </p>
               </ModalBody>
             </Modal>
