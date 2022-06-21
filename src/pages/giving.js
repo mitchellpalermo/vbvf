@@ -59,7 +59,9 @@ const Giving = (props) => {
                 <p>
                   The video above explains the process of giving online. If you
                   have more questions, please send us an email at{" "}
-                  <Link to="mailto:info@vbvf.org">info@vbvf.org</Link>
+                  <a rel="noopener noreferrer" href="mailto:info@vbvf.org">
+                    info@vbvf.org
+                  </a>
                 </p>
               </ModalBody>
             </Modal>
