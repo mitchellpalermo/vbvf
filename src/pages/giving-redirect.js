@@ -4,7 +4,7 @@ import VbvfLogo from "../images/logos/vbvf_logo_full.png";
 import GivingLogo from "../images/logos/giving_logo.png";
 import Arrow from "../images/arrow-thick-right.svg";
 import Button from "../components/button";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const GivingRedirect = (props) => {
   const [counter, setCounter] = useState("10");
@@ -36,9 +36,9 @@ const GivingRedirect = (props) => {
       <div className="redirect-buttons">
         <Button
           size="large"
-          color="green"
+          color="bone"
           buttonFunc={() => navigate(-1)}
-          title="Stay Here"
+          title="Stay"
         />{" "}
         <Button
           color="green"
