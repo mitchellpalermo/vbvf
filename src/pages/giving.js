@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/giving.scss";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 import Button from "../components/button";
-import { Link } from "react-router-dom";
+
 import { getMobileOperatingSystem } from "../util/index";
 const Giving = (props) => {
   const [onlineModal, setOnlineModal] = useState(false);
