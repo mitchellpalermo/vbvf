@@ -7,25 +7,27 @@ import { sanity } from "../util/index";
 import "../css/livestream.scss";
 import MemorialService from "../components/memorial-service";
 
-require("dotenv").config();
-
 var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
   const [wednesdaySeries, setWednesdaySeries] = useState({});
   const [sundaySeries, setSundaySeries] = useState({});
 
-  const wednesdayQuery = `*[_type == "series" && meetingTime.day == "Wednesday"]{
+  const wednesdayQuery = `*[_type == "series" && meetingTime.day == "Wednesday" && endDate > now()]{
   title,
   description,
   endDate,
-  isVbvmiStudy
+  isVbvmiStudy,
+  'notesUrl': lessons|order(lessonNumber desc)[0].notes.asset->url,
+  'questionUrl':lessons|order(lessonNumber desc)[0].questions.asset->url
 }`;
-  const sundayQuery = `*[_type == "series" && meetingTime.day == "Sunday"]{
+  const sundayQuery = `*[_type == "series" && meetingTime.day == "Sunday" && endDate > now()]{
   title,
   description,
   endDate,
-  isVbvmiStudy
+  isVbvmiStudy,
+  'notesUrl': lessons|order(lessonNumber desc)[0].notes.asset->url,
+  'questionUrl':lessons|order(lessonNumber desc)[0].questions.asset->url
 }`;
 
   useEffect(() => {
@@ -98,6 +100,8 @@ export default function Livestream() {
               title={wednesdaySeries.title}
               description={wednesdaySeries.description}
               seriesLink={`/bible-studies/${wednesdaySeries.title}`}
+              notesUrl={wednesdaySeries.notesUrl}
+              questionUrl={wednesdaySeries.questionUrl}
             />
           ) : livestreamHappeningNow() === "sunday" ? ( //return sunday stream
             <>
@@ -106,6 +110,8 @@ export default function Livestream() {
                 title={sundaySeries.title}
                 description={sundaySeries.description}
                 seriesLink={`/bible-studies/${sundaySeries.title}`}
+                notesUrl={sundaySeries.notesUrl}
+                questionUrl={sundaySeries.questionUrl}
               />
             </>
           ) : livestreamHappeningNow() === "memorial" ? ( // environment variable is memorial
