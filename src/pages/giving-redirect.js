@@ -15,8 +15,8 @@ const GivingRedirect = (props) => {
       ? setTimeout(() => {
           setCounter(counter - 1);
         }, 1000)
-      : givingRedirect(props.location.deepDive);
-  }, [counter, props.location.deepDive]);
+      : givingRedirect("https://vbvf.churchcenter.com/giving");
+  }, [counter]);
 
   function givingRedirect(path) {
     window.location.replace(`https://vbvf.churchcenter.com/giving`);
@@ -44,7 +44,9 @@ const GivingRedirect = (props) => {
           color="green"
           size="large"
           title="Proceed"
-          buttonFunc={() => givingRedirect(props.location.deepDive)}
+          buttonFunc={() =>
+            givingRedirect("https://vbvf.churchcenter.com/giving")
+          }
         />
       </div>
       <div className="redirect-images">

@@ -50,7 +50,7 @@ const Giving = (props) => {
                 <div className="giving-video">
                   <iframe
                     title="Giving Online"
-                    src="https://www.youtube.com/embed/NBxfSTsuc78"
+                    src="https://www.youtube.com/embed/N9KAD-cMYxo"
                     frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
@@ -59,7 +59,7 @@ const Giving = (props) => {
                 <p>
                   The video above explains the process of giving online. If you
                   have more questions, please send us an email at{" "}
-                  <Link href="mailto:info@vbvf.org">info@vbvf.org</Link>
+                  <Link to="mailto:info@vbvf.org">info@vbvf.org</Link>
                 </p>
               </ModalBody>
             </Modal>
