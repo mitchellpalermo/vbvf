@@ -14,6 +14,7 @@ const Button = (props) => {
 
   return (
     <a
+      rel="noreferrer"
       target={props.link?.includes("churchcenter") ? "_blank" : null} //forcing a new tab to open if link is to church center
       href={props.link ?? "#0"}
     >
