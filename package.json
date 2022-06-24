@@ -5,9 +5,6 @@
   "dependencies": {
     "@babel/runtime": "^7.10.2",
     "@reach/dialog": "^0.16.2",
-    "@remix-run/node": "^1.6.0",
-    "@remix-run/react": "^1.6.0",
-    "@remix-run/serve": "^1.6.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.1.4",
     "@sanity/image-url": "^0.140.19",
@@ -19,11 +16,13 @@
     "formik": "^2.1.4",
     "framer-motion": "^1.11.1",
     "lodash.sortby": "^4.7.0",
+    "pigeon-maps": "0.15.0",
+    "pigeon-marker": "^0.3.4",
     "prop-types": "^15.7.2",
     "react": "17",
     "react-dom": "17",
     "react-router-dom": "6",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^3.0.1",
     "reactstrap": "^8.4.1",
     "sass": "^1.49.9",
     "smoothscroll-polyfill": "^0.4.4",
@@ -51,7 +50,6 @@
     ]
   },
   "devDependencies": {
-    "@remix-run/dev": "^1.6.0",
     "eslint-plugin-react-hooks": "^2.1.2"
   },
   "resolutions": {
