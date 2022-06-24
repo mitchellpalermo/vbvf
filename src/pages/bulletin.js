@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { Document, Page } from "react-pdf";
+import { Document, Page } from "react-pdf";
 import { Spinner } from "reactstrap";
 import { sanity } from "../util/index";
 
