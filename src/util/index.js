@@ -1,6 +1,5 @@
 import axios from "axios";
 import imageUrlBuilder from "@sanity/image-url";
-require("dotenv").config();
 
 const SanityClient = require("@sanity/client");
 
