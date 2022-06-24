@@ -5,7 +5,7 @@ import { sanity, sanityUrlFor, isOver } from "../util/index";
 import AlertBubble from "../components/alert-bubble";
 import { Spinner } from "reactstrap";
 export default function StudyAggregator() {
-  const query = `*[_type == "series" && isVbvmiStudy == false] | order(endDate desc) {
+  const query = `*[_type == "series"] | order(endDate desc) {
     title,
     seriesImage,
     endDate,
@@ -49,7 +49,16 @@ export default function StudyAggregator() {
           Verse by Verse Fellowship prioritizes the teaching of the word. We
           believe that God uses His word to equip followers of Christ to walk in
           confidence and love. Please enjoy these teaching series from teachers
-          here at VBVF.
+          here at VBVF. If you would like to listen to more Bible teaching,
+          please visit our sister ministry,{" "}
+          <Link
+            target={"blank"}
+            rel="noopener noreferrer"
+            to={"/sermon-redirect"}
+          >
+            Verse by Verse Ministry
+          </Link>
+          .
         </p>
       </div>
       <div className="studies-array">
