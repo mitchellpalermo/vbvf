@@ -5,7 +5,7 @@ import { sanity, sanityUrlFor, isOver } from "../util/index";
 import AlertBubble from "../components/alert-bubble";
 import { Spinner } from "reactstrap";
 export default function StudyAggregator() {
-  const query = `*[_type == "series" && isVbvmiStudy == false && teacher != "Annette Armstrong"] | order(endDate desc) {
+  const query = `*[_type == "series" && isVbvmiStudy == false] | order(endDate desc) {
     title,
     seriesImage,
     endDate,
