@@ -193,6 +193,10 @@ export default function StudyPage() {
                 <p>Loading Lessons</p>
                 <Spinner color="dark" />
               </>
+            ) : lessons.length > 0 ? (
+              <>
+                <p>No lessons yet. Check back later!</p>
+              </>
             ) : (
               lessons.map((lesson, index) => {
                 //render lesson block only if there's a meaningful content
