@@ -27,3 +27,5 @@ yarn-error.log*
 
 # ignore temporary files
 *.tmp
+
+.next
