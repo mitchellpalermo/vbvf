@@ -57,7 +57,7 @@ export async function getVideos(vimeoFolder) {
   const options = {
     url: `https://api.vimeo.com/me/projects/${vimeoFolder}/videos?direction=desc`,
     headers: {
-      Authorization: process.env.REACT_APP_VIMEO_KEY,
+      Authorization: process.env.REACT_APP_VIMEO_KEY_UPDATED,
     },
   };
   return axios(options);
