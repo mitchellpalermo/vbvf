@@ -193,7 +193,7 @@ export default function StudyPage() {
                 <p>Loading Lessons</p>
                 <Spinner color="dark" />
               </>
-            ) : lessons.length > 0 ? (
+            ) : lessons.length === 0 ? (
               <>
                 <p>No lessons yet. Check back later!</p>
               </>
