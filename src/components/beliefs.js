@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/beliefs.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import AboutMenu from "./about-menu";
 
 export default function Beliefs() {
@@ -32,17 +32,15 @@ export default function Beliefs() {
           There is one God who eternally exists as three Persons (Father, Son,
           and Holy Spirit) and is the Sovereign Creator of all things (Genesis
           1:1).
-          <Link
+          {/* <Link
             className="learn-more-link"
-            to={{
-              pathname: "/sermon-redirect",
-              deepDive:
-                "bible-studies/the_sovereignty_of_god#sthash.tGBui5H2.ymWNfxe0.dpbs",
-            }}
+            target={"blank"}
+            rel="noopener noreferrer"
+            to="https://vbvmi.org/bible-studies/the_sovereignty_of_god#sthash.tGBui5H2.ymWNfxe0.dpbs"
           >
             {" "}
             Learn more about God’s sovereignty.
-          </Link>
+          </Link> */}
         </p>
         <h3>Scripture</h3>
         <p>
@@ -52,17 +50,16 @@ export default function Beliefs() {
           service to the glory of God. God is the final authority as revealed in
           His perfect, trustworthy, and inspired Word, which unfolds His
           character and His purposes (2 Timothy 3:16-17).
-          <Link
+          {/* <Link
             className="learn-more-link"
             to={{
               pathname: "/sermon-redirect",
               deepDive:
                 "bible-answers/is_scripture_meant_to_be_literal_or_figurative#sthash.coahtwuJ.dpbs",
             }}
-          >
-            {" "}
-            Learn more about interpretation of Scripture.
-          </Link>
+          > */}{" "}
+          {/* Learn more about interpretation of Scripture.
+          </Link> */}
         </p>
         <h3>The Purpose of God</h3>
         <p>
@@ -76,7 +73,7 @@ export default function Beliefs() {
           thus humanity became alienated from God, totally depraved, and
           incapable of remedying our sinful condition by our own means. (Genesis
           1:27)
-          <Link
+          {/* <Link
             className="learn-more-link"
             to={{
               pathname: "/sermon-redirect",
@@ -84,7 +81,7 @@ export default function Beliefs() {
             }}
           >
             Access a complete study on the book of Genesis.
-          </Link>
+          </Link> */}
         </p>
         <h3>Sin</h3>
         <p>
@@ -113,7 +110,7 @@ export default function Beliefs() {
           Salvation comes by grace, through faith in the finished work of Jesus
           Christ on the cross plus nothing on the part of humanity (Ephesians
           2:1-10).
-          <Link
+          {/* <Link
             className="learn-more-link"
             to={{
               pathname: "/sermon-redirect",
@@ -121,7 +118,7 @@ export default function Beliefs() {
             }}
           >
             Learn more about salvation.
-          </Link>
+          </Link> */}
         </p>
         <h3>The Holy Spirit</h3>
         <p>
@@ -148,7 +145,7 @@ export default function Beliefs() {
           will dwell eternally among God’s people in the coming New Heavens and
           Earth called the New Jerusalem. (John 14:1-5; 1Corinthians 15;
           Revelation 20-22; Matthew 24:1-51, 25:1-46).
-          <Link
+          {/* <Link
             className="learn-more-link"
             to={{
               pathname: "/sermon-redirect",
@@ -156,7 +153,7 @@ export default function Beliefs() {
             }}
           >
             Learn more about the End Times.
-          </Link>
+          </Link> */}
         </p>
         <h3>The Eternal State of Humanity</h3>
         <p>

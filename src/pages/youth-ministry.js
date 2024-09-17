@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import LogosLogo from "../images/logos/logos-logo.png";
-import Volunteer from "../images/youth_assets/volunteer_youth.jpg";
+//import Volunteer from "../images/youth_assets/volunteer_youth.jpg";
 import "../css/youth-ministry.scss";
 import { sanity, sanityUrlFor } from "../util/index";
 import PortableText from "@sanity/block-content-to-react";
 import ScriptureVerse from "../components/scripture-verse";
 import StaffInfo from "../components/staff-info";
-import Button from "../components/button";
+// import Button from "../components/button";
 import Spinner from "reactstrap/lib/Spinner";
 import FrequentlyAskedQuestions from "../components/frequently-asked-questions";
 import AlertBubble from "../components/alert-bubble";
@@ -89,7 +89,7 @@ export default function YouthMinistry() {
         <FrequentlyAskedQuestions faq={pageData.faq.faqs} layout="vertical" />
       )}
 
-      <div className="youth-sign-up">
+      {/* <div className="youth-sign-up">
         <img src={Volunteer} alt="" />
         <div>
           <h3>
@@ -103,7 +103,7 @@ export default function YouthMinistry() {
             link="https://vbvf.churchcenter.com/people/forms/72047"
           />
         </div>
-      </div>
+      </div> */}
       <>
         {personIsLoading ? (
           <Spinner />

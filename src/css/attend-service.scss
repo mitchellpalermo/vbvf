@@ -14,13 +14,13 @@
   }
   &-desc {
     display: grid;
-    grid-template-columns: repeat(2, 600px);
-    gap: 50px;
+    grid-template-columns: repeat(2, 45vw);
+    gap: 5vw;
     grid-template-rows: 1fr;
     margin: 5vh;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 975px) {
   .attend-desc {
     width: 90%;
     display: flex;

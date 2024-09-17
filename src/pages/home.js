@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../css/home.scss";
 import Button from "../components/button";
-import { Spinner } from "reactstrap";
-import {
-  getOrdinalNum,
-  nthSundayHasCome,
-  nthWeekdayOfMonth,
-  sanity,
-  sanityUrlFor,
-} from "../util/index";
-import BibleTeaching from "../images/home_page/bible-teaching.jpg";
+
+import { getOrdinalNum, nthWeekdayOfMonth } from "../util/index";
+// import BibleTeaching from "../images/home_page/mike_bible_teaching.jpeg";
 import DailyBread from "../images/home_page/daily_bread.jpeg";
 import MeetandGreet from "../images/home_page/MeetandGreet.jpg";
 import BaptismPhoto from "../images/home_page/anthony_baptism_horizontal_c.jpg";
@@ -44,50 +38,50 @@ const liveStreamButtonText = () => {
 };
 
 const Home = () => {
-  const query = `{'pageData': *[_type == "page" && title == "Home"]{
-    paragraphs,
-    scripture,
-    ministryLeader->
-  }, 'childrensUnits': *[_type == "childrensUnit"] |order(_createdAt desc)[0...3]{
-    title,
-    unitNumber,
-    seriesImage,
-  }}`;
+  // const query = `{'pageData': *[_type == "page" && title == "Home"]{
+  //   paragraphs,
+  //   scripture,
+  //   ministryLeader->
+  // }, 'childrensUnits': *[_type == "childrensUnit"] |order(_createdAt desc)[0...3]{
+  //   title,
+  //   unitNumber,
+  //   seriesImage,
+  // }}`;
 
   //eslint-disable-next-line
-  const serializers = {
-    //this helps react understand how to present links
-    marks: {
-      link: ({ mark, children }) => {
-        const { href } = mark;
-        return <a href={href}>{children}</a>;
-      },
-      list: (props) => {
-        const { type } = props;
-        const bullet = type === "bullet";
-        if (bullet) {
-          return <ul>{props.children}</ul>;
-        }
-        return <ol>{props.children}</ol>;
-      },
-      listItem: (props) => <li>{props.children}</li>,
-    },
-  };
+  // const serializers = {
+  //   //this helps react understand how to present links
+  //   marks: {
+  //     link: ({ mark, children }) => {
+  //       const { href } = mark;
+  //       return <a href={href}>{children}</a>;
+  //     },
+  //     list: (props) => {
+  //       const { type } = props;
+  //       const bullet = type === "bullet";
+  //       if (bullet) {
+  //         return <ul>{props.children}</ul>;
+  //       }
+  //       return <ol>{props.children}</ol>;
+  //     },
+  //     listItem: (props) => <li>{props.children}</li>,
+  //   },
+  // };
 
-  //eslint-disable-next-line
-  const [pageData, setPageData] = useState([]);
-  const [childrensUnits, setChildrensUnits] = useState();
-  const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
+  // //eslint-disable-next-line
+  // const [pageData, setPageData] = useState([]);
+  // const [childrensUnits, setChildrensUnits] = useState();
+  // const [pageDataIsLoading, setPageDataIsLoading] = useState(true);
 
-  useEffect(() => {
-    sanity.fetch(query).then((result) => {
-      setChildrensUnits(result.childrensUnits);
-      setPageData(result.pageData);
+  // useEffect(() => {
+  //   sanity.fetch(query).then((result) => {
+  //     setChildrensUnits(result.childrensUnits);
+  //     setPageData(result.pageData);
 
-      setPageDataIsLoading(!pageDataIsLoading);
-    });
-    //eslint-disable-next-line
-  }, [query]);
+  //     setPageDataIsLoading(!pageDataIsLoading);
+  //   });
+  //   //eslint-disable-next-line
+  // }, [query]);
 
   return (
     <div className="home">
@@ -116,7 +110,7 @@ const Home = () => {
       <div className="preview-container">
         {/* If the third Sunday has already come this month then display the Bible Teaching preview
            rather than the Get Baptized preview */}
-        {nthSundayHasCome(BAPTISM_WEEK_NUM) ? (
+        {/* {nthSundayHasCome(BAPTISM_WEEK_NUM) ? (
           <Preview
             title="Bible Teaching"
             body="Listen to all sermons and bible studies online."
@@ -124,19 +118,19 @@ const Home = () => {
             link="/bible-studies/"
             image={BibleTeaching}
           />
-        ) : (
-          <Preview
-            title="Get Baptized"
-            body={`Verse by Verse Fellowship celebrates baptisms every month. If you've never been baptized, consider doing so with us this month on ${
-              monthNames[new Date().getMonth()]
-            } the ${getOrdinalNum(
-              nthWeekdayOfMonth(0, BAPTISM_WEEK_NUM).getDate()
-            )}.`}
-            buttonTitle="Register for Baptism"
-            link="https://vbvf.churchcenter.com/registrations/events/1154578"
-            image={BaptismPhoto}
-          />
-        )}
+        ) : ( */}
+        <Preview
+          title="Get Baptized"
+          body={`Verse by Verse Fellowship celebrates baptisms every month. If you've never been baptized, consider doing so with us this month on ${
+            monthNames[new Date().getMonth()]
+          } ${getOrdinalNum(
+            nthWeekdayOfMonth(0, BAPTISM_WEEK_NUM).getDate()
+          )}.`}
+          buttonTitle="Register for Baptism"
+          link="https://vbvf.churchcenter.com/registrations/events/1154578"
+          image={BaptismPhoto}
+        />
+        {/* )} */}
         <Preview
           title="Announcements"
           body="Check out what's happening at Verse by Verse Fellowship."
@@ -176,7 +170,7 @@ const Home = () => {
             />
           </span>
         </div> */}
-      <div className="childrens-content">
+      {/* <div className="childrens-content">
         {pageDataIsLoading ? (
           <Spinner />
         ) : (
@@ -195,7 +189,7 @@ const Home = () => {
             </div>
           </>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

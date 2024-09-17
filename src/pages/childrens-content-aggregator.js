@@ -26,7 +26,7 @@ export default function ChildrensContentAggregator() {
         <Link
           key={unit.unitNumber}
           className="unit-link"
-          to={`/childrens-content/unit-${unit.unitNumber}`}
+          to={`unit-${unit.unitNumber}`}
         >
           <div className="unit-icon">
             <Card body>

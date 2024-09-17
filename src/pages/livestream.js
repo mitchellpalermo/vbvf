@@ -7,8 +7,6 @@ import { sanity } from "../util/index";
 import "../css/livestream.scss";
 import MemorialService from "../components/memorial-service";
 
-require("dotenv").config();
-
 var sortBy = require("lodash.sortby");
 
 export default function Livestream() {
@@ -51,7 +49,7 @@ export default function Livestream() {
 
   useEffect(() => {
     //fetching sunday service archive videos
-    getVideos("1553779").then((vidArr) => {
+    getVideos("11739413").then((vidArr) => {
       setSundayArchiveVideos(vidArr.data.data);
       setIsLoading(false);
     });
@@ -98,7 +96,7 @@ export default function Livestream() {
         <>
           {livestreamHappeningNow() === "wednesday" ? ( //if it's wednesday return the active series happening on wednesday
             <Stream
-              streamUrl="https://vimeo.com/event/49116/embed"
+              streamUrl="https://vimeo.com/event/2282207/embed"
               title={wednesdaySeries.title}
               description={wednesdaySeries.description}
               seriesLink={`/bible-studies/${wednesdaySeries.title}`}
@@ -108,7 +106,7 @@ export default function Livestream() {
           ) : livestreamHappeningNow() === "sunday" ? ( //return sunday stream
             <>
               <Stream
-                streamUrl="https://vimeo.com/event/51649/embed"
+                streamUrl="https://vimeo.com/event/2282202/embed"
                 title={sundaySeries.title}
                 description={sundaySeries.description}
                 seriesLink={`/bible-studies/${sundaySeries.title}`}
@@ -123,6 +121,7 @@ export default function Livestream() {
             </>
           ) : livestreamHappeningNow() === "guestTeacher" ? ( //returning component with no description for guest teacher
             <>
+              {/* TODO: UPDATE URLS */}
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
                 title=""
@@ -131,6 +130,7 @@ export default function Livestream() {
             </>
           ) : livestreamHappeningNow() === "christmas" ? ( //returning component with no description for guest teacher
             <>
+              {/* TODO: UPDATE URLS */}
               <Stream
                 streamUrl="https://vimeo.com/event/51649/embed"
                 title="Christmas Eve Service"

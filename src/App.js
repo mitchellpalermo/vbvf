@@ -1,6 +1,7 @@
 import React from "react";
 import "./css/App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
 import Footer from "./components/footer";
 import ConnectPage from "./pages/connect-page";
 
@@ -32,93 +33,68 @@ import ChildrensContentAggregator from "./pages/childrens-content-aggregator";
 import SpecialAnnouncement from "./pages/specialAnnouncement";
 import CareMinistry from "./pages/care-ministry";
 import WhatsHappening from "./pages/whats-happening";
-import PastorSearch from "./pages/pastor-search";
 
 // import OnlineMinistry from "./pages/online-ministry";
 
 function App() {
   return (
-    <Router>
+    <div className="page-container">
       <ScrollToTop />
-      <div className="page-container">
-        <GlobalNav />
-        <Switch>
-          <Route exact path="/" component={Home} />
+      <GlobalNav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/connect" element={<ConnectPage />} />
+        <Route path="/about/faq" element={<FAQ />} />
+        <Route path="/about/leadership" element={<Leadership />} />
+        <Route path="/about/our-story" element={<OurStory />} />
+        <Route path="/giving" element={<Giving />} />
+        <Route path="/about/beliefs" element={<Beliefs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/livestream" element={<Livestream />} />
+        <Route path="bible-studies" element={<StudyAggregator />} />
+        <Route path="bible-studies/:studyName" element={<StudyPage />} />
 
-          <Route exact path="/connect" component={ConnectPage} />
-          {/* <Route exact path="/online-ministry" component={OnlineMinistry} /> */}
+        <Route path="/sermon-redirect" element={<SermonRedirect />} />
+        <Route path="/giving-redirect" element={<GivingRedirect />} />
 
-          <Route exact path="/about/faq" component={FAQ} />
-          <Route exact path="/about/leadership" component={Leadership} />
-          <Route exact path="/about/our-story" component={OurStory} />
-          <Route exact path="/giving" component={Giving} />
-          <Route exact path="/about/beliefs" component={Beliefs} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/livestream" component={Livestream} />
-          <Route exact path="/bible-studies" component={StudyAggregator} />
-          <Route path="/bible-studies/:studyName" component={StudyPage} />
-          <Route exact path="/sermon-redirect" component={SermonRedirect} />
-          <Route exact path="/giving-redirect" component={GivingRedirect} />
-          <Route exact path="/pastor-search" component={PastorSearch} />
-          <Route
-            exact
-            path="/registration-redirect"
-            component={RegistrationRedirect}
-          />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route
-            exact
-            path="/terms-and-conditions"
-            component={TermsConditions}
-          />
-          <Route
-            exact
-            path="/ministries/youth-ministry"
-            component={YouthMinistry}
-          />
-          <Route
-            exact
-            path="/ministries/childrens-ministry"
-            component={ChildrensMinistry}
-          />
-          <Route
-            exact
-            path="/childrens-content"
-            component={ChildrensContentAggregator}
-          />
-          <Route
-            exact
-            path="/childrens-content/:unitId"
-            component={ChildrensUnitPage}
-          />
-          <Route
-            exact
-            path="/ministries/small-groups"
-            component={SmallGroups}
-          />
-          <Route exact path="/ministries/serve" component={Serve} />
-          <Route
-            exact
-            path="/ministries/care-ministry"
-            component={CareMinistry}
-          />
-          <Route exact path="/attend" component={AttendService} />
-          <Route
-            exact
-            path="/announcement/:announcementId"
-            component={SpecialAnnouncement}
-          />
-          <Route exact path="/announcements" component={WhatsHappening} />
-
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-        <link
-          href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
-          rel="stylesheet"
+        <Route
+          path="/registration-redirect"
+          element={<RegistrationRedirect />}
         />
-      </div>
-    </Router>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/ministries/youth-ministry" element={<YouthMinistry />} />
+        <Route
+          path="/ministries/childrens-ministry"
+          element={<ChildrensMinistry />}
+        />
+        <Route
+          path="childrens-content"
+          element={<ChildrensContentAggregator />}
+        />
+        <Route
+          path="childrens-content/:unitId"
+          element={<ChildrensUnitPage />}
+        />
+        <Route path="/ministries/small-groups" element={<SmallGroups />} />
+        <Route path="/ministries/serve" element={<Serve />} />
+        <Route path="/ministries/care-ministry" element={<CareMinistry />} />
+        <Route path="/attend" element={<AttendService />} />
+        <Route
+          path="/announcement/:announcementId"
+          element={<SpecialAnnouncement />}
+        />
+        <Route path="/announcements" element={<WhatsHappening />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <Footer />
+      <link
+        href="https://fonts.googleapis.com/css?family=Vollkorn|Work+Sans&display=swap"
+        rel="stylesheet"
+      />
+    </div>
   );
 }
 
